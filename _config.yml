@@ -22,7 +22,7 @@ title: Parker Glia Bank
 email: jonathan.parker@glia.com
 description: >- # this means to ignore newlines until "baseurl:"
   Parker's glia bank site to test the injection and support of the glia application
-baseurl: "/parkerjo-glia.github.io/glia_bank/" # the subpath of your site, e.g. /blog
+baseurl: "/parkerjo-glia.github.io/" # the subpath of your site, e.g. /blog
 url: "https://parkerjo-glia.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
