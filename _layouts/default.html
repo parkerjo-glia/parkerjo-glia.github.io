@@ -23,13 +23,21 @@
           <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
           <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
 
+          <div class="main-nav">
+            <a href="{{ site.url }}/index" title="Home" class="btn">Home</a>
+            <a href="{{ site.url }}/accounts" title="Bank Accounts" class="btn">Bank Accounts</a>
+            <a href="{{ site.url }}/loans" title="Loans" class="btn">Loans</a>
+            <a href="{{ site.url }}/insurance" title="Insurance" class="btn">Insurance</a>
+          </div>
+
+          <!--
           {% if site.show_downloads %}
             <section>
               <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
               <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
               <a class="tar_download_link" href="{{ site.github.tar_url }}">Download this project as a tar.gz file</a>
             </section>
-          {% endif %}
+          {% endif %} -->
         </header>
     </div>
 
@@ -48,9 +56,7 @@
         {% endif %}
         <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
 
-        <button
-          class="omnibrowse-code-button"
-          onclick="document.body.appendChild(document.createElement('sm-visitor-code'))">
+        <a class="omnibrowse-code-button" onclick="document.body.appendChild(document.createElement('sm-visitor-code'))">
           Get CoBrowsing code
         </button>
       </footer>
