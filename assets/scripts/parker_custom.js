@@ -4,8 +4,9 @@ sm.getApi({version: 'v1'}).then(function(glia) {
       var submit = document.querySelector('#sign-up_btn');
   
       submit.addEventListener('click', function() {
+        var name = document.querySelector('#name').value;
         var email = document.querySelector('#email').value;
-        engagement.recordEvent({message: 'Visitor signed up with e-mail: ' + email});
+        engagement.recordEvent({message: name + ' signed up with email ' + email});
       });
     }
   
