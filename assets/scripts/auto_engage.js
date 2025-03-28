@@ -91,9 +91,9 @@ const conversation = {
     ]
  };
 
-sm.getApi({ version: 'v1' }).then(function (api) {
 
-    alert("SM API Loaded");
+ alert(JSON.stringify(conversation));
+sm.getApi({ version: 'v1' }).then(function (api) {
   glia = api;
   glia.queueForEngagement('text', { queueId: '76dbea19-92f7-4e8b-8c6d-de99280b7bcd' })
   glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, engagementStarted);
