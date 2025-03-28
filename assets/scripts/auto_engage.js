@@ -1,6 +1,8 @@
 var glia;
 var currentEngagement;
 
+alert("Loaded auto_engage.js");
+
 const conversation = {
     "conversation_id":6,
     "messages":[
