@@ -6,23 +6,15 @@ var currentEngagement;
 
 var scriptCatalog;
 var visitorCatalog;
-const scriptCatalogURL = "https://parkerjo-glia.github.io/assets/json/script_catalog.json";
-const visitorCatalogURL = "https://parkerjo-glia.github.io/assets/json/visitors_catalog.json";
 
-/*
 $.getJSON('./assets/json/script_catalog.json', data => {
     scriptCatalog = data;
 });
 $.getJSON('./assets/json/visitors_catalog.json', data => {
     visitorCatalog = data;
 });
-*/
 
 async function syntheticEngagement(scriptId) {
-
-    console.log("loading catalogs");
-    await loadCatalogs();
-    console.log("catalogs loaded");
 
     sm.getApi({ version: 'v1' }).then(function (glia) {
         gliaAPI = glia;
@@ -125,36 +117,4 @@ function formatMessage(str, data) {
         str = str.replace(regex, data[key]);
     }
     return str;
-}
-
-async function loadCatalogs() {
-    await Promise.all[
-        getData(scriptCatalog, scriptCatalogURL),
-        getData(visitorCatalog, visitorCatalogURL)
-    ];
-}
-
-async function getData(catalog, url) {
-    try {
-        console.log(`loading catalog from ${url}`);
-
-        if (!catalog) {
-
-            console.log(`loading catalog from ${url} - fetch`);
-            const response = await fetch(url);
-            console.log(`loading catalog from ${url} - fetch complete`);
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            catalog = await response.json();
-            console.log('Data received:', data);
-        }
-
-        console.log(`loading catalog from ${url} :: Complete`);
-        return catalog;
-    } catch (error) {
-        console.error('There was a problem with the fetch operation:', error);
-    }
 }
