@@ -24,7 +24,7 @@ async function syntheticEngagement(scriptId) {
         conversation = scriptCatalog[scriptNdx];
         visitor = visitorCatalog[visitorNdx];
 
-        var queue_id = '8c458838-cb59-4d6c-ae31-d04fd2bbda1f'; // func you up
+        var queue_id = 'a50612a3-db67-4f2e-bc94-8bf3410a3b9f'; // func you up
         //var queue_id = '76dbea19-92f7-4e8b-8c6d-de99280b7bcd'; // GVA Queue
         glia.queueForEngagement('text', { queueId: queue_id })
         glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, engagementStarted);

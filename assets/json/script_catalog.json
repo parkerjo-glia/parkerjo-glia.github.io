@@ -249,6 +249,36 @@
               "message": "Maybe later."
             },
             {
+              "sender": "visitor",
+              "type": "visitor-wait",
+              "timeout": "3800"
+            },
+            {
+              "sender": "visitor",
+              "type": "visitor-msg",
+              "message": "Actually, could I try speaking with someone else regarding my home loan?"
+            },
+            {
+              "sender": "operator",
+              "type": "operator-wait",
+              "timeout": "1000"
+            },
+            {
+              "sender": "operator",
+              "type": "operator-transfer",
+              "queueId": "8c458838-cb59-4d6c-ae31-d04fd2bbda1f"
+            },
+            {
+              "sender": "visitor",
+              "type": "visitor-wait",
+              "timeout": "3800"
+            },
+            {
+              "sender": "visitor",
+              "type": "visitor-msg",
+              "message": "Hi, is my home loan still active?"
+            },
+            {
               "sender": "operator",
               "type": "operator-wait",
               "timeout": "1000"
@@ -256,6 +286,11 @@
             {
               "sender": "operator",
               "type": "operator-suggest",
+              "message": "No."
+            },
+            {
+              "sender": "operator",
+              "type": "operator-chat",
               "message": "Bye! Feel free to call back anytime."
             }
             
