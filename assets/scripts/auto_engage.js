@@ -14,7 +14,7 @@ $.getJSON('./assets/json/visitors_catalog.json', data => {
     visitorCatalog = data;
 });
 
-async function syntheticEngagement(scriptId) {
+function syntheticEngagement(scriptId) {
 
     sm.getApi({ version: 'v1' }).then(function (glia) {
         gliaAPI = glia;
@@ -63,29 +63,13 @@ function processChatMessage() {
 
         switch (nextMsg.type) {
             case 'visitor-msg':
-                const timeout = getRandomNum(500);
                 messageNdx = messageNdx + 1;
-
-                gliaAPI.updateInformation({
-                    name: visitor.name,
-                    phone: visitor.phone,
-                    email: visitor.email,
-                    customAttributesUpdateMethod: 'merge',
-                    customAttributes: {
-                        visitor_id: `${visitor.id}`,
-                        conversation_id: `${conversation.id}`,
-                        step_in_conversation: `${messageNdx}`
-                    }
-                }).then(() => {
-                    setTimeout(sendMessage, timeout, formatMessage(nextMsg.message, visitor));
-                }).catch(err => {
-                    alert(`Error: ${e}`);
-                });
+                setTimeout(updateInfoAndSend,  nextMsg.delay, nextMsg);
                 break;
             case 'visitor-wait':
                 console.log(`Waiting at step ${messageNdx}, waiting for ${nextMsg.timeout}`);
                 messageNdx = messageNdx + 1;
-                setTimeout(processAfterWait, nextMsg.timeout);
+                setTimeout(processAfterWait, nextMsg.delay);
                 break;
             case 'operator-wait':
                 messageNdx = messageNdx + 1;
@@ -95,6 +79,24 @@ function processChatMessage() {
                 break;
         }
     }
+}
+
+function updateInfoAndSend(nextMsg) {
+    gliaAPI.updateInformation({
+        name: visitor.name,
+        phone: visitor.phone,
+        email: visitor.email,
+        customAttributesUpdateMethod: 'merge',
+        customAttributes: {
+            visitor_id: `${visitor.id}`,
+            conversation_id: `${conversation.id}`,
+            step_in_conversation: `${messageNdx}`
+        }
+    }).then(() => {
+        sendMessage(formatMessage(nextMsg.message, visitor));
+    }).catch(err => {
+        alert(`Error: ${err}`);
+    });
 }
 
 function sendMessage(message) {
