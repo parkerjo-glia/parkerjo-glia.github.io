@@ -16,9 +16,10 @@ $.getJSON('./assets/json/visitors_catalog.json', data => {
 
 function syntheticEngagement(scriptId) {
 
-    alert(sm.getApi.toString());
-    /*
     sm.getApi({ version: 'v1' }).then(function (glia) {
+
+        alert("Salemove loaded");
+/*
         gliaAPI = glia;
         messageNdx = 0;
         const scriptNdx = scriptId ?? getRandomNum(scriptCatalog.length - 1);
@@ -30,10 +31,10 @@ function syntheticEngagement(scriptId) {
         //var queue_id = '76dbea19-92f7-4e8b-8c6d-de99280b7bcd'; // GVA Queue
         glia.queueForEngagement('text', { queueId: queue_id })
         glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, engagementStarted);
+    */
     }).catch(e => {
         alert(`Error: ${e}`);
     });
-    */
 }
 
 function engagementStarted(engagement) {
