@@ -16,6 +16,8 @@ $.getJSON('./assets/json/visitors_catalog.json', data => {
 
 function syntheticEngagement(scriptId) {
 
+    alert(sm.getApi.toString());
+    /*
     sm.getApi({ version: 'v1' }).then(function (glia) {
         gliaAPI = glia;
         messageNdx = 0;
@@ -31,6 +33,7 @@ function syntheticEngagement(scriptId) {
     }).catch(e => {
         alert(`Error: ${e}`);
     });
+    */
 }
 
 function engagementStarted(engagement) {
