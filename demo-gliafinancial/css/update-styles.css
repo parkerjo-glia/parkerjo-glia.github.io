@@ -1,0 +1,350 @@
+@charset "utf-8";
+
+.default-application .form-sub-title {
+  color: #15549a;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.default-application span {
+  color: #9a9fab;
+  text-transform: none;
+  margin-left: 6px
+}
+
+.default-application select.form-control:not([size]):not([multiple]) {
+  height: 52px;
+}
+
+.default-application hr {
+  max-width:calc(100% - 30px);
+}
+
+.default-application label {
+  white-space: nowrap;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.default-application img {
+  height: 16px;
+}
+
+.default-application .label-help-button {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.default-application #error-div {
+  color: red;
+  position: absolute;
+  right: 0;
+  top: -2px;
+}
+
+#income-div {
+  position: relative;
+}
+
+.logo-login-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.steps-container {
+  padding-bottom: 0;
+}
+
+.application-steps {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+}
+
+.step-icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.cta-section-app {
+  background: url(../images/cta-img-4a.jpg)no-repeat;
+  background-size: cover;
+  background-position-x: 50%;
+}
+
+/* navigation bar syles */
+.header-2 #navigation {
+  display: flex;
+  justify-content: space-between;
+  float: none;
+}
+
+.header-2 #navigation #contact-us {
+  border-right: 1px solid #dee7f2;
+}
+
+.header-2 #navigation:after, #navigation>ul:after {
+  content: none;
+}
+
+.header-2 #navigation .language-selector a {
+  border-left: none;
+}
+
+.header-2 #navigation .language-selector ul li a {
+  text-align: left;
+  text-transform: capitalize;
+  letter-spacing: 0;
+}
+
+.navigation-2 .container #language-list {
+  display: block !important;
+}
+
+/* log in page styles */
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-section {
+  align-items: center;
+  display: flex;
+}
+
+.login-section .control-label {
+  padding: 2px;
+  text-transform: none;
+}
+
+#log-out .tooltiptext {
+  align-items: center;
+  background-color: #f51f8a;
+  border-radius: 2px;
+  bottom: 25px;
+  color: #ffffff;
+  display: flex;
+  font-weight: 500;
+  height: 20px;
+  justify-content: center;
+  position: absolute;
+  padding: 5px 0;
+  right: -48px;
+  text-align: center;
+  visibility: hidden;
+  width: 65px;
+}
+
+#log-out:hover .tooltiptext {
+  visibility: visible;
+}
+
+#logout-icon {
+  height: 20px;
+  margin-left: 10px;
+}
+
+#error-login {
+  color: red;
+  margin-bottom: 10px;
+}
+
+/* Account summary styles */
+.summary-container {
+  display: grid;
+  grid-gap: 25px;
+  background-color: #f4f6f8 !important;
+  margin-top: 35px;
+}
+
+.summary-container > div {
+  background: #ffffff;
+  border-radius: 4px;
+  border: 2px solid #e6ecef;
+  padding: 25px;
+  box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075);
+}
+
+#summary-payment {
+  grid-column: 1/ span 3;
+  grid-row: 1 / span 1;
+}
+
+#summary-banking,
+#summary-insurance {
+  grid-column: 1/ span 3;
+  grid-row: 2 / span 4;
+}
+
+#summary-agent {
+  grid-column: 4/ span 2;
+  grid-row: 1 / span 3;;
+}
+
+#summary-accounts {
+  grid-column: 4/ span 2;
+  grid-row: 4 / span 2;
+}
+
+.child-header,
+#payment-plan-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+#agent-photo {
+  height: 100px;
+  width: auto;
+  margin-top: 10px;
+}
+
+#bill-sum {
+  color: black;
+  font-weight: 500;
+}
+
+.summary-child-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.summary-child-content .lead {
+  margin-bottom: 1rem;
+}
+
+.summary-child-text {
+  margin-left: 25px;
+}
+
+.contact-link p {
+  align-items: center;
+  color: #3c4d6b;
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#chat-button{
+  width: 35px;
+  height: auto;
+  cursor: pointer;
+  margin-left: 3px;
+}
+
+/* Bill Payment styles */
+.card-payment .payment-title {
+  text-align: left;
+  margin: 40px 0 0 0;
+}
+
+#card-payment-button {
+display: flex;
+justify-content: flex-end;
+}
+
+#error-message {
+  color: red;
+}
+
+#payment-container {
+  padding: 0 10% 0 10%;
+}
+
+@media only screen and (max-width: 768px) {
+  .step-icons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .step-icons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+
+  .login-section .control-label {
+    max-width: 170px;
+    word-break: break-word;
+  }
+}
+
+@media only screen and (max-width: 600px), (max-width: 768px) {
+  .default-application,
+  .default-application #error-div {
+    position: static;
+  }
+
+  #navigation.small-screen {
+    display: block;
+  }
+
+  #navigation.small-screen #menu-button:after,
+  #navigation.small-screen #menu-button:before {
+    content: none;
+  }
+
+  .header-2 #navigation #contact-us {
+    border-right: none;
+  }
+
+  .navigation-2 .container #language-list {
+    position: absolute !important;
+    top: 0px;
+    width: auto !important;
+    right: 0px;
+  }
+
+  .navigation-2 .container #language-list li {
+    background-color: #ffffff;
+  }
+
+  .header-2 #navigation .language-selector .submenu-button {
+    border-left: none;
+  }
+
+  .header-2 #navigation>ul>li>a {
+    font-size: 12px;
+  }
+
+  .log-in {
+    align-items: center;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    width: 80px;
+  }
+
+  #summary-payment,
+  #summary-banking,
+  #summary-agent,
+  #summary-accounts,
+  #summary-insurance
+   {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .mobile-header {
+    min-height: 0;
+  }
+
+  #log-out .tooltiptext {
+    bottom: 5px;
+    right: 17px;
+  }
+  #payment-container {
+    padding: 0;
+  }
+}

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Cortex Financial Demo</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/fontello.css" rel="stylesheet">
+    <link href="css/update-styles.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Merriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<body onload="pageType(), loggingToggle()">
+    <!-- /.top-bar -->
+    <div class="header-2 credit-union">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 logo-login-button">
+                    <!-- logo -->
+                    <div class="logo">
+                        <img src="images/Cortex_v1_140x70px.png " alt="Cortex - Insurance Company Website Template"></a>
+                    </div>
+                    <div class="login-section"></div>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div id="navigation" onclick="menuCloser()">
+                        <!-- navigation start-->
+                            <ul id="menu-options">
+                                <li class="active"><a href="index.html" title="Home page 3"  class="animsition-link">Home</a></li>
+                                <li onmouseover="menuHover('cuDrop')" onmouseout="menuHoverOut('cuDrop')" id="cuButton"><a href="credit-unions.html" title="Credit Union Home" class="animsition-link">Credit Union</a>
+                                    <ul id="cuDrop">
+                                        <li><a href="cu-checking-accounts.html" title="Credit Cards" class="animsition-link dropdownLink" onmouseover="optionHover(this)" onmouseout="optionHoverOut(this)">Checking Accounts</a></li>
+                                        <li><a href="credit-cards.html" title="Credit Cards" class="animsition-link dropdownLink" onmouseover="optionHover(this)" onmouseout="optionHoverOut(this)">Credit Cards</a></li>
+                                        <li><a href="mortgages.html" title="Mortgage" class="animsition-link dropdownLink" onmouseover="optionHover(this)" onmouseout="optionHoverOut(this)">Mortgages &amp; Home Equity</a></li>
+                                    </ul>
+                                </li>
+                                <li onmouseover="menuHover('bankingDrop')" onmouseout="menuHoverOut('bankingDrop')" id="bankingButton" ><a href="banking.html" title="Banking Home" class="animsition-link">Banking</a>
+                                    <ul id="bankingDrop">
+                                        <li><a href="checking-accounts.html" title="Credit Cards" class="animsition-link dropdownLink" onmouseover="optionHover(this)" onmouseout="optionHoverOut(this)">Checking Accounts</a></li>
+                                        <li><a href="credit-cards.html" title="Credit Cards" class="animsition-link dropdownLink" onmouseover="optionHover(this)" onmouseout="optionHoverOut(this)">Credit Cards</a></li>
+                                        <li><a href="mortgages.html" title="Mortgage" class="animsition-link dropdownLink" onmouseover="optionHover(this)" onmouseout="optionHoverOut(this)">Mortgages &amp; Home Equity</a></li>
+                                    </ul>
+                                </li>
+                                <li onmouseover="menuHover('insuranceDrop')" onmouseout="menuHoverOut('insuranceDrop')"><a href="insurance.html" class="animsition-link">Insurance</a>
+                                    <ul id="insuranceDrop">
+                                        <li><a href="auto-insurance.html" title="Auto Insurance" class="animsition-link" onmouseover="optionHover(this)" onmouseout="optionHoverOut(this)">Auto Insurance</a></li>
+                                        <li><a href="homeowners-insurance.html" title="Homeowners" class="animsition-link" onmouseover="optionHover(this)" onmouseout="optionHoverOut(this)">Homeowners Insurance</a></li>
+                                        <li><a href="life-insurance.html" title="Life Insurance" class="animsition-link" onmouseover="optionHover(this)" onmouseout="optionHoverOut(this)">Life Insurance</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact-us.html" data-sm-show-media-selection-on="click" title="Contact us" class="animsition-link">Contact us</a>
+                            </ul>
+                            <ul id="language-list">
+                                <li onmouseover="menuHover('languageDrop')" onmouseout="menuHoverOut('languageDrop')" class="language-selector"><a href="#" title="Language" class="animsition-link">Language</a>
+                                    <ul id="languageDrop">
+                                        <li>
+                                            <a onclick="toggleSpanish();" href="#" title="Spanish" id="spanishLocale" class="btn" onmouseover="optionHover(this)" onmouseout="optionHoverOut(this)">Spanish</a>
+                                            <a onclick="toggleEnglish();" href="#" title="English" id="englishLocale" class="btn" onmouseover="optionHover(this)" onmouseout="optionHoverOut(this)">English</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.navigation start-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="page-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li><a href="credit-unions.html">Credit Union Home</a></li>
+                            <li class="active">Application</li>
+                        </ol>
+                    </div>
+                </div>
+                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="bg-white pinside30">
+                        <div class="row">
+                           <div class="col-xl-4 col-lg-4 col-md-9 col-sm-12 col-12">
+                                <h1 class="page-title">Checking Account Application</h1>
+                            </div>
+                            <div class="col-xl-8 col-lg-8 col-md-3 col-sm-12 col-12">
+                                <div class="row">
+                                       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="btn-action"> <a href="#" class="btn btn-default">How To Apply</a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <!-- content start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="wrapper-content bg-white pinside40">
+                        <div class="contact-form mb60">
+                            <div class=" ">
+                                    <form class="default-application" name="default-application">
+                                        <div class=" ">
+                                            <div class="col-sm-12 col-12">
+                                                <p class="form-sub-title">Personal Information</p>
+                                            </div>
+                                            <!-- Text input-->
+                                            <div class="row">
+                                            <div class="col-xl-4 col-lg-4 col-sm-8 col-xs-8 col-8">
+                                                <div class="form-group">
+                                                    <label class="control-label" for="first-name">First Name</label>
+                                                    <input id="first-name" name="first-name" type="text" class="form-control input-md">
+                                                </div>
+                                            </div>
+                                            <!-- Text input-->
+                                            <div class="col-xl-2 col-lg-2 col-2 col-xs-4 col-4">
+                                                <div class="form-group">
+                                                    <label class="control-label" for="middle-initial">MI</label>
+                                                    <input id="middle-initial" name="middle-initial" type="text" class="form-control input-md">
+                                                </div>
+                                            <!-- Text input-->
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-sm-12 col-xs-12 col-12">
+                                                <div class="form-group">
+                                                    <label class="control-label" for="last-name">Last Name</label>
+                                                    <input id="last-name" name="last-name" type="text" class="form-control input-md">
+                                                </div>
+                                            </div>
+                                            <!-- Text input-->
+                                            <div class="col-xl-6 col-lg-6 col-sm-12 col-xs-12 col-12">
+                                                <div class="form-group">
+                                                    <label class="control-label" for="birth-date">Date of Birth</label>
+                                                    <input id="birth-date" name="birth-date" type="date" class="form-control input-md">
+                                                </div>
+                                            </div>
+                                            <!-- Text input-->
+                                            <div class="col-xl-6 col-lg-6 col-sm-12 col-xs-12 col-12">
+                                                <div class="form-group">
+                                                    <div class = "label-help-button">
+                                                        <label class="control-label" for="social-security">Social Security Number</label>
+                                                        <div data-toggle="popover" data-placement="left" data-content="Federal law requires us to obtain, verify, and record information that identifies each person who opens an account. As a result, your Social Security Number is required and used for identification purposes.">
+                                                            <img src="images/question-mark-button.png" alt="Help"></div>
+                                                    </div>
+                                                    <input id="social-security" name="social-security" type="text" class="form-control input-md sm_cobrowsing_masked_field">
+                                                </div>
+                                            </div>
+                                            <hr class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <div class="col-sm-12 col-12">
+                                                <p class="form-sub-title">Contact Information</p>
+                                            </div>
+                                            <!-- Text input-->
+                                                <div class="col-xl-8 col-lg-8 col-sm-12 col-xs-12 col-12">
+                                                    <div class="form-group residential-address">
+                                                        <label class="control-label" for="residential-address">residential Address<span class = " ">(No PO Boxes or CMRA)</span></label>
+                                                        <input id="residential-address" name="residential-address" type="text" class="form-control input-md sm_cobrowsing_masked_field">
+                                                    </div>
+                                                </div>
+                                                <!-- Text input-->
+                                                <div class="col-xl-4 col-lg-4 col-sm-6 col-xs-12 col-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label" for="suite-apt">Suite / Apt. #<span class = " ">(if applicable)</span></label>
+                                                        <input id="suite-apt" name="suite-apt" type="text" class="form-control input-md">
+                                                    </div>
+                                                </div>
+                                                <!-- Text input-->
+                                                <div class="col-xl-6 col-lg-6 col-sm-6 col-xs-12 col-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label" for="email">Email</label>
+                                                        <input id="email" name="email" type="email" class="form-control input-md">
+                                                    </div>
+                                                </div>
+                                                <!-- Select input-->
+                                                <div class="col-xl-2 col-lg-2 col-sm-6 col-xs-6 col-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label" for="phone-type">Phone Type</label>
+                                                        <select name = "phone-type" id="phone-type" class="form-control" >
+                                                            <option value="" disabled selected hidden>Select</option>
+                                                            <option value = "mobile">Mobile</option>
+                                                            <option value = "home">Home</option>
+                                                            <option value = "work">Work</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <!-- Text input-->
+                                                <div class="col-xl-4 col-lg-4 col-sm-6 col-xs-6 col-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label" for="phone">Phone</label>
+                                                        <input id="phone" name="phone" type="text" class="form-control input-md">
+                                                    </div>
+                                                </div>
+                                                <hr class="col-sm-12 col-12">
+                                            <div class="col-sm-12 col-12">
+                                                <p class="form-sub-title">Financial Information</p>
+                                            </div>
+                                            <!-- Select input-->
+                                            <div class="col-xl-6 col-lg-6 col-sm-6 col-xs-12 col-12">
+                                                <div class="form-group">
+                                                    <label class="control-label" for="bank-accounts">Do you have any bank accounts?</label>
+                                                    <select name = "bank-accounts" id="bank-accounts" class="form-control">
+                                                        <option value="" disabled selected hidden>Select a type</option>
+                                                        <option value = "checking-savings">Checking and Savings</option>
+                                                        <option value = "checking-only">Checking Only</option>
+                                                        <option value = "savings-only">Savings Only</option>
+                                                        <option value = "neither">Neither</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!-- Select input-->
+                                            <div class="col-xl-6 col-lg-6 col-sm-6 col-xs-12 col-12">
+                                                <div class="form-group">
+                                                    <label class="control-label" for="employment-status">Employment Status</label>
+                                                    <select name = "employment-status" id="employment-status" class="form-control">
+                                                        <option value="" disabled selected hidden>Select status</option>
+                                                        <option value = "employed">Employed</option>
+                                                        <option value = "self-employed">Self-Employed</option>
+                                                        <option value = "retired">Retired</option>
+                                                        <option value = "student">Student</option>
+                                                        <option value = "unemployed">Unemployed</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!-- Text input-->
+                                            <div class="col-xl-6 col-lg-6 col-sm-6 col-xs-12 col-12">
+                                                <div class="form-group" id=income-div>
+                                                    <label class="control-label" id="income-label" for="annual-income">Total Annual Income</label>
+                                                    <input id="annual-income" name="annual-income" type="text" placeholder="$" class="form-control currency input-md">
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-sm-6 col-xs-12 col-12">
+                                                <div class="form-group">
+                                                    <label class="control-label" for="rent-mortgage">Monthly Rent / Mortgage</label>
+                                                    <input id="rent-mortgage" name="rent-mortgage" type="text" placeholder="$" class="form-control currency input-md">
+                                                </div>
+                                            </div>
+                                            <!-- Button -->
+                                            <div class="col-sm-12 col-12">
+                                                <button type="button" class="btn btn-default sm_cobrowsing_disabled_field" onclick=required()>Submit</button>
+                                            </div>
+                                            <div class="col-sm-12 col-12">
+                                                    <br>
+                                                    <p class="control-label application-id">Application ID: 3321325905</p>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- /.section title start-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.content end -->
+    <div class="footer section-space100">
+        <!-- footer -->
+        <div class="container">
+            <hr class="dark-line">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="widget-text mt40">
+                        <!-- widget text -->
+                        <p>Our goal at Cortex Financial is to provide access to financial products that meet our customer's needs.</p>
+
+                    </div>
+                    <!-- /.widget text -->
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="widget-text mt40">
+                        <!-- widget text -->
+
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                                <p class="address-text"><span><i class="icon-placeholder-3 icon-1x"></i> </span>30 West 21st St, New York, NY 10504 </p>
+                            </div>
+                            <button class="omnibrowse-code-button btn btn-default" onclick="document.body.appendChild(document.createElement('sm-visitor-code'))">CoBrowse Code
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.widget text -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.footer -->
+    <div class="tiny-footer">
+        <!-- tiny footer -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
+                    <p>© Copyright 2021 | Cortex Financial</p>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 text-right">
+                    <p>Terms of use | Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.tiny footer -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/menumaker.js"></script>
+    <!-- Format Currecy -->
+    <script type="text/javascript" src="js/format_currency.js"></script>
+    <!-- sticky header -->
+    <script type="text/javascript" src="js/jquery.sticky.js"></script>
+    <script type="text/javascript" src="js/sticky-header.js"></script>
+    <!-- Back to top script -->
+    <script src="js/back-to-top.js" type="text/javascript"></script>
+    <!-- Validate annual income field -->
+    <script type="text/javascript" src="js/default-application.js"></script>
+    <!-- Glia Installer, This is where the magic happens! -->
+    <script type="text/javascript" src="js/glia-installer.js"></script>
+    <!-- Show Hide Language -->
+    <script type="text/javascript" src="js/language-toggle.js"></script>
+    <!--Close the menu in mobile view when opening languages-->
+    <script type="text/javascript" src="js/mobile-menu.js"></script>
+    <!--Check if it's banking/insurance and logged in/out-->
+    <script type="text/javascript" src="js/login-validation.js"></script>
+</body>
+</html>
