@@ -49,7 +49,8 @@ fetch('./site-selector-modal.html')
             }
             localStorage.setItem('glia_site', JSON.stringify(selectedSite));
             $('#siteSelectorModal').modal('hide');
-            location.reload(); // Reload the page to apply changes
+            const baseUrl = window.location.origin + window.location.pathname;
+            window.location.replace(baseUrl); // Redirect site without params to reload the site config
         });
     });
 
