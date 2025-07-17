@@ -14,7 +14,7 @@ $.getJSON('./assets/json/visitors_catalog.json', data => {
     visitorCatalog = data;
 });
 
-function syntheticEngagement(scriptId) {
+function syntheticEngagement(scriptId) {    
 
     sm.getApi({ version: 'v1' }).then(function (glia) {
         gliaAPI = glia;
@@ -29,7 +29,7 @@ function syntheticEngagement(scriptId) {
         glia.queueForEngagement('text', { queueId: queue_id })
         glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, engagementStarted);
     }).catch(e => {
-        alert(`Error: ${e}`);
+        console.log(`Error: ${e}`);
     });
 }
 
@@ -54,7 +54,7 @@ function processChatMessage() {
 
     if (messageNdx >= conversation.messages.length) {
         currentEngagement.end().then(() => {
-            alert("Engagement Over");
+            console.log("Engagement Over");
         });
     } else {
 
@@ -95,7 +95,7 @@ function updateInfoAndSend(nextMsg) {
     }).then(() => {
         sendMessage(formatMessage(nextMsg.message, visitor));
     }).catch(err => {
-        alert(`Error: ${err}`);
+        console.log(`Error: ${err}`);
     });
 }
 
