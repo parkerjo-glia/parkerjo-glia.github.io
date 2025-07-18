@@ -14,12 +14,13 @@ $.getJSON('./assets/json/visitors_catalog.json', data => {
     visitorCatalog = data;
 });
 
-function syntheticEngagement(scriptId) {    
-
+function syntheticEngagement(scriptId) {
     sm.getApi({ version: 'v1' }).then(function (glia) {
         gliaAPI = glia;
         messageNdx = 0;
-        const scriptNdx = scriptId ?? getRandomNum(scriptCatalog.length - 1);
+        const maxScriptNdx = scriptCatalog.length - 1;
+        
+        const scriptNdx = scriptId && scriptId <= maxNdx ? scriptId : getRandomNum(maxScriptNdx);
         const visitorNdx = getRandomNum(visitorCatalog.length - 1);
         conversation = scriptCatalog[scriptNdx];
         visitor = visitorCatalog[visitorNdx];
@@ -110,7 +111,7 @@ function processAfterWait() {
 }
 
 function getRandomNum(maxNum) {
-    return Math.floor(Math.random() * maxNum);
+    return Math.floor(Math.random() * (maxNum + 1));
 }
 
 function formatMessage(str, data) {
