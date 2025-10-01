@@ -1,99 +1,142 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: " en-US" }}">
+<html lang="en">
 
 <head>
-  <meta charset='utf-8'>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,maximum-scale=2">
-  <link rel="stylesheet" type="text/css" media="screen"
-    href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-  <script async src="https://api.glia.com/salemove_integration.js"></script>
-  <script async src="/assets/scripts/parker_custom.js"></script>
-  {% seo %}
-  {% include head-custom.html %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI First Credit Union - Responsible Finance for an AI-Powered World</title>
+    <script src="{{ '/assets/scripts/main.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Optional: Custom font or styles for a more unique feel */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
 
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-  <!-- HEADER -->
-  <div id="header_wrap" class="outer">
-    <header class="inner">
-      {% if site.github.is_project_page %}
-      <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a>
-      {% endif %}
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="#" class="flex items-center space-x-2">
+            <img src="/assets/images/logo.png" alt="AI First Credit Union Logo" class="w-8 h-8">
+            <span class="font-bold text-xl text-gray-900">AI First Credit Union</span>
+        </a>
+        <div class="hidden md:flex space-x-6">
+            
+            <div class="relative group">
+                <a href="#" class="flex items-center text-gray-600 hover:text-blue-600 font-medium py-2">
+                    Personal
+                    <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <div class="absolute hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="personal-menu">
+                        <a href="#" data-page="personal-banking" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Banking</a>
+                        <a href="#" data-page="personal-home-loan" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Home Loans</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Auto Loans</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Personal Loans</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Services</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Rates & Fees</a>
+                    </div>
+                </div>
+            </div>
 
-      <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
-      <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+            <div class="relative group">
+                <a href="#" class="flex items-center text-gray-600 hover:text-blue-600 font-medium py-2">
+                    Business
+                    <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <div class="absolute hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="business-menu">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Banking</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Services</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Loans</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Rates & Services</a>
+                    </div>
+                </div>
+            </div>
 
-      <select id="ddl_team">
-        <option value="notre-dame">Notre Dame</option>
-        <option value="cincy-bengals">Cincy Bengals</option>
-      </select>
+            <div class="relative group">
+                <a href="#" class="flex items-center text-gray-600 hover:text-blue-600 font-medium py-2">
+                    Resources
+                    <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <div class="absolute hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="resources-menu">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Help Center</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Learn</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Tools</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">What is?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            <button class="hidden md:inline-flex text-blue-600 font-medium hover:text-blue-800">Login</button>
+            <button class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300 shadow-md">Join Today</button>
+            <button class="md:hidden text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+</header>
+    <main id="content-container" class="flex-grow page-content">
+        {{ content }}
+    </main>
 
-      <select id="ddl_locale">
-        <option value="en-US">'Merican</option>
-        <option value="es-MX">Spanish (Mexico)</option>
-      </select>
-
-      <div class="main-nav">
-        <a href="{{ site.url }}/index" title="Home" class="btn $parkbot-product">Home</a>
-        <a href="{{ site.url }}/accounts" title="Bank Accounts" class="btn eacct">Bank Accounts</a>
-        <a href="{{ site.url }}/loans" title="Loans" class="btn eloan">Loans</a>
-        <a href="{{ site.url }}/insurance" title="Insurance" class="btn eins">Insurance</a>
-        <a href="{{ site.url }}/signup" title="Signup" class="btn">Sign-Up</a>
-      </div>
-
-      <!--
-          {% if site.show_downloads %}
-            <section>
-              <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
-              <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="{{ site.github.tar_url }}">Download this project as a tar.gz file</a>
-            </section>
-          {% endif %} -->
-    </header>
-  </div>
-
-  <!-- MAIN CONTENT -->
-  <div id="main_content_wrap" class="outer">
-    <section id="main_content" class="inner">
-      {{ content }}
-    </section>
-  </div>
-
-  <!-- FOOTER  -->
-  <div id="footer_wrap" class="outer">
-    <footer class="inner">
-      {% if site.github.is_project_page %}
-      <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a
-          href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-      {% endif %}
-      <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-
-      <a class="omnibrowse-code-button" onclick="document.body.appendChild(document.createElement('sm-visitor-code'))">
-        Get CoBrowsing code
-        </button>
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <a href="#" class="flex items-center space-x-2 text-white">
+                    <img src="/assets/images/logo.png" alt="AI First Credit Union Logo" class="w-8 h-8">
+                    <span class="font-bold text-lg">AI First CU</span>
+                </a>
+                <p class="mt-4 text-sm text-gray-400">© 2025 AI First Credit Union. All rights reserved.</p>
+                <p class="mt-2 text-sm text-gray-400">Federally Insured by NCUA.</p>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-2">Accounts</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition duration-300">Checking Accounts</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Savings Accounts</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">CDs & IRAs</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Business Accounts</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-2">Loans</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition duration-300">Auto Loans</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Home Loans</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Personal Loans</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Credit Cards</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-2">Connect</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition duration-300">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Find a Branch</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Careers</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
-  </div>
+
 </body>
-<script type="text/javascript">
-
-
-  const ddlTeam = document.getElementById("ddl_team");
-
-  ddlTeam.addEventListener('change', function () {
-    glia.updateInformation({
-      customAttributes: {
-        'fav-football-team': ddlTeam.value
-      }
-    })
-  });
-
-  const ddlLocale = document.getElementById("ddl_locale");
-
-  ddlLocale.addEventListener('change', function () {
-    glia.setLocale(ddlLocale.value);
-  });
-</script>
 
 </html>

@@ -1,52 +1,106 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="en">
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    
-    {% seo %}
-    {% include head-custom.html %}
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI First Credit Union</title>
+    <script src="./assets/scripts/main.js"></script>
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bai+Jamjuree:wght@700&display=swap');
 
-  <body>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          {% if site.github.is_project_page %}
-            <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a>
-          {% endif %}
+        .page-content {
+            min-height: calc(100vh - 150px);
+            padding-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-          <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
-          <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+        .message-box {
+            position: fixed;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background-color: #f87171;
+            color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
 
-          {% if site.show_downloads %}
-            <section id="downloads">
-              <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="{{ site.github.tar_url }}">Download this project as a tar.gz file</a>
-            </section>
-          {% endif %}
+        .message-box.show {
+            opacity: 1;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        h2,
+        h3,
+        h4 {
+            font-family: 'Bai Jamjuree', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-gray-800 min-h-screen flex flex-col">
+    <div id="header-container">
+        <header class="bg-white text-gray-800 shadow-lg border-b border-gray-200">
+            <div class="container mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center">
+                <h1 class="text-3xl font-bold tracking-tight mb-2 sm:mb-0">
+                    <a href="#" class="hover:text-cyan-600 transition-colors" data-page="home">AI First Credit Union</a>
+                </h1>
+                <nav>
+                    <ul class="flex space-x-4 sm:space-x-6 text-lg">
+                        <li>
+                            <button class="hover:text-cyan-600 transition-colors" data-page="home">Home</button>
+                        </li>
+                        <li>
+                            <button class="hover:text-cyan-600 transition-colors" data-page="products">Products</button>
+                        </li>
+                        {% if state.isLoggedIn %}
+                        <li>
+                            <button class="hover:text-cyan-600 transition-colors" data-page="profile">Profile</button>
+                        </li>
+                        <li>
+                            <button class="hover:text-cyan-600 transition-colors" data-action="logout">Logout</button>
+                        </li>
+                        {% else %}
+                        <li>
+                            <button
+                                class="bg-cyan-600 hover:bg-cyan-500 text-white font-semibold py-2 px-4 rounded-full shadow-lg transition-all transform hover:-translate-y-0.5">
+                                <span data-page="login">Log In</span>
+                            </button>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
         </header>
     </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+    <main id="content-container" class="flex-grow page-content">
         {{ content }}
-      </section>
+    </main>
+    <div id="footer-container">
+        <footer class="bg-gray-100 text-gray-600 py-6 mt-auto border-t border-gray-200">
+            <div class="container mx-auto text-center">
+                <p>&copy; 2024 AI First Credit Union. All Rights Reserved.</p>
+                <p class="mt-2">Member of the AI First Council</p>
+            </div>
+        </footer>
     </div>
+    <div id="message-box" class="message-box"></div>
+</body>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        {% if site.github.is_project_page %}
-        <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-        {% endif %}
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-  </body>
 </html>
