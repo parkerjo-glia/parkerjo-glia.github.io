@@ -6,101 +6,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI First Credit Union - Responsible Finance for an AI-Powered World</title>
     <script src="{{ '/assets/scripts/main.js?v=' | append: site.github.build_revision | relative_url }}"></script>
-    <link href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bai+Jamjuree:wght@700&display=swap');
+        /* Optional: Custom font or styles for a more unique feel */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
         body {
             font-family: 'Inter', sans-serif;
         }
-
-        .page-content {
-            min-height: calc(100vh - 150px);
-            padding-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .message-box {
-            position: fixed;
-            top: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            padding: 1rem 2rem;
-            background-color: #f87171;
-            color: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        .message-box.show {
-            opacity: 1;
-        }
-
-        button {
-            cursor: pointer;
-        }
-
-        h2,
-        h3,
-        h4 {
-            font-family: 'Bai Jamjuree', sans-serif;
-        }
     </style>
 </head>
 
-<body class="bg-slate-50 text-gray-800 min-h-screen flex flex-col">
-    <div id="header-container">
-        <header class="bg-white text-gray-800 shadow-lg border-b border-gray-200">
-            <div class="container mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center">
-                <h1 class="text-3xl font-bold tracking-tight mb-2 sm:mb-0">
-                    <a href="#" class="hover:text-cyan-600 transition-colors" data-page="home">AI First Credit Union</a>
-                </h1>
-                <nav>
-                    <ul class="flex space-x-4 sm:space-x-6 text-lg">
-                        <li>
-                            <button class="hover:text-cyan-600 transition-colors" data-page="home">Home</button>
-                        </li>
-                        <li>
-                            <button class="hover:text-cyan-600 transition-colors" data-page="products">Products</button>
-                        </li>
-                        {% if state.isLoggedIn %}
-                        <li>
-                            <button class="hover:text-cyan-600 transition-colors" data-page="profile">Profile</button>
-                        </li>
-                        <li>
-                            <button class="hover:text-cyan-600 transition-colors" data-action="logout">Logout</button>
-                        </li>
-                        {% else %}
-                        <li>
-                            <button
-                                class="bg-cyan-600 hover:bg-cyan-500 text-white font-semibold py-2 px-4 rounded-full shadow-lg transition-all transform hover:-translate-y-0.5">
-                                <span data-page="login">Log In</span>
-                            </button>
-                        </li>
-                        {% endif %}
-                    </ul>
-                </nav>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="#" class="flex items-center space-x-2">
+            <img src="/assets/images/logo.png" alt="AI First Credit Union Logo" class="w-8 h-8">
+            <span class="font-bold text-xl text-gray-900">AI First Credit Union</span>
+        </a>
+        <div class="hidden md:flex space-x-6">
+            
+            <div class="relative group">
+                <a href="#" class="flex items-center text-gray-600 hover:text-blue-600 font-medium py-2">
+                    Personal
+                    <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <div class="absolute hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="personal-menu">
+                        <a href="#" data-page="personal-banking" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Banking</a>
+                        <a href="#" data-page="personal-home-loan" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Home Loans</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Auto Loans</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Personal Loans</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Services</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Rates & Fees</a>
+                    </div>
+                </div>
             </div>
-        </header>
-    </div>
+
+            <div class="relative group">
+                <a href="#" class="flex items-center text-gray-600 hover:text-blue-600 font-medium py-2">
+                    Business
+                    <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <div class="absolute hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="business-menu">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Banking</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Services</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Loans</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Rates & Services</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <a href="#" class="flex items-center text-gray-600 hover:text-blue-600 font-medium py-2">
+                    Resources
+                    <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <div class="absolute hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="resources-menu">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Help Center</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Learn</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Tools</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">What is?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            <button class="hidden md:inline-flex text-blue-600 font-medium hover:text-blue-800">Login</button>
+            <button class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300 shadow-md">Join Today</button>
+            <button class="md:hidden text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+</header>
     <main id="content-container" class="flex-grow page-content">
         {{ content }}
     </main>
-    <div id="footer-container">
-        <footer class="bg-gray-100 text-gray-600 py-6 mt-auto border-t border-gray-200">
-            <div class="container mx-auto text-center">
-                <p>&copy; 2024 AI First Credit Union. All Rights Reserved.</p>
-                <p class="mt-2">Member of the AI First Council</p>
+
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <a href="#" class="flex items-center space-x-2 text-white">
+                    <img src="/assets/images/logo.png" alt="AI First Credit Union Logo" class="w-8 h-8">
+                    <span class="font-bold text-lg">AI First CU</span>
+                </a>
+                <p class="mt-4 text-sm text-gray-400">© 2025 AI First Credit Union. All rights reserved.</p>
+                <p class="mt-2 text-sm text-gray-400">Federally Insured by NCUA.</p>
             </div>
-        </footer>
-    </div>
-    <div id="message-box" class="message-box"></div>
+            <div>
+                <h4 class="font-semibold text-white mb-2">Accounts</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition duration-300">Checking Accounts</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Savings Accounts</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">CDs & IRAs</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Business Accounts</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-2">Loans</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition duration-300">Auto Loans</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Home Loans</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Personal Loans</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Credit Cards</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-2">Connect</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition duration-300">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Find a Branch</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Careers</a></li>
+                    <li><a href="#" class="hover:text-white transition duration-300">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 </html>
