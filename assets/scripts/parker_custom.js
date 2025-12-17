@@ -28,7 +28,7 @@ var installGlia = function (callback) {
   document.body.append(scriptElement);
 };
 
-installGlia(siteId, function () {
+installGlia(function () {
 
   var glia;
 
