@@ -8,7 +8,6 @@
     <script src="{{ '/assets/scripts/main.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
-    <script async src="https://api.glia.com/salemove_integration.js"></script>
     <script async src="/assets/scripts/parker_custom.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -19,6 +18,40 @@
             font-family: 'Inter', sans-serif;
         }
     </style>
+    <script>
+        var installGlia = function (siteId, callback) {
+
+            var gliaIntegrationScriptUrl = 'https://api.glia.com/salemove_integration.js';
+
+            // If the current page URL contains a `sessionId` query param,
+            // append it to the Glia script URL as `session_context`.
+            try {
+                var urlParams = new URLSearchParams(window.location.search);
+                var sessionId = urlParams.get('sessionId');
+                if (sessionId) {
+                    var sep = gliaIntegrationScriptUrl.indexOf('?') === -1 ? '?' : '&';
+                    gliaIntegrationScriptUrl += sep + 'session_context=' + encodeURIComponent(sessionId);
+                }
+            } catch (e) {
+                // URLSearchParams may not be available in very old browsers; fail silently.
+            }
+
+            var scriptElement = document.createElement('script');
+
+            scriptElement.async = 1;
+            scriptElement.src = gliaIntegrationScriptUrl;
+            scriptElement.type = 'text/javascript';
+            if (typeof (callback) === 'function') {
+                scriptElement.addEventListener('load', callback);
+            }
+
+            document.body.append(scriptElement);
+        };
+
+        installGlia(siteId, function () {
+            // Any post-install configuration
+        });
+    </script>
 </head>
 
 <body class="bg-gray-50 text-gray-800">
@@ -113,7 +146,8 @@
                 </div>
             </div>
             <div class="flex items-center space-x-4">
-                <a class="hidden md:inline-flex text-blue-600 font-medium hover:text-blue-800" href="#" data-page="login">Login</a>
+                <a class="hidden md:inline-flex text-blue-600 font-medium hover:text-blue-800" href="#"
+                    data-page="login">Login</a>
                 <button
                     class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300 shadow-md">Join
                     Today</button>
