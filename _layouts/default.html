@@ -8,6 +8,8 @@
     <script src="{{ '/assets/scripts/main.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <script async src="https://api.glia.com/salemove_integration.js"></script>
+    <script async src="/assets/scripts/parker_custom.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Optional: Custom font or styles for a more unique feel */
@@ -111,8 +113,7 @@
                 </div>
             </div>
             <div class="flex items-center space-x-4">
-                <a class="hidden md:inline-flex text-blue-600 font-medium hover:text-blue-800" href="#"
-                    data-page="login">Login</a>
+                <a class="hidden md:inline-flex text-blue-600 font-medium hover:text-blue-800" href="#" data-page="login">Login</a>
                 <button
                     class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300 shadow-md">Join
                     Today</button>
@@ -169,7 +170,6 @@
             </div>
         </div>
     </footer>
-    <script async src="/assets/scripts/parker_custom.js"></script>
 
 </body>
 

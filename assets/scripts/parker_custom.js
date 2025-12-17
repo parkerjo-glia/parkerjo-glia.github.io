@@ -1,5 +1,5 @@
 
-var installGlia = function (callback) {
+/*var installGlia = function (callback) {
 
   var gliaIntegrationScriptUrl = 'https://api.glia.com/salemove_integration.js';
 
@@ -28,7 +28,7 @@ var installGlia = function (callback) {
   document.body.append(scriptElement);
 };
 
-installGlia(function () {
+installGlia(function () {*/
 
   var glia;
 
@@ -46,4 +46,4 @@ installGlia(function () {
       engagement.recordEvent({ message: name + ' signed up with email ' + email });
     });
   }
-});
+//});
