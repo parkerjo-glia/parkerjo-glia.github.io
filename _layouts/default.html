@@ -18,38 +18,6 @@
             font-family: 'Inter', sans-serif;
         }
     </style>
-    <script>
-        var installGlia = function (siteId, callback) {
-
-            var gliaIntegrationScriptUrl = 'https://api.glia.com/salemove_integration.js';
-
-            // If the current page URL contains a `sessionId` query param,
-            // append it to the Glia script URL as `session_context`.
-            try {
-                var urlParams = new URLSearchParams(window.location.search);
-                var sessionId = urlParams.get('sessionId');
-                if (sessionId) {
-                    var sep = gliaIntegrationScriptUrl.indexOf('?') === -1 ? '?' : '&';
-                    gliaIntegrationScriptUrl += sep + 'session_context=' + encodeURIComponent(sessionId);
-                }
-            } catch (e) {
-                // URLSearchParams may not be available in very old browsers; fail silently.
-            }
-
-            var scriptElement = document.createElement('script');
-
-            scriptElement.async = 1;
-            scriptElement.src = gliaIntegrationScriptUrl;
-            scriptElement.type = 'text/javascript';
-            if (typeof (callback) === 'function') {
-                scriptElement.addEventListener('load', callback);
-            }
-
-            document.body.append(scriptElement);
-        };
-
-        installGlia();
-    </script>
 </head>
 
 <body class="bg-gray-50 text-gray-800">
