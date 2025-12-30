@@ -382,8 +382,90 @@
 - `rate-sheet-icon.png` (48x48px)
 - `financial-tips-icon.png` (48x48px)
 
-### Home Loan Application (home-loan-application.html)
-- No specific images required (uses form elements only)
+### Personal Services (personal-services.html)
+- `mobile-banking-icon.png` (48x48px)
+- `online-banking-icon.png` (48x48px)
+- `remote-deposit-icon.png` (48x48px)
+- `card-services-icon.png` (48x48px)
+- `business-credit-card-icon.png` (48x48px)
+- `check-icon.png` (20x20px)
+- `financial-tips-icon.png` (48x48px)
+- `retirement-calc-icon.png` (48x48px)
+- `education-icon.png` (48x48px)
+- `secure-protected-icon.png` (48x48px)
+- `bill-pay-icon.png` (48x48px)
+- `member-services-icon.png` (48x48px)
+- `cash-management-icon.png` (48x48px)
+
+### Personal Rates (personal-rates.html)
+- `auto-loan-calc-icon.png` (48x48px)
+- `home-loan-calc-icon.png` (48x48px)
+- `personal-loan-calc-icon.png` (48x48px)
+- `business-credit-card-icon.png` (48x48px)
+- `savings-calc-icon.png` (48x48px)
+- `cd-calc-icon.png` (48x48px)
+
+### Business Services (business-services.html)
+- `merchant-services-icon.png` (48x48px)
+- `mobile-banking-icon.png` (48x48px)
+- `online-banking-icon.png` (48x48px)
+- `cash-management-icon.png` (48x48px)
+- `remote-deposit-icon.png` (48x48px)
+- `bill-pay-icon.png` (48x48px)
+- `secure-protected-icon.png` (48x48px)
+- `check-icon.png` (20x20px)
+- `dedicated-support-icon.png` (48x48px)
+- `member-services-icon.png` (48x48px)
+- `it-support-icon.png` (48x48px)
+- `business-services-icon.png` (48x48px)
+- `innovation-icon.png` (48x48px)
+- `business-checking-icon.png` (48x48px)
+- `community-support-icon.png` (48x48px)
+
+### Business Rates (business-rates.html)
+- `term-loan-icon.png` (48x48px)
+- `line-of-credit-icon.png` (48x48px)
+- `equipment-financing-icon.png` (48x48px)
+- `commercial-real-estate-icon.png` (48x48px)
+- `business-savings-icon.png` (48x48px)
+- `business-cd-icon.png` (48x48px)
+- `merchant-services-icon.png` (48x48px)
+- `mobile-banking-icon.png` (48x48px)
+- `online-banking-icon.png` (48x48px)
+
+### Learn (learn.html)
+- `education-icon.png` (48x48px)
+- `budget-planner-icon.png` (48x48px)
+- `business-credit-card-icon.png` (48x48px)
+- `home-loan-calc-icon.png` (48x48px)
+- `retirement-calc-icon.png` (48x48px)
+- `business-services-icon.png` (48x48px)
+- `ai-security-icon.png` (48x48px)
+- `savings-calc-icon.png` (48x48px)
+- `secure-protected-icon.png` (48x48px)
+- `debt-payoff-icon.png` (48x48px)
+- `auto-loan-calc-icon.png` (48x48px)
+- `financial-tips-icon.png` (48x48px)
+
+### Privacy Policy (privacy-policy.html)
+- `check-icon.png` (20x20px)
+- `secure-protected-icon.png` (48x48px)
+- `ai-security-icon.png` (48x48px)
+- `member-services-icon.png` (48x48px)
+- `financial-tips-icon.png` (48x48px)
+- `transparent-ethical-icon.png` (48x48px)
+- `always-human-icon.png` (48x48px)
+- `member-owned-icon.png` (48x48px)
+
+### Terms & Conditions (terms-conditions.html)
+- `check-icon.png` (20x20px)
+- `online-banking-icon.png` (48x48px)
+- `mobile-banking-icon.png` (48x48px)
+- `ai-security-icon.png` (48x48px)
+- `always-human-icon.png` (48x48px)
+- `transparent-ethical-icon.png` (48x48px)
+- `member-owned-icon.png` (48x48px)
+- `secure-protected-icon.png` (48x48px)
 
 ---
 
@@ -411,3 +493,31 @@
 **Total Images Required: 89 unique image files**
 
 This comprehensive specification document provides everything needed to create a complete, cohesive image library for the AI First Credit Union website, organized by page and prioritized for efficient development.
+
+## 📝 **Summary of New Pages Created**
+
+The following pages have been added to complete the website:
+
+1. **personal-services.html** - Comprehensive personal banking services including digital banking, card services, financial planning, and additional services
+2. **personal-rates.html** - Personal banking rates and fees with transparent pricing for loans, deposits, and services
+3. **business-services.html** - Business banking services including payment processing, cash management, and industry-specific solutions
+4. **business-rates.html** - Business banking rates and service pricing for loans, deposits, and merchant services
+5. **learn.html** - Financial education resources and learning center with articles, tools, and workshops
+6. **privacy-policy.html** - Comprehensive privacy policy with AI ethics and data protection information
+7. **terms-conditions.html** - Terms and conditions with AI service terms and regulatory compliance
+
+### Navigation Updates
+- Updated Personal dropdown to include Services and Rates & Fees links
+- Updated Business dropdown to include Services and Rates & Services links  
+- Updated Resources dropdown to include Learn page link
+- Updated footer to include Privacy Policy and Terms & Conditions links
+
+### Design Consistency
+All new pages follow the established brand guidelines and design system:
+- Consistent hero sections with gradient backgrounds
+- Proper use of brand colors and typography
+- Reuse of existing images where appropriate
+- Responsive design with mobile-first approach
+- Consistent call-to-action patterns and button styling
+
+The website is now complete with all necessary pages for a comprehensive credit union website, maintaining consistency while providing comprehensive information about services, rates, education, and legal requirements.
