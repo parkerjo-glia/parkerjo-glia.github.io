@@ -49,6 +49,20 @@
 ### Personal Banking Page (personal-banking.html) - 48x48px each
 | File | Description | Visual Elements | Used In |
 |------|-------------|-----------------|---------|
+| `checking-account-icon.png` | Checking account services | Credit card or checkbook with checkmark | Personal banking page |
+| `savings-account-icon.png` | Savings account services | Piggy bank or vault with upward arrow | Personal banking page |
+| `mobile-banking-icon.png` | Mobile banking app | Smartphone with banking interface | Personal banking page |
+
+---
+
+## 🔒 **Security Settings Images** (olb/security-settings.html)
+
+### Authentication & Security (Various sizes)
+| File | Dimensions | Description | Visual Elements | Used In |
+|------|------------|-------------|-----------------|---------|
+| `authenticator-app-icon.png` | 32x32px | Authenticator app icon | Shield with key or QR code, mobile app style | Security settings 2FA section |
+| `backup-codes-icon.png` | 32x32px | Backup recovery codes | Document with numbered list or key symbols | Security settings 2FA section |
+|------|-------------|-----------------|---------|
 | `secure-protected-icon.png` | Account security | Shield with lock, security badge | Personal banking benefits |
 | `smarter-insights-icon.png` | AI-powered insights | Brain with circuit patterns, lightbulb with data | Personal banking benefits |
 | `always-human-icon.png` | Human customer service | Person icon with headset, or handshake | Personal banking benefits |

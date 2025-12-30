@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (username) {
     loadGliaAfterAuth();
 
-    const logOutButton = document.getElementById("log-out");
+    const logOutButton = document.getElementById("btnLogOut");
     logOutButton.addEventListener("click", function () {
       logout();
     });
