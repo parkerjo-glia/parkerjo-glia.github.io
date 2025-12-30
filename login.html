@@ -63,6 +63,17 @@ layout: default
 </section>
 
 <script>
+    // Check if user is already logged in on page load
+    document.addEventListener('DOMContentLoaded', function () {
+        const storedUsername = localStorage.getItem('username');
+
+        // If username exists in localStorage, auto-redirect to OLB Dashboard
+        if (storedUsername) {
+            window.location.href = '/olb/dashboard.html';
+            return; // Exit early to prevent form setup
+        }
+    });
+
     document.getElementById('login-form').addEventListener('submit', function (e) {
         e.preventDefault();
 

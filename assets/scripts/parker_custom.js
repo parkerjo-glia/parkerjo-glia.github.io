@@ -111,6 +111,28 @@ function showCobrowseCode() {
   }
 }
 
+function logout() {
+
+  localStorage.removeItem('loggingStatus');
+  localStorage.removeItem('username');
+  window.getGliaContext = () => null
+
+  sm.getApi({ version: 'v1' }).then(function (glia) {
+    glia.updateInformation({
+      externalId: '',
+      customAttributes: {
+        Authenticated: 'NO'
+      }
+    }).catch(function (error) {
+      console.log(JSON.stringify(error));
+    }).then(function () {
+      console.log('Custom attributes set for unauthenticated user');
+      window.location = "index.html";
+      return true;
+    })
+  });
+}
+
 function addSubmitListener(engagement) {
   var submit = document.querySelector('#sign-up_btn');
 
@@ -133,6 +155,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (username) {
     loadGliaAfterAuth();
+
+    const logOutButton = document.getElementById("log-out");
+    logOutButton.addEventListener("click", function () {
+      logout();
+    });
+
   } else {
     loadGliaUnauth();
   }
