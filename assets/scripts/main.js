@@ -18,7 +18,9 @@ function navigate(page) {
     if (page === 'profile' && !state.isLoggedIn) {
         state.currentPage = 'login';
     } else {
-        location.href = page;
+        // Add .html extension if not present
+        const url = page.includes('.html') ? page : page + '.html';
+        location.href = url;
     }
 }
 
