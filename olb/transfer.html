@@ -1,0 +1,432 @@
+---
+layout: olb
+title: Transfer Money
+nav_active: transfer
+---
+
+<section class="py-8">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <!-- Page Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Transfer Money</h1>
+            <p class="text-gray-600">Move funds between your accounts or send money to external accounts</p>
+        </div>
+
+        <!-- Transfer Form -->
+        <div class="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+            <form id="transfer-form" class="space-y-6">
+                <!-- Transfer Type -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-3">Transfer Type</label>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <label class="relative">
+                            <input type="radio" name="transfer-type" value="internal" checked class="sr-only">
+                            <div class="transfer-type-card border-2 border-blue-600 bg-blue-50 rounded-lg p-4 cursor-pointer">
+                                <div class="flex items-center">
+                                    <img src="/assets/images/internal-transfer-icon.png" alt="Internal Transfer" class="w-8 h-8 mr-3">
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900">Between My Accounts</h3>
+                                        <p class="text-sm text-gray-600">Transfer between your AI First accounts</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="relative">
+                            <input type="radio" name="transfer-type" value="external" class="sr-only">
+                            <div class="transfer-type-card border-2 border-gray-200 bg-white rounded-lg p-4 cursor-pointer">
+                                <div class="flex items-center">
+                                    <img src="/assets/images/external-transfer-icon.png" alt="External Transfer" class="w-8 h-8 mr-3">
+                                    <div>
+                                        <h3 class="font-semibold text-gray-900">To External Account</h3>
+                                        <p class="text-sm text-gray-600">Send to another bank or person</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- From Account -->
+                <div>
+                    <label for="from-account" class="block text-sm font-medium text-gray-700 mb-2">From Account *</label>
+                    <select id="from-account" name="from-account" required class="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">Select account to transfer from</option>
+                    </select>
+                    <div id="from-account-balance" class="mt-2 text-sm text-gray-600"></div>
+                </div>
+
+                <!-- To Account (Internal) -->
+                <div id="internal-to-section">
+                    <label for="to-account" class="block text-sm font-medium text-gray-700 mb-2">To Account *</label>
+                    <select id="to-account" name="to-account" class="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">Select account to transfer to</option>
+                    </select>
+                </div>
+
+                <!-- To Account (External) -->
+                <div id="external-to-section" class="hidden space-y-4">
+                    <div>
+                        <label for="external-account-name" class="block text-sm font-medium text-gray-700 mb-2">Account Holder Name *</label>
+                        <input type="text" id="external-account-name" name="external-account-name" class="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="John Doe">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="external-routing" class="block text-sm font-medium text-gray-700 mb-2">Routing Number *</label>
+                            <input type="text" id="external-routing" name="external-routing" class="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="123456789">
+                        </div>
+                        <div>
+                            <label for="external-account" class="block text-sm font-medium text-gray-700 mb-2">Account Number *</label>
+                            <input type="text" id="external-account" name="external-account" class="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="1234567890">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="external-bank-name" class="block text-sm font-medium text-gray-700 mb-2">Bank Name</label>
+                        <input type="text" id="external-bank-name" name="external-bank-name" class="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Bank Name">
+                    </div>
+                </div>
+
+                <!-- Amount -->
+                <div>
+                    <label for="amount" class="block text-sm font-medium text-gray-700 mb-2">Amount *</label>
+                    <div class="relative">
+                        <span class="absolute left-3 top-3 text-gray-500">$</span>
+                        <input type="number" id="amount" name="amount" step="0.01" min="0.01" required class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="0.00">
+                    </div>
+                    <div class="mt-2 flex space-x-2">
+                        <button type="button" class="quick-amount px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded hover:bg-gray-200" data-amount="100">$100</button>
+                        <button type="button" class="quick-amount px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded hover:bg-gray-200" data-amount="500">$500</button>
+                        <button type="button" class="quick-amount px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded hover:bg-gray-200" data-amount="1000">$1,000</button>
+                    </div>
+                </div>
+
+                <!-- When -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-3">When to Transfer</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center">
+                            <input type="radio" name="when" value="now" checked class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <span class="ml-2 text-sm text-gray-900">Transfer now</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="when" value="scheduled" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                            <span class="ml-2 text-sm text-gray-900">Schedule for later</span>
+                        </label>
+                    </div>
+                    <div id="schedule-date-section" class="mt-3 hidden">
+                        <label for="schedule-date" class="block text-sm font-medium text-gray-700 mb-2">Transfer Date</label>
+                        <input type="date" id="schedule-date" name="schedule-date" class="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+
+                <!-- Memo -->
+                <div>
+                    <label for="memo" class="block text-sm font-medium text-gray-700 mb-2">Memo (Optional)</label>
+                    <input type="text" id="memo" name="memo" class="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="What's this transfer for?">
+                </div>
+
+                <!-- Transfer Summary -->
+                <div id="transfer-summary" class="bg-gray-50 rounded-lg p-4 border border-gray-200 hidden">
+                    <h3 class="font-semibold text-gray-900 mb-3">Transfer Summary</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">From:</span>
+                            <span id="summary-from" class="font-medium"></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">To:</span>
+                            <span id="summary-to" class="font-medium"></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Amount:</span>
+                            <span id="summary-amount" class="font-medium text-blue-600"></span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">When:</span>
+                            <span id="summary-when" class="font-medium"></span>
+                        </div>
+                        <div id="summary-fee" class="flex justify-between hidden">
+                            <span class="text-gray-600">Fee:</span>
+                            <span class="font-medium"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Buttons -->
+                <div class="flex space-x-4">
+                    <button type="submit" class="flex-1 bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 font-medium">
+                        Review Transfer
+                    </button>
+                    <button type="button" onclick="window.location.href='/olb/dashboard.html'" class="flex-1 bg-gray-100 text-gray-700 py-3 px-6 rounded-md hover:bg-gray-200 transition duration-300 font-medium">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+let accounts = [];
+
+// Load accounts
+async function loadAccounts() {
+    try {
+        const response = await fetch('/assets/json/accounts.json');
+        const data = await response.json();
+        accounts = data.accounts.filter(account => account.balance >= 0); // Only show deposit accounts for transfers
+        populateAccountSelects();
+        
+        // Check for pre-selected from account
+        const urlParams = new URLSearchParams(window.location.search);
+        const fromAccountId = urlParams.get('from');
+        if (fromAccountId) {
+            document.getElementById('from-account').value = fromAccountId;
+            updateFromAccountBalance();
+        }
+    } catch (error) {
+        console.error('Error loading accounts:', error);
+    }
+}
+
+// Populate account select dropdowns
+function populateAccountSelects() {
+    const fromSelect = document.getElementById('from-account');
+    const toSelect = document.getElementById('to-account');
+    
+    // Clear existing options (except first)
+    fromSelect.innerHTML = '<option value="">Select account to transfer from</option>';
+    toSelect.innerHTML = '<option value="">Select account to transfer to</option>';
+    
+    accounts.forEach(account => {
+        const option = `<option value="${account.id}">${account.name} - $${account.balance.toLocaleString('en-US', {minimumFractionDigits: 2})}</option>`;
+        fromSelect.innerHTML += option;
+        toSelect.innerHTML += option;
+    });
+}
+
+// Update from account balance display
+function updateFromAccountBalance() {
+    const fromAccountId = document.getElementById('from-account').value;
+    const balanceDiv = document.getElementById('from-account-balance');
+    
+    if (fromAccountId) {
+        const account = accounts.find(acc => acc.id === fromAccountId);
+        if (account) {
+            balanceDiv.textContent = `Available balance: $${account.balance.toLocaleString('en-US', {minimumFractionDigits: 2})}`;
+            balanceDiv.classList.remove('hidden');
+        }
+    } else {
+        balanceDiv.textContent = '';
+        balanceDiv.classList.add('hidden');
+    }
+    
+    updateToAccountOptions();
+}
+
+// Update to account options (exclude selected from account)
+function updateToAccountOptions() {
+    const fromAccountId = document.getElementById('from-account').value;
+    const toSelect = document.getElementById('to-account');
+    
+    toSelect.innerHTML = '<option value="">Select account to transfer to</option>';
+    
+    accounts.forEach(account => {
+        if (account.id !== fromAccountId) {
+            const option = `<option value="${account.id}">${account.name} - $${account.balance.toLocaleString('en-US', {minimumFractionDigits: 2})}</option>`;
+            toSelect.innerHTML += option;
+        }
+    });
+}
+
+// Toggle transfer type
+function toggleTransferType() {
+    const transferType = document.querySelector('input[name="transfer-type"]:checked').value;
+    const internalSection = document.getElementById('internal-to-section');
+    const externalSection = document.getElementById('external-to-section');
+    
+    if (transferType === 'internal') {
+        internalSection.classList.remove('hidden');
+        externalSection.classList.add('hidden');
+        // Clear external form fields
+        document.getElementById('external-account-name').value = '';
+        document.getElementById('external-routing').value = '';
+        document.getElementById('external-account').value = '';
+        document.getElementById('external-bank-name').value = '';
+    } else {
+        internalSection.classList.add('hidden');
+        externalSection.classList.remove('hidden');
+        // Clear internal selection
+        document.getElementById('to-account').value = '';
+    }
+    
+    updateTransferSummary();
+}
+
+// Toggle schedule date section
+function toggleScheduleDate() {
+    const when = document.querySelector('input[name="when"]:checked').value;
+    const scheduleDateSection = document.getElementById('schedule-date-section');
+    
+    if (when === 'scheduled') {
+        scheduleDateSection.classList.remove('hidden');
+        // Set minimum date to tomorrow
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        document.getElementById('schedule-date').min = tomorrow.toISOString().split('T')[0];
+    } else {
+        scheduleDateSection.classList.add('hidden');
+        document.getElementById('schedule-date').value = '';
+    }
+    
+    updateTransferSummary();
+}
+
+// Update transfer summary
+function updateTransferSummary() {
+    const transferType = document.querySelector('input[name="transfer-type"]:checked').value;
+    const fromAccountId = document.getElementById('from-account').value;
+    const amount = document.getElementById('amount').value;
+    const when = document.querySelector('input[name="when"]:checked').value;
+    const scheduleDate = document.getElementById('schedule-date').value;
+    
+    const summaryDiv = document.getElementById('transfer-summary');
+    
+    if (fromAccountId && amount) {
+        const fromAccount = accounts.find(acc => acc.id === fromAccountId);
+        let toText = '';
+        
+        if (transferType === 'internal') {
+            const toAccountId = document.getElementById('to-account').value;
+            if (toAccountId) {
+                const toAccount = accounts.find(acc => acc.id === toAccountId);
+                toText = toAccount.name;
+            }
+        } else {
+            const accountName = document.getElementById('external-account-name').value;
+            const bankName = document.getElementById('external-bank-name').value;
+            if (accountName) {
+                toText = accountName + (bankName ? ` at ${bankName}` : '');
+            }
+        }
+        
+        if (toText) {
+            document.getElementById('summary-from').textContent = fromAccount.name;
+            document.getElementById('summary-to').textContent = toText;
+            document.getElementById('summary-amount').textContent = `$${parseFloat(amount).toLocaleString('en-US', {minimumFractionDigits: 2})}`;
+            
+            let whenText = 'Immediately';
+            if (when === 'scheduled' && scheduleDate) {
+                whenText = new Date(scheduleDate).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            }
+            document.getElementById('summary-when').textContent = whenText;
+            
+            summaryDiv.classList.remove('hidden');
+        } else {
+            summaryDiv.classList.add('hidden');
+        }
+    } else {
+        summaryDiv.classList.add('hidden');
+    }
+}
+
+// Handle form submission
+function handleFormSubmit(e) {
+    e.preventDefault();
+    
+    // Basic validation
+    const fromAccountId = document.getElementById('from-account').value;
+    const amount = parseFloat(document.getElementById('amount').value);
+    const transferType = document.querySelector('input[name="transfer-type"]:checked').value;
+    
+    if (!fromAccountId || !amount) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+    
+    // Check sufficient funds
+    const fromAccount = accounts.find(acc => acc.id === fromAccountId);
+    if (amount > fromAccount.balance) {
+        alert('Insufficient funds in the selected account.');
+        return;
+    }
+    
+    // Validate destination
+    if (transferType === 'internal') {
+        const toAccountId = document.getElementById('to-account').value;
+        if (!toAccountId) {
+            alert('Please select a destination account.');
+            return;
+        }
+    } else {
+        const accountName = document.getElementById('external-account-name').value;
+        const routing = document.getElementById('external-routing').value;
+        const accountNumber = document.getElementById('external-account').value;
+        
+        if (!accountName || !routing || !accountNumber) {
+            alert('Please fill in all external account details.');
+            return;
+        }
+    }
+    
+    // Show confirmation
+    if (confirm('Are you sure you want to proceed with this transfer?')) {
+        alert('Transfer submitted successfully! You will receive a confirmation email shortly.');
+        window.location.href = '/olb/dashboard.html';
+    }
+}
+
+// Event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    loadAccounts();
+    
+    // Transfer type radio buttons
+    document.querySelectorAll('input[name="transfer-type"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            // Update card styles
+            document.querySelectorAll('.transfer-type-card').forEach(card => {
+                card.classList.remove('border-blue-600', 'bg-blue-50');
+                card.classList.add('border-gray-200', 'bg-white');
+            });
+            
+            const selectedCard = this.parentElement.querySelector('.transfer-type-card');
+            selectedCard.classList.remove('border-gray-200', 'bg-white');
+            selectedCard.classList.add('border-blue-600', 'bg-blue-50');
+            
+            toggleTransferType();
+        });
+    });
+    
+    // When radio buttons
+    document.querySelectorAll('input[name="when"]').forEach(radio => {
+        radio.addEventListener('change', toggleScheduleDate);
+    });
+    
+    // Account selects
+    document.getElementById('from-account').addEventListener('change', updateFromAccountBalance);
+    document.getElementById('to-account').addEventListener('change', updateTransferSummary);
+    
+    // Amount input
+    document.getElementById('amount').addEventListener('input', updateTransferSummary);
+    
+    // Quick amount buttons
+    document.querySelectorAll('.quick-amount').forEach(button => {
+        button.addEventListener('click', function() {
+            const amount = this.dataset.amount;
+            document.getElementById('amount').value = amount;
+            updateTransferSummary();
+        });
+    });
+    
+    // External account fields
+    document.getElementById('external-account-name').addEventListener('input', updateTransferSummary);
+    document.getElementById('external-bank-name').addEventListener('input', updateTransferSummary);
+    document.getElementById('schedule-date').addEventListener('change', updateTransferSummary);
+    
+    // Form submission
+    document.getElementById('transfer-form').addEventListener('submit', handleFormSubmit);
+});
+</script>

@@ -521,3 +521,120 @@ All new pages follow the established brand guidelines and design system:
 - Consistent call-to-action patterns and button styling
 
 The website is now complete with all necessary pages for a comprehensive credit union website, maintaining consistency while providing comprehensive information about services, rates, education, and legal requirements.
+
+---
+
+## 🏦 **Online Banking (OLB) Images**
+
+### OLB Layout & Navigation (_layouts/olb.html)
+| File | Description | Visual Elements | Used In | Size |
+|------|-------------|-----------------|---------|------|
+| `user-avatar.png` | Default user profile picture | Generic person silhouette or initials placeholder | OLB header user menu | 32x32px |
+
+### Dashboard Page (olb/dashboard.html) - 48x48px each
+| File | Description | Visual Elements | Used In |
+|------|-------------|-----------------|---------|
+| `transfer-icon.png` | Money transfer | Arrows between accounts, money flow | Quick actions section |
+| `pay-bill-icon.png` | Bill payment | Invoice with payment symbol | Quick actions section |
+| `deposit-icon.png` | Mobile check deposit | Smartphone with check, camera symbol | Quick actions section |
+| `statements-icon.png` | Account statements | Document stack, PDF symbol | Quick actions section |
+
+### Transfer Money Page (olb/transfer.html) - 48x48px each
+| File | Description | Visual Elements | Used In |
+|------|-------------|-----------------|---------|
+| `internal-transfer-icon.png` | Internal transfers | Circular arrows between accounts | Transfer type selection |
+| `external-transfer-icon.png` | External transfers | Arrow pointing to external bank | Transfer type selection |
+
+### Bill Pay Page (olb/bill-pay.html) - 48x48px each
+| File | Description | Visual Elements | Used In |
+|------|-------------|-----------------|---------|
+| `add-payee-icon.png` | Add new payee | Plus sign with person/building | Quick actions section |
+| `autopay-icon.png` | Automatic payments | Calendar with recurring symbol | Quick actions section |
+
+### Account Details Page (olb/account-details.html)
+*Note: This page primarily uses existing icons and doesn't require new images*
+
+---
+
+## 📋 **Updated Complete Image Inventory by Page**
+
+### Online Banking Dashboard (olb/dashboard.html)
+- `transfer-icon.png` (48x48px)
+- `pay-bill-icon.png` (48x48px)
+- `deposit-icon.png` (48x48px)
+- `statements-icon.png` (48x48px)
+
+### Online Banking Transfer (olb/transfer.html)
+- `internal-transfer-icon.png` (48x48px)
+- `external-transfer-icon.png` (48x48px)
+
+### Online Banking Bill Pay (olb/bill-pay.html)
+- `pay-bill-icon.png` (48x48px) *[Reused from dashboard]*
+- `add-payee-icon.png` (48x48px)
+- `autopay-icon.png` (48x48px)
+
+### Online Banking Layout (olb/*.html)
+- `user-avatar.png` (32x32px)
+
+---
+
+## 🎨 **OLB Design Guidelines**
+
+### OLB-Specific Requirements
+- **Security Focus**: All OLB icons should convey trust and security
+- **Simplified Design**: Clean, minimal icons for better usability in banking interface
+- **Consistent Style**: Match the public site design language but optimized for functionality
+- **Professional Appearance**: Banking-appropriate colors and styling
+- **Accessibility**: High contrast for financial data visibility
+
+### OLB Color Specifications
+- **Primary Blue**: #2563EB (same as public site)
+- **Success Green**: #10B981 (for positive balances, completed transactions)
+- **Warning Red**: #EF4444 (for negative balances, alerts)
+- **Neutral Gray**: #6B7280 (for inactive states)
+- **Background**: #F9FAFB (slightly different from public site for distinction)
+
+---
+
+## 📊 **Updated Priority Order for Creation**
+
+### High Priority (Essential for launch)
+1. **Brand Assets**: `logo.png`, `favicon.png`
+2. **Homepage Core**: `ncua-insured-icon.png`, `ai-security-icon.png`, `transparent-ethical-icon.png`
+3. **Universal Elements**: `check-icon.png`, `search-icon.png`, `chevron-down-icon.png`
+4. **Contact Essentials**: `phone-support-icon.png`, `email-support-icon.png`, `location-icon.png`
+5. **OLB Core**: `user-avatar.png`, `transfer-icon.png`, `pay-bill-icon.png`
+
+### Medium Priority (Important for functionality)
+1. **Service Icons**: `smart-savings-icon.png`, `ethical-lending-icon.png`, `seamless-integrations-icon.png`
+2. **Loan Features**: `fast-decisions-icon.png`, `competitive-rates-icon.png`, `flexible-terms-icon.png`
+3. **Banking Features**: `secure-protected-icon.png`, `smarter-insights-icon.png`, `always-human-icon.png`
+4. **Business Banking**: All business product and feature icons
+5. **Personal Loan Uses**: `debt-consolidation-icon.png`, `home-improvement-icon.png`, `medical-expenses-icon.png`, `major-purchase-icon.png`
+6. **OLB Features**: `deposit-icon.png`, `statements-icon.png`, `internal-transfer-icon.png`, `external-transfer-icon.png`, `add-payee-icon.png`, `autopay-icon.png`
+
+### Lower Priority (Nice to have)
+1. **Leadership Photos**: All team member headshots
+2. **Calculator Icons**: All tool and calculator specific icons
+3. **Placeholder Images**: `about-story-image.png`, `map-placeholder.png`
+4. **Community Impact**: `education-icon.png`, `scholarship-icon.png`, `community-support-icon.png`
+
+**Total Images Required: 95 unique image files** *(+6 new OLB images)*
+
+---
+
+## 🔒 **OLB Security & Trust Elements**
+
+### Visual Security Indicators
+- **SSL Badge**: Consider adding SSL security badge to OLB footer
+- **Session Timeout**: Visual indicators for session security
+- **Secure Connection**: Lock icons and security messaging
+- **Account Protection**: Visual elements that reinforce security
+
+### Trust Building Elements
+- **NCUA Insurance**: Prominent display in OLB interface
+- **Encryption Notice**: Visual indicators of data protection
+- **Logout Confirmation**: Clear security messaging
+- **Balance Masking**: Option to hide/show sensitive information
+
+This updated specification now includes all images needed for the complete AI First Credit Union website, including the online banking system, maintaining consistency across both public and authenticated areas of the site.

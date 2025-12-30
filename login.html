@@ -15,22 +15,27 @@ layout: default
                 Access your secure online banking portal.
             </p>
         </div>
-        <form class="mt-8 space-y-6" action="#" method="POST">
+        <form id="login-form" class="mt-8 space-y-6" action="#" method="POST">
             <div>
                 <label for="member-id" class="block text-sm font-medium text-gray-700">Member ID</label>
                 <div class="mt-1">
-                    <input id="member-id" name="member-id" type="text" autocomplete="username" required class="block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Enter your Member ID">
+                    <input id="member-id" name="member-id" type="text" autocomplete="username" required
+                        class="block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                        placeholder="Enter your Member ID">
                 </div>
             </div>
             <div class="relative">
                 <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
                 <div class="mt-1">
-                    <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Enter your Password">
-                    </div>
+                    <input id="password" name="password" type="password" autocomplete="current-password" required
+                        class="block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                        placeholder="Enter your Password">
+                </div>
             </div>
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                    <input id="remember-me" name="remember-me" type="checkbox"
+                        class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
                     <label for="remember-me" class="ml-2 block text-sm text-gray-900">
                         Remember me
                     </label>
@@ -42,16 +47,43 @@ layout: default
                 </div>
             </div>
             <div>
-                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">
+                <button type="submit"
+                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">
                     Log in
                 </button>
             </div>
         </form>
         <div class="mt-6 text-center text-sm text-gray-500">
             Not a member yet?
-            <a href="join.html" class="font-medium text-blue-600 hover:text-blue-500">
+            <a href="/join.html" class="font-medium text-blue-600 hover:text-blue-500">
                 Join AI First Credit Union
             </a>
         </div>
     </div>
 </section>
+
+<script>
+    document.getElementById('login-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const memberId = document.getElementById('member-id').value;
+        const password = document.getElementById('password').value;
+
+        // Basic validation
+        if (!memberId || !password) {
+            alert('Please enter both Member ID and Password.');
+            return;
+        }
+
+        // Simple demo authentication (in a real app, this would be handled securely by the backend)
+        if (memberId.length > 1 && password === 'glia123') {
+            localStorage.setItem('loggingStatus', true);
+            localStorage.setItem('username', memberId);
+            // Successful login - redirect to OLB dashboard
+            window.location.href = '/olb/dashboard.html';
+        } else {
+            alert('Invalid Member ID or Password. Please try again.');
+        }
+    });
+
+</script>
