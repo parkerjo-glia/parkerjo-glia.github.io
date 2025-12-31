@@ -1,4 +1,4 @@
-window.defaultSite = window.defaultSite ?? { id: "e501268f-9055-4133-a379-64f2a85c08d6", name: "Glia Demo Universal - Digital" };
+window.defaultSite = window.defaultSite ?? { id: "70436271-1338-4b36-b07f-8d1c9f3d6d33", name: "Glia Demo Universal - SE 10" };
 var glia;
 var username = localStorage.getItem('username');
 var gliaSite = JSON.parse(localStorage.getItem('glia_site')) ?? defaultSite;
@@ -18,7 +18,7 @@ var installGlia = function (callback) {
     }
   }
 
-  var gliaIntegrationScriptUrl = 'https://api.glia.com/salemove_integration.js';//?site_id=' + gliaSite.id;
+  var gliaIntegrationScriptUrl = 'https://api.glia.com/salemove_integration.js?site_id=' + gliaSite.id;
   var scriptElement = document.createElement('script');
 
   scriptElement.async = 1;
