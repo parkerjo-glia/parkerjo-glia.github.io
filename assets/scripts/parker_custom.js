@@ -150,35 +150,19 @@ function addSubmitListener(engagement) {
   }
 }
 
-// Safer Glia integration with better error handling and security checks
+// Wait for DOM to be fully loaded before executing Glia integration
 document.addEventListener('DOMContentLoaded', function () {
-    // Only proceed if we're in a secure context
-    if (!window.isSecureContext) {
-        console.warn('Glia integration requires a secure context (HTTPS)');
-        return;
-    }
 
-    try {
-        var username = localStorage.getItem('username');
-        var gliaSite = JSON.parse(localStorage.getItem('glia_site')) || window.defaultSite;
+  if (username) {
+    loadGliaAfterAuth();
 
-        if (username) {
-            loadGliaAfterAuth();
-            setupLogoutHandler();
-        } else {
-            loadGliaUnauth();
-        }
-    } catch (error) {
-        console.error('Error initializing Glia:', error);
-    }
-});
-
-function setupLogoutHandler() {
     const logOutButton = document.getElementById("btnLogOut");
-    if (logOutButton) {
-        logOutButton.addEventListener("click", function (e) {
-            e.preventDefault();
-            logout();
-        });
-    }
-}
+    logOutButton.addEventListener("click", function () {
+      logout();
+    });
+
+  } else {
+    loadGliaUnauth();
+  }
+
+}); // End DOM ready event listener

@@ -1,6 +1,0 @@
-Contact: security@aifirstcu.com
-Expires: 2025-12-31T23:59:59.000Z
-Encryption: https://aifirstcu.com/pgp-key.txt
-Preferred-Languages: en
-Canonical: https://aifirstcu.com/.well-known/security.txt
-Policy: https://aifirstcu.com/security-policy
