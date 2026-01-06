@@ -1,0 +1,286 @@
+---
+layout: default
+---
+
+<section class="bg-gradient-to-br from-blue-100 to-white py-20 md:py-32">
+    <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+            Financial Tools & Calculators.
+        </h1>
+        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            Make informed financial decisions with our suite of AI-powered calculators and planning tools designed to help you achieve your goals.
+        </p>
+        <div class="mt-8">
+            <a href="#calculators" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg">Explore Tools</a>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white py-16" id="calculators">
+    <div class="container mx-auto px-4">
+        <div class="text-center max-w-4xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">Loan Calculators</h2>
+            <p class="mt-2 text-gray-600">Calculate payments and compare options for all your borrowing needs.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition duration-300">
+                <img src="/assets/images/auto-loan-calc-icon.png" alt="Auto Loan Calculator" class="h-12 w-12 mb-4">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Auto Loan Calculator</h3>
+                <p class="text-gray-600 text-sm mb-4">Calculate monthly payments for new and used vehicle financing.</p>
+                <a href="personal-auto-loan.html#calculator" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Use Calculator →</a>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition duration-300">
+                <img src="/assets/images/home-loan-calc-icon.png" alt="Home Loan Calculator" class="h-12 w-12 mb-4">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Mortgage Calculator</h3>
+                <p class="text-gray-600 text-sm mb-4">Estimate monthly mortgage payments and total interest costs.</p>
+                <a href="personal-home-loan.html#calculator" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Use Calculator →</a>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition duration-300">
+                <img src="/assets/images/personal-loan-calc-icon.png" alt="Personal Loan Calculator" class="h-12 w-12 mb-4">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Personal Loan Calculator</h3>
+                <p class="text-gray-600 text-sm mb-4">Calculate payments for personal loans and debt consolidation.</p>
+                <a href="personal-loans.html#calculator" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Use Calculator →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-4">
+        <div class="text-center max-w-4xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">Savings & Investment Tools</h2>
+            <p class="mt-2 text-gray-600">Plan for your future with our savings and investment calculators.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                <img src="/assets/images/savings-calc-icon.png" alt="Savings Calculator" class="h-12 w-12 mb-4">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Savings Goal Calculator</h3>
+                <p class="text-gray-600 mb-6">Calculate how much you need to save monthly to reach your financial goals.</p>
+                
+                <form id="savings-form" class="space-y-4">
+                    <div>
+                        <label for="savings-goal" class="block text-sm font-medium text-gray-700">Savings Goal ($)</label>
+                        <input type="number" id="savings-goal" name="savings-goal" required
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="e.g., 10000">
+                    </div>
+                    <div>
+                        <label for="time-frame" class="block text-sm font-medium text-gray-700">Time Frame (Months)</label>
+                        <input type="number" id="time-frame" name="time-frame" required
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="e.g., 24">
+                    </div>
+                    <div>
+                        <label for="interest-rate-savings" class="block text-sm font-medium text-gray-700">Annual Interest Rate (%)</label>
+                        <input type="number" id="interest-rate-savings" name="interest-rate-savings" step="0.01"
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="e.g., 2.5">
+                    </div>
+                    <button type="button" onclick="calculateSavings()"
+                        class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">
+                        Calculate
+                    </button>
+                </form>
+                
+                <div id="savings-results" class="mt-6 text-center hidden">
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">Monthly Savings Needed</h4>
+                    <p class="text-3xl font-extrabold text-blue-600" id="monthly-savings-result">$0.00</p>
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+                <img src="/assets/images/cd-calc-icon.png" alt="CD Calculator" class="h-12 w-12 mb-4">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Certificate of Deposit Calculator</h3>
+                <p class="text-gray-600 mb-6">Calculate earnings on certificates of deposit with compound interest.</p>
+                
+                <form id="cd-form" class="space-y-4">
+                    <div>
+                        <label for="cd-amount" class="block text-sm font-medium text-gray-700">Initial Deposit ($)</label>
+                        <input type="number" id="cd-amount" name="cd-amount" required
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="e.g., 5000">
+                    </div>
+                    <div>
+                        <label for="cd-rate" class="block text-sm font-medium text-gray-700">Annual Interest Rate (%)</label>
+                        <input type="number" id="cd-rate" name="cd-rate" step="0.01" required
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="e.g., 4.5">
+                    </div>
+                    <div>
+                        <label for="cd-term" class="block text-sm font-medium text-gray-700">Term (Months)</label>
+                        <select id="cd-term" name="cd-term" required
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <option value="6">6 months</option>
+                            <option value="12">12 months</option>
+                            <option value="18">18 months</option>
+                            <option value="24">24 months</option>
+                            <option value="36">36 months</option>
+                            <option value="60">60 months</option>
+                        </select>
+                    </div>
+                    <button type="button" onclick="calculateCD()"
+                        class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">
+                        Calculate
+                    </button>
+                </form>
+                
+                <div id="cd-results" class="mt-6 text-center hidden">
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">Maturity Value</h4>
+                    <p class="text-3xl font-extrabold text-blue-600" id="cd-maturity-result">$0.00</p>
+                    <p class="text-sm text-gray-600 mt-2">Interest Earned: <span id="cd-interest-earned">$0.00</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center max-w-4xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">Budget & Planning Tools</h2>
+            <p class="mt-2 text-gray-600">Take control of your finances with our budgeting and planning resources.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition duration-300">
+                <img src="/assets/images/budget-planner-icon.png" alt="Budget Planner" class="h-12 w-12 mb-4">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Budget Planner</h3>
+                <p class="text-gray-600 text-sm mb-4">Create and track your monthly budget with our interactive planner.</p>
+                <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Coming Soon →</a>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition duration-300">
+                <img src="/assets/images/debt-payoff-icon.png" alt="Debt Payoff Calculator" class="h-12 w-12 mb-4">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Debt Payoff Calculator</h3>
+                <p class="text-gray-600 text-sm mb-4">Create a strategy to pay off your debts faster and save on interest.</p>
+                <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Coming Soon →</a>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition duration-300">
+                <img src="/assets/images/retirement-calc-icon.png" alt="Retirement Calculator" class="h-12 w-12 mb-4">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Retirement Calculator</h3>
+                <p class="text-gray-600 text-sm mb-4">Plan for your retirement and see if you're on track to meet your goals.</p>
+                <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Coming Soon →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="text-center max-w-4xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">Financial Resources</h2>
+            <p class="mt-2 text-gray-600">Educational resources to help you make informed financial decisions.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <img src="/assets/images/rate-sheet-icon.png" alt="Current Rates" class="h-12 w-12 mb-4">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Current Rates</h3>
+                <p class="text-gray-600 mb-6">View our latest rates for loans, savings accounts, and certificates of deposit.</p>
+                
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                        <span class="text-gray-700">Auto Loans (New)</span>
+                        <span class="font-semibold text-blue-600">3.49% APR*</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                        <span class="text-gray-700">Personal Loans</span>
+                        <span class="font-semibold text-blue-600">6.99% APR*</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                        <span class="text-gray-700">Mortgages (30-year)</span>
+                        <span class="font-semibold text-blue-600">6.75% APR*</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                        <span class="text-gray-700">Savings Account</span>
+                        <span class="font-semibold text-blue-600">2.25% APY*</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2">
+                        <span class="text-gray-700">12-Month CD</span>
+                        <span class="font-semibold text-blue-600">4.50% APY*</span>
+                    </div>
+                </div>
+                
+                <p class="text-xs text-gray-500 mt-4">*Rates subject to change. Contact us for current rates and terms.</p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <img src="/assets/images/financial-tips-icon.png" alt="Financial Tips" class="h-12 w-12 mb-4">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Financial Tips & Guides</h3>
+                <p class="text-gray-600 mb-6">Expert advice and guides to help you make smart financial decisions.</p>
+                
+                <div class="space-y-4">
+                    <a href="#" class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition duration-300">
+                        <h4 class="font-semibold text-gray-900 mb-1">First-Time Home Buyer's Guide</h4>
+                        <p class="text-sm text-gray-600">Everything you need to know about buying your first home.</p>
+                    </a>
+                    <a href="#" class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition duration-300">
+                        <h4 class="font-semibold text-gray-900 mb-1">Building Your Emergency Fund</h4>
+                        <p class="text-sm text-gray-600">How to save for unexpected expenses and financial security.</p>
+                    </a>
+                    <a href="#" class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition duration-300">
+                        <h4 class="font-semibold text-gray-900 mb-1">Understanding Credit Scores</h4>
+                        <p class="text-sm text-gray-600">Learn how credit scores work and how to improve yours.</p>
+                    </a>
+                    <a href="#" class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition duration-300">
+                        <h4 class="font-semibold text-gray-900 mb-1">Retirement Planning Basics</h4>
+                        <p class="text-sm text-gray-600">Start planning for your retirement with these essential tips.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-blue-600 py-16">
+    <div class="container mx-auto px-4 text-center text-white">
+        <h2 class="text-3xl md:text-4xl font-bold">Need Personalized Advice?</h2>
+        <p class="mt-4 text-lg max-w-2xl mx-auto opacity-90">
+            Our financial advisors are here to help you create a personalized plan for your financial goals.
+        </p>
+        <div class="mt-8 flex justify-center space-x-4">
+            <a href="/contact.html" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Schedule Consultation</a>
+            <a href="/join.html" class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Become a Member</a>
+        </div>
+    </div>
+</section>
+
+<script>
+function calculateSavings() {
+    const goal = parseFloat(document.getElementById('savings-goal').value);
+    const months = parseInt(document.getElementById('time-frame').value);
+    const rate = parseFloat(document.getElementById('interest-rate-savings').value) / 100 / 12;
+    
+    if (goal && months) {
+        let monthlyPayment;
+        if (rate > 0) {
+            monthlyPayment = goal * rate / (Math.pow(1 + rate, months) - 1);
+        } else {
+            monthlyPayment = goal / months;
+        }
+        
+        document.getElementById('monthly-savings-result').textContent = '$' + monthlyPayment.toFixed(2);
+        document.getElementById('savings-results').classList.remove('hidden');
+    }
+}
+
+function calculateCD() {
+    const principal = parseFloat(document.getElementById('cd-amount').value);
+    const rate = parseFloat(document.getElementById('cd-rate').value) / 100;
+    const months = parseInt(document.getElementById('cd-term').value);
+    
+    if (principal && rate && months) {
+        const maturityValue = principal * Math.pow(1 + rate/12, months);
+        const interestEarned = maturityValue - principal;
+        
+        document.getElementById('cd-maturity-result').textContent = '$' + maturityValue.toFixed(2);
+        document.getElementById('cd-interest-earned').textContent = '$' + interestEarned.toFixed(2);
+        document.getElementById('cd-results').classList.remove('hidden');
+    }
+}
+</script>

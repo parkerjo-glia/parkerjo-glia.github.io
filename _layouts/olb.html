@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: "Online Banking" }} - AI First Credit Union</title>
+    <script src="{{ '/assets/scripts/main.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    
+    <script async src="/assets/scripts/parker_custom.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- OLB Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <a href="/index.html" class="flex items-center space-x-2">
+                    <img src="/assets/images/logo.png" alt="AI First Credit Union Logo" class="w-8 h-8">
+                    <span class="font-bold text-xl text-gray-900">AI First CU</span>
+                </a>
+                <span class="text-gray-400">|</span>
+                <span class="text-gray-600 font-medium">Online Banking</span>
+            </div>
+            
+            <!-- OLB Navigation -->
+            <div class="hidden md:flex space-x-6">
+                <a href="/olb/dashboard.html" class="text-gray-600 hover:text-blue-600 font-medium py-2 {% if page.nav_active == 'dashboard' %}text-blue-600 border-b-2 border-blue-600{% endif %}">
+                    Dashboard
+                </a>
+                <a href="/olb/transfer.html" class="text-gray-600 hover:text-blue-600 font-medium py-2 {% if page.nav_active == 'transfer' %}text-blue-600 border-b-2 border-blue-600{% endif %}">
+                    Transfer Money
+                </a>
+                <a href="/olb/bill-pay.html" class="text-gray-600 hover:text-blue-600 font-medium py-2 {% if page.nav_active == 'billpay' %}text-blue-600 border-b-2 border-blue-600{% endif %}">
+                    Bill Pay
+                </a>
+            </div>
+
+            <!-- User Menu -->
+            <div class="flex items-center space-x-4">
+                <div class="relative group">
+                    <button class="flex items-center text-gray-600 hover:text-blue-600 font-medium py-2">
+                        <img src="/assets/images/user-avatar.png" alt="User Avatar" class="w-8 h-8 rounded-full mr-2">
+                        John Doe
+                        <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="absolute right-0 hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        <div class="py-1" role="menu">
+                            <a href="/olb/profile-settings.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Profile Settings</a>
+                            <a href="/olb/security-settings.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Security Settings</a>
+                            <div class="border-t border-gray-100"></div>
+                            <a id="btnLogOut" href="/index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="md:hidden text-gray-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        {{ content }}
+    </main>
+
+    <!-- OLB Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <img src="/assets/images/logo.png" alt="AI First Credit Union Logo" class="w-6 h-6">
+                    <span class="font-bold">AI First Credit Union</span>
+                </div>
+                <div class="flex space-x-6 text-sm">
+                    <a href="/contact.html" class="hover:text-white transition duration-300">Contact Support</a>
+                    <a href="/privacy-policy.html" class="hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="/terms-conditions.html" class="hover:text-white transition duration-300">Terms & Conditions</a>
+                </div>
+            </div>
+            <div class="mt-4 pt-4 border-t border-gray-700 text-center text-sm text-gray-400">
+                <p>© 2025 AI First Credit Union. All rights reserved. Federally Insured by NCUA.</p>
+                <p class="mt-1">Your connection is secured with 256-bit SSL encryption.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
