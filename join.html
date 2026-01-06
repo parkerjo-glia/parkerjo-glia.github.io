@@ -158,27 +158,27 @@ layout: default
     <div class="container mx-auto px-4 max-w-2xl">
         <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-6">Start Your Membership Application</h2>
-            <form id="membership-form" class="space-y-6">
+            <div id="membership-form" class="space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label for="first-name" class="block text-sm font-medium text-gray-700">First Name</label>
-                        <input type="text" id="first-name" name="first-name" required
+                        <input type="text" id="first-name" name="first-name" required placeholder="John"
                             class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                     </div>
                     <div>
                         <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name</label>
-                        <input type="text" id="last-name" name="last-name" required
+                        <input type="text" id="last-name" name="last-name" required placeholder="Doe"
                             class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                     </div>
                 </div>
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                    <input type="email" id="email" name="email" required
+                    <input type="email" id="email" name="email" required placeholder="john.doe@ai-cu.com"
                         class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                 </div>
                 <div>
                     <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required
+                    <input type="tel" id="phone" name="phone" required placeholder="555.867.5309"
                         class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                 </div>
                 <div>
@@ -213,10 +213,11 @@ layout: default
                     </label>
                 </div>
                 <button type="submit"
+                    disabled style="cursor: pointer;"
                     class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">
                     Submit Application
                 </button>
-            </form>
+            </div>
             <p class="mt-4 text-center text-sm text-gray-500">
                 Your application will be reviewed within 1 business day. We'll contact you with next steps.
             </p>
