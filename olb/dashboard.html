@@ -1,0 +1,221 @@
+---
+layout: olb
+title: Dashboard
+nav_active: dashboard
+---
+
+<section class="bg-gradient-to-br from-blue-50 to-white py-8">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-900">Welcome back, John!</h1>
+                <p class="text-gray-600 mt-1">Here's an overview of your accounts</p>
+            </div>
+            <div class="text-right">
+                <p class="text-sm text-gray-500">Last login</p>
+                <p class="text-sm font-medium text-gray-900">Dec 29, 2024 at 2:15 PM</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-8">
+    <div class="container mx-auto px-4">
+        <!-- Quick Actions -->
+        <div class="mb-8">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Quick Actions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <a href="/olb/transfer.html" class="bg-white p-4 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition duration-300 text-center">
+                    <img src="/assets/images/transfer-icon.png" alt="Transfer Money" class="w-8 h-8 mx-auto mb-2">
+                    <h3 class="font-semibold text-gray-900">Transfer Money</h3>
+                    <p class="text-sm text-gray-600">Between accounts</p>
+                </a>
+                <a href="/olb/bill-pay.html" class="bg-white p-4 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition duration-300 text-center">
+                    <img src="/assets/images/bill-pay-icon.png" alt="Pay Bills" class="w-8 h-8 mx-auto mb-2">
+                    <h3 class="font-semibold text-gray-900">Pay Bills</h3>
+                    <p class="text-sm text-gray-600">Schedule payments</p>
+                </a>
+                <a href="#" class="bg-white p-4 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition duration-300 text-center">
+                    <img src="/assets/images/mobile-deposit-icon.png" alt="Mobile Deposit" class="w-8 h-8 mx-auto mb-2">
+                    <h3 class="font-semibold text-gray-900">Mobile Deposit</h3>
+                    <p class="text-sm text-gray-600">Deposit checks</p>
+                </a>
+                <a href="#" class="bg-white p-4 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition duration-300 text-center">
+                    <img src="/assets/images/statements-icon.png" alt="Statements" class="w-8 h-8 mx-auto mb-2">
+                    <h3 class="font-semibold text-gray-900">Statements</h3>
+                    <p class="text-sm text-gray-600">View & download</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Account Summary -->
+        <div class="mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-gray-900">Account Summary</h2>
+                <button class="text-blue-600 hover:text-blue-700 font-medium text-sm">Refresh Balances</button>
+            </div>
+            
+            <div id="accounts-container" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Accounts will be loaded here via JavaScript -->
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div>
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Recent Activity</h2>
+            <div class="bg-white rounded-lg shadow-md border border-gray-200">
+                <div class="p-6">
+                    <div id="recent-transactions" class="space-y-4">
+                        <!-- Recent transactions will be loaded here via JavaScript -->
+                    </div>
+                    <div class="mt-6 text-center">
+                        <button class="text-blue-600 hover:text-blue-700 font-medium">View All Activity</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Load account data
+async function loadAccounts() {
+    try {
+        const response = await fetch('/assets/json/accounts.json');
+        const data = await response.json();
+        displayAccounts(data.accounts);
+    } catch (error) {
+        console.error('Error loading accounts:', error);
+    }
+}
+
+// Display accounts
+function displayAccounts(accounts) {
+    const container = document.getElementById('accounts-container');
+    container.innerHTML = '';
+
+    accounts.forEach(account => {
+        const accountCard = createAccountCard(account);
+        container.appendChild(accountCard);
+    });
+}
+
+// Create account card
+function createAccountCard(account) {
+    const card = document.createElement('div');
+    card.className = 'bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition duration-300';
+    
+    const isLoan = account.balance < 0;
+    const balanceColor = isLoan ? 'text-red-600' : 'text-green-600';
+    const balanceLabel = isLoan ? 'Balance Owed' : 'Available Balance';
+    
+    card.innerHTML = `
+        <div class="flex justify-between items-start mb-4">
+            <div>
+                <h3 class="font-bold text-gray-900">${account.name}</h3>
+                <p class="text-sm text-gray-600 capitalize">${account.type.replace('_', ' ')}</p>
+                <p class="text-xs text-gray-500">${account.accountNumber}</p>
+            </div>
+            <span class="px-2 py-1 text-xs font-medium rounded-full ${account.status === 'active' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}">${account.status}</span>
+        </div>
+        <div class="mb-4">
+            <p class="text-sm text-gray-600">${balanceLabel}</p>
+            <p class="text-2xl font-bold ${balanceColor}">$${Math.abs(account.balance).toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
+        </div>
+        ${account.type === 'heloc' ? `
+            <div class="mb-4">
+                <p class="text-sm text-gray-600">Available Credit</p>
+                <p class="text-lg font-semibold text-blue-600">$${account.availableCredit.toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
+            </div>
+        ` : ''}
+        ${account.interestRate ? `
+            <div class="mb-4">
+                <p class="text-sm text-gray-600">Interest Rate</p>
+                <p class="text-sm font-medium text-gray-900">${account.interestRate}% APY</p>
+            </div>
+        ` : ''}
+        <div class="flex space-x-2">
+            <button onclick="viewAccountDetails('${account.id}')" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300 text-sm font-medium">
+                View Details
+            </button>
+            ${!isLoan ? `
+                <button onclick="initiateTransfer('${account.id}')" class="flex-1 bg-gray-100 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-200 transition duration-300 text-sm font-medium">
+                    Transfer
+                </button>
+            ` : ''}
+        </div>
+    `;
+    
+    return card;
+}
+
+// Load recent transactions
+async function loadRecentTransactions() {
+    try {
+        const response = await fetch('/assets/json/transactions.json');
+        const data = await response.json();
+        
+        // Get all transactions and sort by date
+        const allTransactions = [];
+        Object.keys(data.transactions).forEach(accountId => {
+            data.transactions[accountId].forEach(transaction => {
+                allTransactions.push({...transaction, accountId});
+            });
+        });
+        
+        // Sort by date (most recent first) and take top 5
+        allTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
+        const recentTransactions = allTransactions.slice(0, 5);
+        
+        displayRecentTransactions(recentTransactions);
+    } catch (error) {
+        console.error('Error loading transactions:', error);
+    }
+}
+
+// Display recent transactions
+function displayRecentTransactions(transactions) {
+    const container = document.getElementById('recent-transactions');
+    container.innerHTML = '';
+
+    transactions.forEach(transaction => {
+        const transactionElement = document.createElement('div');
+        transactionElement.className = 'flex justify-between items-center py-3 border-b border-gray-100 last:border-b-0';
+        
+        const amountColor = transaction.amount >= 0 ? 'text-green-600' : 'text-red-600';
+        const amountSign = transaction.amount >= 0 ? '+' : '';
+        
+        transactionElement.innerHTML = `
+            <div class="flex-1">
+                <p class="font-medium text-gray-900">${transaction.description}</p>
+                <p class="text-sm text-gray-600">${new Date(transaction.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                })}</p>
+            </div>
+            <div class="text-right">
+                <p class="font-semibold ${amountColor}">${amountSign}$${Math.abs(transaction.amount).toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
+                <p class="text-xs text-gray-500">${transaction.category}</p>
+            </div>
+        `;
+        
+        container.appendChild(transactionElement);
+    });
+}
+
+// Navigation functions
+function viewAccountDetails(accountId) {
+    window.location.href = `/olb/account-details.html?id=${accountId}`;
+}
+
+function initiateTransfer(fromAccountId) {
+    window.location.href = `/olb/transfer.html?from=${fromAccountId}`;
+}
+
+// Load data when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    loadAccounts();
+    loadRecentTransactions();
+});
+</script>

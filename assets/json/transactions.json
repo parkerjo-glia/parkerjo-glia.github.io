@@ -1,0 +1,160 @@
+{
+  "transactions": {
+    "CHK001": [
+      {
+        "id": "TXN001",
+        "date": "2024-12-29",
+        "description": "Direct Deposit - Salary",
+        "amount": 3250.00,
+        "type": "credit",
+        "category": "Income",
+        "balance": 2847.63
+      },
+      {
+        "id": "TXN002",
+        "date": "2024-12-28",
+        "description": "Grocery Store Purchase",
+        "amount": -127.45,
+        "type": "debit",
+        "category": "Groceries",
+        "balance": -402.37
+      },
+      {
+        "id": "TXN003",
+        "date": "2024-12-27",
+        "description": "Online Transfer to Savings",
+        "amount": -500.00,
+        "type": "transfer",
+        "category": "Transfer",
+        "balance": -274.92
+      },
+      {
+        "id": "TXN004",
+        "date": "2024-12-26",
+        "description": "Gas Station",
+        "amount": -65.23,
+        "type": "debit",
+        "category": "Transportation",
+        "balance": 225.08
+      },
+      {
+        "id": "TXN005",
+        "date": "2024-12-25",
+        "description": "Restaurant",
+        "amount": -89.67,
+        "type": "debit",
+        "category": "Dining",
+        "balance": 290.31
+      }
+    ],
+    "SAV001": [
+      {
+        "id": "TXN006",
+        "date": "2024-12-27",
+        "description": "Transfer from Checking",
+        "amount": 500.00,
+        "type": "credit",
+        "category": "Transfer",
+        "balance": 15420.89
+      },
+      {
+        "id": "TXN007",
+        "date": "2024-12-01",
+        "description": "Monthly Interest Payment",
+        "amount": 54.73,
+        "type": "credit",
+        "category": "Interest",
+        "balance": 14920.89
+      },
+      {
+        "id": "TXN008",
+        "date": "2024-11-15",
+        "description": "Automatic Savings Deposit",
+        "amount": 1000.00,
+        "type": "credit",
+        "category": "Savings",
+        "balance": 14866.16
+      }
+    ],
+    "CD001": [
+      {
+        "id": "TXN009",
+        "date": "2024-12-01",
+        "description": "Monthly Interest Accrual",
+        "amount": 42.92,
+        "type": "credit",
+        "category": "Interest",
+        "balance": 10000.00
+      },
+      {
+        "id": "TXN010",
+        "date": "2024-01-15",
+        "description": "Initial Deposit",
+        "amount": 10000.00,
+        "type": "credit",
+        "category": "Deposit",
+        "balance": 10000.00
+      }
+    ],
+    "MTG001": [
+      {
+        "id": "TXN011",
+        "date": "2025-01-01",
+        "description": "Monthly Mortgage Payment",
+        "amount": -1847.23,
+        "type": "payment",
+        "category": "Loan Payment",
+        "balance": -287450.32
+      },
+      {
+        "id": "TXN012",
+        "date": "2024-12-01",
+        "description": "Monthly Mortgage Payment",
+        "amount": -1847.23,
+        "type": "payment",
+        "category": "Loan Payment",
+        "balance": -285603.09
+      }
+    ],
+    "AUTO001": [
+      {
+        "id": "TXN013",
+        "date": "2025-01-01",
+        "description": "Monthly Auto Loan Payment",
+        "amount": -485.67,
+        "type": "payment",
+        "category": "Loan Payment",
+        "balance": -18750.45
+      },
+      {
+        "id": "TXN014",
+        "date": "2024-12-01",
+        "description": "Monthly Auto Loan Payment",
+        "amount": -485.67,
+        "type": "payment",
+        "category": "Loan Payment",
+        "balance": -18264.78
+      }
+    ],
+    "HELOC001": [
+      {
+        "id": "TXN015",
+        "date": "2024-12-15",
+        "description": "Home Improvement Purchase",
+        "amount": -2500.00,
+        "type": "advance",
+        "category": "Home Improvement",
+        "balance": -5250.00
+      },
+      {
+        "id": "TXN016",
+        "date": "2024-11-20",
+        "description": "Home Improvement Purchase",
+        "amount": -2750.00,
+        "type": "advance",
+        "category": "Home Improvement",
+        "balance": -2750.00
+      }
+    ]
+  }
+}
