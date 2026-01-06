@@ -8,12 +8,14 @@ layout: default
             We're Here to Help.
         </h1>
         <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Find answers to your questions, get support when you need it, and discover resources to help you make the most of your AI First Credit Union membership.
+            Find answers to your questions, get support when you need it, and discover resources to help you make the
+            most of your AI First Credit Union membership.
         </p>
         <div class="mt-8">
             <div class="max-w-md mx-auto">
                 <div class="relative">
-                    <input type="text" placeholder="Search for help..." class="w-full px-4 py-3 pr-12 border border-gray-300 rounded-full shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <input type="text" placeholder="Search for help..."
+                        class="w-full px-4 py-3 pr-12 border border-gray-300 rounded-full shadow-sm focus:ring-blue-500 focus:border-blue-500">
                     <button class="absolute right-3 top-3 text-gray-400 hover:text-blue-600">
                         <img src="/assets/images/search-icon.png" alt="Search" class="h-6 w-6">
                     </button>
@@ -29,7 +31,7 @@ layout: default
             <h2 class="text-3xl font-bold text-gray-900">Popular Help Topics</h2>
             <p class="mt-2 text-gray-600">Quick answers to the most common questions from our members.</p>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition duration-300">
                 <img src="/assets/images/account-access-icon.png" alt="Account Access" class="h-12 w-12 mb-4">
@@ -37,7 +39,7 @@ layout: default
                 <p class="text-gray-600 text-sm mb-4">Login issues, password resets, and account security questions.</p>
                 <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Get Help →</a>
             </div>
-            
+
             <div class="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition duration-300">
                 <img src="/assets/images/mobile-banking-help-icon.png" alt="Mobile Banking" class="h-12 w-12 mb-4">
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Mobile Banking</h3>
@@ -82,40 +84,36 @@ layout: default
             <h2 class="text-3xl font-bold text-gray-900">Contact Us</h2>
             <p class="mt-2 text-gray-600">Multiple ways to get the support you need, when you need it.</p>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-white p-8 rounded-lg shadow-md text-center">
                 <img src="/assets/images/phone-support-icon.png" alt="Phone Support" class="h-16 w-16 mx-auto mb-4">
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Phone Support</h3>
                 <p class="text-gray-600 mb-4">Speak with our member service team for personalized assistance.</p>
-                <p class="text-2xl font-bold text-blue-600 mb-2">(555) 123-4567</p>
+                <p class="text-2xl font-bold text-blue-600 mb-2 contact-phone">(555) 123-4567</p>
                 <p class="text-sm text-gray-500">
                     Mon-Fri: 7:00 AM - 7:00 PM<br>
                     Sat: 9:00 AM - 1:00 PM<br>
                     24/7 Automated Service
                 </p>
             </div>
-            
+
             <div class="bg-white p-8 rounded-lg shadow-md text-center">
                 <img src="/assets/images/chat-support-icon.png" alt="Live Chat" class="h-16 w-16 mx-auto mb-4">
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Live Chat</h3>
                 <p class="text-gray-600 mb-4">Get instant help through our secure chat system.</p>
-                <button class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 mb-2">Start Chat</button>
-                <p class="text-sm text-gray-500">
-                    Mon-Fri: 8:00 AM - 6:00 PM<br>
-                    Sat: 9:00 AM - 1:00 PM
-                </p>
+                <button onclick="startEngagement('text')"
+                    class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 mb-2">Start
+                    Chat</button>
             </div>
 
             <div class="bg-white p-8 rounded-lg shadow-md text-center">
-                <img src="/assets/images/email-support-icon.png" alt="Email Support" class="h-16 w-16 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Email Support</h3>
-                <p class="text-gray-600 mb-4">Send us a message and we'll respond within 24 hours.</p>
-                <a href="mailto:support@aifirstcu.org" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 inline-block mb-2">Send Email</a>
-                <p class="text-sm text-gray-500">
-                    Response within 24 hours<br>
-                    Monday through Friday
-                </p>
+                <img src="/assets/images/audio-support-icon.png" alt="Audio Support" class="h-16 w-16 mx-auto mb-4">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Audio Support</h3>
+                <p class="text-gray-600 mb-4">Get instant help using your computer microphone.</p>
+                <button onclick="startEngagement('audio')"
+                    class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 mb-2">Start
+                    Audio</button>
             </div>
         </div>
     </div>
@@ -126,55 +124,84 @@ layout: default
         <div class="text-center max-w-4xl mx-auto mb-12">
             <h2 class="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
         </div>
-        
+
         <div class="max-w-4xl mx-auto space-y-6">
             <div class="bg-white rounded-lg border border-gray-200">
-                <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white transition duration-300" onclick="toggleFAQ(1)">
+                <button
+                    class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white transition duration-300"
+                    onclick="toggleFAQ(1)">
                     <span class="font-semibold text-gray-900">How do I reset my online banking password?</span>
-                    <img src="/assets/images/chevron-down-icon.png" alt="Expand" class="h-5 w-5 transform transition-transform duration-300" id="faq-icon-1">
+                    <img src="/assets/images/chevron-down-icon.png" alt="Expand"
+                        class="h-5 w-5 transform transition-transform duration-300" id="faq-icon-1">
                 </button>
                 <div class="px-6 pb-4 hidden" id="faq-content-1">
-                    <p class="text-gray-600">You can reset your password by clicking "Forgot Password" on the login page, or by calling our member service line at (555) 123-4567. You'll need to verify your identity with personal information.</p>
+                    <p class="text-gray-600">You can reset your password by clicking "Forgot Password" on the login
+                        page, or by calling our member service line at <span class="contact-phone">(555)
+                            123-4567</span>. You'll need to verify your
+                        identity with personal information.</p>
                 </div>
             </div>
 
             <div class="bg-white rounded-lg border border-gray-200">
-                <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white transition duration-300" onclick="toggleFAQ(2)">
+                <button
+                    class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white transition duration-300"
+                    onclick="toggleFAQ(2)">
                     <span class="font-semibold text-gray-900">What are your current loan rates?</span>
-                    <img src="/assets/images/chevron-down-icon.png" alt="Expand" class="h-5 w-5 transform transition-transform duration-300" id="faq-icon-2">
+                    <img src="/assets/images/chevron-down-icon.png" alt="Expand"
+                        class="h-5 w-5 transform transition-transform duration-300" id="faq-icon-2">
                 </button>
                 <div class="px-6 pb-4 hidden" id="faq-content-2">
-                    <p class="text-gray-600">Our rates vary based on loan type and your creditworthiness. Current rates start at 3.49% APR for new auto loans, 6.99% APR for personal loans, and 7.25% APR for business loans. Visit our rates page for complete details.</p>
+                    <p class="text-gray-600">Our rates vary based on loan type and your creditworthiness. Current rates
+                        start at 3.49% APR for new auto loans, 6.99% APR for personal loans, and 7.25% APR for business
+                        loans. Visit our rates page for complete details.</p>
                 </div>
             </div>
 
             <div class="bg-white rounded-lg border border-gray-200">
-                <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white transition duration-300" onclick="toggleFAQ(3)">
+                <button
+                    class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white transition duration-300"
+                    onclick="toggleFAQ(3)">
                     <span class="font-semibold text-gray-900">How do I deposit a check using mobile banking?</span>
-                    <img src="/assets/images/chevron-down-icon.png" alt="Expand" class="h-5 w-5 transform transition-transform duration-300" id="faq-icon-3">
+                    <img src="/assets/images/chevron-down-icon.png" alt="Expand"
+                        class="h-5 w-5 transform transition-transform duration-300" id="faq-icon-3">
                 </button>
                 <div class="px-6 pb-4 hidden" id="faq-content-3">
-                    <p class="text-gray-600">Open the AI First CU mobile app, log in, and select "Deposit Check." Follow the prompts to take photos of the front and back of your endorsed check. Funds are typically available within 1-2 business days.</p>
+                    <p class="text-gray-600">Open the AI First CU mobile app, log in, and select "Deposit Check." Follow
+                        the prompts to take photos of the front and back of your endorsed check. Funds are typically
+                        available within 1-2 business days.</p>
                 </div>
             </div>
 
             <div class="bg-white rounded-lg border border-gray-200">
-                <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white transition duration-300" onclick="toggleFAQ(4)">
-                    <span class="font-semibold text-gray-900">What should I do if my debit card is lost or stolen?</span>
-                    <img src="/assets/images/chevron-down-icon.png" alt="Expand" class="h-5 w-5 transform transition-transform duration-300" id="faq-icon-4">
+                <button
+                    class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white transition duration-300"
+                    onclick="toggleFAQ(4)">
+                    <span class="font-semibold text-gray-900">What should I do if my debit card is lost or
+                        stolen?</span>
+                    <img src="/assets/images/chevron-down-icon.png" alt="Expand"
+                        class="h-5 w-5 transform transition-transform duration-300" id="faq-icon-4">
                 </button>
                 <div class="px-6 pb-4 hidden" id="faq-content-4">
-                    <p class="text-gray-600">Immediately call our 24/7 card services line at (555) 123-4567 to report your card lost or stolen. We'll deactivate your card and rush a replacement to you. You can also temporarily freeze your card through mobile banking.</p>
+                    <p class="text-gray-600">Immediately call our 24/7 card services line at <span
+                            class="contact-phone">(555) 123-4567</span> to report
+                        your card lost or stolen. We'll deactivate your card and rush a replacement to you. You can also
+                        temporarily freeze your card through mobile banking.</p>
                 </div>
             </div>
 
             <div class="bg-white rounded-lg border border-gray-200">
-                <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white transition duration-300" onclick="toggleFAQ(5)">
+                <button
+                    class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white transition duration-300"
+                    onclick="toggleFAQ(5)">
                     <span class="font-semibold text-gray-900">How is AI First Credit Union different from a bank?</span>
-                    <img src="/assets/images/chevron-down-icon.png" alt="Expand" class="h-5 w-5 transform transition-transform duration-300" id="faq-icon-5">
+                    <img src="/assets/images/chevron-down-icon.png" alt="Expand"
+                        class="h-5 w-5 transform transition-transform duration-300" id="faq-icon-5">
                 </button>
                 <div class="px-6 pb-4 hidden" id="faq-content-5">
-                    <p class="text-gray-600">As a credit union, we're member-owned and not-for-profit. This means we return profits to members through better rates, lower fees, and enhanced services. We also use AI ethically to improve your banking experience while maintaining the personal touch you expect.</p>
+                    <p class="text-gray-600">As a credit union, we're member-owned and not-for-profit. This means we
+                        return profits to members through better rates, lower fees, and enhanced services. We also use
+                        AI ethically to improve your banking experience while maintaining the personal touch you expect.
+                    </p>
                 </div>
             </div>
         </div>
@@ -188,23 +215,65 @@ layout: default
             Our member service team is standing by to assist you with any questions or concerns.
         </p>
         <div class="mt-8 flex justify-center space-x-4">
-            <button class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Contact Support</button>
-            <a href="#" class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Schedule Appointment</a>
+            <button
+                class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Contact
+                Support</button>
+            <a href="#"
+                class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Schedule
+                Appointment</a>
         </div>
     </div>
 </section>
 
 <script>
-function toggleFAQ(id) {
-    const content = document.getElementById(`faq-content-${id}`);
-    const icon = document.getElementById(`faq-icon-${id}`);
-    
-    if (content.classList.contains('hidden')) {
-        content.classList.remove('hidden');
-        icon.style.transform = 'rotate(180deg)';
-    } else {
-        content.classList.add('hidden');
-        icon.style.transform = 'rotate(0deg)';
+    function toggleFAQ(id) {
+        const content = document.getElementById(`faq-content-${id}`);
+        const icon = document.getElementById(`faq-icon-${id}`);
+
+        if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
+            icon.style.transform = 'rotate(180deg)';
+        } else {
+            content.classList.add('hidden');
+            icon.style.transform = 'rotate(0deg)';
+        }
     }
-}
+
+    function startEngagement(channel) {
+        var engagementRequest = glia.queueForEngagement(channel);
+        engagementRequest.engagementPromise.then(function (engagement) {
+            console.log("Visitor Enqueued");
+        }).catch(function (error) {
+            if (error.cause === salemove.ERRORS.OPERATOR_DECLINED) {
+                console.log("Engagement Request: DECLINED");
+            } else {
+                console.error("Engagement Request: ERROR. - " + error.cause);
+            }
+        });
+    }
+
+    async function loadSiteData() {
+        const defaultPhone = "(555) 123-4567";
+        var gliaSite = JSON.parse(localStorage.getItem('glia_site')) ?? defaultSite;
+
+        var contactPhoneVal;
+        const contactPhoneElArray = document.getElementsByClassName("contact-phone");
+
+        try {
+            const response = await fetch('/assets/json/site_data.json');
+            const data = await response.json();
+
+            const currentSite = data.filter(s => s.id === gliaSite.id)[0];
+            contactPhoneVal = currentSite.phone;
+
+        } catch (error) {
+            console.error('Error loading account details:', error);
+        }
+
+        for (const el of contactPhoneElArray) {
+            el.textContent = contactPhoneVal || defaultPhone;
+        }
+    }
+
+    loadSiteData();
 </script>
