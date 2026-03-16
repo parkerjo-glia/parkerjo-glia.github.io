@@ -52,7 +52,7 @@ title: Security Settings
                             <h3 class="text-xl font-bold text-gray-900">Password Management</h3>
                             <p class="text-sm text-gray-600 mt-1">Last changed: November 15, 2024</p>
                         </div>
-                        <button id="change-password-btn" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Change Password</button>
+                        <span class="text-blue-600 hover:text-blue-700 font-medium text-sm cursor-pointer">Change Password</span>
                     </div>
                     
                     <form id="password-form" class="space-y-4 hidden">
@@ -105,8 +105,8 @@ title: Security Settings
                         </div>
                         <div class="flex items-center">
                             <span class="text-sm text-green-600 font-medium mr-3">Enabled</span>
-                            <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-                                <input type="checkbox" id="2fa-toggle" checked class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
+                            <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in cursor-pointer">
+                                <input type="checkbox" id="2fa-toggle" checked disabled class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"/>
                                 <label for="2fa-toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-green-400 cursor-pointer"></label>
                             </div>
                         </div>
@@ -282,68 +282,15 @@ title: Security Settings
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Password Change Form
+    // Password Change Form - disabled for demo
     const changePasswordBtn = document.getElementById('change-password-btn');
     const passwordForm = document.getElementById('password-form');
     const passwordInfo = document.getElementById('password-info');
     const cancelPasswordBtn = document.getElementById('cancel-password-btn');
     
-    changePasswordBtn.addEventListener('click', function() {
-        passwordForm.classList.remove('hidden');
-        passwordInfo.classList.add('hidden');
-        changePasswordBtn.textContent = 'Changing...';
-        changePasswordBtn.disabled = true;
-    });
-    
-    cancelPasswordBtn.addEventListener('click', function() {
-        passwordForm.classList.add('hidden');
-        passwordInfo.classList.remove('hidden');
-        changePasswordBtn.textContent = 'Change Password';
-        changePasswordBtn.disabled = false;
-        passwordForm.reset();
-    });
-    
-    passwordForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const newPassword = document.getElementById('new-password').value;
-        const confirmPassword = document.getElementById('confirm-password').value;
-        
-        if (newPassword !== confirmPassword) {
-            alert('New passwords do not match. Please try again.');
-            return;
-        }
-        
-        if (newPassword.length < 8) {
-            alert('Password must be at least 8 characters long.');
-            return;
-        }
-        
-        // Simulate password update
-        alert('Password updated successfully! You will be logged out and need to sign in with your new password.');
-        passwordForm.classList.add('hidden');
-        passwordInfo.classList.remove('hidden');
-        changePasswordBtn.textContent = 'Change Password';
-        changePasswordBtn.disabled = false;
-        passwordForm.reset();
-    });
-    
-    // 2FA Toggle
+    // 2FA Toggle - disabled for demo
     const twoFAToggle = document.getElementById('2fa-toggle');
     const twoFAContent = document.getElementById('2fa-content');
-    
-    twoFAToggle.addEventListener('change', function() {
-        if (this.checked) {
-            twoFAContent.classList.remove('hidden');
-        } else {
-            if (confirm('Are you sure you want to disable two-factor authentication? This will make your account less secure.')) {
-                twoFAContent.classList.add('hidden');
-                alert('Two-factor authentication has been disabled.');
-            } else {
-                this.checked = true;
-            }
-        }
-    });
     
     // Security Preferences Form
     const securityPreferencesForm = document.getElementById('security-preferences-form');

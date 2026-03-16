@@ -11,7 +11,7 @@ layout: default
             Whether it's consolidating debt, funding a major purchase, or covering unexpected expenses, our personal loans offer flexible terms and competitive rates.
         </p>
         <div class="mt-8 flex justify-center space-x-4">
-            <button class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg">Apply for Personal Loan</button>
+            <button class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg" onclick="document.getElementById('apply').scrollIntoView({behavior: 'smooth'})">Apply for Personal Loan</button>
             <a href="#calculator" class="bg-white text-blue-600 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition duration-300 border border-gray-300">Check Your Rate</a>
         </div>
     </div>
@@ -177,6 +177,136 @@ layout: default
     </div>
 </section>
 
+<section class="py-16 bg-white" id="apply">
+    <div class="container mx-auto px-4 max-w-2xl">
+        <div class="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-200">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-2">Apply for a Personal Loan</h2>
+            <p class="text-center text-gray-600 mb-6">Complete the form below to start your application.</p>
+            <form id="personal-loan-application" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="pl-first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
+                        <input type="text" id="pl-first-name" name="pl-first-name" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="pl-last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
+                        <input type="text" id="pl-last-name" name="pl-last-name" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="pl-dob" class="block text-sm font-medium text-gray-700">Date of Birth *</label>
+                        <input type="date" id="pl-dob" name="pl-dob" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="pl-ssn" class="block text-sm font-medium text-gray-700">Social Security Number *</label>
+                        <input type="text" id="pl-ssn" name="pl-ssn" required placeholder="XXX-XX-XXXX" maxlength="11"
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="pl-email" class="block text-sm font-medium text-gray-700">Email Address *</label>
+                        <input type="email" id="pl-email" name="pl-email" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="pl-phone" class="block text-sm font-medium text-gray-700">Phone Number *</label>
+                        <input type="tel" id="pl-phone" name="pl-phone" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div>
+                    <label for="pl-address" class="block text-sm font-medium text-gray-700">Street Address *</label>
+                    <input type="text" id="pl-address" name="pl-address" required
+                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="col-span-2">
+                        <label for="pl-city" class="block text-sm font-medium text-gray-700">City *</label>
+                        <input type="text" id="pl-city" name="pl-city" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="pl-state" class="block text-sm font-medium text-gray-700">State *</label>
+                        <input type="text" id="pl-state" name="pl-state" required maxlength="2" placeholder="NY"
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="pl-zip" class="block text-sm font-medium text-gray-700">ZIP *</label>
+                        <input type="text" id="pl-zip" name="pl-zip" required maxlength="10"
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="pl-amount" class="block text-sm font-medium text-gray-700">Loan Amount Requested ($) *</label>
+                        <input type="number" id="pl-amount" name="pl-amount" required min="1000" max="50000"
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="1,000 - 50,000">
+                    </div>
+                    <div>
+                        <label for="pl-term" class="block text-sm font-medium text-gray-700">Preferred Term *</label>
+                        <select id="pl-term" name="pl-term" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">Select term</option>
+                            <option value="12">12 months</option>
+                            <option value="24">24 months</option>
+                            <option value="36">36 months</option>
+                            <option value="48">48 months</option>
+                            <option value="60">60 months</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label for="pl-purpose" class="block text-sm font-medium text-gray-700">Loan Purpose *</label>
+                    <select id="pl-purpose" name="pl-purpose" required
+                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">Select purpose</option>
+                        <option value="debt-consolidation">Debt Consolidation</option>
+                        <option value="home-improvement">Home Improvement</option>
+                        <option value="medical">Medical Expenses</option>
+                        <option value="major-purchase">Major Purchase</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="pl-income" class="block text-sm font-medium text-gray-700">Annual Income ($) *</label>
+                    <input type="number" id="pl-income" name="pl-income" required min="0"
+                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="e.g., 65000">
+                </div>
+                <div>
+                    <label for="pl-employment" class="block text-sm font-medium text-gray-700">Employment Status *</label>
+                    <select id="pl-employment" name="pl-employment" required
+                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">Select status</option>
+                        <option value="employed">Employed Full-Time</option>
+                        <option value="part-time">Employed Part-Time</option>
+                        <option value="self-employed">Self-Employed</option>
+                        <option value="retired">Retired</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <button type="submit"
+                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">
+                    Submit Application
+                </button>
+                <p class="text-center text-xs text-gray-500">This is a demo site. Do not enter real personal information.</p>
+            </form>
+            <div id="pl-success" class="mt-6 text-center hidden">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                    <p class="text-green-800 font-medium">Application submitted successfully!</p>
+                    <p class="text-green-600 text-sm mt-1">This is a demo - no data was actually submitted.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="bg-blue-600 py-16">
     <div class="container mx-auto px-4 text-center text-white">
         <h2 class="text-3xl md:text-4xl font-bold">Ready to Achieve Your Goals?</h2>
@@ -184,7 +314,7 @@ layout: default
             Apply for a personal loan today and take the next step toward your financial objectives.
         </p>
         <div class="mt-8 flex justify-center space-x-4">
-            <button class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Apply for Personal Loan</button>
+            <button class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg" onclick="document.getElementById('apply').scrollIntoView({behavior: 'smooth'})">Apply for Personal Loan</button>
             <a href="#" class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Speak with a Loan Officer</a>
         </div>
     </div>
@@ -202,6 +332,38 @@ function calculatePersonalPayment() {
         const totalInterest = totalAmount - loanAmount;
         
         document.getElementById('personal-monthly-payment-result').textContent = '$' + monthlyPayment.toFixed(2);
+        document.getElementById('total-interest').textContent = '$' + totalInterest.toFixed(2);
+        document.getElementById('total-amount').textContent = '$' + totalAmount.toFixed(2);
+        document.getElementById('personal-results').classList.remove('hidden');
+    }
+}
+
+document.getElementById('personal-loan-application').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const firstName = document.getElementById('pl-first-name').value.trim();
+    const lastName = document.getElementById('pl-last-name').value.trim();
+    const email = document.getElementById('pl-email').value.trim();
+    const phone = document.getElementById('pl-phone').value.trim();
+    const amount = document.getElementById('pl-amount').value;
+    const term = document.getElementById('pl-term').value;
+    const purpose = document.getElementById('pl-purpose').value;
+    const income = document.getElementById('pl-income').value;
+    const employment = document.getElementById('pl-employment').value;
+    
+    if (!firstName || !lastName || !email || !phone || !amount || !term || !purpose || !income || !employment) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+    
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+    
+    document.getElementById('pl-success').classList.remove('hidden');
+    this.reset();
+});$' + monthlyPayment.toFixed(2);
         document.getElementById('total-interest').textContent = '$' + totalInterest.toFixed(2);
         document.getElementById('total-amount').textContent = '$' + totalAmount.toFixed(2);
         document.getElementById('personal-results').classList.remove('hidden');

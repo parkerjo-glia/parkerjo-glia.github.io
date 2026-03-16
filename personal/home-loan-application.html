@@ -298,7 +298,7 @@ layout: default
                             <input id="terms-consent" name="terms-consent" type="checkbox" required 
                                 class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-1">
                             <label for="terms-consent" class="ml-3 block text-sm text-gray-900">
-                                I agree to the <a href="../terms-conditions.html" class="text-blue-600 hover:text-blue-700">Terms and Conditions</a> and <a href="../privacy-policy.html" class="text-blue-600 hover:text-blue-700">Privacy Policy</a>. *
+                                I agree to the <a href="../terms-of-use.html" class="text-blue-600 hover:text-blue-700">Terms of Use</a> and <a href="../privacy-policy.html" class="text-blue-600 hover:text-blue-700">Privacy Policy</a>. *
                             </label>
                         </div>
                         <div class="flex items-start">
@@ -317,9 +317,13 @@ layout: default
                         class="bg-blue-600 text-white font-semibold py-4 px-12 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 shadow-lg text-lg">
                         Submit Application
                     </button>
-                    <p class="mt-4 text-sm text-gray-500">
-                        Your application will be reviewed within 24 hours. We'll contact you with next steps.
-                    </p>
+                    <p class="mt-4 text-xs text-gray-500">This is a demo site. Do not enter real personal information.</p>
+                </div>
+                <div id="hl-success" class="mt-6 text-center hidden">
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                        <p class="text-green-800 font-medium">Application submitted successfully!</p>
+                        <p class="text-green-600 text-sm mt-1">This is a demo - no data was actually submitted.</p>
+                    </div>
                 </div>
             </form>
         </div>
@@ -373,20 +377,27 @@ document.getElementById('home-loan-application').addEventListener('submit', func
     let isValid = true;
     
     requiredFields.forEach(field => {
-        if (!field.value.trim()) {
+        if (!field.value.trim() && field.type !== 'checkbox') {
             isValid = false;
             field.classList.add('border-red-500');
+        } else if (field.type === 'checkbox' && !field.checked) {
+            isValid = false;
         } else {
             field.classList.remove('border-red-500');
         }
     });
     
+    // Email validation
+    const email = document.getElementById('email').value;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        isValid = false;
+        document.getElementById('email').classList.add('border-red-500');
+    }
+    
     if (isValid) {
-        // Show success message (in a real application, this would submit to a server)
-        alert('Thank you for your application! We will review it within 24 hours and contact you with next steps.');
-        
-        // Optionally redirect to a thank you page
-        // window.location.href = 'application-thank-you.html';
+        document.getElementById('hl-success').classList.remove('hidden');
+        document.getElementById('hl-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        this.reset();
     } else {
         alert('Please fill in all required fields marked with an asterisk (*).');
         

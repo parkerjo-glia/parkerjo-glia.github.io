@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Glia demo site for integration testing. Not a real financial institution.">
     <meta name="google-site-verification" content="AiR11pkGBnm5APUixlIcuCTDI4kgN0ZlW20IEJUsENQ" />
-    <title>AI First Credit Union - Responsible Finance for an AI-Powered World</title>
+    <title>AI First Credit Union - a Glia Demo</title>
     <script src="{{ '/assets/scripts/parker_custom.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
@@ -28,7 +29,10 @@
         <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
             <a href="/index.html" class="flex items-center space-x-2">
                 <img src="/assets/images/logo.png" alt="AI First Credit Union Logo" class="w-8 h-8">
-                <span class="font-bold text-xl text-gray-900">AI First Credit Union</span>
+                <div class="flex flex-col">
+                    <span class="font-bold text-xl text-gray-900 leading-tight">AI First CU</span>
+                    <span class="text-xs text-gray-500">a Glia Demo</span>
+                </div>
             </a>
             <div class="hidden md:flex space-x-6">
 
@@ -114,11 +118,46 @@
                 </div>
             </div>
             <div class="flex items-center space-x-4">
-                <a class="hidden md:inline-flex text-blue-600 font-medium hover:text-blue-800" href="/login.html">Login</a>
-                <a href="/join.html"
-                    class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300 shadow-md">Join
-                    Today</a>
-                <button class="md:hidden text-gray-600">
+                <!-- Logged Out State -->
+                <div id="logged-out-nav" class="flex items-center space-x-4">
+                    <a class="hidden md:inline-flex text-blue-600 font-medium hover:text-blue-800" href="/login.html">Login</a>
+                    <a href="/join.html"
+                        class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300 shadow-md">Join
+                        Today</a>
+                </div>
+                
+                <!-- Logged In State -->
+                <div id="logged-in-nav" class="hidden items-center space-x-4">
+                    <!-- Mobile: just show avatar and name (no flyout) -->
+                    <div class="flex md:hidden items-center text-gray-600 font-medium py-2">
+                        <img src="/assets/images/user-avatar.png" alt="User Avatar" class="w-8 h-8 rounded-full mr-2">
+                        <span id="header-username-mobile">User</span>
+                    </div>
+                    <!-- Desktop: show avatar, name, and flyout dropdown -->
+                    <div class="relative group hidden md:block">
+                        <button class="flex items-center text-gray-600 hover:text-blue-600 font-medium py-2">
+                            <img src="/assets/images/user-avatar.png" alt="User Avatar" class="w-8 h-8 rounded-full mr-2">
+                            <span id="header-username">User</span>
+                            <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="absolute right-0 hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                            <div class="py-1" role="menu">
+                                <a href="/olb/dashboard.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Dashboard</a>
+                                <a href="/olb/profile-settings.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Profile Settings</a>
+                                <a href="/olb/security-settings.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Security Settings</a>
+                                <div class="border-t border-gray-100"></div>
+                                <a href="#" id="header-logout-btn" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -127,7 +166,231 @@
                 </button>
             </div>
         </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-4 py-4 space-y-2">
+                <!-- Personal -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-btn w-full flex items-center justify-between py-2 text-gray-600 font-medium">
+                        Personal
+                        <svg class="h-4 w-4 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-4 pb-2 space-y-1">
+                        <a href="/personal/personal-banking.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Banking</a>
+                        <a href="/personal/personal-home-loan.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Home Loans</a>
+                        <a href="/personal/personal-auto-loan.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Auto Loans</a>
+                        <a href="/personal/personal-loans.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Personal Loans</a>
+                        <a href="/personal/personal-services.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Services</a>
+                        <a href="/personal/personal-rates.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Rates & Fees</a>
+                    </div>
+                </div>
+                
+                <!-- Business -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-btn w-full flex items-center justify-between py-2 text-gray-600 font-medium">
+                        Business
+                        <svg class="h-4 w-4 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-4 pb-2 space-y-1">
+                        <a href="/business/business-banking.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Banking</a>
+                        <a href="/business/business-services.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Services</a>
+                        <a href="/business/business-loans.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Loans</a>
+                        <a href="/business/business-rates.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Rates & Services</a>
+                    </div>
+                </div>
+                
+                <!-- Resources -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-btn w-full flex items-center justify-between py-2 text-gray-600 font-medium">
+                        Resources
+                        <svg class="h-4 w-4 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-content hidden pl-4 pb-2 space-y-1">
+                        <a href="/resources/help-center.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Help Center</a>
+                        <a href="/resources/learn.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Learn</a>
+                        <a href="/resources/tools.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Tools</a>
+                        <a href="/about.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">About Us</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Login/User Menu -->
+                <div class="pt-4 border-t border-gray-200">
+                    <div id="mobile-logged-out" class="space-y-2">
+                        <a href="/login.html" class="block py-2 text-blue-600 font-medium">Login</a>
+                    </div>
+                    <div id="mobile-logged-in" class="hidden space-y-1">
+                        <a href="/olb/dashboard.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Dashboard</a>
+                        <a href="/olb/profile-settings.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Profile Settings</a>
+                        <a href="/olb/security-settings.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Security Settings</a>
+                        <a href="#" id="mobile-logout-btn" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
+    
+    <script>
+    // Session management functions
+    function clearSession() {
+        localStorage.removeItem('loggingStatus');
+        localStorage.removeItem('username');
+        localStorage.removeItem('sessionExpiration');
+    }
+    
+    function refreshSession() {
+        const expirationTime = Date.now() + (60 * 60 * 1000); // 1 hour
+        localStorage.setItem('sessionExpiration', expirationTime);
+    }
+    
+    function checkSessionExpiration() {
+        const isLoggedIn = localStorage.getItem('loggingStatus') === 'true';
+        if (!isLoggedIn) return;
+        
+        const expiration = parseInt(localStorage.getItem('sessionExpiration'));
+        if (!expiration) return;
+        
+        const now = Date.now();
+        const timeUntilExpiry = expiration - now;
+        
+        // If already expired, clear session
+        if (timeUntilExpiry <= 0) {
+            clearSession();
+            return;
+        }
+        
+        // If expiring within 60 seconds, show warning modal
+        if (timeUntilExpiry <= 60000) {
+            showSessionWarningModal();
+        }
+    }
+    
+    function showSessionWarningModal() {
+        // Create modal if it doesn't exist
+        if (document.getElementById('session-warning-modal')) return;
+        
+        const modal = document.createElement('div');
+        modal.id = 'session-warning-modal';
+        modal.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center';
+        modal.innerHTML = `
+            <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6">
+                <div class="flex items-center mb-4">
+                    <svg class="w-6 h-6 text-yellow-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    </svg>
+                    <h3 class="text-lg font-bold text-gray-900">Session Expiring</h3>
+                </div>
+                <p class="text-gray-600 mb-6">Your session is about to expire. Would you like to extend your session?</p>
+                <div class="flex space-x-3">
+                    <button id="session-extend-btn" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300 font-medium">
+                        Yes, Extend Session
+                    </button>
+                    <button id="session-dismiss-btn" class="flex-1 bg-gray-100 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-200 transition duration-300 font-medium">
+                        No, Thanks
+                    </button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        document.getElementById('session-extend-btn').addEventListener('click', function() {
+            refreshSession();
+            modal.remove();
+        });
+        
+        document.getElementById('session-dismiss-btn').addEventListener('click', function() {
+            modal.remove();
+        });
+    }
+    
+    // Check login state and update header
+    document.addEventListener('DOMContentLoaded', function() {
+        // Check session expiration first
+        checkSessionExpiration();
+        
+        const isLoggedIn = localStorage.getItem('loggingStatus') === 'true';
+        const username = localStorage.getItem('username') || 'User';
+        
+        const loggedOutNav = document.getElementById('logged-out-nav');
+        const loggedInNav = document.getElementById('logged-in-nav');
+        const headerUsername = document.getElementById('header-username');
+        const logoutBtn = document.getElementById('header-logout-btn');
+        
+        // Mobile menu elements
+        const mobileLoggedOut = document.getElementById('mobile-logged-out');
+        const mobileLoggedIn = document.getElementById('mobile-logged-in');
+        const mobileLogoutBtn = document.getElementById('mobile-logout-btn');
+        
+        if (isLoggedIn) {
+            loggedOutNav.classList.add('hidden');
+            loggedInNav.classList.remove('hidden');
+            loggedInNav.classList.add('flex');
+            headerUsername.textContent = username;
+            
+            // Also update mobile username
+            const headerUsernameMobile = document.getElementById('header-username-mobile');
+            if (headerUsernameMobile) headerUsernameMobile.textContent = username;
+            
+            // Mobile menu
+            if (mobileLoggedOut) mobileLoggedOut.classList.add('hidden');
+            if (mobileLoggedIn) mobileLoggedIn.classList.remove('hidden');
+        } else {
+            loggedOutNav.classList.remove('hidden');
+            loggedOutNav.classList.add('flex');
+            loggedInNav.classList.add('hidden');
+            
+            // Mobile menu
+            if (mobileLoggedOut) mobileLoggedOut.classList.remove('hidden');
+            if (mobileLoggedIn) mobileLoggedIn.classList.add('hidden');
+        }
+        
+        // Handle logout (desktop)
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                clearSession();
+                window.location.href = '/index.html';
+            });
+        }
+        
+        // Handle logout (mobile)
+        if (mobileLogoutBtn) {
+            mobileLogoutBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                clearSession();
+                window.location.href = '/index.html';
+            });
+        }
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Mobile dropdown toggles
+        const mobileDropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+        mobileDropdownBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('svg');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+    });
+    </script>
     <main id="content-container" class="flex-grow page-content">
         {{ content }}
     </main>
@@ -137,10 +400,13 @@
             <div>
                 <a href="/index.html" class="flex items-center space-x-2 text-white">
                     <img src="/assets/images/logo.png" alt="AI First Credit Union Logo" class="w-8 h-8">
-                    <span class="font-bold text-lg">AI First CU</span>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-lg leading-tight">AI First CU</span>
+                        <span class="text-xs text-gray-400">a Glia Demo</span>
+                    </div>
                 </a>
-                <p class="mt-4 text-sm text-gray-400">© 2025 AI First Credit Union. All rights reserved.</p>
-                <p class="mt-2 text-sm text-gray-400">Federally Insured by NCUA.</p>
+                <p class="mt-4 text-sm text-gray-400">© 2025 AI First CU. All rights reserved.</p>
+                <p class="mt-2 text-sm text-gray-400">Demo Site - Not a real financial institution.</p>
             </div>
             <div>
                 <h4 class="font-semibold text-white mb-2">Accounts</h4>
@@ -167,7 +433,7 @@
                     <li><a href="/about.html" class="hover:text-white transition duration-300">About Us</a></li>
                     <li><a href="/resources/help-center.html" class="hover:text-white transition duration-300">Help Center</a></li>
                     <li><a href="/privacy-policy.html" class="hover:text-white transition duration-300">Privacy Policy</a></li>
-                    <li><a href="/terms-conditions.html" class="hover:text-white transition duration-300">Terms & Conditions</a></li>
+                    <li><a href="/terms-of-use.html" class="hover:text-white transition duration-300">Terms of Use</a></li>
                 </ul>
             </div>
         </div>

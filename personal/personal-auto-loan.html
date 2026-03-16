@@ -11,7 +11,7 @@ layout: default
             Get behind the wheel with competitive auto loan rates and AI-powered approval processes that put you in the driver's seat.
         </p>
         <div class="mt-8 flex justify-center space-x-4">
-            <button class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg">Apply for Auto Loan</button>
+            <button class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg" onclick="document.getElementById('apply').scrollIntoView({behavior: 'smooth'})">Apply for Auto Loan</button>
             <a href="#calculator" class="bg-white text-blue-600 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition duration-300 border border-gray-300">Payment Calculator</a>
         </div>
     </div>
@@ -143,6 +143,128 @@ layout: default
     </div>
 </section>
 
+<section class="py-16 bg-white" id="apply">
+    <div class="container mx-auto px-4 max-w-2xl">
+        <div class="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-200">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-2">Apply for an Auto Loan</h2>
+            <p class="text-center text-gray-600 mb-6">Complete the form below to start your application.</p>
+            <form id="auto-loan-application" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="al-first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
+                        <input type="text" id="al-first-name" name="al-first-name" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="al-last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
+                        <input type="text" id="al-last-name" name="al-last-name" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="al-dob" class="block text-sm font-medium text-gray-700">Date of Birth *</label>
+                        <input type="date" id="al-dob" name="al-dob" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="al-ssn" class="block text-sm font-medium text-gray-700">Social Security Number *</label>
+                        <input type="text" id="al-ssn" name="al-ssn" required placeholder="XXX-XX-XXXX" maxlength="11"
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="al-email" class="block text-sm font-medium text-gray-700">Email Address *</label>
+                        <input type="email" id="al-email" name="al-email" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="al-phone" class="block text-sm font-medium text-gray-700">Phone Number *</label>
+                        <input type="tel" id="al-phone" name="al-phone" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div>
+                    <label for="al-address" class="block text-sm font-medium text-gray-700">Street Address *</label>
+                    <input type="text" id="al-address" name="al-address" required
+                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="col-span-2">
+                        <label for="al-city" class="block text-sm font-medium text-gray-700">City *</label>
+                        <input type="text" id="al-city" name="al-city" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="al-state" class="block text-sm font-medium text-gray-700">State *</label>
+                        <input type="text" id="al-state" name="al-state" required maxlength="2" placeholder="NY"
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="al-zip" class="block text-sm font-medium text-gray-700">ZIP *</label>
+                        <input type="text" id="al-zip" name="al-zip" required maxlength="10"
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div>
+                    <label for="al-loan-type" class="block text-sm font-medium text-gray-700">Loan Type *</label>
+                    <select id="al-loan-type" name="al-loan-type" required
+                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">Select loan type</option>
+                        <option value="new">New Vehicle</option>
+                        <option value="used">Used Vehicle</option>
+                        <option value="refinance">Refinance Existing Loan</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="al-vehicle-price" class="block text-sm font-medium text-gray-700">Vehicle Price ($) *</label>
+                        <input type="number" id="al-vehicle-price" name="al-vehicle-price" required min="1000"
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="e.g., 35000">
+                    </div>
+                    <div>
+                        <label for="al-down-payment" class="block text-sm font-medium text-gray-700">Down Payment ($)</label>
+                        <input type="number" id="al-down-payment" name="al-down-payment" min="0"
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="e.g., 5000">
+                    </div>
+                </div>
+                <div>
+                    <label for="al-term" class="block text-sm font-medium text-gray-700">Preferred Term *</label>
+                    <select id="al-term" name="al-term" required
+                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">Select term</option>
+                        <option value="36">36 months</option>
+                        <option value="48">48 months</option>
+                        <option value="60">60 months</option>
+                        <option value="72">72 months</option>
+                        <option value="84">84 months</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="al-income" class="block text-sm font-medium text-gray-700">Annual Income ($) *</label>
+                    <input type="number" id="al-income" name="al-income" required min="0"
+                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="e.g., 65000">
+                </div>
+                <button type="submit"
+                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">
+                    Submit Application
+                </button>
+                <p class="text-center text-xs text-gray-500">This is a demo site. Do not enter real personal information.</p>
+            </form>
+            <div id="al-success" class="mt-6 text-center hidden">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                    <p class="text-green-800 font-medium">Application submitted successfully!</p>
+                    <p class="text-green-600 text-sm mt-1">This is a demo - no data was actually submitted.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="bg-blue-600 py-16">
     <div class="container mx-auto px-4 text-center text-white">
         <h2 class="text-3xl md:text-4xl font-bold">Ready to Hit the Road?</h2>
@@ -150,7 +272,7 @@ layout: default
             Get pre-approved for your auto loan today and shop with confidence at any dealership.
         </p>
         <div class="mt-8 flex justify-center space-x-4">
-            <button class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Apply for Auto Loan</button>
+            <button class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg" onclick="document.getElementById('apply').scrollIntoView({behavior: 'smooth'})">Apply for Auto Loan</button>
             <a href="#" class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Contact a Loan Officer</a>
         </div>
     </div>
@@ -168,6 +290,35 @@ function calculateAutoPayment() {
         const monthlyPayment = (loanAmount * interestRate * Math.pow(1 + interestRate, loanTerm)) / (Math.pow(1 + interestRate, loanTerm) - 1);
         
         document.getElementById('auto-monthly-payment-result').textContent = '$' + monthlyPayment.toFixed(2);
+        document.getElementById('auto-results').classList.remove('hidden');
+    }
+}
+
+document.getElementById('auto-loan-application').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const firstName = document.getElementById('al-first-name').value.trim();
+    const lastName = document.getElementById('al-last-name').value.trim();
+    const email = document.getElementById('al-email').value.trim();
+    const phone = document.getElementById('al-phone').value.trim();
+    const loanType = document.getElementById('al-loan-type').value;
+    const vehiclePrice = document.getElementById('al-vehicle-price').value;
+    const term = document.getElementById('al-term').value;
+    const income = document.getElementById('al-income').value;
+    
+    if (!firstName || !lastName || !email || !phone || !loanType || !vehiclePrice || !term || !income) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+    
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+    
+    document.getElementById('al-success').classList.remove('hidden');
+    this.reset();
+});$' + monthlyPayment.toFixed(2);
         document.getElementById('auto-results').classList.remove('hidden');
     }
 }

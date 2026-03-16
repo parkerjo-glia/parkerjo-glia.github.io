@@ -31,7 +31,7 @@
 ### Trust & Security Section (48x48px each)
 | File | Description | Visual Elements | Used In |
 |------|-------------|-----------------|---------|
-| `ncua-insured-icon.png` | NCUA insurance badge | Shield with checkmark, "NCUA" text, government seal style | Homepage trust section |
+| `glia-demo-icon.png` | Demo site indicator | Glia logo or demo badge, tech/testing symbol | Homepage trust section |
 | `ai-security-icon.png` | AI-powered security | Shield with circuit pattern or neural network, lock symbol | Homepage trust section |
 | `transparent-ethical-icon.png` | Transparency & ethics | Open book, balance scales, or transparency symbol with tech elements | Homepage trust section |
 
@@ -271,7 +271,7 @@
 ## 📋 **Complete Image Inventory by Page**
 
 ### Homepage (index.html)
-- `ncua-insured-icon.png` (48x48px)
+- `glia-demo-icon.png` (48x48px)
 - `ai-security-icon.png` (48x48px)
 - `transparent-ethical-icon.png` (48x48px)
 - `smart-savings-icon.png` (48x48px)
@@ -487,7 +487,7 @@
 
 ### High Priority (Essential for launch)
 1. **Brand Assets**: `logo.png`, `favicon.png`
-2. **Homepage Core**: `ncua-insured-icon.png`, `ai-security-icon.png`, `transparent-ethical-icon.png`
+2. **Homepage Core**: `glia-demo-icon.png`, `ai-security-icon.png`, `transparent-ethical-icon.png`
 3. **Universal Elements**: `check-icon.png`, `search-icon.png`, `chevron-down-icon.png`
 4. **Contact Essentials**: `phone-support-icon.png`, `email-support-icon.png`, `location-icon.png`
 
@@ -614,7 +614,7 @@ The website is now complete with all necessary pages for a comprehensive credit 
 
 ### High Priority (Essential for launch)
 1. **Brand Assets**: `logo.png`, `favicon.png`
-2. **Homepage Core**: `ncua-insured-icon.png`, `ai-security-icon.png`, `transparent-ethical-icon.png`
+2. **Homepage Core**: `glia-demo-icon.png`, `ai-security-icon.png`, `transparent-ethical-icon.png`
 3. **Universal Elements**: `check-icon.png`, `search-icon.png`, `chevron-down-icon.png`
 4. **Contact Essentials**: `phone-support-icon.png`, `email-support-icon.png`, `location-icon.png`
 5. **OLB Core**: `user-avatar.png`, `transfer-icon.png`, `pay-bill-icon.png`
@@ -646,7 +646,7 @@ The website is now complete with all necessary pages for a comprehensive credit 
 - **Account Protection**: Visual elements that reinforce security
 
 ### Trust Building Elements
-- **NCUA Insurance**: Prominent display in OLB interface
+- **Demo Site Notice**: Clear indication this is a demonstration site
 - **Encryption Notice**: Visual indicators of data protection
 - **Logout Confirmation**: Clear security messaging
 - **Balance Masking**: Option to hide/show sensitive information

@@ -11,7 +11,7 @@ layout: default
             Empower your business with intelligent banking solutions, competitive rates, and AI-powered insights that help you make smarter financial decisions.
         </p>
         <div class="mt-8 flex justify-center space-x-4">
-            <button class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg">Open Business Account</button>
+            <button class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg" onclick="document.getElementById('apply').scrollIntoView({behavior: 'smooth'})">Open Business Account</button>
             <a href="#products" class="bg-white text-blue-600 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition duration-300 border border-gray-300">Explore Products</a>
         </div>
     </div>
@@ -79,7 +79,7 @@ layout: default
                 <ul class="text-sm text-gray-600 mb-6 space-y-1">
                     <li>• Competitive interest rates</li>
                     <li>• No minimum balance</li>
-                    <li>• NCUA insured up to $250,000</li>
+                    <li>• Secure account protection</li>
                     <li>• Online account management</li>
                 </ul>
                 <a href="#" class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300">Open Account</a>
@@ -173,6 +173,119 @@ layout: default
     </div>
 </section>
 
+<section class="py-16 bg-gray-100" id="apply">
+    <div class="container mx-auto px-4 max-w-2xl">
+        <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-2">Open a Business Account</h2>
+            <p class="text-center text-gray-600 mb-6">Complete the form below to get started with your business account.</p>
+            <form id="business-account-form" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="ba-first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
+                        <input type="text" id="ba-first-name" name="ba-first-name" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="ba-last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
+                        <input type="text" id="ba-last-name" name="ba-last-name" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="ba-dob" class="block text-sm font-medium text-gray-700">Date of Birth *</label>
+                        <input type="date" id="ba-dob" name="ba-dob" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="ba-ssn" class="block text-sm font-medium text-gray-700">Social Security Number *</label>
+                        <input type="text" id="ba-ssn" name="ba-ssn" required placeholder="XXX-XX-XXXX" maxlength="11"
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div>
+                    <label for="ba-business-name" class="block text-sm font-medium text-gray-700">Business Name *</label>
+                    <input type="text" id="ba-business-name" name="ba-business-name" required
+                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="ba-email" class="block text-sm font-medium text-gray-700">Email Address *</label>
+                        <input type="email" id="ba-email" name="ba-email" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="ba-phone" class="block text-sm font-medium text-gray-700">Phone Number *</label>
+                        <input type="tel" id="ba-phone" name="ba-phone" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div>
+                    <label for="ba-address" class="block text-sm font-medium text-gray-700">Business Address *</label>
+                    <input type="text" id="ba-address" name="ba-address" required
+                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="col-span-2">
+                        <label for="ba-city" class="block text-sm font-medium text-gray-700">City *</label>
+                        <input type="text" id="ba-city" name="ba-city" required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="ba-state" class="block text-sm font-medium text-gray-700">State *</label>
+                        <input type="text" id="ba-state" name="ba-state" required maxlength="2" placeholder="NY"
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="ba-zip" class="block text-sm font-medium text-gray-700">ZIP *</label>
+                        <input type="text" id="ba-zip" name="ba-zip" required maxlength="10"
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div>
+                    <label for="ba-business-type" class="block text-sm font-medium text-gray-700">Business Type *</label>
+                    <select id="ba-business-type" name="ba-business-type" required
+                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">Select business type</option>
+                        <option value="sole-proprietor">Sole Proprietorship</option>
+                        <option value="llc">LLC</option>
+                        <option value="corporation">Corporation</option>
+                        <option value="partnership">Partnership</option>
+                        <option value="nonprofit">Non-Profit</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="ba-account-type" class="block text-sm font-medium text-gray-700">Account Type *</label>
+                    <select id="ba-account-type" name="ba-account-type" required
+                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">Select account type</option>
+                        <option value="checking">Business Checking</option>
+                        <option value="savings">Business Savings</option>
+                        <option value="cd">Business CD</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="ba-annual-revenue" class="block text-sm font-medium text-gray-700">Estimated Annual Revenue ($)</label>
+                    <input type="number" id="ba-annual-revenue" name="ba-annual-revenue" min="0"
+                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="e.g., 250000">
+                </div>
+                <button type="submit"
+                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">
+                    Submit Application
+                </button>
+                <p class="text-center text-xs text-gray-500">This is a demo site. Do not enter real personal information.</p>
+            </form>
+            <div id="ba-success" class="mt-6 text-center hidden">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                    <p class="text-green-800 font-medium">Application submitted successfully!</p>
+                    <p class="text-green-600 text-sm mt-1">This is a demo - no data was actually submitted.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="bg-blue-600 py-16">
     <div class="container mx-auto px-4 text-center text-white">
         <h2 class="text-3xl md:text-4xl font-bold">Ready to Grow Your Business?</h2>
@@ -180,8 +293,35 @@ layout: default
             Partner with AI First Credit Union and experience banking that works as hard as you do.
         </p>
         <div class="mt-8 flex justify-center space-x-4">
-            <button class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Open Business Account</button>
+            <button class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg" onclick="document.getElementById('apply').scrollIntoView({behavior: 'smooth'})">Open Business Account</button>
             <a href="#" class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Schedule Consultation</a>
         </div>
     </div>
 </section>
+
+<script>
+document.getElementById('business-account-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const firstName = document.getElementById('ba-first-name').value.trim();
+    const lastName = document.getElementById('ba-last-name').value.trim();
+    const businessName = document.getElementById('ba-business-name').value.trim();
+    const email = document.getElementById('ba-email').value.trim();
+    const phone = document.getElementById('ba-phone').value.trim();
+    const businessType = document.getElementById('ba-business-type').value;
+    const accountType = document.getElementById('ba-account-type').value;
+    
+    if (!firstName || !lastName || !businessName || !email || !phone || !businessType || !accountType) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+    
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+    
+    document.getElementById('ba-success').classList.remove('hidden');
+    this.reset();
+});
+</script>

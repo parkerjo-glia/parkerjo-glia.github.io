@@ -56,7 +56,7 @@ layout: default
         <div class="mt-6 text-center text-sm text-gray-500">
             Not a member yet?
             <a href="/join.html" class="font-medium text-blue-600 hover:text-blue-500">
-                Join AI First Credit Union
+                Join AI First Credit Union Demo
             </a>
         </div>
     </div>
@@ -90,8 +90,11 @@ layout: default
 
         // Simple demo authentication (in a real app, this would be handled securely by the backend)
         if (loginName.length > 1 && password === 'glia123!!') {
-            localStorage.setItem('loggingStatus', true);
+            localStorage.setItem('loggingStatus', 'true');
             localStorage.setItem('username', loginName);
+            // Set session expiration to 1 hour from now
+            const expirationTime = Date.now() + (60 * 60 * 1000); // 1 hour in milliseconds
+            localStorage.setItem('sessionExpiration', expirationTime);
             // Successful login - redirect to OLB dashboard
             window.location.href = '/olb/dashboard.html';
         } else {
