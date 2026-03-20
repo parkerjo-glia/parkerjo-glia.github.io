@@ -93,9 +93,42 @@ layout: default
             <p class="mt-4 text-center text-sm text-gray-500">
                 This form is for demonstration purposes only.
             </p>
+            <div id="contact-success" class="mt-6 text-center hidden">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                    <p class="text-green-800 font-medium">Message sent successfully!</p>
+                    <p class="text-green-600 text-sm mt-1">This is a demo - no data was actually submitted.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Validate required fields
+    const firstName = document.getElementById('contact-first-name').value.trim();
+    const lastName = document.getElementById('contact-last-name').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+    const subject = document.getElementById('contact-subject').value;
+    const message = document.getElementById('contact-message').value.trim();
+    
+    if (!firstName || !lastName || !email || !subject || !message) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+    
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+    
+    // Show success message (demo only)
+    document.getElementById('contact-success').classList.remove('hidden');
+    this.reset();
+});
+</script>
 
 <section class="bg-blue-600 py-16">
     <div class="container mx-auto px-4 text-center text-white">

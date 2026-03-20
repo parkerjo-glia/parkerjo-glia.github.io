@@ -158,31 +158,31 @@ layout: default
     <div class="container mx-auto px-4 max-w-2xl">
         <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-6">Start Your Membership Application</h2>
-            <div id="membership-form" class="space-y-6">
+            <form id="membership-form" class="space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label for="first-name" class="block text-sm font-medium text-gray-700">First Name</label>
+                        <label for="first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
                         <input type="text" id="first-name" name="first-name" required placeholder="John"
                             class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                     </div>
                     <div>
-                        <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name</label>
+                        <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
                         <input type="text" id="last-name" name="last-name" required placeholder="Doe"
                             class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                     </div>
                 </div>
                 <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email Address *</label>
                     <input type="email" id="email" name="email" required placeholder="john.doe@ai-cu.com"
                         class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                 </div>
                 <div>
-                    <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                    <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number *</label>
                     <input type="tel" id="phone" name="phone" required placeholder="555.867.5309"
                         class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                 </div>
                 <div>
-                    <label for="eligibility" class="block text-sm font-medium text-gray-700">Membership Eligibility</label>
+                    <label for="eligibility" class="block text-sm font-medium text-gray-700">Membership Eligibility *</label>
                     <select id="eligibility" name="eligibility" required
                         class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                         <option value="">Select your eligibility</option>
@@ -194,7 +194,7 @@ layout: default
                     </select>
                 </div>
                 <div>
-                    <label for="initial-deposit" class="block text-sm font-medium text-gray-700">Initial Deposit Amount</label>
+                    <label for="initial-deposit" class="block text-sm font-medium text-gray-700">Initial Deposit Amount *</label>
                     <select id="initial-deposit" name="initial-deposit" required
                         class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                         <option value="">Select deposit amount</option>
@@ -209,18 +209,23 @@ layout: default
                 <div class="flex items-center">
                     <input id="terms" name="terms" type="checkbox" required class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
                     <label for="terms" class="ml-2 block text-sm text-gray-900">
-                        I agree to the <a href="#" class="text-blue-600 hover:text-blue-700">Terms of Use</a> and <a href="#" class="text-blue-600 hover:text-blue-700">Privacy Policy</a>
+                        I agree to the <a href="/terms-of-use.html" class="text-blue-600 hover:text-blue-700">Terms of Use</a> and <a href="/privacy-policy.html" class="text-blue-600 hover:text-blue-700">Privacy Policy</a> *
                     </label>
                 </div>
                 <button type="submit"
-                    disabled style="cursor: pointer;"
                     class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">
                     Submit Application
                 </button>
+                <p class="text-center text-xs text-gray-500">
+                    This is a demo site. Do not enter real personal information.
+                </p>
+            </form>
+            <div id="membership-success" class="mt-6 text-center hidden">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                    <p class="text-green-800 font-medium">Application submitted successfully!</p>
+                    <p class="text-green-600 text-sm mt-1">This is a demo - no data was actually submitted.</p>
+                </div>
             </div>
-            <p class="mt-4 text-center text-xs text-gray-500">
-                This is a demo site. Do not enter real personal information.
-            </p>
         </div>
     </div>
 </section>
@@ -232,8 +237,42 @@ layout: default
             Our member services team is here to help you understand the benefits and process of joining AI First Credit Union.
         </p>
         <div class="mt-8 flex justify-center space-x-4">
-            <button class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Contact Us</button>
+            <a href="/contact.html" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Contact Us</a>
             <a href="#" class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Schedule Consultation</a>
         </div>
     </div>
 </section>
+
+<script>
+document.getElementById('membership-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Validate required fields
+    const firstName = document.getElementById('first-name').value.trim();
+    const lastName = document.getElementById('last-name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const eligibility = document.getElementById('eligibility').value;
+    const initialDeposit = document.getElementById('initial-deposit').value;
+    const terms = document.getElementById('terms').checked;
+    
+    if (!firstName || !lastName || !email || !phone || !eligibility || !initialDeposit) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+    
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+    
+    if (!terms) {
+        alert('Please agree to the Terms of Use and Privacy Policy.');
+        return;
+    }
+    
+    // Show success message (demo only)
+    document.getElementById('membership-success').classList.remove('hidden');
+    this.reset();
+});
+</script>
