@@ -6,30 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Glia demo site for integration testing. Not a real financial institution.">
     <meta name="google-site-verification" content="AiR11pkGBnm5APUixlIcuCTDI4kgN0ZlW20IEJUsENQ" />
-    <title>{{ page.title | default: "Online Banking" }} - AI First Credit Union Demo</title>
+    <title>{{ page.title | default: "Online Banking" }} - {% if page.site_type == 'bank' %}AI First Bank{% else %}AI First Credit Union{% endif %} Demo</title>
     <script src="{{ '/assets/scripts/parker_custom.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800">
+    {% assign base_path = page.base_path | default: '' %}
+    {% assign site_name = 'AI First CU' %}
+    {% assign site_name_full = 'AI First Credit Union' %}
+    {% assign logo_image = '/assets/images/logo.png' %}
+    {% if page.site_type == 'bank' %}
+        {% assign site_name = 'AI First Bank' %}
+        {% assign site_name_full = 'AI First Bank' %}
+        {% assign logo_image = '/assets/images/bank-logo.png' %}
+    {% endif %}
 
-    <!-- OLB Header -->
     <header class="bg-white shadow-sm border-b border-gray-200">
         <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
             <div class="flex items-center space-x-4">
-                <a href="/index.html" class="flex items-center space-x-2">
-                    <img src="/assets/images/logo.png" alt="AI First Credit Union Logo" class="w-8 h-8">
+                <a href="{{ base_path }}/index.html" class="flex items-center space-x-2">
+                    <img src="{{ logo_image }}" alt="{{ site_name_full }} Logo" class="w-8 h-8">
                     <div class="flex flex-col">
-                        <span class="font-bold text-xl text-gray-900 leading-tight">AI First CU</span>
+                        <span class="font-bold text-xl text-gray-900 leading-tight">{{ site_name }}</span>
                         <span class="text-xs text-gray-500">a Glia Demo</span>
                     </div>
                 </a>
@@ -37,66 +42,50 @@
                 <span class="text-gray-600 font-medium hidden md:inline">Online Banking</span>
             </div>
             
-            <!-- OLB Navigation -->
             <div class="hidden md:flex space-x-6">
-                <a href="/olb/dashboard.html" class="text-gray-600 hover:text-blue-600 font-medium py-2 {% if page.nav_active == 'dashboard' %}text-blue-600 border-b-2 border-blue-600{% endif %}">
-                    Dashboard
-                </a>
-                <a href="/olb/transfer.html" class="text-gray-600 hover:text-blue-600 font-medium py-2 {% if page.nav_active == 'transfer' %}text-blue-600 border-b-2 border-blue-600{% endif %}">
-                    Transfer Money
-                </a>
-                <a href="/olb/bill-pay.html" class="text-gray-600 hover:text-blue-600 font-medium py-2 {% if page.nav_active == 'billpay' %}text-blue-600 border-b-2 border-blue-600{% endif %}">
-                    Bill Pay
-                </a>
+                <a href="{{ base_path }}/olb/dashboard.html" class="text-gray-600 hover:text-blue-600 font-medium py-2 {% if page.nav_active == 'dashboard' %}text-blue-600 border-b-2 border-blue-600{% endif %}">Dashboard</a>
+                <a href="{{ base_path }}/olb/transfer.html" class="text-gray-600 hover:text-blue-600 font-medium py-2 {% if page.nav_active == 'transfer' %}text-blue-600 border-b-2 border-blue-600{% endif %}">Transfer Money</a>
+                <a href="{{ base_path }}/olb/bill-pay.html" class="text-gray-600 hover:text-blue-600 font-medium py-2 {% if page.nav_active == 'billpay' %}text-blue-600 border-b-2 border-blue-600{% endif %}">Bill Pay</a>
             </div>
 
-            <!-- User Menu -->
             <div class="flex items-center space-x-4">
-                <!-- Mobile: just show avatar and name (no flyout) -->
                 <div class="flex md:hidden items-center text-gray-600 font-medium py-2">
                     <img src="/assets/images/user-avatar.png" alt="User Avatar" class="w-8 h-8 rounded-full mr-2">
                     <span id="olb-username-mobile">User</span>
                 </div>
-                <!-- Desktop: show avatar, name, and flyout dropdown -->
                 <div class="relative group hidden md:block">
                     <button class="flex items-center text-gray-600 hover:text-blue-600 font-medium py-2">
                         <img src="/assets/images/user-avatar.png" alt="User Avatar" class="w-8 h-8 rounded-full mr-2">
                         <span id="olb-username">User</span>
-                        <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd" />
+                        <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                         </svg>
                     </button>
-                    <div class="absolute right-0 hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div class="absolute right-0 hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                         <div class="py-1" role="menu">
-                            <a href="/olb/profile-settings.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Profile Settings</a>
-                            <a href="/olb/security-settings.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Security Settings</a>
+                            <a href="{{ base_path }}/olb/profile-settings.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Profile Settings</a>
+                            <a href="{{ base_path }}/olb/security-settings.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Security Settings</a>
                             <div class="border-t border-gray-100"></div>
                             <a id="btnLogOut" href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign Out</a>
                         </div>
                     </div>
                 </div>
                 <button id="olb-mobile-menu-btn" class="md:hidden text-gray-600">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 </button>
             </div>
         </nav>
         
-        <!-- OLB Mobile Menu -->
         <div id="olb-mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
             <div class="px-4 py-4 space-y-2">
-                <a href="/olb/dashboard.html" class="block py-2 text-gray-600 font-medium hover:text-blue-600 {% if page.nav_active == 'dashboard' %}text-blue-600{% endif %}">Dashboard</a>
-                <a href="/olb/transfer.html" class="block py-2 text-gray-600 font-medium hover:text-blue-600 {% if page.nav_active == 'transfer' %}text-blue-600{% endif %}">Transfer Money</a>
-                <a href="/olb/bill-pay.html" class="block py-2 text-gray-600 font-medium hover:text-blue-600 {% if page.nav_active == 'billpay' %}text-blue-600{% endif %}">Bill Pay</a>
+                <a href="{{ base_path }}/olb/dashboard.html" class="block py-2 text-gray-600 font-medium hover:text-blue-600 {% if page.nav_active == 'dashboard' %}text-blue-600{% endif %}">Dashboard</a>
+                <a href="{{ base_path }}/olb/transfer.html" class="block py-2 text-gray-600 font-medium hover:text-blue-600 {% if page.nav_active == 'transfer' %}text-blue-600{% endif %}">Transfer Money</a>
+                <a href="{{ base_path }}/olb/bill-pay.html" class="block py-2 text-gray-600 font-medium hover:text-blue-600 {% if page.nav_active == 'billpay' %}text-blue-600{% endif %}">Bill Pay</a>
                 <div class="pt-4 border-t border-gray-200 space-y-2">
-                    <a href="/olb/profile-settings.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Profile Settings</a>
-                    <a href="/olb/security-settings.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Security Settings</a>
+                    <a href="{{ base_path }}/olb/profile-settings.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Profile Settings</a>
+                    <a href="{{ base_path }}/olb/security-settings.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Security Settings</a>
                     <a href="#" id="olb-mobile-logout-btn" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Sign Out</a>
                 </div>
             </div>
@@ -107,161 +96,75 @@
         {{ content }}
     </main>
 
-    <!-- OLB Footer -->
     <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="flex items-center space-x-2 mb-4 md:mb-0">
-                    <img src="/assets/images/logo.png" alt="AI First Credit Union Logo" class="w-6 h-6">
+                    <img src="{{ logo_image }}" alt="{{ site_name_full }} Logo" class="w-6 h-6">
                     <div class="flex flex-col">
-                        <span class="font-bold leading-tight">AI First CU</span>
+                        <span class="font-bold leading-tight">{{ site_name }}</span>
                         <span class="text-xs text-gray-400">a Glia Demo</span>
                     </div>
                 </div>
                 <div class="flex space-x-6 text-sm">
-                    <a href="/contact.html" class="hover:text-white transition duration-300">Contact Support</a>
-                    <a href="/privacy-policy.html" class="hover:text-white transition duration-300">Privacy Policy</a>
-                    <a href="/terms-of-use.html" class="hover:text-white transition duration-300">Terms of Use</a>
+                    <a href="{{ base_path }}/contact.html" class="hover:text-white transition duration-300">Contact Support</a>
+                    <a href="{{ base_path }}/privacy-policy.html" class="hover:text-white transition duration-300">Privacy Policy</a>
+                    <a href="{{ base_path }}/terms-of-use.html" class="hover:text-white transition duration-300">Terms of Use</a>
                 </div>
             </div>
             <div class="mt-4 pt-4 border-t border-gray-700 text-center text-sm text-gray-400">
-                <p>© 2025 AI First CU. All rights reserved. Demo Site - Not a real financial institution.</p>
+                <p>© 2025 {{ site_name }}. All rights reserved. Demo Site - Not a real financial institution.</p>
                 <p class="mt-1">Your connection is secured with 256-bit SSL encryption.</p>
             </div>
         </div>
     </footer>
 
     <script>
-    // Session management functions
+    var basePath = '{{ base_path }}';
     function clearSession() {
         localStorage.removeItem('loggingStatus');
         localStorage.removeItem('username');
         localStorage.removeItem('sessionExpiration');
     }
-    
     function refreshSession() {
-        const expirationTime = Date.now() + (60 * 60 * 1000); // 1 hour
-        localStorage.setItem('sessionExpiration', expirationTime);
+        localStorage.setItem('sessionExpiration', Date.now() + (60 * 60 * 1000));
     }
-    
     function checkSessionExpiration() {
-        const isLoggedIn = localStorage.getItem('loggingStatus') === 'true';
-        if (!isLoggedIn) {
-            // Redirect to login if not logged in on OLB pages
-            window.location.href = '/login.html';
+        if (localStorage.getItem('loggingStatus') !== 'true') {
+            window.location.href = basePath + '/login.html';
             return;
         }
-        
-        const expiration = parseInt(localStorage.getItem('sessionExpiration'));
-        if (!expiration) {
-            // No expiration set, clear session and redirect
-            clearSession();
-            window.location.href = '/login.html';
-            return;
-        }
-        
-        const now = Date.now();
-        const timeUntilExpiry = expiration - now;
-        
-        // If already expired, clear session and redirect
-        if (timeUntilExpiry <= 0) {
-            clearSession();
-            window.location.href = '/login.html';
-            return;
-        }
-        
-        // If expiring within 60 seconds, show warning modal
-        if (timeUntilExpiry <= 60000) {
-            showSessionWarningModal();
-        }
+        var expiration = parseInt(localStorage.getItem('sessionExpiration'));
+        if (!expiration) { clearSession(); window.location.href = basePath + '/login.html'; return; }
+        var timeUntilExpiry = expiration - Date.now();
+        if (timeUntilExpiry <= 0) { clearSession(); window.location.href = basePath + '/login.html'; return; }
+        if (timeUntilExpiry <= 60000) showSessionWarningModal();
     }
-    
     function showSessionWarningModal() {
-        // Create modal if it doesn't exist
         if (document.getElementById('session-warning-modal')) return;
-        
-        const modal = document.createElement('div');
+        var modal = document.createElement('div');
         modal.id = 'session-warning-modal';
         modal.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center';
-        modal.innerHTML = `
-            <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6">
-                <div class="flex items-center mb-4">
-                    <svg class="w-6 h-6 text-yellow-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                    </svg>
-                    <h3 class="text-lg font-bold text-gray-900">Session Expiring</h3>
-                </div>
-                <p class="text-gray-600 mb-6">Your session is about to expire. Would you like to extend your session?</p>
-                <div class="flex space-x-3">
-                    <button id="session-extend-btn" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300 font-medium">
-                        Yes, Extend Session
-                    </button>
-                    <button id="session-dismiss-btn" class="flex-1 bg-gray-100 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-200 transition duration-300 font-medium">
-                        No, Thanks
-                    </button>
-                </div>
-            </div>
-        `;
+        modal.innerHTML = '<div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6"><div class="flex items-center mb-4"><svg class="w-6 h-6 text-yellow-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg><h3 class="text-lg font-bold text-gray-900">Session Expiring</h3></div><p class="text-gray-600 mb-6">Your session is about to expire. Would you like to extend your session?</p><div class="flex space-x-3"><button id="session-extend-btn" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300 font-medium">Yes, Extend Session</button><button id="session-dismiss-btn" class="flex-1 bg-gray-100 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-200 transition duration-300 font-medium">No, Thanks</button></div></div>';
         document.body.appendChild(modal);
-        
-        document.getElementById('session-extend-btn').addEventListener('click', function() {
-            refreshSession();
-            modal.remove();
-        });
-        
-        document.getElementById('session-dismiss-btn').addEventListener('click', function() {
-            modal.remove();
-        });
+        document.getElementById('session-extend-btn').addEventListener('click', function() { refreshSession(); modal.remove(); });
+        document.getElementById('session-dismiss-btn').addEventListener('click', function() { modal.remove(); });
     }
-    
-    // Set username from localStorage and handle logout
     document.addEventListener('DOMContentLoaded', function() {
-        // Check session expiration first
         checkSessionExpiration();
-        
-        const username = localStorage.getItem('username') || 'User';
-        const olbUsername = document.getElementById('olb-username');
-        const logoutBtn = document.getElementById('btnLogOut');
-        const mobileLogoutBtn = document.getElementById('olb-mobile-logout-btn');
-        
-        if (olbUsername) {
-            olbUsername.textContent = username;
-        }
-        
-        // Also update mobile username
-        const olbUsernameMobile = document.getElementById('olb-username-mobile');
-        if (olbUsernameMobile) {
-            olbUsernameMobile.textContent = username;
-        }
-        
-        if (logoutBtn) {
-            logoutBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                clearSession();
-                window.location.href = '/index.html';
-            });
-        }
-        
-        if (mobileLogoutBtn) {
-            mobileLogoutBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                clearSession();
-                window.location.href = '/index.html';
-            });
-        }
-        
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('olb-mobile-menu-btn');
-        const mobileMenu = document.getElementById('olb-mobile-menu');
-        
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
+        var username = localStorage.getItem('username') || 'User';
+        var olbUsername = document.getElementById('olb-username');
+        var olbUsernameMobile = document.getElementById('olb-username-mobile');
+        var logoutBtn = document.getElementById('btnLogOut');
+        var mobileLogoutBtn = document.getElementById('olb-mobile-logout-btn');
+        if (olbUsername) olbUsername.textContent = username;
+        if (olbUsernameMobile) olbUsernameMobile.textContent = username;
+        if (logoutBtn) logoutBtn.addEventListener('click', function(e) { e.preventDefault(); clearSession(); window.location.href = basePath + '/index.html'; });
+        if (mobileLogoutBtn) mobileLogoutBtn.addEventListener('click', function(e) { e.preventDefault(); clearSession(); window.location.href = basePath + '/index.html'; });
+        var mobileMenuBtn = document.getElementById('olb-mobile-menu-btn');
+        var mobileMenu = document.getElementById('olb-mobile-menu');
+        if (mobileMenuBtn && mobileMenu) mobileMenuBtn.addEventListener('click', function() { mobileMenu.classList.toggle('hidden'); });
     });
     </script>
-
 </body>
-
 </html>

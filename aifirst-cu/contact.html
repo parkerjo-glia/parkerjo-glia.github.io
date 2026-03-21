@@ -1,0 +1,107 @@
+---
+layout: default
+site_type: cu
+base_path: /aifirst-cu
+---
+
+<section class="bg-gradient-to-br from-blue-100 to-white py-20 md:py-32">
+    <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">Get in Touch.</h1>
+        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">This is a demo site operated by Glia Technologies, Inc. For questions about Glia integration, please contact us using the information below.</p>
+    </div>
+</section>
+
+<section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+        <div class="text-center max-w-4xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">Contact Information</h2>
+            <p class="mt-2 text-gray-600">For questions about this demo site or Glia's services.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="bg-white p-8 rounded-lg text-center border border-gray-200 shadow-md">
+                <img src="/assets/images/email-support-icon.png" alt="Email" class="h-16 w-16 mx-auto mb-4">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Email</h3>
+                <p class="text-lg font-semibold text-blue-600 mb-2"><a href="mailto:legal@glia.com" class="hover:text-blue-700">legal@glia.com</a></p>
+                <p class="text-sm text-gray-500">For legal and demo site inquiries</p>
+            </div>
+            <div class="bg-white p-8 rounded-lg text-center border border-gray-200 shadow-md">
+                <img src="/assets/images/location-icon.png" alt="Location" class="h-16 w-16 mx-auto mb-4">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">Address</h3>
+                <p class="text-gray-600 mb-2">Glia Technologies, Inc.<br>30 West 21st St<br>New York, NY 10010</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 bg-white" id="contact-form">
+    <div class="container mx-auto px-4 max-w-2xl">
+        <div class="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-200">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-6">Send Us a Message</h2>
+            <p class="text-center text-gray-600 mb-6">For demo site feedback or Glia integration questions.</p>
+            <form id="contact-form" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="contact-first-name" class="block text-sm font-medium text-gray-700">First Name</label>
+                        <input type="text" id="contact-first-name" name="contact-first-name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="contact-last-name" class="block text-sm font-medium text-gray-700">Last Name</label>
+                        <input type="text" id="contact-last-name" name="contact-last-name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div>
+                    <label for="contact-email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                    <input type="email" id="contact-email" name="contact-email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="contact-subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                    <select id="contact-subject" name="contact-subject" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">Select a subject</option>
+                        <option value="demo">Demo Site Feedback</option>
+                        <option value="integration">Glia Integration Questions</option>
+                        <option value="technical">Technical Issues</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="contact-message" class="block text-sm font-medium text-gray-700">Message</label>
+                    <textarea id="contact-message" name="contact-message" rows="5" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="Please provide details about your inquiry..."></textarea>
+                </div>
+                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">Send Message</button>
+            </form>
+            <p class="mt-4 text-center text-sm text-gray-500">This form is for demonstration purposes only.</p>
+            <div id="contact-success" class="mt-6 text-center hidden">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                    <p class="text-green-800 font-medium">Message sent successfully!</p>
+                    <p class="text-green-600 text-sm mt-1">This is a demo - no data was actually submitted.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var firstName = document.getElementById('contact-first-name').value.trim();
+    var lastName = document.getElementById('contact-last-name').value.trim();
+    var email = document.getElementById('contact-email').value.trim();
+    var subject = document.getElementById('contact-subject').value;
+    var message = document.getElementById('contact-message').value.trim();
+    if (!firstName || !lastName || !email || !subject || !message) { alert('Please fill in all required fields.'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
+    document.getElementById('contact-success').classList.remove('hidden');
+    this.reset();
+});
+</script>
+
+<section class="bg-blue-600 py-16">
+    <div class="container mx-auto px-4 text-center text-white">
+        <h2 class="text-3xl md:text-4xl font-bold">Learn More About Glia</h2>
+        <p class="mt-4 text-lg max-w-2xl mx-auto opacity-90">Discover how Glia's Digital Customer Service platform can transform your customer experience.</p>
+        <div class="mt-8 flex justify-center space-x-4">
+            <a href="https://www.glia.com" target="_blank" rel="noopener noreferrer" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Visit Glia.com</a>
+            <a href="mailto:legal@glia.com" class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Contact Us</a>
+        </div>
+    </div>
+</section>
