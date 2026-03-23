@@ -4,289 +4,265 @@ site_type: bank
 base_path: /aifirst-bank
 ---
 
-<section class="bg-gradient-to-br from-blue-100 to-white py-20 md:py-32">
-    <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-            Business Services & Solutions.
-        </h1>
-        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive business services designed to streamline operations, reduce costs, and help your business thrive with AI-powered efficiency and expert support.
-        </p>
-        <div class="mt-8 flex justify-center space-x-4">
-            <button class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg">Open Business Account</button>
-            <a href="../contact.html" class="bg-white text-blue-600 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition duration-300 border border-gray-300">Schedule Consultation</a>
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-blue-600 to-blue-800 py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+        <img src="/assets/images/business-svc-hero-bg.png" alt="" class="w-full h-full object-cover">
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">Business Services & Solutions</h1>
+        <p class="mt-4 text-lg text-blue-100 max-w-2xl mx-auto">Comprehensive services designed to streamline operations, reduce costs, and help your business thrive with AI-powered efficiency.</p>
+        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#contact-form" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition duration-300 shadow-lg">Schedule Consultation</a>
+            <a href="#services" class="bg-transparent text-white font-semibold py-3 px-8 rounded-full border-2 border-white hover:bg-white/10 transition duration-300">Explore Services</a>
         </div>
     </div>
 </section>
 
-<section class="bg-white py-16">
-    <div class="container mx-auto px-4 text-center max-w-4xl">
-        <h2 class="text-3xl font-bold text-gray-900">Services That Drive Business Success</h2>
-        <p class="mt-4 text-gray-600">
-            From payment processing to cash management, our comprehensive suite of business services combines cutting-edge technology with personalized support to help your business operate more efficiently and profitably.
-        </p>
-    </div>
-</section>
-
-<section class="bg-gray-100 py-16">
+<!-- Payment Processing Section -->
+<section class="py-16 bg-white" id="services">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
+        <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900">Payment Processing Solutions</h2>
-            <p class="mt-2 text-gray-600">Accept payments anywhere with our comprehensive merchant services.</p>
+            <p class="mt-2 text-gray-600">Accept payments anywhere with competitive rates and next-day funding</p>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <img src="/assets/images/merchant-services-icon.png" alt="Credit Card Processing" class="h-12 w-12 mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Credit Card Processing</h3>
-                <p class="text-gray-600 text-sm mb-4">Accept all major credit and debit cards with competitive processing rates and next-day funding.</p>
-                <ul class="text-sm text-gray-600 space-y-1">
-                    <li>• Competitive processing rates</li>
-                    <li>• Next-day funding available</li>
-                    <li>• EMV chip and contactless payments</li>
-                    <li>• 24/7 customer support</li>
-                </ul>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Credit Card Processing -->
+            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="h-44 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-6">
+                    <img src="/assets/images/credit-card-processing.png" alt="Credit Card Processing" class="h-28 object-contain rounded-xl">
+                </div>
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-gray-900">Credit Card Processing</h3>
+                    <p class="text-sm text-gray-600 mt-2">Accept all major credit and debit cards with competitive rates.</p>
+                    <ul class="mt-3 space-y-1 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Next-day funding available</li>
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> EMV chip & contactless</li>
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> 24/7 support</li>
+                    </ul>
+                </div>
             </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <img src="/assets/images/mobile-banking-icon.png" alt="Mobile Payments" class="h-12 w-12 mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Mobile Payment Solutions</h3>
-                <p class="text-gray-600 text-sm mb-4">Accept payments on-the-go with our mobile card readers and payment apps.</p>
-                <ul class="text-sm text-gray-600 space-y-1">
-                    <li>• Mobile card readers</li>
-                    <li>• Smartphone payment apps</li>
-                    <li>• Inventory management integration</li>
-                    <li>• Real-time transaction reporting</li>
-                </ul>
+            <!-- Mobile Payments -->
+            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="h-44 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-6">
+                    <img src="/assets/images/mobile-pay-svcs.png" alt="Mobile Payments" class="h-28 object-contain rounded-xl">
+                </div>
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-gray-900">Mobile Payment Solutions</h3>
+                    <p class="text-sm text-gray-600 mt-2">Accept payments on-the-go with mobile card readers.</p>
+                    <ul class="mt-3 space-y-1 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Mobile card readers</li>
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Inventory integration</li>
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Real-time reporting</li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <img src="/assets/images/online-banking-icon.png" alt="Online Payments" class="h-12 w-12 mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Online Payment Gateway</h3>
-                <p class="text-gray-600 text-sm mb-4">Secure e-commerce payment processing for your online business with fraud protection.</p>
-                <ul class="text-sm text-gray-600 space-y-1">
-                    <li>• Secure payment gateway</li>
-                    <li>• Shopping cart integration</li>
-                    <li>• Fraud detection and prevention</li>
-                    <li>• Recurring billing options</li>
-                </ul>
+            <!-- Online Gateway -->
+            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="h-44 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-6">
+                    <img src="/assets/images/biz-online-pay-gtwy.png" alt="Online Payments" class="h-28 object-contain rounded-xl">
+                </div>
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-gray-900">Online Payment Gateway</h3>
+                    <p class="text-sm text-gray-600 mt-2">Secure e-commerce processing with fraud protection.</p>
+                    <ul class="mt-3 space-y-1 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Shopping cart integration</li>
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Fraud detection</li>
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Recurring billing</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-16 bg-white">
+<!-- Cash Management Section -->
+<section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
+        <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900">Cash Management Services</h2>
-            <p class="mt-2 text-gray-600">Streamline your business operations with our comprehensive cash management solutions.</p>
+            <p class="mt-2 text-gray-600">Streamline operations with comprehensive cash management solutions</p>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-gray-50 p-8 rounded-lg">
-                <img src="/assets/images/cash-management-icon.png" alt="ACH Services" class="h-12 w-12 mb-4">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">ACH Services</h3>
-                <p class="text-gray-600 mb-4">Automate your payroll, vendor payments, and collections with our ACH processing services.</p>
-                <ul class="text-sm text-gray-600 space-y-2">
-                    <li class="flex items-center">
-                        <img src="/assets/images/check-icon.png" alt="Check" class="h-4 w-4 mr-2">
-                        <span>Payroll direct deposit</span>
-                    </li>
-                    <li class="flex items-center">
-                        <img src="/assets/images/check-icon.png" alt="Check" class="h-4 w-4 mr-2">
-                        <span>Vendor payment automation</span>
-                    </li>
-                    <li class="flex items-center">
-                        <img src="/assets/images/check-icon.png" alt="Check" class="h-4 w-4 mr-2">
-                        <span>Customer collections</span>
-                    </li>
-                    <li class="flex items-center">
-                        <img src="/assets/images/check-icon.png" alt="Check" class="h-4 w-4 mr-2">
-                        <span>Same-day ACH available</span>
-                    </li>
-                </ul>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- ACH Services -->
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300">
+                <div class="flex items-start gap-4">
+                    <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <img src="/assets/images/cash-management-icon.png" alt="ACH" class="w-8 h-8">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900">ACH Services</h3>
+                        <p class="text-gray-600 text-sm mt-1">Automate payroll, vendor payments, and collections.</p>
+                        <ul class="mt-3 space-y-1 text-sm text-gray-600">
+                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Payroll direct deposit</li>
+                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Vendor payment automation</li>
+                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Same-day ACH available</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            
-            <div class="bg-gray-50 p-8 rounded-lg">
-                <img src="/assets/images/remote-deposit-icon.png" alt="Remote Deposit" class="h-12 w-12 mb-4">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Remote Deposit Capture</h3>
-                <p class="text-gray-600 mb-4">Deposit checks from your office with our secure remote deposit capture service.</p>
-                <ul class="text-sm text-gray-600 space-y-2">
-                    <li class="flex items-center">
-                        <img src="/assets/images/check-icon.png" alt="Check" class="h-4 w-4 mr-2">
-                        <span>Desktop and mobile options</span>
-                    </li>
-                    <li class="flex items-center">
-                        <img src="/assets/images/check-icon.png" alt="Check" class="h-4 w-4 mr-2">
-                        <span>Same-day availability</span>
-                    </li>
-                    <li class="flex items-center">
-                        <img src="/assets/images/check-icon.png" alt="Check" class="h-4 w-4 mr-2">
-                        <span>Fraud detection technology</span>
-                    </li>
-                    <li class="flex items-center">
-                        <img src="/assets/images/check-icon.png" alt="Check" class="h-4 w-4 mr-2">
-                        <span>Detailed reporting and tracking</span>
-                    </li>
-                </ul>
+            <!-- Remote Deposit -->
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300">
+                <div class="flex items-start gap-4">
+                    <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <img src="/assets/images/remote-deposit-icon.png" alt="Remote Deposit" class="w-8 h-8">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900">Remote Deposit Capture</h3>
+                        <p class="text-gray-600 text-sm mt-1">Deposit checks from your office securely.</p>
+                        <ul class="mt-3 space-y-1 text-sm text-gray-600">
+                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Desktop and mobile options</li>
+                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Same-day availability</li>
+                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Fraud detection technology</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-
-            <div class="bg-gray-50 p-8 rounded-lg">
-                <img src="/assets/images/bill-pay-icon.png" alt="Wire Transfers" class="h-12 w-12 mb-4">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Wire Transfer Services</h3>
-                <p class="text-gray-600 mb-4">Send and receive domestic and international wire transfers quickly and securely.</p>
-                <ul class="text-sm text-gray-600 space-y-2">
-                    <li class="flex items-center">
-                        <img src="/assets/images/check-icon.png" alt="Check" class="h-4 w-4 mr-2">
-                        <span>Domestic and international wires</span>
-                    </li>
-                    <li class="flex items-center">
-                        <img src="/assets/images/check-icon.png" alt="Check" class="h-4 w-4 mr-2">
-                        <span>Same-day processing</span>
-                    </li>
-                    <li class="flex items-center">
-                        <img src="/assets/images/check-icon.png" alt="Check" class="h-4 w-4 mr-2">
-                        <span>Competitive exchange rates</span>
-                    </li>
-                    <li class="flex items-center">
-                        <img src="/assets/images/check-icon.png" alt="Check" class="h-4 w-4 mr-2">
-                        <span>Online wire initiation</span>
-                    </li>
-                </ul>
+            <!-- Wire Transfers -->
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300">
+                <div class="flex items-start gap-4">
+                    <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <img src="/assets/images/bill-pay-icon.png" alt="Wire Transfers" class="w-8 h-8">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900">Wire Transfer Services</h3>
+                        <p class="text-gray-600 text-sm mt-1">Send and receive domestic and international wires.</p>
+                        <ul class="mt-3 space-y-1 text-sm text-gray-600">
+                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Same-day processing</li>
+                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Competitive exchange rates</li>
+                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Online wire initiation</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-
-            <div class="bg-gray-50 p-8 rounded-lg">
-                <img src="/assets/images/secure-protected-icon.png" alt="Positive Pay" class="h-12 w-12 mb-4">
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Positive Pay</h3>
-                <p class="text-gray-600 mb-4">Protect your business from check fraud with our advanced positive pay service.</p>
-                <ul class="text-sm text-gray-600 space-y-2">
-                    <li class="flex items-center">
-                        <img src="/assets/images/check-icon.png" alt="Check" class="h-4 w-4 mr-2">
-                        <span>Check fraud prevention</span>
-                    </li>
-                    <li class="flex items-center">
-                        <img src="/assets/images/check-icon.png" alt="Check" class="h-4 w-4 mr-2">
-                        <span>Exception reporting</span>
-                    </li>
-                    <li class="flex items-center">
-                        <img src="/assets/images/check-icon.png" alt="Check" class="h-4 w-4 mr-2">
-                        <span>Automated file uploads</span>
-                    </li>
-                    <li class="flex items-center">
-                        <img src="/assets/images/check-icon.png" alt="Check" class="h-4 w-4 mr-2">
-                        <span>Real-time alerts</span>
-                    </li>
-                </ul>
+            <!-- Positive Pay -->
+            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300">
+                <div class="flex items-start gap-4">
+                    <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <img src="/assets/images/secure-protected-icon.png" alt="Positive Pay" class="w-8 h-8">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900">Positive Pay</h3>
+                        <p class="text-gray-600 text-sm mt-1">Protect your business from check fraud.</p>
+                        <ul class="mt-3 space-y-1 text-sm text-gray-600">
+                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Check fraud prevention</li>
+                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Exception reporting</li>
+                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Real-time alerts</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-16 bg-gray-100">
-    <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Business Support Services</h2>
-            <p class="mt-2 text-gray-600">Additional services to help your business operate more efficiently.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                <img src="/assets/images/dedicated-support-icon.png" alt="Business Consulting" class="h-12 w-12 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Business Consulting</h3>
-                <p class="text-gray-600 text-sm">Expert guidance on financial planning, cash flow management, and business growth strategies.</p>
-            </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                <img src="/assets/images/customer-services-icon.png" alt="Payroll Services" class="h-12 w-12 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Payroll Services</h3>
-                <p class="text-gray-600 text-sm">Comprehensive payroll processing with tax filing, direct deposit, and employee self-service portals.</p>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                <img src="/assets/images/it-support-icon.png" alt="Technology Integration" class="h-12 w-12 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Technology Integration</h3>
-                <p class="text-gray-600 text-sm">Seamless integration with popular accounting software, ERP systems, and business applications.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
+<!-- Getting Started Steps -->
 <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Industry-Specific Solutions</h2>
-            <p class="mt-2 text-gray-600">Tailored services for specific business sectors and industries.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="text-center p-4">
-                <img src="/assets/images/business-services-icon.png" alt="Healthcare" class="h-12 w-12 mx-auto mb-3">
-                <h4 class="font-semibold text-gray-900 mb-2">Healthcare</h4>
-                <p class="text-sm text-gray-600">Specialized payment processing and compliance solutions for healthcare providers.</p>
-            </div>
-            
-            <div class="text-center p-4">
-                <img src="/assets/images/innovation-icon.png" alt="Technology" class="h-12 w-12 mx-auto mb-3">
-                <h4 class="font-semibold text-gray-900 mb-2">Technology</h4>
-                <p class="text-sm text-gray-600">Banking solutions designed for tech startups and established technology companies.</p>
-            </div>
-
-            <div class="text-center p-4">
-                <img src="/assets/images/business-checking-icon.png" alt="Retail" class="h-12 w-12 mx-auto mb-3">
-                <h4 class="font-semibold text-gray-900 mb-2">Retail</h4>
-                <p class="text-sm text-gray-600">Point-of-sale integration and inventory management solutions for retailers.</p>
-            </div>
-
-            <div class="text-center p-4">
-                <img src="/assets/images/community-support-icon.png" alt="Non-Profit" class="h-12 w-12 mx-auto mb-3">
-                <h4 class="font-semibold text-gray-900 mb-2">Non-Profit</h4>
-                <p class="text-sm text-gray-600">Specialized banking services and donation processing for non-profit organizations.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="py-16 bg-gray-100">
-    <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
+        <div class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900">Getting Started</h2>
-            <p class="mt-2 text-gray-600">Simple steps to access our comprehensive business services.</p>
+            <p class="mt-2 text-gray-600">Simple steps to access our business services</p>
         </div>
-        
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div class="text-center">
                 <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Consultation</h3>
-                <p class="text-sm text-gray-600">Schedule a consultation to discuss your business needs and goals.</p>
+                <h3 class="font-semibold text-gray-900 mb-2">Consultation</h3>
+                <p class="text-sm text-gray-600">Schedule a consultation to discuss your business needs.</p>
             </div>
             <div class="text-center">
                 <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Custom Solution</h3>
-                <p class="text-sm text-gray-600">We'll design a customized service package tailored to your business.</p>
+                <h3 class="font-semibold text-gray-900 mb-2">Custom Solution</h3>
+                <p class="text-sm text-gray-600">We design a service package tailored to your business.</p>
             </div>
             <div class="text-center">
                 <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Implementation</h3>
-                <p class="text-sm text-gray-600">Our team will handle setup and integration with your existing systems.</p>
+                <h3 class="font-semibold text-gray-900 mb-2">Implementation</h3>
+                <p class="text-sm text-gray-600">Our team handles setup and system integration.</p>
             </div>
             <div class="text-center">
                 <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Ongoing Support</h3>
-                <p class="text-sm text-gray-600">Receive dedicated support and account management for your business.</p>
+                <h3 class="font-semibold text-gray-900 mb-2">Ongoing Support</h3>
+                <p class="text-sm text-gray-600">Dedicated support and account management.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="bg-blue-600 py-16">
-    <div class="container mx-auto px-4 text-center text-white">
-        <h2 class="text-3xl md:text-4xl font-bold">Ready to Streamline Your Business Operations?</h2>
-        <p class="mt-4 text-lg max-w-2xl mx-auto opacity-90">
-            Partner with AI First bank and discover how our business services can help you operate more efficiently and profitably.
-        </p>
-        <div class="mt-8 flex justify-center space-x-4">
-            <button class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Schedule Consultation</button>
-            <a href="business-banking.html" class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Explore Business Banking</a>
+<!-- Contact Form -->
+<section class="py-16 bg-gray-50" id="contact-form">
+    <div class="container mx-auto px-4 max-w-2xl">
+        <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-2">Schedule a Consultation</h2>
+            <p class="text-center text-gray-600 mb-6">Tell us about your business needs</p>
+            <form id="services-form" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="svc-first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
+                        <input type="text" id="svc-first-name" name="svc-first-name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="svc-last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
+                        <input type="text" id="svc-last-name" name="svc-last-name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div>
+                    <label for="svc-business-name" class="block text-sm font-medium text-gray-700">Business Name *</label>
+                    <input type="text" id="svc-business-name" name="svc-business-name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="svc-email" class="block text-sm font-medium text-gray-700">Email *</label>
+                        <input type="email" id="svc-email" name="svc-email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="svc-phone" class="block text-sm font-medium text-gray-700">Phone *</label>
+                        <input type="tel" id="svc-phone" name="svc-phone" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+                <div>
+                    <label for="svc-interest" class="block text-sm font-medium text-gray-700">Services Interested In *</label>
+                    <select id="svc-interest" name="svc-interest" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">Select a service</option>
+                        <option value="payment-processing">Payment Processing</option>
+                        <option value="cash-management">Cash Management</option>
+                        <option value="payroll">Payroll Services</option>
+                        <option value="consulting">Business Consulting</option>
+                        <option value="multiple">Multiple Services</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="svc-message" class="block text-sm font-medium text-gray-700">Tell us about your needs</label>
+                    <textarea id="svc-message" name="svc-message" rows="3" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition duration-300">Request Consultation</button>
+                <p class="text-center text-xs text-gray-500">Demo site - do not enter real information.</p>
+            </form>
+            <div id="svc-success" class="mt-6 text-center hidden">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                    <p class="text-green-800 font-medium">Request submitted!</p>
+                    <p class="text-blue-600 text-sm mt-1">This is a demo - no data was submitted.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+<!-- CTA Section -->
+<section class="py-16 bg-blue-600">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Streamline Your Business?</h2>
+        <p class="text-blue-100 max-w-2xl mx-auto mb-8">Partner with AI First Bank and discover how our business services can help you operate more efficiently.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#contact-form" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition duration-300">Schedule Consultation</a>
+            <a href="/aifirst-bank/business/business-banking.html" class="bg-transparent text-white font-semibold py-3 px-8 rounded-full border-2 border-white hover:bg-white/10 transition duration-300">Explore Business Banking</a>
+        </div>
+    </div>
+</section>
+
+<script>
+document.getElementById('services-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('svc-success').classList.remove('hidden');
+    this.reset();
+});
+</script>

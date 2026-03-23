@@ -69,9 +69,8 @@
                     <div class="absolute hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                         <div class="py-1" role="menu">
                             <a href="{{ base_path }}/business/business-banking.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Banking</a>
-                            <a href="{{ base_path }}/business/business-services.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Services</a>
                             <a href="{{ base_path }}/business/business-loans.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Loans</a>
-                            <a href="{{ base_path }}/business/business-rates.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Rates & Services</a>
+                            <a href="{{ base_path }}/business/business-services.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Services</a>
                         </div>
                     </div>
                 </div>
@@ -272,7 +271,7 @@
     </main>
 
     <footer class="bg-gray-900 text-gray-300 py-12">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-8">
             <div>
                 <a href="{{ base_path }}/index.html" class="flex items-center space-x-2 text-white">
                     <img src="{{ logo_image }}" alt="{{ site_name_full }} Logo" class="w-8 h-8">
@@ -285,29 +284,35 @@
                 <p class="mt-2 text-sm text-gray-400">Demo Site - Not a real financial institution.</p>
             </div>
             <div>
-                <h4 class="font-semibold text-white mb-2">Accounts</h4>
+                <h4 class="font-semibold text-white mb-2">Personal</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="{{ base_path }}/personal/personal-banking.html" class="hover:text-white transition duration-300">Checking Accounts</a></li>
-                    <li><a href="{{ base_path }}/personal/personal-banking.html" class="hover:text-white transition duration-300">Savings Accounts</a></li>
-                    <li><a href="{{ base_path }}/personal/personal-banking.html" class="hover:text-white transition duration-300">CDs & IRAs</a></li>
-                    <li><a href="{{ base_path }}/business/business-banking.html" class="hover:text-white transition duration-300">Business Accounts</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-semibold text-white mb-2">Loans</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="{{ base_path }}/personal/personal-auto-loan.html" class="hover:text-white transition duration-300">Auto Loans</a></li>
+                    <li><a href="{{ base_path }}/personal/personal-banking.html" class="hover:text-white transition duration-300">Checking, Savings & CDs</a></li>
+                    <li><a href="{{ base_path }}/personal/credit-cards.html" class="hover:text-white transition duration-300">Credit Cards</a></li>
                     <li><a href="{{ base_path }}/personal/personal-home-loan.html" class="hover:text-white transition duration-300">Home Loans</a></li>
-                    <li><a href="{{ base_path }}/personal/personal-loans.html" class="hover:text-white transition duration-300">Personal Loans</a></li>
-                    <li><a href="{{ base_path }}/business/business-loans.html" class="hover:text-white transition duration-300">Business Loans</a></li>
+                    <li><a href="{{ base_path }}/personal/personal-auto-loan.html" class="hover:text-white transition duration-300">Auto Loans</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-semibold text-white mb-2">Connect</h4>
+                <h4 class="font-semibold text-white mb-2">Business</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="{{ base_path }}/business/business-banking.html" class="hover:text-white transition duration-300">Banking</a></li>
+                    <li><a href="{{ base_path }}/business/business-loans.html" class="hover:text-white transition duration-300">Loans</a></li>
+                    <li><a href="{{ base_path }}/business/business-services.html" class="hover:text-white transition duration-300">Services</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-2">Resources</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="{{ base_path }}/resources/help-center.html" class="hover:text-white transition duration-300">Help Center</a></li>
+                    <li><a href="{{ base_path }}/resources/learn.html" class="hover:text-white transition duration-300">Learn</a></li>
+                    <li><a href="{{ base_path }}/resources/tools.html" class="hover:text-white transition duration-300">Tools</a></li>
+                    <li><a href="{{ base_path }}/about.html" class="hover:text-white transition duration-300">About Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-white mb-2">Legal</h4>
                 <ul class="space-y-2 text-sm">
                     <li><a href="{{ base_path }}/contact.html" class="hover:text-white transition duration-300">Contact Us</a></li>
-                    <li><a href="{{ base_path }}/about.html" class="hover:text-white transition duration-300">About Us</a></li>
-                    <li><a href="{{ base_path }}/resources/help-center.html" class="hover:text-white transition duration-300">Help Center</a></li>
                     <li><a href="{{ base_path }}/privacy-policy.html" class="hover:text-white transition duration-300">Privacy Policy</a></li>
                     <li><a href="{{ base_path }}/terms-of-use.html" class="hover:text-white transition duration-300">Terms of Use</a></li>
                 </ul>
