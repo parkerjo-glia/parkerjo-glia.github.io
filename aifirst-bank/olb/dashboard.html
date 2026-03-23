@@ -111,7 +111,7 @@ function createAccountCard(account) {
     card.className = 'bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition duration-300';
     
     const isLoan = account.balance < 0;
-    const balanceColor = isLoan ? 'text-red-600' : 'text-green-600';
+    const balanceColor = isLoan ? 'text-red-600' : 'text-blue-600';
     const balanceLabel = isLoan ? 'Balance Owed' : 'Available Balance';
     
     card.innerHTML = `
@@ -187,7 +187,7 @@ function displayRecentTransactions(transactions) {
         const transactionElement = document.createElement('div');
         transactionElement.className = 'flex justify-between items-center py-3 border-b border-gray-100 last:border-b-0';
         
-        const amountColor = transaction.amount >= 0 ? 'text-green-600' : 'text-red-600';
+        const amountColor = transaction.amount >= 0 ? 'text-blue-600' : 'text-red-600';
         const amountSign = transaction.amount >= 0 ? '+' : '';
         
         transactionElement.innerHTML = `
@@ -211,11 +211,11 @@ function displayRecentTransactions(transactions) {
 
 // Navigation functions
 function viewAccountDetails(accountId) {
-    window.location.href = `/olb/account-details.html?id=${accountId}`;
+    window.location.href = `/aifirst-bank/olb/account-details.html?id=${accountId}`;
 }
 
 function initiateTransfer(fromAccountId) {
-    window.location.href = `/olb/transfer.html?from=${fromAccountId}`;
+    window.location.href = `/aifirst-bank/olb/transfer.html?from=${fromAccountId}`;
 }
 
 // Load data when page loads

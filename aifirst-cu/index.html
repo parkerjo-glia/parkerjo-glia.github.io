@@ -4,86 +4,202 @@ site_type: cu
 base_path: /aifirst-cu
 ---
 
-<section class="bg-gradient-to-br from-blue-100 to-gray-200 py-20 md:py-32">
-    <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-            Responsible Finance for an <br class="hidden md:inline"> AI-Powered World.
+<!-- Hero Section with Background Image -->
+<section class="relative bg-gradient-to-br from-blue-600 to-blue-800 py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+        <img src="/assets/images/hero-background.png" alt="" class="w-full h-full object-cover">
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+            Banking That Puts <br class="hidden md:inline"> Members First.
         </h1>
-        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            A demo credit union site for Glia integration testing, showcasing cutting-edge, ethical technology.
+        <p class="mt-4 text-lg md:text-xl text-blue-100 max-w-2xl mx-auto">
+            Join a community of members who enjoy better rates, lower fees, and AI-powered service.
         </p>
-        <div class="mt-8 flex justify-center space-x-4">
-            <a href="/aifirst-cu/join.html" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg">Become a Member</a>
-            <a href="/aifirst-cu/personal/personal-banking.html" class="bg-white text-blue-600 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition duration-300 border border-gray-300">Explore Accounts</a>
+        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="/aifirst-cu/join.html" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition duration-300 shadow-lg">Become a Member</a>
+            <a href="/aifirst-cu/personal/personal-banking.html" class="bg-transparent text-white font-semibold py-3 px-8 rounded-full border-2 border-white hover:bg-white/10 transition duration-300">Explore Accounts</a>
         </div>
     </div>
 </section>
 
-<section class="bg-white py-16">
-    <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold text-gray-900">Your Trust is Our Technology</h2>
-        <p class="mt-2 text-gray-600">We leverage AI to protect your assets and enhance your financial well-being, securely and ethically.</p>
-        <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition duration-300 hover:shadow-lg">
-                <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mx-auto">
-                    <img src="/assets/images/glia-demo-icon.png" alt="Demo Site" class="w-12 h-12 text-blue-600">
-                </div>
-                <h3 class="mt-4 text-xl font-semibold text-gray-900">Demo Site</h3>
-                <p class="mt-2 text-gray-500">This is a demonstration site for Glia integration testing purposes only.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition duration-300 hover:shadow-lg">
-                <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mx-auto">
-                    <img src="/assets/images/ai-security-icon.png" alt="AI Security" class="w-12 h-12 text-blue-600">
-                </div>
-                <h3 class="mt-4 text-xl font-semibold text-gray-900">AI-Powered Security</h3>
-                <p class="mt-2 text-gray-500">Our systems use advanced AI to detect fraud and protect your data in real-time.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition duration-300 hover:shadow-lg">
-                <div class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 text-blue-600 mx-auto">
-                    <img src="/assets/images/transparent-ethical-icon.png" alt="Transparent & Ethical" class="w-12 h-12 text-blue-600">
-                </div>
-                <h3 class="mt-4 text-xl font-semibold text-gray-900">Transparent & Ethical</h3>
-                <p class="mt-2 text-gray-500">We are committed to the responsible use of AI, putting your privacy and interests first.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="py-16 bg-gray-100">
+<!-- Featured Products with Card Images -->
+<section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-        <div class="text-center">
-            <h2 class="text-3xl font-bold text-gray-900">Your Financial Future, Redefined.</h2>
-            <p class="mt-2 text-gray-600 max-w-3xl mx-auto">Explore our member-first products and services designed for the modern financial landscape.</p>
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">Popular Products</h2>
+            <p class="mt-2 text-gray-600">Find the right account for your financial goals</p>
         </div>
-        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-                <img src="/assets/images/smart-savings-icon.png" alt="Smart Savings" class="w-12 h-12 text-blue-600">
-                <h3 class="mt-4 text-xl font-semibold text-gray-900">Smart Savings</h3>
-                <p class="mt-2 text-gray-500">AI-driven insights help you save more, effortlessly. Automate your savings goals based on your spending habits.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="/aifirst-cu/personal/personal-banking.html" class="group bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center">
+                    <img src="/assets/images/checking-card.png" alt="Checking Account" class="h-32 object-contain transform group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-gray-900 text-lg">Free Checking</h3>
+                    <p class="text-sm text-gray-600 mt-1">No monthly fees, no minimums</p>
+                    <span class="text-blue-600 text-sm font-medium mt-2 inline-block">Learn More →</span>
+                </div>
+            </a>
+            <a href="/aifirst-cu/personal/personal-banking.html" class="group bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                    <img src="/assets/images/savings-card.png" alt="Savings Account" class="h-32 object-contain transform group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-gray-900 text-lg">High-Yield Savings</h3>
+                    <p class="text-sm text-gray-600 mt-1">Earn 4.50% APY</p>
+                    <span class="text-blue-600 text-sm font-medium mt-2 inline-block">Learn More →</span>
+                </div>
+            </a>
+            <a href="/aifirst-cu/personal/personal-banking.html#credit-cards" class="group bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-blue-700 to-blue-800 flex items-center justify-center">
+                    <img src="/assets/images/rewards-credit-card.png" alt="Credit Card" class="h-32 object-contain transform group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-gray-900 text-lg">Rewards Credit Card</h3>
+                    <p class="text-sm text-gray-600 mt-1">2% cash back on everything</p>
+                    <span class="text-blue-600 text-sm font-medium mt-2 inline-block">Learn More →</span>
+                </div>
+            </a>
+            <a href="/aifirst-cu/personal/personal-auto-loan.html" class="group bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-500 flex items-center justify-center">
+                    <img src="/assets/images/auto-loan-car.png" alt="Auto Loan" class="h-32 object-contain transform group-hover:scale-105 transition duration-300">
+                </div>
+                <div class="p-5">
+                    <h3 class="font-bold text-gray-900 text-lg">Auto Loans</h3>
+                    <p class="text-sm text-gray-600 mt-1">Rates as low as 5.49% APR</p>
+                    <span class="text-blue-600 text-sm font-medium mt-2 inline-block">Learn More →</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us - Visual Section -->
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <img src="/assets/images/family-banking.png" alt="Family enjoying financial freedom" class="rounded-2xl shadow-xl w-full">
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-                <img src="/assets/images/ethical-lending-icon.png" alt="Ethical Lending" class="w-12 h-12 text-blue-600">
-                <h3 class="mt-4 text-xl font-semibold text-gray-900">Ethical Lending</h3>
-                <p class="mt-2 text-gray-500">Fair and transparent loan applications. Our AI models analyze risk responsibly, offering competitive rates.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-                <img src="/assets/images/seamless-integrations-icon.png" alt="Seamless Integrations" class="w-12 h-12 text-blue-600">
-                <h3 class="mt-4 text-xl font-semibold text-gray-900">Seamless Integrations</h3>
-                <p class="mt-2 text-gray-500">Connect your accounts to your favorite financial tools and services with a simple, secure API.</p>
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Why Members Love Us</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <img src="/assets/images/member-owned-icon.png" alt="" class="w-10 h-10 flex-shrink-0">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Member-Owned</h3>
+                            <p class="text-gray-600">You're not just a customer—you're an owner. Our profits go back to you through better rates and lower fees.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <img src="/assets/images/competitive-rates-icon.png" alt="" class="w-10 h-10 flex-shrink-0">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Better Rates</h3>
+                            <p class="text-gray-600">Higher savings rates and lower loan rates than traditional banks. Your money works harder here.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <img src="/assets/images/ai-security-icon.png" alt="" class="w-10 h-10 flex-shrink-0">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">AI-Powered Security</h3>
+                            <p class="text-gray-600">Advanced fraud detection protects your accounts 24/7 while smart tools help you manage your money.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="/aifirst-cu/about.html" class="inline-block mt-8 bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300">Learn About Us</a>
             </div>
         </div>
     </div>
 </section>
 
-<section class="bg-blue-600 py-16">
-    <div class="container mx-auto px-4 text-center text-white">
-        <h2 class="text-3xl md:text-4xl font-bold">Ready to Explore the Demo?</h2>
-        <p class="mt-4 text-lg max-w-2xl mx-auto opacity-90">
-            Experience the AI First Credit Union Demo and see how Glia integration enhances the member experience.
-        </p>
-        <div class="mt-8 flex justify-center space-x-4">
-            <a href="/aifirst-cu/join.html" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Become a Member</a>
-            <a href="/aifirst-cu/resources/help-center.html" class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Learn More</a>
+<!-- Mobile Banking Promo -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1">
+                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wide">Mobile Banking</span>
+                <h2 class="text-3xl font-bold text-gray-900 mt-2 mb-4">Bank Anytime, Anywhere</h2>
+                <p class="text-gray-600 mb-6">Manage your accounts, deposit checks, transfer money, and pay bills—all from your phone. Our award-winning app puts your credit union in your pocket.</p>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-3">
+                        <img src="/assets/images/check-icon.png" alt="" class="w-5 h-5">
+                        <span class="text-gray-700">Mobile check deposit</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <img src="/assets/images/check-icon.png" alt="" class="w-5 h-5">
+                        <span class="text-gray-700">Instant transfers between accounts</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <img src="/assets/images/check-icon.png" alt="" class="w-5 h-5">
+                        <span class="text-gray-700">Bill pay with reminders</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <img src="/assets/images/check-icon.png" alt="" class="w-5 h-5">
+                        <span class="text-gray-700">Card controls & alerts</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="order-1 lg:order-2 flex justify-center">
+                <img src="/assets/images/mobile-app-mockup.png" alt="Mobile Banking App" class="rounded-2xl shadow-xl w-full">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-16 bg-blue-600">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-white text-center mb-12">What Our Members Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
+                <div class="flex items-center gap-1 mb-4">
+                    <span class="text-yellow-400">★★★★★</span>
+                </div>
+                <p class="text-blue-100 mb-4">"Switched from a big bank and couldn't be happier. The rates are so much better and the service is actually personal."</p>
+                <div class="flex items-center gap-3">
+                    <div>
+                        <p class="font-semibold">Sarah M.</p>
+                        <p class="text-sm text-blue-200">Member since 2021</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
+                <div class="flex items-center gap-1 mb-4">
+                    <span class="text-yellow-400">★★★★★</span>
+                </div>
+                <p class="text-blue-100 mb-4">"Got my auto loan here at an amazing rate. The process was quick and the team made it so easy."</p>
+                <div class="flex items-center gap-3">
+                    <div>
+                        <p class="font-semibold">James T.</p>
+                        <p class="text-sm text-blue-200">Member since 2019</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
+                <div class="flex items-center gap-1 mb-4">
+                    <span class="text-yellow-400">★★★★★</span>
+                </div>
+                <p class="text-blue-100 mb-4">"The mobile app is fantastic and their customer service is always helpful. Truly feel like they care about members."</p>
+                <div class="flex items-center gap-3">
+                    <div>
+                        <p class="font-semibold">Maria L.</p>
+                        <p class="text-sm text-blue-200">Member since 2020</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 bg-gray-900">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Join?</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto mb-8">Open your account in minutes and start enjoying the benefits of member ownership.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="/aifirst-cu/join.html" class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-blue-700 transition duration-300">Become a Member</a>
+            <a href="/aifirst-cu/contact.html" class="bg-transparent text-white font-semibold py-3 px-8 rounded-full border-2 border-gray-600 hover:border-gray-400 transition duration-300">Contact Us</a>
         </div>
     </div>
 </section>
