@@ -4,250 +4,288 @@ site_type: bank
 base_path: /aifirst-bank
 ---
 
-<section class="bg-gradient-to-br from-blue-100 to-white py-20 md:py-32">
-    <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-            Banking Built for Business Success.
-        </h1>
-        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Empower your business with intelligent banking solutions, competitive rates, and AI-powered insights that help you make smarter financial decisions.
-        </p>
-        <div class="mt-8 flex justify-center space-x-4">
-            <button class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg" onclick="document.getElementById('apply').scrollIntoView({behavior: 'smooth'})">Open Business Account</button>
-            <a href="#products" class="bg-white text-blue-600 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition duration-300 border border-gray-300">Explore Products</a>
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-blue-600 to-blue-800 py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+        <img src="/assets/images/business-hero-bg.png" alt="" class="w-full h-full object-cover">
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">Business Banking That Works for You</h1>
+        <p class="mt-4 text-lg text-blue-100 max-w-2xl mx-auto">From startups to enterprises, find the perfect accounts with competitive rates and AI-powered insights.</p>
+        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#apply" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition duration-300 shadow-lg">Open Business Account</a>
+            <a href="#products" class="bg-transparent text-white font-semibold py-3 px-8 rounded-full border-2 border-white hover:bg-white/10 transition duration-300">Compare Accounts</a>
         </div>
     </div>
 </section>
 
-<section class="bg-white py-16">
-    <div class="container mx-auto px-4 text-center max-w-4xl">
-        <h2 class="text-3xl font-bold text-gray-900">Your Business Partner in Growth</h2>
-        <p class="mt-4 text-gray-600">
-            From startups to established enterprises, AI First bank provides the financial tools and expertise your business needs to thrive. Our AI-enhanced platform offers real-time insights, automated bookkeeping integration, and personalized financial guidance to help you focus on what matters most - growing your business.
-        </p>
-    </div>
-</section>
-
-<section class="bg-gray-100 py-16">
+<!-- Business Account Products -->
+<section class="py-16 bg-white" id="products">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-900">Why Businesses Choose AI First</h2>
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">Business Accounts</h2>
+            <p class="mt-2 text-gray-600">Choose the accounts that fit your business needs</p>
         </div>
-        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="p-6 bg-white rounded-lg shadow-md flex flex-col items-center text-center">
-                <img src="/assets/images/smart-insights-icon.png" alt="Smart Insights" class="h-12 w-12 mb-4">
-                <h3 class="text-xl font-semibold text-gray-900">Smart Financial Insights</h3>
-                <p class="mt-2 text-gray-600">AI-powered analytics provide actionable insights into your cash flow, spending patterns, and growth opportunities.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Free Business Checking -->
+            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="h-44 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-6">
+                    <img src="/assets/images/free-business-checking.png" alt="Free Business Checking" class="h-28 object-contain rounded-xl">
+                </div>
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-gray-900">Free Business Checking</h3>
+                    <p class="text-2xl font-bold text-blue-600 mt-2">$0 <span class="text-sm font-normal text-gray-500">monthly fee</span></p>
+                    <ul class="mt-3 space-y-1 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> No minimum balance</li>
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> 200 free transactions/mo</li>
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Free business debit card</li>
+                    </ul>
+                    <button class="w-full mt-4 bg-blue-600 text-white py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition text-sm">Open Account</button>
+                </div>
             </div>
-            <div class="p-6 bg-white rounded-lg shadow-md flex flex-col items-center text-center">
-                <img src="/assets/images/dedicated-support-icon.png" alt="Dedicated Support" class="h-12 w-12 mb-4">
-                <h3 class="text-xl font-semibold text-gray-900">Dedicated Business Support</h3>
-                <p class="mt-2 text-gray-600">Work with experienced business banking specialists who understand your industry and goals.</p>
+            <!-- Small Business Checking -->
+            <div class="bg-white rounded-xl shadow-lg border-2 border-blue-500 overflow-hidden hover:shadow-xl transition duration-300 relative">
+                <div class="absolute top-4 right-4 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full shadow-md">POPULAR</div>
+                <div class="h-44 bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center p-6">
+                    <img src="/assets/images/small-business-checking.png" alt="Small Business Checking" class="h-28 object-contain rounded-xl">
+                </div>
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-gray-900">Small Business Checking</h3>
+                    <p class="text-2xl font-bold text-blue-600 mt-2">$0 <span class="text-sm font-normal text-gray-500">with $5K balance*</span></p>
+                    <ul class="mt-3 space-y-1 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> 500 free transactions/mo</li>
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Earns 0.10% APY</li>
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> 5 free wire transfers/mo</li>
+                    </ul>
+                    <button class="w-full mt-4 bg-blue-600 text-white py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition text-sm">Open Account</button>
+                </div>
             </div>
-            <div class="p-6 bg-white rounded-lg shadow-md flex flex-col items-center text-center">
-                <img src="/assets/images/seamless-integrations-icon.png" alt="Seamless Integration" class="h-12 w-12 mb-4">
-                <h3 class="text-xl font-semibold text-gray-900">Seamless Integrations</h3>
-                <p class="mt-2 text-gray-600">Connect with popular accounting software, payroll systems, and business tools for streamlined operations.</p>
+            <!-- Enterprise Checking -->
+            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="h-44 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-6">
+                    <img src="/assets/images/enterprise-checking.png" alt="Enterprise Checking" class="h-28 object-contain rounded-xl">
+                </div>
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-gray-900">Enterprise Checking</h3>
+                    <p class="text-2xl font-bold text-blue-600 mt-2">$0 <span class="text-sm font-normal text-gray-500">with $25K balance*</span></p>
+                    <ul class="mt-3 space-y-1 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Unlimited transactions</li>
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Earns 0.25% APY</li>
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Dedicated account manager</li>
+                    </ul>
+                    <button class="w-full mt-4 bg-blue-600 text-white py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition text-sm">Open Account</button>
+                </div>
+            </div>
+            <!-- Business Savings -->
+            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="h-44 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-6">
+                    <img src="/assets/images/business-savings.png" alt="Business Savings" class="h-28 object-contain rounded-xl">
+                </div>
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-gray-900">Business Savings</h3>
+                    <p class="text-2xl font-bold text-blue-600 mt-2">4.00% <span class="text-sm font-normal text-gray-500">APY*</span></p>
+                    <ul class="mt-3 space-y-1 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> No minimum balance</li>
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> No monthly fees</li>
+                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Easy transfers to checking</li>
+                    </ul>
+                    <button class="w-full mt-4 bg-blue-600 text-white py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition text-sm">Open Account</button>
+                </div>
             </div>
         </div>
+        <p class="text-center text-sm text-gray-500 mt-6">*Fee waived with minimum daily balance. APY = Annual Percentage Yield, subject to change.</p>
     </div>
 </section>
 
-<section class="py-16 bg-gray-50" id="products">
+<!-- Why Choose Us -->
+<section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Business Banking Products</h2>
-            <p class="mt-2 text-gray-600">Comprehensive banking solutions designed for businesses of all sizes.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                <img src="/assets/images/business-checking-icon.png" alt="Business Checking" class="h-12 w-12 mb-4">
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">Business Checking</h3>
-                <p class="text-gray-600 text-sm mb-4">Feature-rich checking accounts with no monthly fees for qualifying balances and unlimited transactions.</p>
-                <ul class="text-sm text-gray-600 mb-6 space-y-1">
-                    <li>• No monthly maintenance fees*</li>
-                    <li>• Unlimited transactions</li>
-                    <li>• Mobile and online banking</li>
-                    <li>• Business debit card</li>
-                </ul>
-                <a href="#" class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300">Open Account</a>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <img src="/assets/images/business-team.png" alt="Business team working together" class="rounded-2xl shadow-xl w-full">
             </div>
-            
-            <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                <img src="/assets/images/business-savings-icon.png" alt="Business Savings" class="h-12 w-12 mb-4">
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">Business Savings</h3>
-                <p class="text-gray-600 text-sm mb-4">Earn competitive interest on your business reserves while maintaining easy access to your funds.</p>
-                <ul class="text-sm text-gray-600 mb-6 space-y-1">
-                    <li>• Competitive interest rates</li>
-                    <li>• No minimum balance</li>
-                    <li>• Secure account protection</li>
-                    <li>• Online account management</li>
-                </ul>
-                <a href="#" class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300">Open Account</a>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                <img src="/assets/images/business-cd-icon.png" alt="Business CDs" class="h-12 w-12 mb-4">
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">Business CDs</h3>
-                <p class="text-gray-600 text-sm mb-4">Lock in guaranteed returns with our business certificates of deposit, perfect for surplus cash management.</p>
-                <ul class="text-sm text-gray-600 mb-6 space-y-1">
-                    <li>• Terms from 3 months to 5 years</li>
-                    <li>• Guaranteed fixed rates</li>
-                    <li>• Minimum deposit $1,000</li>
-                    <li>• Automatic renewal options</li>
-                </ul>
-                <a href="#" class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300">Open Account</a>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                <img src="/assets/images/merchant-services-icon.png" alt="Merchant Services" class="h-12 w-12 mb-4">
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">Merchant Services</h3>
-                <p class="text-gray-600 text-sm mb-4">Accept payments anywhere with our comprehensive merchant services and point-of-sale solutions.</p>
-                <ul class="text-sm text-gray-600 mb-6 space-y-1">
-                    <li>• Credit and debit card processing</li>
-                    <li>• Mobile payment solutions</li>
-                    <li>• Online payment gateway</li>
-                    <li>• Competitive processing rates</li>
-                </ul>
-                <a href="#" class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300">Learn More</a>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                <img src="/assets/images/cash-management-icon.png" alt="Cash Management" class="h-12 w-12 mb-4">
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">Cash Management</h3>
-                <p class="text-gray-600 text-sm mb-4">Streamline your business operations with automated cash management and treasury services.</p>
-                <ul class="text-sm text-gray-600 mb-6 space-y-1">
-                    <li>• ACH origination and receipt</li>
-                    <li>• Wire transfer services</li>
-                    <li>• Remote deposit capture</li>
-                    <li>• Account reconciliation</li>
-                </ul>
-                <a href="#" class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300">Learn More</a>
-            </div>
-
-            <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-                <img src="/assets/images/business-credit-card-icon.png" alt="Business Credit Cards" class="h-12 w-12 mb-4">
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">Business Credit Cards</h3>
-                <p class="text-gray-600 text-sm mb-4">Manage expenses and build business credit with our rewards-earning business credit cards.</p>
-                <ul class="text-sm text-gray-600 mb-6 space-y-1">
-                    <li>• Competitive interest rates</li>
-                    <li>• Rewards on business purchases</li>
-                    <li>• Expense management tools</li>
-                    <li>• No annual fee options</li>
-                </ul>
-                <a href="#" class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300">Apply Now</a>
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Why Customers Choose Us for Business Banking</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <img src="/assets/images/competitive-rates-icon.png" alt="" class="w-10 h-10 flex-shrink-0">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Competitive Rates & Low Fees</h3>
+                            <p class="text-gray-600">We offer some of the most competitive business banking rates with transparent, low fees.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <img src="/assets/images/smart-insights-icon.png" alt="" class="w-10 h-10 flex-shrink-0">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">AI-Powered Insights</h3>
+                            <p class="text-gray-600">Get real-time cash flow analysis, spending insights, and personalized recommendations to grow your business.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <img src="/assets/images/dedicated-support-icon.png" alt="" class="w-10 h-10 flex-shrink-0">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Dedicated Business Support</h3>
+                            <p class="text-gray-600">Work with experienced business banking specialists who understand your industry and goals.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <p class="text-center text-sm text-gray-500 mt-8">*Monthly maintenance fees may apply based on account type and balance requirements.</p>
     </div>
 </section>
 
+<!-- Comparison Table -->
 <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Digital Banking Features</h2>
-            <p class="mt-2 text-gray-600">Modern tools to manage your business finances efficiently.</p>
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">Compare Accounts</h2>
+            <p class="mt-2 text-gray-600">See all features side by side</p>
         </div>
-        
+        <div class="overflow-x-auto">
+            <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
+                <thead class="bg-gray-100">
+                    <tr>
+                        <th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">Feature</th>
+                        <th class="px-6 py-4 text-center text-sm font-semibold text-blue-600">Free Business</th>
+                        <th class="px-6 py-4 text-center text-sm font-semibold text-blue-600">Small Business</th>
+                        <th class="px-6 py-4 text-center text-sm font-semibold text-blue-600">Enterprise</th>
+                        <th class="px-6 py-4 text-center text-sm font-semibold text-blue-600">Savings</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    <tr>
+                        <td class="px-6 py-4 text-sm text-gray-700">Monthly Fee</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">$0</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">$0 or $15*</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">$0 or $35*</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">$0</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                        <td class="px-6 py-4 text-sm text-gray-700">Minimum Balance</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">None</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">$5,000</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">$25,000</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">None</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 text-sm text-gray-700">Monthly Transactions</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">200 free</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">500 free</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">Unlimited</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">6/month</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                        <td class="px-6 py-4 text-sm text-gray-700">Interest Rate (APY)</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">—</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">0.10%</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">0.25%</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">4.00%</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 text-sm text-gray-700">Wire Transfers</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">$25 each</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">5 free/month</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">Unlimited free</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">—</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                        <td class="px-6 py-4 text-sm text-gray-700">Debit Card</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">✓</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">✓</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">✓</td>
+                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="text-center text-sm text-gray-500 mt-4">*Fee waived with minimum daily balance requirement.</p>
+    </div>
+</section>
+
+<!-- Digital Features -->
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">All Accounts Include</h2>
+            <p class="mt-2 text-gray-600">Powerful digital tools to manage your business</p>
+        </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="text-center p-6">
-                <img src="/assets/images/mobile-banking-icon.png" alt="Mobile Banking" class="h-16 w-16 mx-auto mb-4">
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Mobile Banking</h3>
-                <p class="text-sm text-gray-600">Bank on-the-go with our secure mobile app featuring biometric login and real-time notifications.</p>
+            <div class="text-center p-6 bg-white rounded-xl shadow-md">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <img src="/assets/images/mobile-banking-icon.png" alt="" class="w-8 h-8">
+                </div>
+                <h3 class="font-semibold text-gray-900 mb-2">Mobile Banking</h3>
+                <p class="text-sm text-gray-600">Manage accounts, deposit checks, and pay bills from anywhere.</p>
             </div>
-            <div class="text-center p-6">
-                <img src="/assets/images/online-banking-icon.png" alt="Online Banking" class="h-16 w-16 mx-auto mb-4">
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Online Banking</h3>
-                <p class="text-sm text-gray-600">Comprehensive online platform with account management, transfers, and detailed reporting.</p>
+            <div class="text-center p-6 bg-white rounded-xl shadow-md">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <img src="/assets/images/online-banking-icon.png" alt="" class="w-8 h-8">
+                </div>
+                <h3 class="font-semibold text-gray-900 mb-2">Online Banking</h3>
+                <p class="text-sm text-gray-600">Full-featured platform with reporting and account management.</p>
             </div>
-            <div class="text-center p-6">
-                <img src="/assets/images/remote-deposit-icon.png" alt="Remote Deposit" class="h-16 w-16 mx-auto mb-4">
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Remote Deposit</h3>
-                <p class="text-sm text-gray-600">Deposit checks instantly using your smartphone or desktop scanner from anywhere.</p>
+            <div class="text-center p-6 bg-white rounded-xl shadow-md">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <img src="/assets/images/bill-pay-icon.png" alt="" class="w-8 h-8">
+                </div>
+                <h3 class="font-semibold text-gray-900 mb-2">Business Bill Pay</h3>
+                <p class="text-sm text-gray-600">Schedule and automate vendor payments securely.</p>
             </div>
-            <div class="text-center p-6">
-                <img src="/assets/images/bill-pay-icon.png" alt="Bill Pay" class="h-16 w-16 mx-auto mb-4">
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Business Bill Pay</h3>
-                <p class="text-sm text-gray-600">Schedule and manage vendor payments with our secure online bill pay service.</p>
+            <div class="text-center p-6 bg-white rounded-xl shadow-md">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <img src="/assets/images/seamless-integrations-icon.png" alt="" class="w-8 h-8">
+                </div>
+                <h3 class="font-semibold text-gray-900 mb-2">QuickBooks Sync</h3>
+                <p class="text-sm text-gray-600">Automatic integration with popular accounting software.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-16 bg-gray-100" id="apply">
+<!-- Application Form -->
+<section class="py-16 bg-white" id="apply">
     <div class="container mx-auto px-4 max-w-2xl">
-        <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+        <div class="bg-gray-50 p-8 rounded-xl shadow-lg border border-gray-200">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-2">Open a Business Account</h2>
-            <p class="text-center text-gray-600 mb-6">Complete the form below to get started with your business account.</p>
-            <form id="business-account-form" class="space-y-6">
+            <p class="text-center text-gray-600 mb-6">Get started in minutes</p>
+            <form id="business-checking-form" class="space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label for="ba-first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
-                        <input type="text" id="ba-first-name" name="ba-first-name" required
-                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <label for="bc-first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
+                        <input type="text" id="bc-first-name" name="bc-first-name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                     </div>
                     <div>
-                        <label for="ba-last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
-                        <input type="text" id="ba-last-name" name="ba-last-name" required
-                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label for="ba-dob" class="block text-sm font-medium text-gray-700">Date of Birth *</label>
-                        <input type="date" id="ba-dob" name="ba-dob" required
-                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                    </div>
-                    <div>
-                        <label for="ba-ssn" class="block text-sm font-medium text-gray-700">Social Security Number *</label>
-                        <input type="text" id="ba-ssn" name="ba-ssn" required placeholder="XXX-XX-XXXX" maxlength="11"
-                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <label for="bc-last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
+                        <input type="text" id="bc-last-name" name="bc-last-name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                     </div>
                 </div>
                 <div>
-                    <label for="ba-business-name" class="block text-sm font-medium text-gray-700">Business Name *</label>
-                    <input type="text" id="ba-business-name" name="ba-business-name" required
-                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <label for="bc-business-name" class="block text-sm font-medium text-gray-700">Business Name *</label>
+                    <input type="text" id="bc-business-name" name="bc-business-name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label for="ba-email" class="block text-sm font-medium text-gray-700">Email Address *</label>
-                        <input type="email" id="ba-email" name="ba-email" required
-                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <label for="bc-email" class="block text-sm font-medium text-gray-700">Email *</label>
+                        <input type="email" id="bc-email" name="bc-email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                     </div>
                     <div>
-                        <label for="ba-phone" class="block text-sm font-medium text-gray-700">Phone Number *</label>
-                        <input type="tel" id="ba-phone" name="ba-phone" required
-                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <label for="bc-phone" class="block text-sm font-medium text-gray-700">Phone *</label>
+                        <input type="tel" id="bc-phone" name="bc-phone" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                     </div>
                 </div>
                 <div>
-                    <label for="ba-address" class="block text-sm font-medium text-gray-700">Business Address *</label>
-                    <input type="text" id="ba-address" name="ba-address" required
-                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="col-span-2">
-                        <label for="ba-city" class="block text-sm font-medium text-gray-700">City *</label>
-                        <input type="text" id="ba-city" name="ba-city" required
-                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                    </div>
-                    <div>
-                        <label for="ba-state" class="block text-sm font-medium text-gray-700">State *</label>
-                        <input type="text" id="ba-state" name="ba-state" required maxlength="2" placeholder="NY"
-                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                    </div>
-                    <div>
-                        <label for="ba-zip" class="block text-sm font-medium text-gray-700">ZIP *</label>
-                        <input type="text" id="ba-zip" name="ba-zip" required maxlength="10"
-                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                    </div>
+                    <label for="bc-account-type" class="block text-sm font-medium text-gray-700">Account Type *</label>
+                    <select id="bc-account-type" name="bc-account-type" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">Select account type</option>
+                        <option value="free">Free Business Checking</option>
+                        <option value="small">Small Business Checking</option>
+                        <option value="enterprise">Enterprise Checking</option>
+                        <option value="savings">Business Savings</option>
+                    </select>
                 </div>
                 <div>
-                    <label for="ba-business-type" class="block text-sm font-medium text-gray-700">Business Type *</label>
-                    <select id="ba-business-type" name="ba-business-type" required
-                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <label for="bc-business-type" class="block text-sm font-medium text-gray-700">Business Type *</label>
+                    <select id="bc-business-type" name="bc-business-type" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                         <option value="">Select business type</option>
                         <option value="sole-proprietor">Sole Proprietorship</option>
                         <option value="llc">LLC</option>
@@ -256,74 +294,35 @@ base_path: /aifirst-bank
                         <option value="nonprofit">Non-Profit</option>
                     </select>
                 </div>
-                <div>
-                    <label for="ba-account-type" class="block text-sm font-medium text-gray-700">Account Type *</label>
-                    <select id="ba-account-type" name="ba-account-type" required
-                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                        <option value="">Select account type</option>
-                        <option value="checking">Business Checking</option>
-                        <option value="savings">Business Savings</option>
-                        <option value="cd">Business CD</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="ba-annual-revenue" class="block text-sm font-medium text-gray-700">Estimated Annual Revenue ($)</label>
-                    <input type="number" id="ba-annual-revenue" name="ba-annual-revenue" min="0"
-                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="e.g., 250000">
-                </div>
-                <button type="submit"
-                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">
-                    Submit Application
-                </button>
-                <p class="text-center text-xs text-gray-500">This is a demo site. Do not enter real personal information.</p>
+                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition duration-300">Submit Application</button>
+                <p class="text-center text-xs text-gray-500">Demo site - do not enter real information.</p>
             </form>
-            <div id="ba-success" class="mt-6 text-center hidden">
+            <div id="bc-success" class="mt-6 text-center hidden">
                 <div class="bg-green-50 border border-green-200 rounded-lg p-4">
-                    <p class="text-green-800 font-medium">Application submitted successfully!</p>
-                    <p class="text-blue-600 text-sm mt-1">This is a demo - no data was actually submitted.</p>
+                    <p class="text-green-800 font-medium">Application submitted!</p>
+                    <p class="text-blue-600 text-sm mt-1">This is a demo - no data was submitted.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="bg-blue-600 py-16">
-    <div class="container mx-auto px-4 text-center text-white">
-        <h2 class="text-3xl md:text-4xl font-bold">Ready to Grow Your Business?</h2>
-        <p class="mt-4 text-lg max-w-2xl mx-auto opacity-90">
-            Partner with AI First bank and experience banking that works as hard as you do.
-        </p>
-        <div class="mt-8 flex justify-center space-x-4">
-            <button class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg" onclick="document.getElementById('apply').scrollIntoView({behavior: 'smooth'})">Open Business Account</button>
-            <a href="#" class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Schedule Consultation</a>
+<!-- CTA Section -->
+<section class="py-16 bg-blue-600">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Grow Your Business?</h2>
+        <p class="text-blue-100 max-w-2xl mx-auto mb-8">Join thousands of customers who trust AI First Bank for their business banking needs.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#apply" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition duration-300">Open Account</a>
+            <a href="/aifirst-bank/contact.html" class="bg-transparent text-white font-semibold py-3 px-8 rounded-full border-2 border-white hover:bg-white/10 transition duration-300">Contact Us</a>
         </div>
     </div>
 </section>
 
 <script>
-document.getElementById('business-account-form').addEventListener('submit', function(e) {
+document.getElementById('business-checking-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    const firstName = document.getElementById('ba-first-name').value.trim();
-    const lastName = document.getElementById('ba-last-name').value.trim();
-    const businessName = document.getElementById('ba-business-name').value.trim();
-    const email = document.getElementById('ba-email').value.trim();
-    const phone = document.getElementById('ba-phone').value.trim();
-    const businessType = document.getElementById('ba-business-type').value;
-    const accountType = document.getElementById('ba-account-type').value;
-    
-    if (!firstName || !lastName || !businessName || !email || !phone || !businessType || !accountType) {
-        alert('Please fill in all required fields.');
-        return;
-    }
-    
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        alert('Please enter a valid email address.');
-        return;
-    }
-    
-    document.getElementById('ba-success').classList.remove('hidden');
+    document.getElementById('bc-success').classList.remove('hidden');
     this.reset();
 });
 </script>
