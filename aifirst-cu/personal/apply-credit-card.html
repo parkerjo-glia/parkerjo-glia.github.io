@@ -1,0 +1,211 @@
+---
+layout: default
+site_type: cu
+base_path: /aifirst-cu
+---
+
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-blue-600 to-blue-800 py-16 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <img src="/assets/images/credit-cards-hero-bg.png" alt="" class="w-full h-full object-cover">
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">Apply for a Credit Card</h1>
+        <p class="mt-4 text-lg text-blue-100 max-w-2xl mx-auto">Get a decision in minutes with no impact to your credit score.</p>
+    </div>
+</section>
+
+<!-- Application Form -->
+<section class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-2xl">
+        <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+            <h2 class="text-2xl font-bold text-center text-gray-900 mb-2">Credit Card Application</h2>
+            <p class="text-center text-gray-600 mb-6">Complete the form below to apply</p>
+            
+            <form id="credit-card-application-form" class="space-y-6">
+                <!-- Card Selection -->
+                <div>
+                    <label for="card-type" class="block text-sm font-medium text-gray-700">Select Card *</label>
+                    <select id="card-type" name="card-type" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">Choose a card</option>
+                        <option value="cash-back">Cash Back Rewards - 2% unlimited cash back</option>
+                        <option value="travel-rewards">Travel Rewards - 3X points on travel & dining</option>
+                        <option value="platinum-rewards">Platinum Rewards - Premium travel perks</option>
+                        <option value="student">Student Card - Build credit history</option>
+                    </select>
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                </div>
+
+                <!-- Personal Information -->
+                <div class="border-t pt-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Personal Information</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="cc-first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
+                            <input type="text" id="cc-first-name" name="cc-first-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        </div>
+                        <div>
+                            <label for="cc-last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
+                            <input type="text" id="cc-last-name" name="cc-last-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        <div>
+                            <label for="cc-email" class="block text-sm font-medium text-gray-700">Email *</label>
+                            <input type="email" id="cc-email" name="cc-email" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        </div>
+                        <div>
+                            <label for="cc-phone" class="block text-sm font-medium text-gray-700">Phone *</label>
+                            <input type="tel" id="cc-phone" name="cc-phone" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <label for="cc-dob" class="block text-sm font-medium text-gray-700">Date of Birth *</label>
+                        <input type="date" id="cc-dob" name="cc-dob" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    </div>
+                    <div class="mt-4">
+                        <label for="cc-ssn" class="block text-sm font-medium text-gray-700">Social Security Number *</label>
+                        <input type="text" id="cc-ssn" name="cc-ssn" data-required="true" placeholder="###-##-####" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    </div>
+                </div>
+
+
+                <!-- Address -->
+                <div class="border-t pt-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Address</h3>
+                    <div>
+                        <label for="cc-address" class="block text-sm font-medium text-gray-700">Street Address *</label>
+                        <input type="text" id="cc-address" name="cc-address" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+                        <div class="col-span-2">
+                            <label for="cc-city" class="block text-sm font-medium text-gray-700">City *</label>
+                            <input type="text" id="cc-city" name="cc-city" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        </div>
+                        <div>
+                            <label for="cc-state" class="block text-sm font-medium text-gray-700">State *</label>
+                            <select id="cc-state" name="cc-state" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">Select</option>
+                                <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option>
+                                <option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option>
+                                <option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option>
+                                <option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option>
+                                <option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option>
+                                <option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option>
+                                <option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option>
+                                <option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option>
+                                <option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option>
+                                <option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option>
+                                <option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option>
+                                <option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option>
+                                <option value="WI">WI</option><option value="WY">WY</option>
+                            </select>
+                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        </div>
+                        <div>
+                            <label for="cc-zip" class="block text-sm font-medium text-gray-700">ZIP *</label>
+                            <input type="text" id="cc-zip" name="cc-zip" data-required="true" pattern="[0-9]{5}" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Employment & Income -->
+                <div class="border-t pt-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Employment & Income</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="cc-employment" class="block text-sm font-medium text-gray-700">Employment Status *</label>
+                            <select id="cc-employment" name="cc-employment" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">Select status</option>
+                                <option value="employed">Employed</option>
+                                <option value="self-employed">Self-Employed</option>
+                                <option value="student">Student</option>
+                                <option value="retired">Retired</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        </div>
+                        <div>
+                            <label for="cc-income" class="block text-sm font-medium text-gray-700">Annual Income ($) *</label>
+                            <input type="number" id="cc-income" name="cc-income" data-required="true" min="0" placeholder="e.g., 50000" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <label for="cc-housing" class="block text-sm font-medium text-gray-700">Housing Status *</label>
+                        <select id="cc-housing" name="cc-housing" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">Select status</option>
+                            <option value="own">Own</option>
+                            <option value="rent">Rent</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    </div>
+                    <div class="mt-4">
+                        <label for="cc-housing-payment" class="block text-sm font-medium text-gray-700">Monthly Housing Payment ($) *</label>
+                        <input type="number" id="cc-housing-payment" name="cc-housing-payment" data-required="true" min="0" placeholder="e.g., 1500" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    </div>
+                </div>
+
+
+                <!-- Terms -->
+                <div class="border-t pt-6">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="cc-terms" name="cc-terms" data-required="true" class="mt-1 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                        <label for="cc-terms" class="ml-2 text-sm text-gray-600">I agree to the <a href="/aifirst-cu/terms-of-use.html" class="text-blue-600 hover:underline">Terms of Use</a>, <a href="/aifirst-cu/privacy-policy.html" class="text-blue-600 hover:underline">Privacy Policy</a>, and authorize a credit check. *</label>
+                    </div>
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                </div>
+
+                <!-- Demo Notice -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <p class="text-sm text-blue-800 text-center"><span class="font-semibold">Demo Site Notice:</span> This is a demonstration website. Please do not enter real personal information. No data is stored or transmitted.</p>
+                </div>
+
+                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition duration-300">Submit Application</button>
+            </form>
+
+            <div id="cc-application-success" class="text-center hidden">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <p class="text-green-800 font-semibold text-lg">Thank You!</p>
+                    <p class="text-gray-600 mt-2">Your application has been received.</p>
+                    <p class="text-sm text-blue-600 mt-2">This is a demo site - no data was actually submitted.</p>
+                    <a href="/aifirst-cu/personal/credit-cards.html" class="inline-block mt-4 text-blue-600 font-medium hover:underline">Back to Credit Cards</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.getElementById('credit-card-application-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (validate(this)) {
+        this.classList.add('hidden');
+        document.getElementById('cc-application-success').classList.remove('hidden');
+    }
+});
+
+// Pre-select card type from URL parameter
+const urlParams = new URLSearchParams(window.location.search);
+const cardType = urlParams.get('type');
+if (cardType) {
+    const select = document.getElementById('card-type');
+    if (select) {
+        select.value = cardType;
+    }
+}
+</script>

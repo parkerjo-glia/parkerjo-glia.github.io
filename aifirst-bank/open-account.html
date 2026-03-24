@@ -102,34 +102,39 @@ base_path: /aifirst-bank
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label for="first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
-                        <input type="text" id="first-name" name="first-name" required placeholder="John" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <input type="text" id="first-name" name="first-name" placeholder="John" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" data-required="true">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                     </div>
                     <div>
                         <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
-                        <input type="text" id="last-name" name="last-name" required placeholder="Doe" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <input type="text" id="last-name" name="last-name" placeholder="Doe" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" data-required="true">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                     </div>
                 </div>
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700">Email Address *</label>
-                    <input type="email" id="email" name="email" required placeholder="john.doe@example.com" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <input type="email" id="email" name="email" placeholder="john.doe@example.com" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" data-required="true">
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                 </div>
                 <div>
                     <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" required placeholder="555.867.5309" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <input type="tel" id="phone" name="phone" placeholder="555.867.5309" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" data-required="true">
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                 </div>
                 <div>
                     <label for="account-type" class="block text-sm font-medium text-gray-700">Account Type *</label>
-                    <select id="account-type" name="account-type" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <select id="account-type" name="account-type" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" data-required="true">
                         <option value="">Select account type</option>
                         <option value="checking">Checking Account</option>
                         <option value="savings">Savings Account</option>
                         <option value="money-market">Money Market Account</option>
                         <option value="cd">Certificate of Deposit</option>
                     </select>
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                 </div>
                 <div>
                     <label for="initial-deposit" class="block text-sm font-medium text-gray-700">Initial Deposit Amount *</label>
-                    <select id="initial-deposit" name="initial-deposit" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <select id="initial-deposit" name="initial-deposit" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" data-required="true">
                         <option value="">Select deposit amount</option>
                         <option value="100">$100</option>
                         <option value="500">$500</option>
@@ -137,20 +142,34 @@ base_path: /aifirst-bank
                         <option value="5000">$5,000</option>
                         <option value="other">Other amount</option>
                     </select>
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                 </div>
-                <div class="flex items-center">
-                    <input id="terms" name="terms" type="checkbox" required class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
-                    <label for="terms" class="ml-2 block text-sm text-gray-900">
-                        I agree to the <a href="/aifirst-bank/terms-of-use.html" class="text-blue-600 hover:text-blue-700">Terms of Use</a> and <a href="/aifirst-bank/privacy-policy.html" class="text-blue-600 hover:text-blue-700">Privacy Policy</a> *
-                    </label>
+                <div>
+                    <div class="flex items-center">
+                        <input id="terms" name="terms" type="checkbox" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" data-required="true">
+                        <label for="terms" class="ml-2 block text-sm text-gray-900">
+                            I agree to the <a href="/aifirst-bank/terms-of-use.html" class="text-blue-600 hover:text-blue-700">Terms of Use</a> and <a href="/aifirst-bank/privacy-policy.html" class="text-blue-600 hover:text-blue-700">Privacy Policy</a> *
+                        </label>
+                    </div>
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                 </div>
+                <!-- Demo Notice -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <p class="text-sm text-blue-800 text-center"><span class="font-semibold">Demo Site Notice:</span> This is a demonstration website. Please do not enter real personal information. No data is stored or transmitted.</p>
+                </div>
+
                 <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">Submit Application</button>
-                <p class="text-center text-xs text-gray-500">This is a demo site. Do not enter real personal information.</p>
             </form>
-            <div id="account-success" class="mt-6 text-center hidden">
-                <div class="bg-green-50 border border-green-200 rounded-lg p-4">
-                    <p class="text-green-800 font-medium">Application submitted successfully!</p>
-                    <p class="text-blue-600 text-sm mt-1">This is a demo - no data was actually submitted.</p>
+
+            <div id="account-success" class="text-center hidden">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <p class="text-green-800 font-semibold text-lg">Thank You!</p>
+                    <p class="text-gray-600 mt-2">Your account application has been received.</p>
+                    <p class="text-sm text-blue-600 mt-2">This is a demo site - no data was actually submitted.</p>
+                    <a href="/aifirst-bank/index.html" class="inline-block mt-4 text-blue-600 font-medium hover:underline">Back to Home</a>
                 </div>
             </div>
         </div>
@@ -171,17 +190,9 @@ base_path: /aifirst-bank
 <script>
 document.getElementById('account-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    var firstName = document.getElementById('first-name').value.trim();
-    var lastName = document.getElementById('last-name').value.trim();
-    var email = document.getElementById('email').value.trim();
-    var phone = document.getElementById('phone').value.trim();
-    var accountType = document.getElementById('account-type').value;
-    var initialDeposit = document.getElementById('initial-deposit').value;
-    var terms = document.getElementById('terms').checked;
-    if (!firstName || !lastName || !email || !phone || !accountType || !initialDeposit) { alert('Please fill in all required fields.'); return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
-    if (!terms) { alert('Please agree to the Terms of Use and Privacy Policy.'); return; }
-    document.getElementById('account-success').classList.remove('hidden');
-    this.reset();
+    if (validate(this)) {
+        this.classList.add('hidden');
+        document.getElementById('account-success').classList.remove('hidden');
+    }
 });
 </script>

@@ -170,49 +170,63 @@ base_path: /aifirst-cu
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="al-first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
-                        <input type="text" id="al-first-name" name="al-first-name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <input type="text" id="al-first-name" name="al-first-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                     </div>
                     <div>
                         <label for="al-last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
-                        <input type="text" id="al-last-name" name="al-last-name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <input type="text" id="al-last-name" name="al-last-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="al-email" class="block text-sm font-medium text-gray-700">Email *</label>
-                        <input type="email" id="al-email" name="al-email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <input type="email" id="al-email" name="al-email" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                     </div>
                     <div>
                         <label for="al-phone" class="block text-sm font-medium text-gray-700">Phone *</label>
-                        <input type="tel" id="al-phone" name="al-phone" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <input type="tel" id="al-phone" name="al-phone" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                     </div>
                 </div>
                 <div>
                     <label for="al-loan-type" class="block text-sm font-medium text-gray-700">Loan Type *</label>
-                    <select id="al-loan-type" name="al-loan-type" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <select id="al-loan-type" name="al-loan-type" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                         <option value="">Select loan type</option>
                         <option value="new">New Vehicle</option>
                         <option value="used">Used Vehicle</option>
                         <option value="recreational">Boat, RV & Motorcycle</option>
                     </select>
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="al-vehicle-price" class="block text-sm font-medium text-gray-700">Vehicle Price ($) *</label>
-                        <input type="number" id="al-vehicle-price" name="al-vehicle-price" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 35000">
+                        <input type="number" id="al-vehicle-price" name="al-vehicle-price" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 35000">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                     </div>
                     <div>
                         <label for="al-down-payment" class="block text-sm font-medium text-gray-700">Down Payment ($)</label>
                         <input type="number" id="al-down-payment" name="al-down-payment" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 5000">
                     </div>
                 </div>
+                <!-- Demo Notice -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <p class="text-sm text-blue-800 text-center"><span class="font-semibold">Demo Site Notice:</span> This is a demonstration website. Please do not enter real personal information. No data is stored or transmitted.</p>
+                </div>
                 <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition duration-300">Submit Application</button>
-                <p class="text-center text-xs text-gray-500">Demo site - do not enter real information.</p>
             </form>
-            <div id="al-success" class="mt-6 text-center hidden">
-                <div class="bg-green-50 border border-green-200 rounded-lg p-4">
-                    <p class="text-green-800 font-medium">Application submitted!</p>
-                    <p class="text-blue-600 text-sm mt-1">This is a demo - no data was submitted.</p>
+            <div id="al-success" class="text-center hidden">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <p class="text-green-800 font-semibold text-lg">Thank You!</p>
+                    <p class="text-gray-600 mt-2">Your auto loan application has been received.</p>
+                    <p class="text-sm text-blue-600 mt-2">This is a demo site - no data was actually submitted.</p>
+                    <a href="/aifirst-cu/personal/personal-auto-loan.html" class="inline-block mt-4 text-blue-600 font-medium hover:underline">Back to Auto Loans</a>
                 </div>
             </div>
         </div>
@@ -248,7 +262,9 @@ function calculateAutoPayment() {
 
 document.getElementById('auto-loan-application').addEventListener('submit', function(e) {
     e.preventDefault();
-    document.getElementById('al-success').classList.remove('hidden');
-    this.reset();
+    if (validate(this)) {
+        this.classList.add('hidden');
+        document.getElementById('al-success').classList.remove('hidden');
+    }
 });
 </script>

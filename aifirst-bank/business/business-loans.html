@@ -171,30 +171,35 @@ base_path: /aifirst-bank
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="bl-first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
-                        <input type="text" id="bl-first-name" name="bl-first-name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <input type="text" id="bl-first-name" name="bl-first-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                     </div>
                     <div>
                         <label for="bl-last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
-                        <input type="text" id="bl-last-name" name="bl-last-name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <input type="text" id="bl-last-name" name="bl-last-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                     </div>
                 </div>
                 <div>
                     <label for="bl-business-name" class="block text-sm font-medium text-gray-700">Business Name *</label>
-                    <input type="text" id="bl-business-name" name="bl-business-name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <input type="text" id="bl-business-name" name="bl-business-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="bl-email" class="block text-sm font-medium text-gray-700">Email *</label>
-                        <input type="email" id="bl-email" name="bl-email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <input type="email" id="bl-email" name="bl-email" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                     </div>
                     <div>
                         <label for="bl-phone" class="block text-sm font-medium text-gray-700">Phone *</label>
-                        <input type="tel" id="bl-phone" name="bl-phone" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <input type="tel" id="bl-phone" name="bl-phone" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                     </div>
                 </div>
                 <div>
                     <label for="bl-loan-type" class="block text-sm font-medium text-gray-700">Loan Type *</label>
-                    <select id="bl-loan-type" name="bl-loan-type" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <select id="bl-loan-type" name="bl-loan-type" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                         <option value="">Select loan type</option>
                         <option value="term-loan">Business Term Loan</option>
                         <option value="line-of-credit">Business Line of Credit</option>
@@ -202,20 +207,23 @@ base_path: /aifirst-bank
                         <option value="commercial-real-estate">Commercial Real Estate</option>
                         <option value="sba">SBA Loan</option>
                     </select>
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="bl-amount" class="block text-sm font-medium text-gray-700">Loan Amount ($) *</label>
-                        <input type="number" id="bl-amount" name="bl-amount" required min="5000" placeholder="e.g., 100000" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <input type="number" id="bl-amount" name="bl-amount" data-required="true" min="5000" placeholder="e.g., 100000" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                     </div>
                     <div>
                         <label for="bl-annual-revenue" class="block text-sm font-medium text-gray-700">Annual Revenue ($) *</label>
-                        <input type="number" id="bl-annual-revenue" name="bl-annual-revenue" required min="0" placeholder="e.g., 500000" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <input type="number" id="bl-annual-revenue" name="bl-annual-revenue" data-required="true" min="0" placeholder="e.g., 500000" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                     </div>
                 </div>
                 <div>
                     <label for="bl-purpose" class="block text-sm font-medium text-gray-700">Loan Purpose *</label>
-                    <select id="bl-purpose" name="bl-purpose" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <select id="bl-purpose" name="bl-purpose" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                         <option value="">Select purpose</option>
                         <option value="working-capital">Working Capital</option>
                         <option value="equipment">Equipment Purchase</option>
@@ -224,10 +232,11 @@ base_path: /aifirst-bank
                         <option value="inventory">Inventory</option>
                         <option value="refinance">Refinance Existing Debt</option>
                     </select>
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                 </div>
                 <div>
                     <label for="bl-years-in-business" class="block text-sm font-medium text-gray-700">Years in Business *</label>
-                    <select id="bl-years-in-business" name="bl-years-in-business" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <select id="bl-years-in-business" name="bl-years-in-business" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                         <option value="">Select years</option>
                         <option value="less-than-1">Less than 1 year</option>
                         <option value="1-2">1-2 years</option>
@@ -235,14 +244,25 @@ base_path: /aifirst-bank
                         <option value="5-10">5-10 years</option>
                         <option value="10+">10+ years</option>
                     </select>
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                 </div>
+                <!-- Demo Notice -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <p class="text-sm text-blue-800 text-center"><span class="font-semibold">Demo Site Notice:</span> This is a demonstration website. Please do not enter real personal information. No data is stored or transmitted.</p>
+                </div>
+
                 <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition duration-300">Submit Application</button>
-                <p class="text-center text-xs text-gray-500">Demo site - do not enter real information.</p>
             </form>
-            <div id="bl-success" class="mt-6 text-center hidden">
-                <div class="bg-green-50 border border-green-200 rounded-lg p-4">
-                    <p class="text-green-800 font-medium">Application submitted!</p>
-                    <p class="text-blue-600 text-sm mt-1">This is a demo - no data was submitted.</p>
+
+            <div id="bl-success" class="text-center hidden">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <p class="text-green-800 font-semibold text-lg">Thank You!</p>
+                    <p class="text-gray-600 mt-2">Your business loan application has been received.</p>
+                    <p class="text-sm text-blue-600 mt-2">This is a demo site - no data was actually submitted.</p>
+                    <a href="/aifirst-bank/business/business-banking.html" class="inline-block mt-4 text-blue-600 font-medium hover:underline">Back to Business Banking</a>
                 </div>
             </div>
         </div>
@@ -264,7 +284,9 @@ base_path: /aifirst-bank
 <script>
 document.getElementById('business-loan-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    document.getElementById('bl-success').classList.remove('hidden');
-    this.reset();
+    if (validate(this)) {
+        this.classList.add('hidden');
+        document.getElementById('bl-success').classList.remove('hidden');
+    }
 });
 </script>

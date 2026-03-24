@@ -1,0 +1,197 @@
+---
+layout: default
+site_type: cu
+base_path: /aifirst-cu
+---
+
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-blue-600 to-blue-800 py-16 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <img src="/assets/images/banking-hero-bg.png" alt="" class="w-full h-full object-cover">
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">Open Your Account</h1>
+        <p class="mt-4 text-lg text-blue-100 max-w-2xl mx-auto">Join AI First CU and start enjoying better rates and lower fees today.</p>
+    </div>
+</section>
+
+<!-- Application Form -->
+<section class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-2xl">
+        <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+            <h2 class="text-2xl font-bold text-center text-gray-900 mb-2">Account Application</h2>
+            <p class="text-center text-gray-600 mb-6">Complete the form below to open your new account</p>
+            
+            <form id="account-application-form" class="space-y-6">
+                <!-- Account Selection -->
+                <div>
+                    <label for="account-type" class="block text-sm font-medium text-gray-700">Select Account Type *</label>
+                    <select id="account-type" name="account-type" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">Choose an account</option>
+                        <optgroup label="Checking Accounts">
+                            <option value="free-checking">Free Checking - $0 monthly fee</option>
+                            <option value="premium-checking">Premium Checking - Earns 0.25% APY</option>
+                            <option value="student-checking">Student Checking - Ages 16-25</option>
+                        </optgroup>
+                        <optgroup label="Savings Accounts">
+                            <option value="regular-savings">Regular Savings - 2.50% APY</option>
+                            <option value="high-yield-savings">High-Yield Savings - 4.50% APY</option>
+                            <option value="money-market">Money Market - 4.00% APY</option>
+                        </optgroup>
+                    </select>
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                </div>
+
+                <!-- Personal Information -->
+                <div class="border-t pt-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Personal Information</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
+                            <input type="text" id="first-name" name="first-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        </div>
+                        <div>
+                            <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
+                            <input type="text" id="last-name" name="last-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email *</label>
+                            <input type="email" id="email" name="email" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Phone *</label>
+                            <input type="tel" id="phone" name="phone" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <label for="dob" class="block text-sm font-medium text-gray-700">Date of Birth *</label>
+                        <input type="date" id="dob" name="dob" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    </div>
+                    <div class="mt-4">
+                        <label for="ssn" class="block text-sm font-medium text-gray-700">Social Security Number *</label>
+                        <input type="text" id="ssn" name="ssn" data-required="true" placeholder="###-##-####" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    </div>
+                </div>
+
+                <!-- Address -->
+                <div class="border-t pt-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Address</h3>
+                    <div>
+                        <label for="address" class="block text-sm font-medium text-gray-700">Street Address *</label>
+                        <input type="text" id="address" name="address" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+                        <div class="col-span-2">
+                            <label for="city" class="block text-sm font-medium text-gray-700">City *</label>
+                            <input type="text" id="city" name="city" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        </div>
+                        <div>
+                            <label for="state" class="block text-sm font-medium text-gray-700">State *</label>
+                            <select id="state" name="state" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">Select</option>
+                                <option value="AL">AL</option><option value="AK">AK</option><option value="AZ">AZ</option><option value="AR">AR</option>
+                                <option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DE">DE</option>
+                                <option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option>
+                                <option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option>
+                                <option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option>
+                                <option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option>
+                                <option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option>
+                                <option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option>
+                                <option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option>
+                                <option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option>
+                                <option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option>
+                                <option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option>
+                                <option value="WI">WI</option><option value="WY">WY</option>
+                            </select>
+                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        </div>
+                        <div>
+                            <label for="zip" class="block text-sm font-medium text-gray-700">ZIP *</label>
+                            <input type="text" id="zip" name="zip" data-required="true" pattern="[0-9]{5}" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initial Deposit -->
+                <div class="border-t pt-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Initial Deposit</h3>
+                    <div>
+                        <label for="initial-deposit" class="block text-sm font-medium text-gray-700">Opening Deposit Amount ($) *</label>
+                        <input type="number" id="initial-deposit" name="initial-deposit" data-required="true" min="5" placeholder="Minimum $5" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    </div>
+                    <div class="mt-4">
+                        <label for="funding-source" class="block text-sm font-medium text-gray-700">Funding Source *</label>
+                        <select id="funding-source" name="funding-source" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">Select funding method</option>
+                            <option value="transfer">Transfer from another bank</option>
+                            <option value="debit">Debit card</option>
+                            <option value="check">Mail a check</option>
+                            <option value="branch">Deposit at branch</option>
+                        </select>
+                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    </div>
+                </div>
+
+                <!-- Terms -->
+                <div class="border-t pt-6">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="terms" name="terms" data-required="true" class="mt-1 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                        <label for="terms" class="ml-2 text-sm text-gray-600">I agree to the <a href="/aifirst-cu/terms-of-use.html" class="text-blue-600 hover:underline">Terms of Use</a> and <a href="/aifirst-cu/privacy-policy.html" class="text-blue-600 hover:underline">Privacy Policy</a>. *</label>
+                    </div>
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                </div>
+
+                <!-- Demo Notice -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <p class="text-sm text-blue-800 text-center"><span class="font-semibold">Demo Site Notice:</span> This is a demonstration website. Please do not enter real personal information. No data is stored or transmitted.</p>
+                </div>
+
+                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition duration-300">Submit Application</button>
+            </form>
+
+            <div id="application-success" class="text-center hidden">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <p class="text-green-800 font-semibold text-lg">Thank You!</p>
+                    <p class="text-gray-600 mt-2">Your application has been received.</p>
+                    <p class="text-sm text-blue-600 mt-2">This is a demo site - no data was actually submitted.</p>
+                    <a href="/aifirst-cu/personal/personal-banking.html" class="inline-block mt-4 text-blue-600 font-medium hover:underline">Back to Banking Products</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.getElementById('account-application-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (validate(this)) {
+        this.classList.add('hidden');
+        document.getElementById('application-success').classList.remove('hidden');
+    }
+});
+
+// Pre-select account type from URL parameter
+const urlParams = new URLSearchParams(window.location.search);
+const accountType = urlParams.get('type');
+if (accountType) {
+    const select = document.getElementById('account-type');
+    if (select) {
+        select.value = accountType;
+    }
+}
+</script>

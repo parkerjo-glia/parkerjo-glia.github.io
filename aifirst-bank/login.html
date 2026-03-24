@@ -12,19 +12,21 @@ base_path: /aifirst-bank
         </div>
         <form id="login-form" class="mt-8 space-y-6" action="#" method="POST">
             <div>
-                <label for="login-name" class="block text-sm font-medium text-gray-700">Name</label>
+                <label for="login-name" class="block text-sm font-medium text-gray-700">Name *</label>
                 <div class="mt-1">
-                    <input id="login-name" name="login-name" type="text" autocomplete="username" required
+                    <input id="login-name" name="login-name" type="text" autocomplete="username" data-required="true"
                         class="block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         placeholder="Enter your Name">
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                 </div>
             </div>
             <div class="relative">
-                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <label for="password" class="block text-sm font-medium text-gray-700">Password *</label>
                 <div class="mt-1">
-                    <input id="password" name="password" type="password" autocomplete="current-password" required
+                    <input id="password" name="password" type="password" autocomplete="current-password" data-required="true"
                         class="block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         placeholder="Enter your Password" readonly>
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                 </div>
             </div>
             <div class="flex items-center justify-between">
@@ -38,6 +40,10 @@ base_path: /aifirst-bank
             </div>
             <div>
                 <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">Log in</button>
+            </div>
+            <!-- Demo Notice -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 mt-4">
+                <p class="text-xs text-blue-800 text-center"><span class="font-semibold">Demo Site:</span> Enter any name and the password will auto-fill. No real data is stored.</p>
             </div>
         </form>
         <div class="mt-6 text-center text-sm text-gray-500">
@@ -58,9 +64,9 @@ document.addEventListener('DOMContentLoaded', function () {
 document.getElementById("login-name").addEventListener("blur", function(e) { document.getElementById("password").value = "glia123!!"; });
 document.getElementById('login-form').addEventListener('submit', function (e) {
     e.preventDefault();
+    if (!validate(this)) return;
     var loginName = document.getElementById('login-name').value;
     var password = document.getElementById('password').value;
-    if (!loginName || !password) { alert('Please enter both Name and Password.'); return; }
     if (loginName.length > 1 && password === 'glia123!!') {
         localStorage.setItem('loggingStatus', 'true');
         localStorage.setItem('username', loginName);
