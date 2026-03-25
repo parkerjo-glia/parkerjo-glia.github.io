@@ -2,9 +2,25 @@ window.defaultSite = window.defaultSite ?? { id: "e501268f-9055-4133-a379-64f2a8
 window.gliaContextSessionItemKey = "gliaContextSession";
 var glia;
 var username = localStorage.getItem('username');
+
+// Determine site to use: URL param > localStorage > default
 var gliaSiteRaw = localStorage.getItem('glia_site');
 var useWebAddress = gliaSiteRaw === '"allowed-web-address"';
-var gliaSite = useWebAddress ? null : (JSON.parse(gliaSiteRaw) ?? defaultSite);
+var gliaSite;
+
+// Check for glia_site in URL query string first (highest priority)
+var urlParams = new URLSearchParams(window.location.search);
+var urlSiteId = urlParams.get('glia_site') || urlParams.get('site_id');
+
+if (urlSiteId) {
+    gliaSite = { id: urlSiteId, name: 'URL Parameter' };
+} else if (useWebAddress) {
+    gliaSite = null;
+} else if (gliaSiteRaw) {
+    gliaSite = JSON.parse(gliaSiteRaw) ?? defaultSite;
+} else {
+    gliaSite = defaultSite;
+}
 
 window.getGliaContext = function () {
     // Check for sessionId in URL params first
@@ -17,21 +33,15 @@ window.getGliaContext = function () {
 }
 
 var installGlia = function (callback) {
-    var siteId;
+    var gliaIntegrationScriptUrl;
     
-    if (useWebAddress) {
-        // Get site_id from URL query parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        siteId = urlParams.get('site_id');
-        if (!siteId) {
-            console.warn('Glia: "Use Web Address" mode enabled but no site_id query parameter found');
-            return;
-        }
+    if (useWebAddress && !urlSiteId) {
+        // Load without site_id - Glia will use site_id from the page's URL query string
+        gliaIntegrationScriptUrl = 'https://api.glia.com/salemove_integration.js';
     } else {
-        siteId = gliaSite.id;
+        gliaIntegrationScriptUrl = 'https://api.glia.com/salemove_integration.js?site_id=' + gliaSite.id;
     }
 
-    var gliaIntegrationScriptUrl = 'https://api.glia.com/salemove_integration.js?site_id=' + siteId;
     var scriptElement = document.createElement('script');
 
     scriptElement.async = 1;
@@ -45,8 +55,10 @@ var installGlia = function (callback) {
 
     var gliaSiteElement = document.getElementById("glia-site");
     if (gliaSiteElement) {
-        if (useWebAddress) {
-            gliaSiteElement.textContent = 'Web Address (' + siteId.substring(0, 8) + '...)';
+        if (urlSiteId) {
+            gliaSiteElement.textContent = 'URL: ' + urlSiteId.substring(0, 8) + '...';
+        } else if (useWebAddress) {
+            gliaSiteElement.textContent = 'Web Address';
         } else {
             gliaSiteElement.textContent = gliaSite.name;
         }
