@@ -67,7 +67,7 @@ function buildLanguageDropdowns() {
 function fetchCustomLocales(api) {
     var siteId = api.getSiteId();
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://api.glia.com/visitor_app/sites/' + site_id + '/custom_locales');
+    xhr.open('GET', 'https://api.glia.com/visitor_app/sites/' + siteId + '/custom_locales');
 
     var requestHeaders = api.getRequestHeaders();
     Object.keys(requestHeaders).forEach(function (key) {
