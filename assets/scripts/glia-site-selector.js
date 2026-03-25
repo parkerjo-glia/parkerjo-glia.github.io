@@ -1,4 +1,5 @@
 window.gliaDemo = {};
+window.gliaContextSessionItemKey = window.gliaContextSessionItemKey ?? "gliaContextSession";
 
 window.gliaDemo.sites = [
     { id: '', name: '' },
@@ -23,8 +24,11 @@ function loadSiteSelector() {
             document.body.insertAdjacentHTML('beforeend', html);
 
             $('#siteSelectorModal').on('shown.bs.modal', function () {
-                // Your code here, e.g.:
                 prepSettingsForm();
+            });
+
+            $('#useWebAddressToggle').on('change', function () {
+                toggleWebAddressMode($(this).is(':checked'));
             });
 
             $('#siteSelectorDDL').on('change', function () {
@@ -47,12 +51,21 @@ function loadSiteSelector() {
             });
 
             $('#saveSettings').on('click', function () {
+                const useWebAddress = $('#useWebAddressToggle').is(':checked');
+                
+                if (useWebAddress) {
+                    localStorage.setItem('glia_site', '"allowed-web-address"');
+                    bootstrap.Modal.getInstance(document.getElementById('siteSelectorModal')).hide();
+                    localStorage.removeItem(window.gliaContextSessionItemKey);
+                    location.reload();
+                    return;
+                }
+
                 const siteIdFieldError = $("#siteid-error");
                 siteIdFieldError.hide();
                 const siteId = $('#siteIdTXT').val();
 
                 if (validateSiteId()) {
-
                     const selectedOption = $('#siteSelectorDDL').find(`option[value="${siteId}"]`);
 
                     const selectedSite = {
@@ -62,12 +75,15 @@ function loadSiteSelector() {
 
                     localStorage.setItem('glia_site', JSON.stringify(selectedSite));
                     bootstrap.Modal.getInstance(document.getElementById('siteSelectorModal')).hide();
-                    localStorage.removeItem(gliaContextSessionItemKey); // remove glia context session on site swap
-                    location.reload(); // Reload the page to apply changes
+                    localStorage.removeItem(window.gliaContextSessionItemKey);
+                    location.reload();
                 }
             });
 
             function validateSiteId(){
+                const useWebAddress = $('#useWebAddressToggle').is(':checked');
+                if (useWebAddress) return true;
+
                 const siteIdFieldError = $("#siteid-error");
                 siteIdFieldError.hide();
                 const siteId = $('#siteIdTXT').val();
@@ -83,14 +99,43 @@ function loadSiteSelector() {
         });
 }
 
+function toggleWebAddressMode(enabled) {
+    const $fields = $('#siteSelectionFields');
+    const $ddl = $('#siteSelectorDDL');
+    const $txt = $('#siteIdTXT');
+    const $error = $('#siteid-error');
+
+    if (enabled) {
+        $fields.addClass('opacity-50');
+        $ddl.prop('disabled', true).val('');
+        $txt.prop('disabled', true).val('');
+        $error.hide();
+    } else {
+        $fields.removeClass('opacity-50');
+        $ddl.prop('disabled', false);
+        $txt.prop('disabled', false);
+        prepSettingsForm();
+    }
+}
+
 async function prepSettingsForm() {
     await buildSelectOptionsAsync('siteSelectorDDL');
-    const gliaSite = JSON.parse(localStorage.getItem('glia_site'));
+    const gliaSiteRaw = localStorage.getItem('glia_site');
+    
+    // Check if using web address mode
+    if (gliaSiteRaw === '"allowed-web-address"') {
+        $('#useWebAddressToggle').prop('checked', true);
+        toggleWebAddressMode(true);
+        return;
+    }
 
+    $('#useWebAddressToggle').prop('checked', false);
+    toggleWebAddressMode(false);
+
+    const gliaSite = JSON.parse(gliaSiteRaw);
     if (gliaSite) {
         const siteSelectorDDL = $('#siteSelectorDDL');
         const siteIdTXT = $('#siteIdTXT');
-        // Try to set the dropdown to the value
         if (siteSelectorDDL.find(`option[value="${gliaSite.id}"]`).length > 0) {
             siteSelectorDDL.val(gliaSite.id);
             siteIdTXT.val(gliaSite.id);
@@ -101,7 +146,6 @@ async function prepSettingsForm() {
     }
 }
 
-// Function to build select options
 async function buildSelectOptionsAsync(selectId) {
     return new Promise((resolve) => {
         const $select = $('#' + selectId);
@@ -130,7 +174,6 @@ function getQueryParam(paramName) {
 }
 
 function isUUID(str) {
-    // Matches UUID v1-v5 (with or without hyphens, case-insensitive)
     const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
     return uuidRegex.test(str);
 }
@@ -139,7 +182,6 @@ function init() {
     const siteParam = getQueryParam("glia_site");
 
     if (siteParam) {
-        // Try to find by value or code
         let selectedSite = window.gliaDemo.sites.find(
             site => site.id === siteParam || site.code === siteParam
         );
@@ -153,10 +195,8 @@ function init() {
         }
     }
 
-    // Load site selector modal and set up click handler
     loadSiteSelector();
     
-    // Set up click handler for settings link
     document.addEventListener('DOMContentLoaded', function() {
         const settingsLink = document.getElementById('settings-link');
         if (settingsLink) {
@@ -166,11 +206,17 @@ function init() {
             });
         }
         
-        // Update the glia-site display
-        const gliaSite = JSON.parse(localStorage.getItem('glia_site'));
+        const gliaSiteRaw = localStorage.getItem('glia_site');
         const gliaSiteElement = document.getElementById('glia-site');
-        if (gliaSiteElement && gliaSite) {
-            gliaSiteElement.textContent = gliaSite.name;
+        if (gliaSiteElement) {
+            if (gliaSiteRaw === '"allowed-web-address"') {
+                gliaSiteElement.textContent = 'Web Address';
+            } else {
+                const gliaSite = JSON.parse(gliaSiteRaw);
+                if (gliaSite) {
+                    gliaSiteElement.textContent = gliaSite.name;
+                }
+            }
         }
     });
 }

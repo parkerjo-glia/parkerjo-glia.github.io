@@ -2,7 +2,9 @@ window.defaultSite = window.defaultSite ?? { id: "e501268f-9055-4133-a379-64f2a8
 window.gliaContextSessionItemKey = "gliaContextSession";
 var glia;
 var username = localStorage.getItem('username');
-var gliaSite = JSON.parse(localStorage.getItem('glia_site')) ?? defaultSite;
+var gliaSiteRaw = localStorage.getItem('glia_site');
+var useWebAddress = gliaSiteRaw === '"allowed-web-address"';
+var gliaSite = useWebAddress ? null : (JSON.parse(gliaSiteRaw) ?? defaultSite);
 
 window.getGliaContext = function () {
     // Check for sessionId in URL params first
@@ -15,7 +17,21 @@ window.getGliaContext = function () {
 }
 
 var installGlia = function (callback) {
-    var gliaIntegrationScriptUrl = 'https://api.glia.com/salemove_integration.js?site_id=' + gliaSite.id;
+    var siteId;
+    
+    if (useWebAddress) {
+        // Get site_id from URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        siteId = urlParams.get('site_id');
+        if (!siteId) {
+            console.warn('Glia: "Use Web Address" mode enabled but no site_id query parameter found');
+            return;
+        }
+    } else {
+        siteId = gliaSite.id;
+    }
+
+    var gliaIntegrationScriptUrl = 'https://api.glia.com/salemove_integration.js?site_id=' + siteId;
     var scriptElement = document.createElement('script');
 
     scriptElement.async = 1;
@@ -29,7 +45,11 @@ var installGlia = function (callback) {
 
     var gliaSiteElement = document.getElementById("glia-site");
     if (gliaSiteElement) {
-        gliaSiteElement.textContent = gliaSite.name;
+        if (useWebAddress) {
+            gliaSiteElement.textContent = 'Web Address (' + siteId.substring(0, 8) + '...)';
+        } else {
+            gliaSiteElement.textContent = gliaSite.name;
+        }
     }
 };
 
