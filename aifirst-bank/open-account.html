@@ -4,151 +4,175 @@ site_type: bank
 base_path: /aifirst-bank
 ---
 
-<section class="bg-gradient-to-br from-blue-100 to-white py-20 md:py-32">
-    <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">Open Your Account Today.</h1>
-        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Explore the AI First Bank Demo and see how Glia integration enhances customer onboarding and support.</p>
-        <div class="mt-8 flex justify-center space-x-4">
-            <button class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg" onclick="document.getElementById('account-form').scrollIntoView({behavior: 'smooth'})">Start Your Application</button>
-            <a href="#account-benefits" class="bg-white text-blue-600 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition duration-300 border border-gray-300">Learn About Benefits</a>
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-blue-600 to-blue-800 py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+        <img src="/assets/images/banking-hero-bg.png" alt="" class="w-full h-full object-cover">
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">Set Up Online Access</h1>
+        <p class="mt-4 text-lg text-blue-100 max-w-2xl mx-auto">Already a customer? Enroll in online banking to manage your accounts anytime, anywhere with our secure digital platform.</p>
+        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#enroll" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition duration-300 shadow-lg">Enroll Now</a>
+            <a href="#features" class="bg-transparent text-white font-semibold py-3 px-8 rounded-full border-2 border-white hover:bg-white/10 transition duration-300">See Features</a>
         </div>
     </div>
 </section>
 
-<section class="bg-white py-16">
-    <div class="container mx-auto px-4 text-center max-w-4xl">
-        <h2 class="text-3xl font-bold text-gray-900">Why Choose AI First Bank?</h2>
-        <p class="mt-4 text-gray-600">This demo showcases the account opening experience at AI First Bank Demo. Explore how Glia's customer engagement platform enhances the customer journey.</p>
-    </div>
-</section>
-
-<section class="bg-gray-100 py-16" id="account-benefits">
+<!-- Online Banking Features -->
+<section class="py-16 bg-white" id="features">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Account Benefits</h2>
-            <p class="mt-2 text-gray-600">Discover what makes AI First Bank special.</p>
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">Online Banking Features</h2>
+            <p class="mt-2 text-gray-600">Everything you need to manage your finances digitally</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                <img src="/assets/images/competitive-rates-icon.png" alt="Competitive Rates" class="h-12 w-12 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Competitive Rates</h3>
-                <p class="text-gray-600">Enjoy high-yield savings rates and competitive loan rates designed for your success.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 text-center hover:shadow-xl transition duration-300">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <img src="/assets/images/account-access-icon.png" alt="" class="w-10 h-10">
+                </div>
+                <h3 class="text-lg font-bold text-gray-900">Account Access</h3>
+                <p class="text-sm text-gray-600 mt-2">View balances, transactions, and statements for all your accounts in one place.</p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                <img src="/assets/images/lower-fees-icon.png" alt="Low Fees" class="h-12 w-12 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Low Fees</h3>
-                <p class="text-gray-600">Transparent pricing with minimal fees means more money stays in your pocket.</p>
+            <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 text-center hover:shadow-xl transition duration-300">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <img src="/assets/images/transfer-icon.png" alt="" class="w-10 h-10">
+                </div>
+                <h3 class="text-lg font-bold text-gray-900">Easy Transfers</h3>
+                <p class="text-sm text-gray-600 mt-2">Move money between accounts or send to others instantly with Zelle®.</p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                <img src="/assets/images/ai-security-icon.png" alt="AI-Powered Security" class="h-12 w-12 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">AI-Powered Security</h3>
-                <p class="text-gray-600">Advanced fraud detection and security measures protect your accounts 24/7.</p>
+            <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 text-center hover:shadow-xl transition duration-300">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <img src="/assets/images/bill-pay-icon.png" alt="" class="w-10 h-10">
+                </div>
+                <h3 class="text-lg font-bold text-gray-900">Bill Pay</h3>
+                <p class="text-sm text-gray-600 mt-2">Schedule one-time or recurring payments to any company or individual.</p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                <img src="/assets/images/always-human-icon.png" alt="Personalized Service" class="h-12 w-12 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Personalized Service</h3>
-                <p class="text-gray-600">Work with real people who understand your financial goals and provide expert guidance.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                <img src="/assets/images/location-icon.png" alt="Nationwide Access" class="h-12 w-12 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Nationwide Access</h3>
-                <p class="text-gray-600">Access your accounts at ATMs nationwide with no fees and full mobile banking.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                <img src="/assets/images/education-icon.png" alt="Financial Tools" class="h-12 w-12 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Financial Tools</h3>
-                <p class="text-gray-600">Free resources, budgeting tools, and insights to help you achieve your financial goals.</p>
+            <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 text-center hover:shadow-xl transition duration-300">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <img src="/assets/images/mobile-deposit-icon.png" alt="" class="w-10 h-10">
+                </div>
+                <h3 class="text-lg font-bold text-gray-900">Mobile Deposit</h3>
+                <p class="text-sm text-gray-600 mt-2">Deposit checks from anywhere using your smartphone camera.</p>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Security Features -->
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <img src="/assets/images/business-team.png" alt="Secure online banking" class="rounded-2xl shadow-xl w-full">
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Bank with Confidence</h2>
+                <p class="text-gray-600 mb-6">Your security is our top priority. Our online banking platform uses industry-leading security measures to protect your accounts and personal information.</p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <img src="/assets/images/ai-security-icon.png" alt="" class="w-10 h-10 flex-shrink-0">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Multi-Factor Authentication</h3>
+                            <p class="text-gray-600 text-sm">Extra layer of security with SMS, email, or authenticator app verification.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <img src="/assets/images/secure-protected-icon.png" alt="" class="w-10 h-10 flex-shrink-0">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">256-bit Encryption</h3>
+                            <p class="text-gray-600 text-sm">Bank-grade encryption protects all your data in transit and at rest.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <img src="/assets/images/security-help-icon.png" alt="" class="w-10 h-10 flex-shrink-0">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Real-Time Fraud Monitoring</h3>
+                            <p class="text-gray-600 text-sm">AI-powered systems monitor for suspicious activity 24/7.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Enrollment Steps -->
 <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">How to Open an Account</h2>
-            <p class="mt-2 text-gray-600">Simple steps to start banking smarter.</p>
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">How to Enroll</h2>
+            <p class="mt-2 text-gray-600">Get started with online banking in just a few steps</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Apply Online</h3>
-                <p class="text-sm text-gray-600">Complete our secure online application in just a few minutes.</p>
+                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                <h3 class="font-semibold text-gray-900 mb-2">Verify Identity</h3>
+                <p class="text-sm text-gray-600">Enter your account number and personal details to verify your identity.</p>
             </div>
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Verify Identity</h3>
-                <p class="text-sm text-gray-600">Provide required identification for secure account setup.</p>
+                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                <h3 class="font-semibold text-gray-900 mb-2">Create Credentials</h3>
+                <p class="text-sm text-gray-600">Choose a username and create a strong password for your account.</p>
             </div>
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Fund Account</h3>
-                <p class="text-sm text-gray-600">Make your initial deposit to activate your new account.</p>
+                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                <h3 class="font-semibold text-gray-900 mb-2">Set Up Security</h3>
+                <p class="text-sm text-gray-600">Configure multi-factor authentication for enhanced protection.</p>
             </div>
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">4</div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Start Banking</h3>
-                <p class="text-sm text-gray-600">Access your accounts online, by mobile app, or visit a branch.</p>
+                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+                <h3 class="font-semibold text-gray-900 mb-2">Start Banking</h3>
+                <p class="text-sm text-gray-600">Access your accounts online or download our mobile app.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-16 bg-gray-100">
+<!-- Enrollment Form -->
+<section class="py-16 bg-gray-50" id="enroll">
     <div class="container mx-auto px-4 max-w-2xl">
-        <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-6">Open Your Account</h2>
-            <form id="account-form" class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-2">Enroll in Online Banking</h2>
+            <p class="text-center text-gray-600 mb-6">Already have an account? Set up your online access below.</p>
+            <form id="enroll-form" class="space-y-6">
+                <div>
+                    <label for="account-number" class="block text-sm font-medium text-gray-700">Account Number *</label>
+                    <input type="text" id="account-number" name="account-number" placeholder="Enter your account number" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
-                        <input type="text" id="first-name" name="first-name" placeholder="John" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" data-required="true">
+                        <input type="text" id="first-name" name="first-name" placeholder="John" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                         <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                     </div>
                     <div>
                         <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
-                        <input type="text" id="last-name" name="last-name" placeholder="Doe" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" data-required="true">
+                        <input type="text" id="last-name" name="last-name" placeholder="Doe" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                         <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                     </div>
                 </div>
                 <div>
+                    <label for="ssn-last4" class="block text-sm font-medium text-gray-700">Last 4 Digits of SSN *</label>
+                    <input type="text" id="ssn-last4" name="ssn-last4" placeholder="1234" maxlength="4" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                </div>
+                <div>
                     <label for="email" class="block text-sm font-medium text-gray-700">Email Address *</label>
-                    <input type="email" id="email" name="email" placeholder="john.doe@example.com" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" data-required="true">
+                    <input type="email" id="email" name="email" placeholder="john.doe@example.com" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                     <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                 </div>
                 <div>
                     <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" placeholder="555.867.5309" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" data-required="true">
-                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
-                </div>
-                <div>
-                    <label for="account-type" class="block text-sm font-medium text-gray-700">Account Type *</label>
-                    <select id="account-type" name="account-type" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" data-required="true">
-                        <option value="">Select account type</option>
-                        <option value="checking">Checking Account</option>
-                        <option value="savings">Savings Account</option>
-                        <option value="money-market">Money Market Account</option>
-                        <option value="cd">Certificate of Deposit</option>
-                    </select>
-                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
-                </div>
-                <div>
-                    <label for="initial-deposit" class="block text-sm font-medium text-gray-700">Initial Deposit Amount *</label>
-                    <select id="initial-deposit" name="initial-deposit" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" data-required="true">
-                        <option value="">Select deposit amount</option>
-                        <option value="100">$100</option>
-                        <option value="500">$500</option>
-                        <option value="1000">$1,000</option>
-                        <option value="5000">$5,000</option>
-                        <option value="other">Other amount</option>
-                    </select>
+                    <input type="tel" id="phone" name="phone" placeholder="555-867-5309" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                     <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
                 </div>
                 <div>
                     <div class="flex items-center">
-                        <input id="terms" name="terms" type="checkbox" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" data-required="true">
+                        <input id="terms" name="terms" type="checkbox" data-required="true" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
                         <label for="terms" class="ml-2 block text-sm text-gray-900">
-                            I agree to the <a href="/aifirst-bank/terms-of-use.html" class="text-blue-600 hover:text-blue-700">Terms of Use</a> and <a href="/aifirst-bank/privacy-policy.html" class="text-blue-600 hover:text-blue-700">Privacy Policy</a> *
+                            I agree to the <a href="/aifirst-bank/terms-of-use.html" class="text-blue-600 hover:text-blue-700">Online Banking Agreement</a> and <a href="/aifirst-bank/privacy-policy.html" class="text-blue-600 hover:text-blue-700">Privacy Policy</a> *
                         </label>
                     </div>
                     <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
@@ -158,41 +182,71 @@ base_path: /aifirst-bank
                     <p class="text-sm text-blue-800 text-center"><span class="font-semibold">Demo Site Notice:</span> This is a demonstration website. Please do not enter real personal information. No data is stored or transmitted.</p>
                 </div>
 
-                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">Submit Application</button>
+                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition duration-300">Complete Enrollment</button>
             </form>
 
-            <div id="account-success" class="text-center hidden">
+            <div id="enroll-success" class="text-center hidden">
                 <div class="bg-green-50 border border-green-200 rounded-lg p-6">
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                     </div>
-                    <p class="text-green-800 font-semibold text-lg">Thank You!</p>
-                    <p class="text-gray-600 mt-2">Your account application has been received.</p>
+                    <p class="text-green-800 font-semibold text-lg">Enrollment Complete!</p>
+                    <p class="text-gray-600 mt-2">Your online banking access has been set up successfully.</p>
                     <p class="text-sm text-blue-600 mt-2">This is a demo site - no data was actually submitted.</p>
-                    <a href="/aifirst-bank/index.html" class="inline-block mt-4 text-blue-600 font-medium hover:underline">Back to Home</a>
+                    <a href="/aifirst-bank/login.html" class="inline-block mt-4 bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-blue-700 transition">Log In Now</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="bg-blue-600 py-16">
-    <div class="container mx-auto px-4 text-center text-white">
-        <h2 class="text-3xl md:text-4xl font-bold">Questions About Opening an Account?</h2>
-        <p class="mt-4 text-lg max-w-2xl mx-auto opacity-90">Our customer service team is here to help you understand the benefits and process of banking with AI First Bank.</p>
-        <div class="mt-8 flex justify-center space-x-4">
-            <a href="/aifirst-bank/contact.html" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Contact Us</a>
-            <a href="#" class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Schedule Consultation</a>
+<!-- Mobile App CTA -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Take Your Bank Anywhere</h2>
+                <p class="text-gray-600 mb-6">Download our mobile app to access all your online banking features on the go.</p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-center gap-3 text-gray-700">
+                        <img src="/assets/images/check-icon.png" class="w-5 h-5"> Check balances and transactions
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-700">
+                        <img src="/assets/images/check-icon.png" class="w-5 h-5"> Deposit checks with your camera
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-700">
+                        <img src="/assets/images/check-icon.png" class="w-5 h-5"> Send money with Zelle®
+                    </li>
+                    <li class="flex items-center gap-3 text-gray-700">
+                        <img src="/assets/images/check-icon.png" class="w-5 h-5"> Manage cards and set alerts
+                    </li>
+                </ul>
+            </div>
+            <div class="flex justify-center">
+                <img src="/assets/images/mobile-app-mockup.png" alt="AI First Bank Mobile App" class="max-w-sm rounded-2xl shadow-xl">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 bg-blue-600">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Need Help Getting Started?</h2>
+        <p class="text-blue-100 max-w-2xl mx-auto mb-8">Our customer service team is available to assist you with enrollment and answer any questions about online banking.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="/aifirst-bank/contact.html" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition duration-300">Contact Us</a>
+            <a href="/aifirst-bank/resources/help-center.html" class="bg-transparent text-white font-semibold py-3 px-8 rounded-full border-2 border-white hover:bg-white/10 transition duration-300">Visit Help Center</a>
         </div>
     </div>
 </section>
 
 <script>
-document.getElementById('account-form').addEventListener('submit', function(e) {
+document.getElementById('enroll-form').addEventListener('submit', function(e) {
     e.preventDefault();
     if (validate(this)) {
         this.classList.add('hidden');
-        document.getElementById('account-success').classList.remove('hidden');
+        document.getElementById('enroll-success').classList.remove('hidden');
     }
 });
 </script>
