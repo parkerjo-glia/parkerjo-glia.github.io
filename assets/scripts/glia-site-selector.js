@@ -114,7 +114,6 @@ function toggleWebAddressMode(enabled) {
         $fields.removeClass('opacity-50');
         $ddl.prop('disabled', false);
         $txt.prop('disabled', false);
-        prepSettingsForm();
     }
 }
 
