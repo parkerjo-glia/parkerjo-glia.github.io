@@ -199,21 +199,23 @@ base_path: /aifirst-bank
 </section>
 
 <script>
-document.getElementById('credit-card-application-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    if (validate(this)) {
-        this.classList.add('hidden');
-        document.getElementById('cc-application-success').classList.remove('hidden');
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('credit-card-application-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (validate(this)) {
+            this.classList.add('hidden');
+            document.getElementById('cc-application-success').classList.remove('hidden');
+        }
+    });
+
+    // Pre-select card type from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const cardType = urlParams.get('type');
+    if (cardType) {
+        const select = document.getElementById('card-type');
+        if (select) {
+            select.value = cardType;
+        }
     }
 });
-
-// Pre-select card type from URL parameter
-const urlParams = new URLSearchParams(window.location.search);
-const cardType = urlParams.get('type');
-if (cardType) {
-    const select = document.getElementById('card-type');
-    if (select) {
-        select.value = cardType;
-    }
-}
 </script>
