@@ -180,11 +180,26 @@ function engagementStart(engagement) {
 
     if (engagement && engagement.engagementId) {
         setLocalStorageItemWithExpiry('activeEngagement', engagement.engagementId);
+        var changeGliaSiteLink = document.getElementById('change-glia-site-link');
+        if (changeGliaSiteLink) {
+            changeGliaSiteLink.style.opacity = '0.5';
+            changeGliaSiteLink.style.cursor = 'not-allowed';
+            changeGliaSiteLink.onclick = function(e) {
+                e.preventDefault();
+                alert('Cannot change Glia site while an engagement is active.');
+            };
+        }
     }
 }
 
 function engagementEnd(engagement) {
     localStorage.removeItem('activeEngagement');
+    var changeGliaSiteLink = document.getElementById('change-glia-site-link');
+    if (changeGliaSiteLink) {
+        changeGliaSiteLink.style.opacity = '';
+        changeGliaSiteLink.style.cursor = '';
+        changeGliaSiteLink.onclick = null;
+    }
 }
 
 function getGliaContextSession() {

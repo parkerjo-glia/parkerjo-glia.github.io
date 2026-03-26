@@ -192,6 +192,40 @@ function init() {
             }
         }
         
+        // Display current Glia site in footer and handle engagement lock
+        const currentGliaSiteDisplay = document.getElementById('current-glia-site-display');
+        const changeGliaSiteLink = document.getElementById('change-glia-site-link');
+        
+        if (currentGliaSiteDisplay) {
+            if (gliaSiteRaw) {
+                const gliaSite = JSON.parse(gliaSiteRaw);
+                if (gliaSite && gliaSite.name && gliaSite.name !== gliaSite.id) {
+                    currentGliaSiteDisplay.textContent = gliaSite.name + ' (' + gliaSite.id.substring(0, 8) + '...)';
+                    currentGliaSiteDisplay.title = gliaSite.name + '\n' + gliaSite.id;
+                } else if (gliaSite && gliaSite.id) {
+                    currentGliaSiteDisplay.textContent = gliaSite.id;
+                    currentGliaSiteDisplay.title = gliaSite.id;
+                } else {
+                    currentGliaSiteDisplay.textContent = 'Not configured';
+                }
+            } else {
+                currentGliaSiteDisplay.textContent = 'Not configured';
+            }
+        }
+        
+        // Block site change link if engagement is active
+        if (changeGliaSiteLink) {
+            const activeEngagement = localStorage.getItem('activeEngagement');
+            if (activeEngagement) {
+                changeGliaSiteLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Cannot change Glia site while an engagement is active.');
+                });
+                changeGliaSiteLink.style.opacity = '0.5';
+                changeGliaSiteLink.style.cursor = 'not-allowed';
+            }
+        }
+        
         // Auto-open settings modal if openSettings param is present
         if (openSettings === 'true') {
             setTimeout(function() {
