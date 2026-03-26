@@ -1,0 +1,10 @@
+{
+  "sites": [
+    {
+      "siteId": "d3a89556-35b6-4c09-a6ac-d86212581dfc",
+      "custom_locales": [
+        { "locale_key": "en-PARK", "locale_name": "Parker English" }
+      ]
+    }
+  ]
+}

@@ -66,49 +66,48 @@ function buildLanguageDropdowns() {
 
 function fetchCustomLocales(api) {
     var siteId = api.getSiteId();
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://api.glia.com/visitor_app/sites/' + siteId + '/custom_locales');
-
-    var requestHeaders = api.getRequestHeaders();
-    Object.keys(requestHeaders).forEach(function (key) {
-        xhr.setRequestHeader(key, requestHeaders[key]);
-    });
-
-    xhr.onload = function () {
-        if (xhr.status >= 200 && xhr.status < 300) {
-            try {
-                var response = JSON.parse(xhr.responseText);
-                // Add custom locales to available languages
-                if (Array.isArray(response.custom_locales)) {
-                    response.custom_locales.forEach(function(locale) {
-                        // Check if locale_key already exists
-                        var exists = availableLanguages.some(function(lang) {
-                            return lang.localeKey === locale.locale_key;
-                        });
-                        if (!exists && locale.locale_key && locale.name) {
-                            availableLanguages.push({
-                                localeKey: locale.locale_key,
-                                name: locale.name
-                            });
-                        }
-                    });
-                }
-            } catch (e) {
-                console.log('Error parsing custom locales:', e);
+    
+    fetch('/assets/json/custom_locales.json')
+        .then(function(response) {
+            if (!response.ok) {
+                throw new Error('Failed to load custom_locales.json');
             }
-        }
-        // Build dropdowns after fetching (even if fetch failed, use defaults)
-        buildLanguageDropdowns();
-        restoreStoredLocale(api);
-    };
-
-    xhr.onerror = function () {
-        console.log('Error fetching custom locales');
-        buildLanguageDropdowns();
-        restoreStoredLocale(api);
-    };
-
-    xhr.send();
+            return response.json();
+        })
+        .then(function(data) {
+            // Find matching site config or use default
+            var siteConfig = data.sites.find(function(site) {
+                return site.siteId === siteId;
+            });
+            
+            // Fall back to default if no match
+            if (!siteConfig) {
+                siteConfig = data.sites.find(function(site) {
+                    return site.siteId === 'default';
+                });
+            }
+            
+            // If we found a config, use its locales
+            if (siteConfig && siteConfig.custom_locales) {
+                availableLanguages = siteConfig.custom_locales.map(function(locale) {
+                    return {
+                        localeKey: locale.locale_key,
+                        name: locale.locale_name
+                    };
+                });
+            }
+            
+            // Build dropdowns with the loaded languages
+            buildLanguageDropdowns();
+            restoreStoredLocale(api);
+        })
+        .catch(function(error) {
+            console.warn('Could not load custom locales, using defaults:', error);
+            // Use default languages on error
+            availableLanguages = [...defaultLanguages];
+            buildLanguageDropdowns();
+            restoreStoredLocale(api);
+        });
 }
 
 function restoreStoredLocale(api) {
