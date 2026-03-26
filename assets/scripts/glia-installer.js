@@ -83,7 +83,8 @@ function loadGliaAfterAuth() {
             installGlia(function () {
                 sm.getApi({ version: 'v1' }).then(function (api) {
                     glia = api;
-                    glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, addSubmitListener);
+                    glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, engagementStart);
+                    glia.addEventListener(glia.EVENTS.ENGAGEMENT_END, engagementEnd);
                     glia.updateInformation({
                         externalId: '123456789',
                         name: username,
@@ -113,7 +114,8 @@ function loadGliaUnauth() {
     installGlia(function () {
         sm.getApi({ version: 'v1' }).then(function (api) {
             glia = api;
-            glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, addSubmitListener);
+            glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, engagementStart);
+            glia.addEventListener(glia.EVENTS.ENGAGEMENT_END, engagementEnd);
             glia.updateInformation({
                 customAttributes: {
                     Authenticated: 'NO'
@@ -154,7 +156,7 @@ function logout() {
     });
 }
 
-function addSubmitListener(engagement) {
+function engagementStart(engagement) {
     var submit = document.querySelector('#sign-up_btn');
 
     if (submit) {
@@ -169,6 +171,14 @@ function addSubmitListener(engagement) {
             }
         });
     }
+
+    if (engagement && engagement.engagementId) {
+        setLocalStorageItemWithExpiry('activeEngagement', engagement.engagementId);
+    }
+}
+
+function engagementEnd(engagement) {
+    localStorage.removeItem('activeEngagement');
 }
 
 function getGliaContextSession() {

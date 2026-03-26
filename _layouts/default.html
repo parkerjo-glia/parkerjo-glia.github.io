@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Glia demo site for integration testing. Not a real financial institution.">
     <meta name="google-site-verification" content="AiR11pkGBnm5APUixlIcuCTDI4kgN0ZlW20IEJUsENQ" />
-    <title>{% if page.site_type == 'bank' %}AI First Bank{% else %}AI First Credit Union{% endif %} - a Glia Demo</title>
+    <title>{% if page.site_type == 'bank' %}AI First Bank{% else %}AI First Credit Union{% endif %} - a Glia Demo
+    </title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,9 +22,13 @@
     <script src="{{ '/assets/scripts/glia-installer.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script src="{{ '/assets/scripts/language-toggle.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script src="{{ '/assets/scripts/form-validation.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script src="{{ '/assets/scripts/session-manager.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
     </style>
 </head>
 
@@ -35,11 +40,11 @@
     {% assign join_link = base_path | append: '/join.html' %}
     {% assign logo_image = '/assets/images/logo.png' %}
     {% if page.site_type == 'bank' %}
-        {% assign site_name = 'AI First Bank' %}
-        {% assign site_name_full = 'AI First Bank' %}
-        {% assign join_text = 'Open Account' %}
-        {% assign join_link = base_path | append: '/open-account.html' %}
-        {% assign logo_image = '/assets/images/bank-logo.png' %}
+    {% assign site_name = 'AI First Bank' %}
+    {% assign site_name_full = 'AI First Bank' %}
+    {% assign join_text = 'Open Account' %}
+    {% assign join_link = base_path | append: '/open-account.html' %}
+    {% assign logo_image = '/assets/images/bank-logo.png' %}
     {% endif %}
 
     <header class="bg-white shadow-sm sticky top-0 z-50">
@@ -55,16 +60,28 @@
                 <div class="relative group">
                     <a href="#" class="flex items-center text-gray-600 hover:text-blue-600 font-medium py-2">
                         Personal
-                        <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
                         </svg>
                     </a>
-                    <div class="absolute hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                    <div
+                        class="absolute hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                         <div class="py-1" role="menu">
-                            <a href="{{ base_path }}/personal/personal-banking.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Checking, Savings, & CDs</a>
-                            <a href="{{ base_path }}/personal/credit-cards.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Credit Cards</a>
-                            <a href="{{ base_path }}/personal/personal-home-loan.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Home Loans</a>
-                            <a href="{{ base_path }}/personal/personal-auto-loan.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Auto Loans</a>
+                            <a href="{{ base_path }}/personal/personal-banking.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                role="menuitem">Checking, Savings, & CDs</a>
+                            <a href="{{ base_path }}/personal/credit-cards.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Credit
+                                Cards</a>
+                            <a href="{{ base_path }}/personal/personal-home-loan.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Home
+                                Loans</a>
+                            <a href="{{ base_path }}/personal/personal-auto-loan.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Auto
+                                Loans</a>
                         </div>
                     </div>
                 </div>
@@ -72,15 +89,25 @@
                 <div class="relative group">
                     <a href="#" class="flex items-center text-gray-600 hover:text-blue-600 font-medium py-2">
                         Business
-                        <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
                         </svg>
                     </a>
-                    <div class="absolute hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                    <div
+                        class="absolute hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                         <div class="py-1" role="menu">
-                            <a href="{{ base_path }}/business/business-banking.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Banking</a>
-                            <a href="{{ base_path }}/business/business-loans.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Loans</a>
-                            <a href="{{ base_path }}/business/business-services.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Services</a>
+                            <a href="{{ base_path }}/business/business-banking.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                role="menuitem">Banking</a>
+                            <a href="{{ base_path }}/business/business-loans.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                role="menuitem">Loans</a>
+                            <a href="{{ base_path }}/business/business-services.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                role="menuitem">Services</a>
                         </div>
                     </div>
                 </div>
@@ -88,16 +115,28 @@
                 <div class="relative group">
                     <a href="#" class="flex items-center text-gray-600 hover:text-blue-600 font-medium py-2">
                         Resources
-                        <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
                         </svg>
                     </a>
-                    <div class="absolute hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                    <div
+                        class="absolute hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                         <div class="py-1" role="menu">
-                            <a href="{{ base_path }}/resources/help-center.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Help Center</a>
-                            <a href="{{ base_path }}/resources/learn.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Learn</a>
-                            <a href="{{ base_path }}/resources/tools.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Tools</a>
-                            <a href="{{ base_path }}/about.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">About Us</a>
+                            <a href="{{ base_path }}/resources/help-center.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Help
+                                Center</a>
+                            <a href="{{ base_path }}/resources/learn.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                role="menuitem">Learn</a>
+                            <a href="{{ base_path }}/resources/tools.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                role="menuitem">Tools</a>
+                            <a href="{{ base_path }}/about.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">About
+                                Us</a>
                         </div>
                     </div>
                 </div>
@@ -105,24 +144,36 @@
             <div class="flex items-center space-x-4">
                 <!-- Language Dropdown -->
                 <div class="relative group hidden md:block" style="min-width: 150px;">
-                    <button class="flex items-center justify-end text-gray-600 hover:text-blue-600 font-medium py-2 text-sm w-full">
-                        <svg class="w-4 h-4 mr-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                    <button
+                        class="flex items-center justify-end text-gray-600 hover:text-blue-600 font-medium py-2 text-sm w-full">
+                        <svg class="w-4 h-4 mr-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
+                            </path>
+                        </svg>
                         <span id="current-lang">English</span>
-                        <svg class="ml-1 h-4 w-4 flex-shrink-0 transform transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        <svg class="ml-1 h-4 w-4 flex-shrink-0 transform transition-transform duration-300 group-hover:rotate-180"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
                         </svg>
                     </button>
-                    <div class="absolute right-0 hidden group-hover:block z-10 mt-0 w-36 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                    <div
+                        class="absolute right-0 hidden group-hover:block z-10 mt-0 w-36 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                         <div id="language-dropdown-menu" class="py-1" role="menu">
                             <span class="block px-4 py-2 text-sm text-gray-400">Loading...</span>
                         </div>
                     </div>
                 </div>
                 <div id="logged-out-nav" class="flex items-center space-x-4">
-                    <a class="hidden md:inline-flex text-blue-600 font-medium hover:text-blue-800" href="{{ base_path }}/login.html">Login</a>
-                    <a href="{{ join_link }}" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300 shadow-md">{{ join_text }}</a>
+                    <a class="hidden md:inline-flex text-blue-600 font-medium hover:text-blue-800"
+                        href="{{ base_path }}/login.html">Login</a>
+                    <a href="{{ join_link }}"
+                        class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300 shadow-md">{{
+                        join_text }}</a>
                 </div>
-                
+
                 <div id="logged-in-nav" class="hidden items-center space-x-4">
                     <div class="flex md:hidden items-center text-gray-600 font-medium py-2">
                         <img src="/assets/images/user-avatar.png" alt="User Avatar" class="w-8 h-8 rounded-full mr-2">
@@ -130,88 +181,132 @@
                     </div>
                     <div class="relative group hidden md:block">
                         <button class="flex items-center text-gray-600 hover:text-blue-600 font-medium py-2">
-                            <img src="/assets/images/user-avatar.png" alt="User Avatar" class="w-8 h-8 rounded-full mr-2">
+                            <img src="/assets/images/user-avatar.png" alt="User Avatar"
+                                class="w-8 h-8 rounded-full mr-2">
                             <span id="header-username">User</span>
-                            <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            <svg class="ml-1 h-4 w-4 transform transition-transform duration-300 group-hover:rotate-180"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
                             </svg>
                         </button>
-                        <div class="absolute right-0 hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                        <div
+                            class="absolute right-0 hidden group-hover:block z-10 mt-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                             <div class="py-1" role="menu">
-                                <a href="{{ base_path }}/olb/dashboard.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Dashboard</a>
-                                <a href="{{ base_path }}/olb/profile-settings.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Profile Settings</a>
-                                <a href="{{ base_path }}/olb/security-settings.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Security Settings</a>
+                                <a href="{{ base_path }}/olb/dashboard.html"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    role="menuitem">Dashboard</a>
+                                <a href="{{ base_path }}/olb/profile-settings.html"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    role="menuitem">Profile Settings</a>
+                                <a href="{{ base_path }}/olb/security-settings.html"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    role="menuitem">Security Settings</a>
                                 <div class="border-t border-gray-100"></div>
-                                <a href="#" id="header-logout-btn" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign Out</a>
+                                <a href="#" id="header-logout-btn"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign
+                                    Out</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <button id="mobile-menu-btn" class="md:hidden text-gray-600">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
                 </button>
             </div>
         </nav>
-        
+
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
             <div class="px-4 py-4 space-y-2">
                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex items-center justify-between py-2 text-gray-600 font-medium">
+                    <button
+                        class="mobile-dropdown-btn w-full flex items-center justify-between py-2 text-gray-600 font-medium">
                         Personal
-                        <svg class="h-4 w-4 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        <svg class="h-4 w-4 transform transition-transform duration-300"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
                         </svg>
                     </button>
                     <div class="mobile-dropdown-content hidden pl-4 pb-2 space-y-1">
-                        <a href="{{ base_path }}/personal/personal-banking.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Banking</a>
-                        <a href="{{ base_path }}/personal/credit-cards.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Credit Cards</a>
-                        <a href="{{ base_path }}/personal/personal-home-loan.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Home Loans</a>
-                        <a href="{{ base_path }}/personal/personal-auto-loan.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Auto Loans</a>
-                        <a href="{{ base_path }}/personal/personal-loans.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Personal Loans</a>
-                        <a href="{{ base_path }}/personal/personal-services.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Services</a>
-                        <a href="{{ base_path }}/personal/personal-rates.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Rates & Fees</a>
+                        <a href="{{ base_path }}/personal/personal-banking.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Banking</a>
+                        <a href="{{ base_path }}/personal/credit-cards.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Credit Cards</a>
+                        <a href="{{ base_path }}/personal/personal-home-loan.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Home Loans</a>
+                        <a href="{{ base_path }}/personal/personal-auto-loan.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Auto Loans</a>
+                        <a href="{{ base_path }}/personal/personal-loans.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Personal Loans</a>
+                        <a href="{{ base_path }}/personal/personal-services.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Services</a>
+                        <a href="{{ base_path }}/personal/personal-rates.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Rates & Fees</a>
                     </div>
                 </div>
-                
+
                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex items-center justify-between py-2 text-gray-600 font-medium">
+                    <button
+                        class="mobile-dropdown-btn w-full flex items-center justify-between py-2 text-gray-600 font-medium">
                         Business
-                        <svg class="h-4 w-4 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        <svg class="h-4 w-4 transform transition-transform duration-300"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
                         </svg>
                     </button>
                     <div class="mobile-dropdown-content hidden pl-4 pb-2 space-y-1">
-                        <a href="{{ base_path }}/business/business-banking.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Banking</a>
-                        <a href="{{ base_path }}/business/business-services.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Services</a>
-                        <a href="{{ base_path }}/business/business-loans.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Loans</a>
-                        <a href="{{ base_path }}/business/business-rates.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Rates & Services</a>
+                        <a href="{{ base_path }}/business/business-banking.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Banking</a>
+                        <a href="{{ base_path }}/business/business-services.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Services</a>
+                        <a href="{{ base_path }}/business/business-loans.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Loans</a>
+                        <a href="{{ base_path }}/business/business-rates.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Rates & Services</a>
                     </div>
                 </div>
-                
+
                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn w-full flex items-center justify-between py-2 text-gray-600 font-medium">
+                    <button
+                        class="mobile-dropdown-btn w-full flex items-center justify-between py-2 text-gray-600 font-medium">
                         Resources
-                        <svg class="h-4 w-4 transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        <svg class="h-4 w-4 transform transition-transform duration-300"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
                         </svg>
                     </button>
                     <div class="mobile-dropdown-content hidden pl-4 pb-2 space-y-1">
-                        <a href="{{ base_path }}/resources/help-center.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Help Center</a>
-                        <a href="{{ base_path }}/resources/learn.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Learn</a>
-                        <a href="{{ base_path }}/resources/tools.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Tools</a>
-                        <a href="{{ base_path }}/about.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">About Us</a>
+                        <a href="{{ base_path }}/resources/help-center.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Help Center</a>
+                        <a href="{{ base_path }}/resources/learn.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Learn</a>
+                        <a href="{{ base_path }}/resources/tools.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Tools</a>
+                        <a href="{{ base_path }}/about.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">About Us</a>
                     </div>
                 </div>
-                
+
                 <div class="pt-4 border-t border-gray-200">
                     <!-- Mobile Language Dropdown -->
                     <div class="mb-4">
                         <label class="block text-sm text-gray-600 mb-1">Language</label>
-                        <select id="mobile-language-select" onchange="var opt = this.options[this.selectedIndex]; toggleLanguage(opt.value, opt.text);" class="w-full px-3 py-2 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <select id="mobile-language-select"
+                            onchange="var opt = this.options[this.selectedIndex]; toggleLanguage(opt.value, opt.text);"
+                            class="w-full px-3 py-2 text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                             <option value="">Loading...</option>
                         </select>
                     </div>
@@ -219,85 +314,104 @@
                         <a href="{{ base_path }}/login.html" class="block py-2 text-blue-600 font-medium">Login</a>
                     </div>
                     <div id="mobile-logged-in" class="hidden space-y-1">
-                        <a href="{{ base_path }}/olb/dashboard.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Dashboard</a>
-                        <a href="{{ base_path }}/olb/profile-settings.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Profile Settings</a>
-                        <a href="{{ base_path }}/olb/security-settings.html" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Security Settings</a>
-                        <a href="#" id="mobile-logout-btn" class="block py-2 text-sm text-gray-600 hover:text-blue-600">Sign Out</a>
+                        <a href="{{ base_path }}/olb/dashboard.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Dashboard</a>
+                        <a href="{{ base_path }}/olb/profile-settings.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Profile Settings</a>
+                        <a href="{{ base_path }}/olb/security-settings.html"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Security Settings</a>
+                        <a href="#" id="mobile-logout-btn"
+                            class="block py-2 text-sm text-gray-600 hover:text-blue-600">Sign Out</a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    
+
     <script>
-    var basePath = '{{ base_path }}';
-    function clearSession() {
-        localStorage.removeItem('loggingStatus');
-        localStorage.removeItem('username');
-        localStorage.removeItem('sessionExpiration');
-    }
-    function refreshSession() {
-        localStorage.setItem('sessionExpiration', Date.now() + (60 * 60 * 1000));
-    }
-    function checkSessionExpiration() {
-        if (localStorage.getItem('loggingStatus') !== 'true') return;
-        var expiration = parseInt(localStorage.getItem('sessionExpiration'));
-        if (!expiration) return;
-        var timeUntilExpiry = expiration - Date.now();
-        if (timeUntilExpiry <= 0) { clearSession(); return; }
-        if (timeUntilExpiry <= 60000) showSessionWarningModal();
-    }
-    function showSessionWarningModal() {
-        if (document.getElementById('session-warning-modal')) return;
-        var modal = document.createElement('div');
-        modal.id = 'session-warning-modal';
-        modal.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center';
-        modal.innerHTML = '<div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6"><div class="flex items-center mb-4"><svg class="w-6 h-6 text-yellow-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg><h3 class="text-lg font-bold text-gray-900">Session Expiring</h3></div><p class="text-gray-600 mb-6">Your session is about to expire. Would you like to extend your session?</p><div class="flex space-x-3"><button id="session-extend-btn" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300 font-medium">Yes, Extend Session</button><button id="session-dismiss-btn" class="flex-1 bg-gray-100 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-200 transition duration-300 font-medium">No, Thanks</button></div></div>';
-        document.body.appendChild(modal);
-        document.getElementById('session-extend-btn').addEventListener('click', function() { refreshSession(); modal.remove(); });
-        document.getElementById('session-dismiss-btn').addEventListener('click', function() { modal.remove(); });
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-        checkSessionExpiration();
-        var isLoggedIn = localStorage.getItem('loggingStatus') === 'true';
-        var username = localStorage.getItem('username') || 'User';
-        var loggedOutNav = document.getElementById('logged-out-nav');
-        var loggedInNav = document.getElementById('logged-in-nav');
-        var headerUsername = document.getElementById('header-username');
-        var headerUsernameMobile = document.getElementById('header-username-mobile');
-        var logoutBtn = document.getElementById('header-logout-btn');
-        var mobileLoggedOut = document.getElementById('mobile-logged-out');
-        var mobileLoggedIn = document.getElementById('mobile-logged-in');
-        var mobileLogoutBtn = document.getElementById('mobile-logout-btn');
-        if (isLoggedIn) {
-            loggedOutNav.classList.add('hidden');
-            loggedInNav.classList.remove('hidden');
-            loggedInNav.classList.add('flex');
-            headerUsername.textContent = username;
-            if (headerUsernameMobile) headerUsernameMobile.textContent = username;
-            if (mobileLoggedOut) mobileLoggedOut.classList.add('hidden');
-            if (mobileLoggedIn) mobileLoggedIn.classList.remove('hidden');
-        } else {
-            loggedOutNav.classList.remove('hidden');
-            loggedOutNav.classList.add('flex');
-            loggedInNav.classList.add('hidden');
-            if (mobileLoggedOut) mobileLoggedOut.classList.remove('hidden');
-            if (mobileLoggedIn) mobileLoggedIn.classList.add('hidden');
+        var basePath = '{{ base_path }}';
+        function checkSessionExpiration() {
+            if (localStorage.getItem('loggingStatus') !== 'true') return;
+            var expiration = parseInt(localStorage.getItem('sessionExpiration'));
+            if (!expiration) return;
+            var timeUntilExpiry = expiration - Date.now();
+            if (timeUntilExpiry <= 0) { clearSession(); return; }
+            if (timeUntilExpiry <= 60000) showSessionWarningModal();
         }
-        if (logoutBtn) logoutBtn.addEventListener('click', function(e) { e.preventDefault(); clearSession(); window.location.href = basePath + '/index.html'; });
-        if (mobileLogoutBtn) mobileLogoutBtn.addEventListener('click', function(e) { e.preventDefault(); clearSession(); window.location.href = basePath + '/index.html'; });
-        var mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        var mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenuBtn && mobileMenu) mobileMenuBtn.addEventListener('click', function() { mobileMenu.classList.toggle('hidden'); });
-        document.querySelectorAll('.mobile-dropdown-btn').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                this.nextElementSibling.classList.toggle('hidden');
-                this.querySelector('svg').classList.toggle('rotate-180');
+        document.addEventListener('DOMContentLoaded', function () {
+            checkSessionExpiration();
+            var isLoggedIn = localStorage.getItem('loggingStatus') === 'true';
+            var username = localStorage.getItem('username') || 'User';
+            var loggedOutNav = document.getElementById('logged-out-nav');
+            var loggedInNav = document.getElementById('logged-in-nav');
+            var headerUsername = document.getElementById('header-username');
+            var headerUsernameMobile = document.getElementById('header-username-mobile');
+            var logoutBtn = document.getElementById('header-logout-btn');
+            var mobileLoggedOut = document.getElementById('mobile-logged-out');
+            var mobileLoggedIn = document.getElementById('mobile-logged-in');
+            var mobileLogoutBtn = document.getElementById('mobile-logout-btn');
+            if (isLoggedIn) {
+                loggedOutNav.classList.add('hidden');
+                loggedInNav.classList.remove('hidden');
+                loggedInNav.classList.add('flex');
+                headerUsername.textContent = username;
+                if (headerUsernameMobile) headerUsernameMobile.textContent = username;
+                if (mobileLoggedOut) mobileLoggedOut.classList.add('hidden');
+                if (mobileLoggedIn) mobileLoggedIn.classList.remove('hidden');
+            } else {
+                loggedOutNav.classList.remove('hidden');
+                loggedOutNav.classList.add('flex');
+                loggedInNav.classList.add('hidden');
+                if (mobileLoggedOut) mobileLoggedOut.classList.remove('hidden');
+                if (mobileLoggedIn) mobileLoggedIn.classList.add('hidden');
+            }
+            if (logoutBtn) logoutBtn.addEventListener('click', function (e) { e.preventDefault(); clearSession(); window.location.href = basePath + '/index.html'; });
+            if (mobileLogoutBtn) mobileLogoutBtn.addEventListener('click', function (e) { e.preventDefault(); clearSession(); window.location.href = basePath + '/index.html'; });
+            var mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            var mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuBtn && mobileMenu) mobileMenuBtn.addEventListener('click', function () { mobileMenu.classList.toggle('hidden'); });
+            document.querySelectorAll('.mobile-dropdown-btn').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    this.nextElementSibling.classList.toggle('hidden');
+                    this.querySelector('svg').classList.toggle('rotate-180');
+                });
             });
+
+            // Display current Glia site in footer and handle engagement lock
+            var gliaSiteRaw = localStorage.getItem('glia_site');
+            var currentGliaSiteDisplay = document.getElementById('current-glia-site-display');
+            var changeGliaSiteLink = document.getElementById('change-glia-site-link');
+
+            if (currentGliaSiteDisplay) {
+                if (gliaSiteRaw) {
+                    var gliaSite = JSON.parse(gliaSiteRaw);
+                    if (gliaSite && gliaSite.name && gliaSite.name !== gliaSite.id) {
+                        currentGliaSiteDisplay.textContent = gliaSite.name + ' (' + gliaSite.id.substring(0, 8) + '...)';
+                    } else if (gliaSite && gliaSite.id) {
+                        currentGliaSiteDisplay.textContent = gliaSite.id;
+                    } else {
+                        currentGliaSiteDisplay.textContent = 'Not configured';
+                    }
+                } else {
+                    currentGliaSiteDisplay.textContent = 'Not configured';
+                }
+            }
+
+            // Block site change link if engagement is active
+            if (changeGliaSiteLink) {
+                var activeEngagement = localStorage.getItem('activeEngagement');
+                if (activeEngagement) {
+                    changeGliaSiteLink.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        alert('Cannot change Glia site while an engagement is active.');
+                    });
+                    changeGliaSiteLink.style.opacity = '0.5';
+                    changeGliaSiteLink.style.cursor = 'not-allowed';
+                }
+            }
         });
-    });
     </script>
-    
+
     <main id="content-container" class="flex-grow page-content">
         {{ content }}
     </main>
@@ -307,7 +421,9 @@
         <div class="bg-blue-900 border-b border-blue-800 py-3 mb-8">
             <div class="container mx-auto px-4">
                 <p class="text-sm text-blue-200 text-center">
-                    <span class="font-semibold">Demo Site Notice:</span> This is a demonstration website only. All data, rates, and information displayed are fictitious and intended for demo purposes only. Do not enter real personal information.
+                    <span class="font-semibold">Demo Site Notice:</span> This is a demonstration website only. All data,
+                    rates, and information displayed are fictitious and intended for demo purposes only. Do not enter
+                    real personal information.
                 </p>
             </div>
         </div>
@@ -320,54 +436,79 @@
                         <span class="text-xs text-gray-400">a Glia Demo</span>
                     </div>
                 </a>
-                <p class="address-text mt-4 text-sm text-gray-400 flex items-center gap-2"><img src="/assets/images/location-pin-icon.png" alt="" class="w-5 h-5">30 West 21st St, New York, NY 10010</p>
-                <button id="cobrowse-code-btn" class="mt-3 bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300" onclick="document.body.appendChild(document.createElement('sm-visitor-code'))">Cobrowse Code</button>
+                <p class="address-text mt-4 text-sm text-gray-400 flex items-center gap-2"><img
+                        src="/assets/images/location-pin-icon.png" alt="" class="w-5 h-5">30 West 21st St, New York, NY
+                    10010</p>
+                <button id="cobrowse-code-btn"
+                    class="mt-3 bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"
+                    onclick="document.body.appendChild(document.createElement('sm-visitor-code'))">Cobrowse
+                    Code</button>
                 <div class="mt-4 pt-4 border-t border-gray-700">
                     <p class="text-xs text-gray-500 mb-2">Switch demo site:</p>
                     {% if page.site_type == 'bank' %}
-                    <a href="/aifirst-cu/index.html" class="text-xs text-gray-400 hover:text-white transition duration-300">→ AI First Credit Union</a>
+                    <a href="/aifirst-cu/index.html"
+                        class="text-xs text-gray-400 hover:text-white transition duration-300">→ AI First Credit
+                        Union</a>
                     {% else %}
-                    <a href="/aifirst-bank/index.html" class="text-xs text-gray-400 hover:text-white transition duration-300">→ AI First Bank</a>
+                    <a href="/aifirst-bank/index.html"
+                        class="text-xs text-gray-400 hover:text-white transition duration-300">→ AI First Bank</a>
                     {% endif %}
                     <p class="text-xs text-gray-500 mt-3 mb-2">Switch Glia site:</p>
-                    <a href="/?openSettings=true" class="text-xs text-gray-400 hover:text-white transition duration-300">→ Change Glia Site ID</a>
+                    <a href="/?openSettings=true" id="change-glia-site-link"
+                        class="text-xs text-gray-400 hover:text-white transition duration-300">→ <span
+                            id="current-glia-site-display">Loading...</span></a>
                 </div>
             </div>
             <div>
                 <h4 class="font-semibold text-white mb-2">Personal</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="{{ base_path }}/personal/personal-banking.html" class="hover:text-white transition duration-300">Checking, Savings & CDs</a></li>
-                    <li><a href="{{ base_path }}/personal/credit-cards.html" class="hover:text-white transition duration-300">Credit Cards</a></li>
-                    <li><a href="{{ base_path }}/personal/personal-home-loan.html" class="hover:text-white transition duration-300">Home Loans</a></li>
-                    <li><a href="{{ base_path }}/personal/personal-auto-loan.html" class="hover:text-white transition duration-300">Auto Loans</a></li>
+                    <li><a href="{{ base_path }}/personal/personal-banking.html"
+                            class="hover:text-white transition duration-300">Checking, Savings & CDs</a></li>
+                    <li><a href="{{ base_path }}/personal/credit-cards.html"
+                            class="hover:text-white transition duration-300">Credit Cards</a></li>
+                    <li><a href="{{ base_path }}/personal/personal-home-loan.html"
+                            class="hover:text-white transition duration-300">Home Loans</a></li>
+                    <li><a href="{{ base_path }}/personal/personal-auto-loan.html"
+                            class="hover:text-white transition duration-300">Auto Loans</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-semibold text-white mb-2">Business</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="{{ base_path }}/business/business-banking.html" class="hover:text-white transition duration-300">Banking</a></li>
-                    <li><a href="{{ base_path }}/business/business-loans.html" class="hover:text-white transition duration-300">Loans</a></li>
-                    <li><a href="{{ base_path }}/business/business-services.html" class="hover:text-white transition duration-300">Services</a></li>
+                    <li><a href="{{ base_path }}/business/business-banking.html"
+                            class="hover:text-white transition duration-300">Banking</a></li>
+                    <li><a href="{{ base_path }}/business/business-loans.html"
+                            class="hover:text-white transition duration-300">Loans</a></li>
+                    <li><a href="{{ base_path }}/business/business-services.html"
+                            class="hover:text-white transition duration-300">Services</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-semibold text-white mb-2">Resources</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="{{ base_path }}/resources/help-center.html" class="hover:text-white transition duration-300">Help Center</a></li>
-                    <li><a href="{{ base_path }}/resources/learn.html" class="hover:text-white transition duration-300">Learn</a></li>
-                    <li><a href="{{ base_path }}/resources/tools.html" class="hover:text-white transition duration-300">Tools</a></li>
-                    <li><a href="{{ base_path }}/about.html" class="hover:text-white transition duration-300">About Us</a></li>
+                    <li><a href="{{ base_path }}/resources/help-center.html"
+                            class="hover:text-white transition duration-300">Help Center</a></li>
+                    <li><a href="{{ base_path }}/resources/learn.html"
+                            class="hover:text-white transition duration-300">Learn</a></li>
+                    <li><a href="{{ base_path }}/resources/tools.html"
+                            class="hover:text-white transition duration-300">Tools</a></li>
+                    <li><a href="{{ base_path }}/about.html" class="hover:text-white transition duration-300">About
+                            Us</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-semibold text-white mb-2">Legal</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="{{ base_path }}/contact.html" class="hover:text-white transition duration-300">Contact Us</a></li>
-                    <li><a href="{{ base_path }}/privacy-policy.html" class="hover:text-white transition duration-300">Privacy Policy</a></li>
-                    <li><a href="{{ base_path }}/terms-of-use.html" class="hover:text-white transition duration-300">Terms of Use</a></li>
+                    <li><a href="{{ base_path }}/contact.html" class="hover:text-white transition duration-300">Contact
+                            Us</a></li>
+                    <li><a href="{{ base_path }}/privacy-policy.html"
+                            class="hover:text-white transition duration-300">Privacy Policy</a></li>
+                    <li><a href="{{ base_path }}/terms-of-use.html"
+                            class="hover:text-white transition duration-300">Terms of Use</a></li>
                 </ul>
             </div>
         </div>
     </footer>
 </body>
+
 </html>

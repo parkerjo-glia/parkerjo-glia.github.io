@@ -86,6 +86,28 @@ async function prepSettingsForm() {
     await buildSelectOptionsAsync('siteSelectorDDL');
     const gliaSiteRaw = localStorage.getItem('glia_site');
     const gliaSite = JSON.parse(gliaSiteRaw);
+    const activeEngagement = localStorage.getItem('activeEngagement');
+    
+    // Check for active engagement and show warning / disable fields
+    const existingWarning = document.getElementById('engagement-warning');
+    if (existingWarning) existingWarning.remove();
+    
+    if (activeEngagement) {
+        const warningDiv = document.createElement('div');
+        warningDiv.id = 'engagement-warning';
+        warningDiv.className = 'alert alert-warning mb-3';
+        warningDiv.innerHTML = '<strong>Engagement Active:</strong> You cannot change the Glia site while an engagement is in progress.';
+        const form = document.getElementById('settingsForm');
+        if (form) form.insertBefore(warningDiv, form.firstChild);
+        
+        $('#siteSelectorDDL').prop('disabled', true);
+        $('#siteIdTXT').prop('readonly', true);
+        $('#saveSettings').prop('disabled', true);
+    } else {
+        $('#siteSelectorDDL').prop('disabled', false);
+        $('#siteIdTXT').prop('readonly', false);
+        $('#saveSettings').prop('disabled', false);
+    }
     
     if (gliaSite) {
         const siteSelectorDDL = $('#siteSelectorDDL');
