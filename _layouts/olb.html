@@ -213,8 +213,10 @@
                     var gliaSite = JSON.parse(gliaSiteRaw);
                     if (gliaSite && gliaSite.name && gliaSite.name !== gliaSite.id) {
                         currentGliaSiteDisplay.textContent = gliaSite.name + ' (' + gliaSite.id.substring(0, 8) + '...)';
+                        currentGliaSiteDisplay.title = gliaSite.name + '\n' + gliaSite.id;
                     } else if (gliaSite && gliaSite.id) {
                         currentGliaSiteDisplay.textContent = gliaSite.id;
+                        currentGliaSiteDisplay.title = gliaSite.id;
                     } else {
                         currentGliaSiteDisplay.textContent = 'Not configured';
                     }
