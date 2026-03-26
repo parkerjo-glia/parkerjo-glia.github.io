@@ -134,6 +134,7 @@ function isUUID(str) {
 
 function init() {
     const siteParam = getQueryParam("glia_site");
+    const openSettings = getQueryParam("openSettings");
 
     if (siteParam) {
         let selectedSite = window.gliaDemo.sites.find(
@@ -167,6 +168,17 @@ function init() {
             if (gliaSite) {
                 gliaSiteElement.textContent = gliaSite.name;
             }
+        }
+        
+        // Auto-open settings modal if openSettings param is present
+        if (openSettings === 'true') {
+            setTimeout(function() {
+                const modalEl = document.getElementById('siteSelectorModal');
+                if (modalEl) {
+                    const modal = new bootstrap.Modal(modalEl);
+                    modal.show();
+                }
+            }, 500);
         }
     });
 }
