@@ -89,12 +89,20 @@ function fetchCustomLocales(api) {
             
             // If we found a config, use its locales
             if (siteConfig && siteConfig.custom_locales) {
-                availableLanguages = siteConfig.custom_locales.map(function(locale) {
+                var customLocales = siteConfig.custom_locales.map(function(locale) {
                     return {
                         localeKey: locale.locale_key,
                         name: locale.locale_name
                     };
                 });
+                
+                // Filter out en-US and es-MX from custom locales (we'll add defaults first)
+                var additionalLocales = customLocales.filter(function(locale) {
+                    return locale.localeKey !== 'en-US' && locale.localeKey !== 'es-MX';
+                });
+                
+                // Always start with English and Spanish, then add any additional locales
+                availableLanguages = [...defaultLanguages, ...additionalLocales];
             }
             
             // Build dropdowns with the loaded languages
