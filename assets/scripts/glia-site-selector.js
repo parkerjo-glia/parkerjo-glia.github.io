@@ -27,10 +27,6 @@ function loadSiteSelector() {
                 prepSettingsForm();
             });
 
-            $('#useWebAddressToggle').on('change', function () {
-                toggleWebAddressMode($(this).is(':checked'));
-            });
-
             $('#siteSelectorDDL').on('change', function () {
                 $('#siteIdTXT').val($('#siteSelectorDDL').val());
                 validateSiteId();
@@ -51,16 +47,6 @@ function loadSiteSelector() {
             });
 
             $('#saveSettings').on('click', function () {
-                const useWebAddress = $('#useWebAddressToggle').is(':checked');
-                
-                if (useWebAddress) {
-                    localStorage.setItem('glia_site', '"allowed-web-address"');
-                    bootstrap.Modal.getInstance(document.getElementById('siteSelectorModal')).hide();
-                    localStorage.removeItem(window.gliaContextSessionItemKey);
-                    location.reload();
-                    return;
-                }
-
                 const siteIdFieldError = $("#siteid-error");
                 siteIdFieldError.hide();
                 const siteId = $('#siteIdTXT').val();
@@ -81,9 +67,6 @@ function loadSiteSelector() {
             });
 
             function validateSiteId(){
-                const useWebAddress = $('#useWebAddressToggle').is(':checked');
-                if (useWebAddress) return true;
-
                 const siteIdFieldError = $("#siteid-error");
                 siteIdFieldError.hide();
                 const siteId = $('#siteIdTXT').val();
@@ -99,39 +82,11 @@ function loadSiteSelector() {
         });
 }
 
-function toggleWebAddressMode(enabled) {
-    const $fields = $('#siteSelectionFields');
-    const $ddl = $('#siteSelectorDDL');
-    const $txt = $('#siteIdTXT');
-    const $error = $('#siteid-error');
-
-    if (enabled) {
-        $fields.addClass('opacity-50');
-        $ddl.prop('disabled', true).val('');
-        $txt.prop('disabled', true).val('');
-        $error.hide();
-    } else {
-        $fields.removeClass('opacity-50');
-        $ddl.prop('disabled', false);
-        $txt.prop('disabled', false);
-    }
-}
-
 async function prepSettingsForm() {
     await buildSelectOptionsAsync('siteSelectorDDL');
     const gliaSiteRaw = localStorage.getItem('glia_site');
-    
-    // Check if using web address mode
-    if (gliaSiteRaw === '"allowed-web-address"') {
-        $('#useWebAddressToggle').prop('checked', true);
-        toggleWebAddressMode(true);
-        return;
-    }
-
-    $('#useWebAddressToggle').prop('checked', false);
-    toggleWebAddressMode(false);
-
     const gliaSite = JSON.parse(gliaSiteRaw);
+    
     if (gliaSite) {
         const siteSelectorDDL = $('#siteSelectorDDL');
         const siteIdTXT = $('#siteIdTXT');
@@ -208,13 +163,9 @@ function init() {
         const gliaSiteRaw = localStorage.getItem('glia_site');
         const gliaSiteElement = document.getElementById('glia-site');
         if (gliaSiteElement) {
-            if (gliaSiteRaw === '"allowed-web-address"') {
-                gliaSiteElement.textContent = 'Web Address';
-            } else {
-                const gliaSite = JSON.parse(gliaSiteRaw);
-                if (gliaSite) {
-                    gliaSiteElement.textContent = gliaSite.name;
-                }
+            const gliaSite = JSON.parse(gliaSiteRaw);
+            if (gliaSite) {
+                gliaSiteElement.textContent = gliaSite.name;
             }
         }
     });
