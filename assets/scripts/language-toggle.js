@@ -33,6 +33,8 @@ function toggleLanguage(localeKey, name) {
 }
 
 function buildLanguageDropdowns() {
+    var storedLocale = localStorage.getItem('glia_locale') || 'en-US';
+    
     // Build desktop dropdown
     var desktopMenu = document.getElementById('language-dropdown-menu');
     if (desktopMenu) {
@@ -51,7 +53,30 @@ function buildLanguageDropdowns() {
         });
     }
 
-    // Build mobile select
+    // Build mobile menu (list of clickable items)
+    var mobileMenu = document.getElementById('mobile-language-menu');
+    if (mobileMenu) {
+        mobileMenu.innerHTML = '';
+        availableLanguages.forEach(function(lang) {
+            var link = document.createElement('a');
+            link.href = '#';
+            var isActive = lang.localeKey === storedLocale;
+            link.className = 'block py-2 text-base ' + (isActive ? 'text-blue-600 font-medium' : 'text-gray-600 hover:text-blue-600');
+            link.textContent = lang.name;
+            if (isActive) {
+                link.innerHTML = lang.name + ' <span class="text-blue-600">✓</span>';
+            }
+            link.onclick = function(e) {
+                e.preventDefault();
+                toggleLanguage(lang.localeKey, lang.name);
+                // Update active state
+                buildLanguageDropdowns();
+            };
+            mobileMenu.appendChild(link);
+        });
+    }
+    
+    // Also support legacy mobile select if it exists
     var mobileSelect = document.getElementById('mobile-language-select');
     if (mobileSelect) {
         mobileSelect.innerHTML = '';
