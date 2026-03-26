@@ -34,7 +34,7 @@ window.getGliaContext = function () {
 
 var installGlia = function (callback) {
     var gliaIntegrationScriptUrl;
-    
+
     if (useWebAddress && !urlSiteId) {
         // Load without site_id - Glia will use site_id from the page's URL query string
         gliaIntegrationScriptUrl = 'https://api.glia.com/salemove_integration.js';
@@ -95,8 +95,8 @@ function loadGliaAfterAuth() {
                         }
                     }).then(function () {
                         window.dispatchEvent(new Event('glia-installed'));
-                        showCobrowseCode();
-                    }).catch(function () {});
+                        postGliaInstalled();
+                    }).catch(function () { });
                 });
             });
         }
@@ -122,13 +122,19 @@ function loadGliaUnauth() {
                 }
             }).then(function () {
                 window.dispatchEvent(new Event('glia-installed'));
-                showCobrowseCode();
-            }).catch(function () {});
+                postGliaInstalled();
+            }).catch(function () { });
         });
     });
 }
 
-function showCobrowseCode() {
+function postGliaInstalled(glia) {
+
+    if (!glia.isInEngagement()) {
+        localStorage.removeItem('activeEngagement');
+    }
+
+    // Show Cobrowse if applicable
     const searchParams = new URLSearchParams(window.location.search);
     if (searchParams.has('show_cbcode')) {
         document.body.appendChild(document.createElement('sm-visitor-code'));
