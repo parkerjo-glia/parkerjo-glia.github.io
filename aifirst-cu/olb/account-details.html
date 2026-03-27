@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Transfer button
     document.getElementById('transfer-btn').addEventListener('click', function() {
         if (currentAccount && currentAccount.balance >= 0) {
-            window.location.href = `aifirst-cu/olb/transfer.html?from=${currentAccount.id}`;
+            window.location.href = `/aifirst-cu/olb/transfer.html?from=${currentAccount.id}`;
         }
     });
     
