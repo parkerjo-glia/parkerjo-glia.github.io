@@ -62,8 +62,13 @@ function loadSiteSelector() {
                     localStorage.setItem('glia_site', JSON.stringify(selectedSite));
                     bootstrap.Modal.getInstance(document.getElementById('siteSelectorModal')).hide();
                     localStorage.removeItem(window.gliaContextSessionItemKey);
-                    location.reload();
+                    window.location.href = getCleanReloadUrl();
                 }
+            });
+            
+            // Remove openSettings param when modal is closed
+            $('#siteSelectorModal').on('hidden.bs.modal', function () {
+                removeOpenSettingsParam();
             });
 
             function validateSiteId(){
@@ -154,6 +159,20 @@ function isUUID(str) {
     return uuidRegex.test(str);
 }
 
+function removeOpenSettingsParam() {
+    const url = new URL(window.location.href);
+    if (url.searchParams.has('openSettings')) {
+        url.searchParams.delete('openSettings');
+        window.history.replaceState({}, document.title, url.pathname + url.search);
+    }
+}
+
+function getCleanReloadUrl() {
+    const url = new URL(window.location.href);
+    url.searchParams.delete('openSettings');
+    return url.pathname + url.search;
+}
+
 function init() {
     const siteParam = getQueryParam("glia_site");
     const openSettings = getQueryParam("openSettings");
@@ -195,27 +214,47 @@ function init() {
         // Display current Glia site in footer and handle engagement lock
         const currentGliaSiteDisplay = document.getElementById('current-glia-site-display');
         const changeGliaSiteLink = document.getElementById('change-glia-site-link');
+        const headerGliaSiteDisplay = document.getElementById('header-glia-site-display');
+        
+        // Helper function to set site display text
+        function setSiteDisplayText(element, gliaSite, short) {
+            if (gliaSite && gliaSite.name && gliaSite.name !== gliaSite.id) {
+                if (short) {
+                    element.textContent = gliaSite.name.length > 15 ? gliaSite.name.substring(0, 15) + '...' : gliaSite.name;
+                } else {
+                    element.textContent = gliaSite.name + ' (' + gliaSite.id.substring(0, 8) + '...)';
+                }
+                element.title = gliaSite.name + '\n' + gliaSite.id;
+            } else if (gliaSite && gliaSite.id) {
+                element.textContent = short ? gliaSite.id.substring(0, 8) + '...' : gliaSite.id;
+                element.title = gliaSite.id;
+            } else {
+                element.textContent = 'Not configured';
+            }
+        }
         
         if (currentGliaSiteDisplay) {
             if (gliaSiteRaw) {
                 const gliaSite = JSON.parse(gliaSiteRaw);
-                if (gliaSite && gliaSite.name && gliaSite.name !== gliaSite.id) {
-                    currentGliaSiteDisplay.textContent = gliaSite.name + ' (' + gliaSite.id.substring(0, 8) + '...)';
-                    currentGliaSiteDisplay.title = gliaSite.name + '\n' + gliaSite.id;
-                } else if (gliaSite && gliaSite.id) {
-                    currentGliaSiteDisplay.textContent = gliaSite.id;
-                    currentGliaSiteDisplay.title = gliaSite.id;
-                } else {
-                    currentGliaSiteDisplay.textContent = 'Not configured';
-                }
+                setSiteDisplayText(currentGliaSiteDisplay, gliaSite, false);
             } else {
                 currentGliaSiteDisplay.textContent = 'Not configured';
             }
         }
         
+        if (headerGliaSiteDisplay) {
+            if (gliaSiteRaw) {
+                const gliaSite = JSON.parse(gliaSiteRaw);
+                setSiteDisplayText(headerGliaSiteDisplay, gliaSite, true);
+            } else {
+                headerGliaSiteDisplay.textContent = 'Not set';
+            }
+        }
+        
         // Block site change link if engagement is active
+        const activeEngagement = localStorage.getItem('activeEngagement');
+        
         if (changeGliaSiteLink) {
-            const activeEngagement = localStorage.getItem('activeEngagement');
             if (activeEngagement) {
                 changeGliaSiteLink.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -223,6 +262,19 @@ function init() {
                 });
                 changeGliaSiteLink.style.opacity = '0.5';
                 changeGliaSiteLink.style.cursor = 'not-allowed';
+            }
+        }
+        
+        // Also handle header Glia site link
+        const headerChangeGliaSiteLink = document.getElementById('header-change-glia-site-link');
+        if (headerChangeGliaSiteLink) {
+            if (activeEngagement) {
+                headerChangeGliaSiteLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Cannot change Glia site while an engagement is active.');
+                });
+                headerChangeGliaSiteLink.style.opacity = '0.5';
+                headerChangeGliaSiteLink.style.cursor = 'not-allowed';
             }
         }
         

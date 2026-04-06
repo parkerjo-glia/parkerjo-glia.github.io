@@ -49,14 +49,28 @@
 
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
-            <!-- Logo - fixed width for balance -->
-            <a href="{{ base_path }}/index.html" class="flex items-center space-x-2 flex-shrink-0">
-                <img src="{{ logo_image }}" alt="{{ site_name_full }} Logo" class="w-8 h-8">
-                <div class="flex flex-col">
-                    <span class="font-bold text-xl text-gray-900 leading-tight">{{ site_name }}</span>
-                    <span class="text-xs text-gray-500">a Glia Demo</span>
+            <!-- Logo with switchers -->
+            <div class="flex-shrink-0">
+                <a href="{{ base_path }}/index.html" class="flex items-center space-x-2">
+                    <img src="{{ logo_image }}" alt="{{ site_name_full }} Logo" class="w-8 h-8">
+                    <div class="flex flex-col">
+                        <span class="font-bold text-xl text-gray-900 leading-tight">{{ site_name }}</span>
+                        <span class="text-xs text-gray-500">a Glia Demo</span>
+                    </div>
+                </a>
+                <div class="hidden md:block text-xs text-gray-400 mt-1 space-y-0.5">
+                    <div>
+                        {% if page.site_type == 'bank' %}
+                        <a href="/aifirst-cu/index.html" class="hover:text-gray-600 transition">→ AI First Credit Union</a>
+                        {% else %}
+                        <a href="/aifirst-bank/index.html" class="hover:text-gray-600 transition">→ AI First Bank</a>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <a href="/?openSettings=true" id="header-change-glia-site-link" class="hover:text-gray-600 transition">→ <span id="header-glia-site-display">...</span></a>
+                    </div>
                 </div>
-            </a>
+            </div>
             
             <!-- Center nav links -->
             <div class="hidden md:flex flex-1 justify-center space-x-6">

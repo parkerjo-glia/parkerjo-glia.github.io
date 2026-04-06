@@ -50,13 +50,27 @@
     <header class="bg-white shadow-sm border-b border-gray-200">
         <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
             <div class="flex items-center space-x-4">
-                <a href="{{ base_path }}/index.html" class="flex items-center space-x-2">
-                    <img src="{{ logo_image }}" alt="{{ site_name_full }} Logo" class="w-8 h-8">
-                    <div class="flex flex-col">
-                        <span class="font-bold text-xl text-gray-900 leading-tight">{{ site_name }}</span>
-                        <span class="text-xs text-gray-500">a Glia Demo</span>
+                <div>
+                    <a href="{{ base_path }}/index.html" class="flex items-center space-x-2">
+                        <img src="{{ logo_image }}" alt="{{ site_name_full }} Logo" class="w-8 h-8">
+                        <div class="flex flex-col">
+                            <span class="font-bold text-xl text-gray-900 leading-tight">{{ site_name }}</span>
+                            <span class="text-xs text-gray-500">a Glia Demo</span>
+                        </div>
+                    </a>
+                    <div class="hidden md:block text-xs text-gray-400 mt-1 space-y-0.5">
+                        <div>
+                            {% if page.site_type == 'bank' %}
+                            <a href="/aifirst-cu/olb/dashboard.html" class="hover:text-gray-600 transition">→ AI First Credit Union</a>
+                            {% else %}
+                            <a href="/aifirst-bank/olb/dashboard.html" class="hover:text-gray-600 transition">→ AI First Bank</a>
+                            {% endif %}
+                        </div>
+                        <div>
+                            <a href="/?openSettings=true" id="header-change-glia-site-link" class="hover:text-gray-600 transition">→ <span id="header-glia-site-display">...</span></a>
+                        </div>
                     </div>
-                </a>
+                </div>
                 <span class="text-gray-400 hidden md:inline">|</span>
                 <span class="text-gray-600 font-medium hidden md:inline">Online Banking</span>
             </div>

@@ -30,8 +30,49 @@ site_type: cu
     </style>
 </head>
 <body class="bg-gray-100">
+    <!-- Header with logo and subtle site switchers -->
+    <header class="absolute top-0 left-0 p-6">
+        <div class="flex items-center space-x-3 mb-3">
+            <img src="/assets/images/logo.png" alt="AI First Credit Union Logo" class="w-10 h-10">
+            <div class="flex flex-col">
+                <span class="font-bold text-xl text-gray-900 leading-tight">AI First CU</span>
+                <span class="text-xs text-gray-500">Branch Kiosk</span>
+            </div>
+        </div>
+        <div class="text-xs text-gray-400 space-y-1">
+            <div>
+                <span>Demo: </span>
+                <a href="/aifirst-bank/kiosk.html" class="hover:text-gray-600 transition">Switch to Bank</a>
+            </div>
+            <div>
+                <span>Glia: </span>
+                <a href="/?openSettings=true" id="change-glia-site-link" class="hover:text-gray-600 transition">
+                    <span id="current-glia-site-display">Loading...</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
     <div class="min-h-screen flex items-center justify-center">
         <img src="/assets/images/about-story-image.png" alt="AI First Credit Union" class="max-w-full max-h-screen object-contain">
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var gliaSiteRaw = localStorage.getItem('glia_site');
+        var currentGliaSiteDisplay = document.getElementById('current-glia-site-display');
+        
+        if (currentGliaSiteDisplay && gliaSiteRaw) {
+            var gliaSite = JSON.parse(gliaSiteRaw);
+            if (gliaSite && gliaSite.name && gliaSite.name !== gliaSite.id) {
+                currentGliaSiteDisplay.textContent = gliaSite.name;
+                currentGliaSiteDisplay.title = gliaSite.name + '\n' + gliaSite.id;
+            } else if (gliaSite && gliaSite.id) {
+                currentGliaSiteDisplay.textContent = gliaSite.id.substring(0, 8) + '...';
+                currentGliaSiteDisplay.title = gliaSite.id;
+            }
+        }
+    });
+    </script>
 </body>
 </html>
