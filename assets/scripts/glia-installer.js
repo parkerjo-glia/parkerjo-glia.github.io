@@ -117,9 +117,7 @@ function loadGliaUnauth() {
             glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, engagementStart);
             glia.addEventListener(glia.EVENTS.ENGAGEMENT_END, engagementEnd);
             glia.updateInformation({
-                customAttributes: {
-                    Authenticated: 'NO'
-                }
+                customAttributes: { }
             }).then(function () {
                 window.dispatchEvent(new Event('glia-installed'));
                 postGliaInstalled();
@@ -149,9 +147,7 @@ function logout() {
     sm.getApi({ version: 'v1' }).then(function (glia) {
         glia.updateInformation({
             externalId: '',
-            customAttributes: {
-                Authenticated: 'NO'
-            }
+            customAttributes: { }
         }).catch(function (error) {
             console.log(JSON.stringify(error));
         }).then(function () {
