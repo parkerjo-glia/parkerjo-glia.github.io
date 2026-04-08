@@ -86,8 +86,7 @@ function loadGliaAfterAuth() {
                     glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, engagementStart);
                     glia.addEventListener(glia.EVENTS.ENGAGEMENT_END, engagementEnd);
                     glia.updateInformation({
-                        name: username,
-                        email: username + "@example.com",
+                        externalId: "123456789",
                         phone: "915-555-5555",
                         customAttributes: {
                             Authenticated: 'YES'
