@@ -41,6 +41,7 @@ function buildLanguageDropdowns() {
         desktopMenu.innerHTML = '';
         availableLanguages.forEach(function(lang) {
             var link = document.createElement('a');
+            link.id = lang.name.toLowerCase().replace(/\s/g, '') + 'Locale';
             link.href = '#';
             link.className = 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100';
             link.setAttribute('role', 'menuitem');
