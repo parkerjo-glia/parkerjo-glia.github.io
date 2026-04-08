@@ -165,11 +165,21 @@ base_path: /aifirst-cu
             <form id="mortgage-form" class="space-y-6">
                 <div>
                     <label for="home-price" class="block text-sm font-medium text-gray-700">Home Price ($)</label>
-                    <input type="number" id="home-price" name="home-price" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 450000">
+                    <input type="number" id="home-price" name="home-price" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 450000" min="50000" max="2000000" value="450000">
+                    <input type="range" id="home-price-slider" min="50000" max="2000000" step="10000" value="450000" class="mt-2 w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>$50K</span>
+                        <span>$2M</span>
+                    </div>
                 </div>
                 <div>
                     <label for="down-payment" class="block text-sm font-medium text-gray-700">Down Payment ($)</label>
-                    <input type="number" id="down-payment" name="down-payment" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 90000">
+                    <input type="number" id="down-payment" name="down-payment" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 90000" min="0" max="500000" value="90000">
+                    <input type="range" id="down-payment-slider" min="0" max="500000" step="5000" value="90000" class="mt-2 w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>$0</span>
+                        <span>$500K</span>
+                    </div>
                 </div>
                 <div>
                     <label for="mortgage-interest-rate" class="block text-sm font-medium text-gray-700">Interest Rate (%)</label>
@@ -239,6 +249,26 @@ base_path: /aifirst-cu
 </section>
 
 <script>
+// Sync sliders with input fields
+function syncSliderAndInput(sliderId, inputId) {
+    const slider = document.getElementById(sliderId);
+    const input = document.getElementById(inputId);
+    
+    slider.addEventListener('input', function() {
+        input.value = this.value;
+    });
+    
+    input.addEventListener('input', function() {
+        let val = parseFloat(this.value) || 0;
+        val = Math.max(parseFloat(slider.min), Math.min(parseFloat(slider.max), val));
+        slider.value = val;
+    });
+}
+
+// Initialize slider sync
+syncSliderAndInput('home-price-slider', 'home-price');
+syncSliderAndInput('down-payment-slider', 'down-payment');
+
 function calculateMortgage() {
     const homePrice = parseFloat(document.getElementById('home-price').value);
     const downPayment = parseFloat(document.getElementById('down-payment').value) || 0;
