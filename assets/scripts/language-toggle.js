@@ -1,7 +1,7 @@
 // Default languages always available
 var defaultLanguages = [
-    { localeKey: 'en-US', name: 'English' },
-    { localeKey: 'es-MX', name: 'Español' }
+    { localeKey: 'en-US', name: 'English', id: "englishLocale" },
+    { localeKey: 'es-MX', name: 'Español', id: "spanishLocale" }
 ];
 
 var availableLanguages = [...defaultLanguages];
@@ -41,7 +41,7 @@ function buildLanguageDropdowns() {
         desktopMenu.innerHTML = '';
         availableLanguages.forEach(function(lang) {
             var link = document.createElement('a');
-            link.id = lang.name.toLowerCase().replace(/\s/g, '') + 'Locale';
+            link.id = lang.id;
             link.href = '#';
             link.className = 'block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100';
             link.setAttribute('role', 'menuitem');
@@ -118,7 +118,8 @@ function fetchCustomLocales(api) {
                 var customLocales = siteConfig.custom_locales.map(function(locale) {
                     return {
                         localeKey: locale.locale_key,
-                        name: locale.locale_name
+                        name: locale.locale_name,
+                        id: locale.locale_name.toLowerCase().replace(/\s/g, '') + 'Locale'
                     };
                 });
                 
