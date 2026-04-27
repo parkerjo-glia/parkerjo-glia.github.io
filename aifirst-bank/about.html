@@ -4,157 +4,240 @@ site_type: bank
 base_path: /aifirst-bank
 ---
 
-<section class="bg-gradient-to-br from-blue-100 to-white py-20 md:py-32">
-    <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">About AI First Bank Demo.</h1>
-        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">This is a demo site for Glia integration testing, showcasing how AI-powered customer service can enhance the banking experience.</p>
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 24px 24px;"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl mx-auto text-center">
+            <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6 text-white/90 text-sm font-medium">
+                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+                </svg>
+                Glia Demo Site
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+                About <span class="text-accent">AI First Bank</span>
+            </h1>
+            <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+                A demonstration site showcasing how AI-powered customer service can enhance the banking experience.
+            </p>
+            <div class="mt-10">
+                <a href="/aifirst-bank/open-account.html" class="bg-accent hover:bg-accent-dark text-white font-semibold py-4 px-8 rounded-full transition duration-300 shadow-lg shadow-accent/30">
+                    Open an Account
+                </a>
+            </div>
+        </div>
     </div>
 </section>
 
-<section class="bg-white py-16">
+<!-- Our Story -->
+<section class="py-20 bg-white">
     <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-                <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
-                <p class="text-gray-600 mb-4">AI First Bank was created in 2026 as a demonstration site by Glia Technologies, Inc. This fictional bank showcases how modern financial institutions can leverage AI-powered customer service and digital engagement tools.</p>
-                <p class="text-gray-600 mb-4">The site demonstrates Glia's integration capabilities for banks looking to enhance their customer experience through intelligent automation and personalized service.</p>
-                <p class="text-gray-600">While the bank depicted here is fictional, the technology and customer engagement features demonstrated are real capabilities offered by Glia to financial institutions worldwide.</p>
+                <span class="text-accent font-semibold text-sm uppercase tracking-wider">Our Story</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">Built for Demonstration</h2>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    AI First Bank was created in 2026 as a demonstration site by Glia Technologies, Inc. This fictional bank showcases how modern financial institutions can leverage AI-powered customer service and digital engagement tools.
+                </p>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    The site demonstrates Glia's integration capabilities for banks looking to enhance their customer experience through intelligent automation and personalized service.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    While the bank depicted here is fictional, the technology and customer engagement features demonstrated are real capabilities offered by Glia to financial institutions worldwide.
+                </p>
+            </div>
+            <div>
+                <img src="/assets/images/bank-branch-modern.png" alt="Modern AI First Bank branch with customers" class="w-full rounded-2xl shadow-2xl">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section - Proof Layer -->
+<section class="py-16 bg-slate-900">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-10">
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Sample Statistics</span>
+            <p class="text-gray-400 mt-2">Example metrics for demonstration purposes only</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="text-4xl md:text-5xl font-bold text-white mb-2">50K+</div>
+                <p class="text-gray-400">Active Customers</p>
             </div>
             <div class="text-center">
-                <img src="/assets/images/bank-about-story-image.png" alt="Our Story" class="w-full h-96 object-cover rounded-lg shadow-lg">
+                <div class="text-4xl md:text-5xl font-bold text-white mb-2">$500M</div>
+                <p class="text-gray-400">Assets Managed</p>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl md:text-5xl font-bold text-white mb-2">$300M</div>
+                <p class="text-gray-400">Loans Funded</p>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl md:text-5xl font-bold text-white mb-2">97%</div>
+                <p class="text-gray-400">Satisfaction</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="bg-gray-100 py-16">
+<!-- Mission & Values -->
+<section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Our Mission & Values</h2>
-            <p class="mt-2 text-gray-600">The principles that guide this demo experience.</p>
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Our Foundation</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Mission & Values</h2>
+            <p class="mt-3 text-gray-600">The principles that guide this demo experience.</p>
         </div>
+        
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-lg shadow-md text-center">
-                <img src="/assets/images/mission-icon.png" alt="Mission" class="h-16 w-16 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">Our Mission</h3>
-                <p class="text-gray-600">To provide innovative, secure, and ethical financial services that empower our customers to achieve their goals while advancing responsible AI practices in banking.</p>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center card-hover">
+                <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-5">
+                    <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Our Mission</h3>
+                <p class="text-gray-600">To provide innovative, secure, and ethical financial services that empower our customers to achieve their goals while advancing responsible AI practices.</p>
             </div>
-            <div class="bg-white p-8 rounded-lg shadow-md text-center">
-                <img src="/assets/images/vision-icon.png" alt="Vision" class="h-16 w-16 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">Our Vision</h3>
-                <p class="text-gray-600">To be the leading example of how financial institutions can harness AI technology to better serve customers while maintaining transparency, fairness, and human dignity.</p>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center card-hover">
+                <div class="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center mx-auto mb-5">
+                    <svg class="w-7 h-7 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Our Vision</h3>
+                <p class="text-gray-600">To be the leading example of how financial institutions can harness AI technology to better serve customers while maintaining transparency and fairness.</p>
             </div>
-            <div class="bg-white p-8 rounded-lg shadow-md text-center">
-                <img src="/assets/images/values-icon.png" alt="Values" class="h-16 w-16 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-4">Our Values</h3>
-                <p class="text-gray-600">Transparency, innovation, customer-first service, ethical AI use, financial inclusion, and community empowerment guide every decision we make.</p>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center card-hover">
+                <div class="w-14 h-14 bg-slate-100 rounded-xl flex items-center justify-center mx-auto mb-5">
+                    <svg class="w-7 h-7 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Our Values</h3>
+                <p class="text-gray-600">Transparency, innovation, customer-first service, ethical AI use, financial inclusion, and community empowerment guide every decision.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-16 bg-white">
+<!-- Demo Features -->
+<section class="py-20 bg-white">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Demo Features</h2>
-            <p class="mt-2 text-gray-600">Example differentiators showcased in this demo.</p>
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">What Sets Us Apart</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Demo Features</h2>
+            <p class="mt-3 text-gray-600">Example differentiators showcased in this demo.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="flex items-start space-x-4">
-                <img src="/assets/images/ai-ethics-icon.png" alt="AI Ethics" class="h-12 w-12 mt-1">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
+                <div class="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                    </svg>
+                </div>
                 <div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Ethical AI Implementation</h3>
-                    <p class="text-gray-600">We use AI to enhance customer experiences while maintaining strict ethical guidelines, transparency, and human oversight in all automated decisions.</p>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Ethical AI Implementation</h3>
+                    <p class="text-gray-600">We use AI to enhance customer experiences while maintaining strict ethical guidelines, transparency, and human oversight.</p>
                 </div>
             </div>
-            <div class="flex items-start space-x-4">
-                <img src="/assets/images/innovation-icon.png" alt="Innovation" class="h-12 w-12 mt-1">
+            
+            <div class="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
+                <div class="flex-shrink-0 w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                    </svg>
+                </div>
                 <div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Continuous Innovation</h3>
-                    <p class="text-gray-600">We're constantly exploring new ways to improve your banking experience through technology while maintaining the personal touch you expect.</p>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Continuous Innovation</h3>
+                    <p class="text-gray-600">We're constantly exploring new ways to improve your banking experience through technology while maintaining the personal touch.</p>
                 </div>
             </div>
-            <div class="flex items-start space-x-4">
-                <img src="/assets/images/ai-security-icon.png" alt="Security" class="h-12 w-12 mt-1">
+            
+            <div class="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
+                <div class="flex-shrink-0 w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                    </svg>
+                </div>
                 <div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Advanced Security</h3>
-                    <p class="text-gray-600">State-of-the-art security measures protect your accounts and personal information with AI-powered fraud detection and monitoring.</p>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Advanced Security</h3>
+                    <p class="text-gray-600">State-of-the-art security measures protect your accounts and personal information with AI-powered fraud detection.</p>
                 </div>
             </div>
-            <div class="flex items-start space-x-4">
-                <img src="/assets/images/community-focus-icon.png" alt="Customer Focus" class="h-12 w-12 mt-1">
+            
+            <div class="flex items-start gap-4 p-6 bg-gray-50 rounded-xl">
+                <div class="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    </svg>
+                </div>
                 <div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Customer Focus</h3>
-                    <p class="text-gray-600">Every product and service is designed with our customers in mind, ensuring you get the best rates, lowest fees, and most convenient banking experience.</p>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Customer Focus</h3>
+                    <p class="text-gray-600">Every product and service is designed with our customers in mind, ensuring you get the best rates and most convenient experience.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-16 bg-gray-50">
+<!-- Leadership Team -->
+<section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Sample Leadership Team</h2>
-            <p class="mt-2 text-gray-600">Fictional executives for demonstration purposes. These are not real people.</p>
+        <div class="text-center max-w-3xl mx-auto mb-14">
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Leadership</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Sample Leadership Team</h2>
+            <p class="mt-3 text-gray-600">Fictional executives for demonstration purposes. These are not real people.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                <img src="/assets/images/ceo-photo.png" alt="CEO" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-                <h3 class="text-xl font-semibold text-gray-900 mb-1">Sarah Chen</h3>
-                <p class="text-blue-600 font-medium mb-3">Chief Executive Officer</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center card-hover">
+                <img src="/assets/images/ceo-photo.png" alt="Sarah Chen" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="text-lg font-bold text-gray-900">Sarah Chen</h3>
+                <p class="text-accent font-medium text-sm mb-3">Chief Executive Officer</p>
                 <p class="text-sm text-gray-600">Former fintech executive with 15 years of experience in digital banking and AI implementation.</p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                <img src="/assets/images/cto-photo.png" alt="CTO" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-                <h3 class="text-xl font-semibold text-gray-900 mb-1">Dr. Marcus Rodriguez</h3>
-                <p class="text-blue-600 font-medium mb-3">Chief Technology Officer</p>
+            
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center card-hover">
+                <img src="/assets/images/cto-photo.png" alt="Dr. Marcus Rodriguez" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="text-lg font-bold text-gray-900">Dr. Marcus Rodriguez</h3>
+                <p class="text-accent font-medium text-sm mb-3">Chief Technology Officer</p>
                 <p class="text-sm text-gray-600">AI researcher and former Google engineer specializing in ethical AI systems and financial technology.</p>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md text-center">
-                <img src="/assets/images/cfo-photo.png" alt="CFO" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
-                <h3 class="text-xl font-semibold text-gray-900 mb-1">Jennifer Hansen</h3>
-                <p class="text-blue-600 font-medium mb-3">Chief Financial Officer</p>
+            
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center card-hover">
+                <img src="/assets/images/cfo-photo.png" alt="Jennifer Hansen" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+                <h3 class="text-lg font-bold text-gray-900">Jennifer Hansen</h3>
+                <p class="text-accent font-medium text-sm mb-3">Chief Financial Officer</p>
                 <p class="text-sm text-gray-600">CPA with 20 years in banking management and expertise in financial risk assessment.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Sample Statistics</h2>
-            <p class="mt-2 text-gray-600">Example metrics for demonstration purposes only.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="text-center">
-                <div class="text-4xl font-bold text-blue-600 mb-2">50,000+</div>
-                <p class="text-gray-600">Active Customers</p>
-            </div>
-            <div class="text-center">
-                <div class="text-4xl font-bold text-blue-600 mb-2">$500M+</div>
-                <p class="text-gray-600">Assets Under Management</p>
-            </div>
-            <div class="text-center">
-                <div class="text-4xl font-bold text-blue-600 mb-2">$300M+</div>
-                <p class="text-gray-600">Loans Funded</p>
-            </div>
-            <div class="text-center">
-                <div class="text-4xl font-bold text-blue-600 mb-2">97%</div>
-                <p class="text-gray-600">Customer Satisfaction</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="bg-blue-600 py-16">
-    <div class="container mx-auto px-4 text-center text-white">
-        <h2 class="text-3xl md:text-4xl font-bold">Explore the Demo Experience</h2>
-        <p class="mt-4 text-lg max-w-2xl mx-auto opacity-90">This is a demonstration site. Explore the features and see how Glia integration enhances the customer experience.</p>
-        <div class="mt-8 flex justify-center space-x-4">
-            <a href="/aifirst-bank/open-account.html" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Try the Demo</a>
-            <a href="/aifirst-bank/contact.html" class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Contact Glia</a>
+<!-- CTA Section -->
+<section class="py-20 bg-gradient-to-br from-accent to-accent-dark relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3"></div>
+    
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Explore the Demo Experience</h2>
+        <p class="text-white/80 max-w-2xl mx-auto mb-10 text-lg">
+            This is a demonstration site. Explore the features and see how Glia integration enhances the customer experience.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="/aifirst-bank/open-account.html" class="bg-white text-accent-dark font-semibold py-4 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">
+                Try the Demo
+            </a>
+            <a href="/aifirst-bank/contact.html" class="bg-transparent text-white font-semibold py-4 px-8 rounded-full border-2 border-white/30 hover:bg-white/10 transition duration-300">
+                Contact Glia
+            </a>
         </div>
     </div>
 </section>

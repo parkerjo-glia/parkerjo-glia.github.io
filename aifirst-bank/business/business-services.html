@@ -5,70 +5,101 @@ base_path: /aifirst-bank
 ---
 
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-blue-600 to-blue-800 py-20 md:py-28 overflow-hidden">
-    <div class="absolute inset-0 opacity-20">
-        <img src="/assets/images/business-svc-hero-bg.png" alt="" class="w-full h-full object-cover">
+<section class="relative bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 py-20 md:py-28 overflow-hidden">
+    <!-- Dot pattern overlay -->
+    <div class="absolute inset-0 opacity-10">
+        <svg class="w-full h-full" xmlns="https://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="white"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dots)"/>
+        </svg>
     </div>
     <div class="container mx-auto px-4 text-center relative z-10">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">Business Services & Solutions</h1>
-        <p class="mt-4 text-lg text-blue-100 max-w-2xl mx-auto">Comprehensive services designed to streamline operations, reduce costs, and help your business thrive with AI-powered efficiency.</p>
-        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#contact-form" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition duration-300 shadow-lg">Schedule Consultation</a>
-            <a href="#services" class="bg-transparent text-white font-semibold py-3 px-8 rounded-full border-2 border-white hover:bg-white/10 transition duration-300">Explore Services</a>
+        <span class="inline-block bg-white/10 backdrop-blur-sm text-accent font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full mb-6">Business Solutions</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">Business Services & Solutions</h1>
+        <p class="mt-6 text-lg md:text-xl text-primary-100 max-w-2xl mx-auto">Comprehensive services designed to streamline operations, reduce costs, and help your business thrive with AI-powered efficiency.</p>
+        <!-- Trust badges -->
+        <div class="flex flex-wrap justify-center gap-4 mt-8">
+            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                <span class="text-white text-sm font-medium">Secure Processing</span>
+            </div>
+            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <span class="text-white text-sm font-medium">Next-Day Funding</span>
+            </div>
+            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <span class="text-white text-sm font-medium">24/7 Support</span>
+            </div>
+        </div>
+        <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#contact-form" class="bg-accent hover:bg-accent-dark text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg shadow-accent/30">Schedule Consultation</a>
+            <a href="#services" class="bg-white/10 backdrop-blur-sm text-white font-semibold py-3 px-8 rounded-full border border-white/20 hover:bg-white/20 transition duration-300">Explore Services</a>
         </div>
     </div>
 </section>
 
 <!-- Payment Processing Section -->
-<section class="py-16 bg-white" id="services">
+<section class="py-16 md:py-20 bg-white" id="services">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Payment Processing Solutions</h2>
-            <p class="mt-2 text-gray-600">Accept payments anywhere with competitive rates and next-day funding</p>
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Payment Solutions</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Payment Processing Solutions</h2>
+            <p class="mt-4 text-gray-600">Accept payments anywhere with competitive rates and next-day funding</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Credit Card Processing -->
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300">
-                <div class="h-44 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-6">
-                    <img src="/assets/images/credit-card-processing.png" alt="Credit Card Processing" class="h-28 object-contain rounded-xl">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:border-primary-200 hover:shadow-xl transition duration-300 group">
+                <div class="h-44 bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center p-6">
+                    <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                    </div>
                 </div>
-                <div class="p-5">
+                <div class="p-6">
                     <h3 class="text-lg font-bold text-gray-900">Credit Card Processing</h3>
                     <p class="text-sm text-gray-600 mt-2">Accept all major credit and debit cards with competitive rates.</p>
-                    <ul class="mt-3 space-y-1 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Next-day funding available</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> EMV chip & contactless</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> 24/7 support</li>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Next-day funding available</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> EMV chip & contactless</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> 24/7 support</li>
                     </ul>
                 </div>
             </div>
             <!-- Mobile Payments -->
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300">
-                <div class="h-44 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-6">
-                    <img src="/assets/images/mobile-pay-svcs.png" alt="Mobile Payments" class="h-28 object-contain rounded-xl">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:border-primary-200 hover:shadow-xl transition duration-300 group">
+                <div class="h-44 bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center p-6">
+                    <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    </div>
                 </div>
-                <div class="p-5">
+                <div class="p-6">
                     <h3 class="text-lg font-bold text-gray-900">Mobile Payment Solutions</h3>
                     <p class="text-sm text-gray-600 mt-2">Accept payments on-the-go with mobile card readers.</p>
-                    <ul class="mt-3 space-y-1 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Mobile card readers</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Inventory integration</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Real-time reporting</li>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Mobile card readers</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Inventory integration</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Real-time reporting</li>
                     </ul>
                 </div>
             </div>
             <!-- Online Gateway -->
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300">
-                <div class="h-44 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-6">
-                    <img src="/assets/images/biz-online-pay-gtwy.png" alt="Online Payments" class="h-28 object-contain rounded-xl">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:border-primary-200 hover:shadow-xl transition duration-300 group">
+                <div class="h-44 bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center p-6">
+                    <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                    </div>
                 </div>
-                <div class="p-5">
+                <div class="p-6">
                     <h3 class="text-lg font-bold text-gray-900">Online Payment Gateway</h3>
                     <p class="text-sm text-gray-600 mt-2">Secure e-commerce processing with fraud protection.</p>
-                    <ul class="mt-3 space-y-1 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Shopping cart integration</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Fraud detection</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Recurring billing</li>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Shopping cart integration</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Fraud detection</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Recurring billing</li>
                     </ul>
                 </div>
             </div>
@@ -77,77 +108,78 @@ base_path: /aifirst-bank
 </section>
 
 <!-- Cash Management Section -->
-<section class="py-16 bg-gray-50">
+<section class="py-16 md:py-20 bg-gray-50">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Cash Management Services</h2>
-            <p class="mt-2 text-gray-600">Streamline operations with comprehensive cash management solutions</p>
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Cash Management</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Cash Management Services</h2>
+            <p class="mt-4 text-gray-600">Streamline operations with comprehensive cash management solutions</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- ACH Services -->
-            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:border-primary-200 hover:shadow-xl transition duration-300">
                 <div class="flex items-start gap-4">
-                    <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <img src="/assets/images/cash-management-icon.png" alt="ACH" class="w-8 h-8">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-gray-900">ACH Services</h3>
                         <p class="text-gray-600 text-sm mt-1">Automate payroll, vendor payments, and collections.</p>
-                        <ul class="mt-3 space-y-1 text-sm text-gray-600">
-                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Payroll direct deposit</li>
-                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Vendor payment automation</li>
-                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Same-day ACH available</li>
+                        <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Payroll direct deposit</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Vendor payment automation</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Same-day ACH available</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <!-- Remote Deposit -->
-            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:border-primary-200 hover:shadow-xl transition duration-300">
                 <div class="flex items-start gap-4">
-                    <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <img src="/assets/images/remote-deposit-icon.png" alt="Remote Deposit" class="w-8 h-8">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-gray-900">Remote Deposit Capture</h3>
                         <p class="text-gray-600 text-sm mt-1">Deposit checks from your office securely.</p>
-                        <ul class="mt-3 space-y-1 text-sm text-gray-600">
-                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Desktop and mobile options</li>
-                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Same-day availability</li>
-                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Fraud detection technology</li>
+                        <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Desktop and mobile options</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Same-day availability</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Fraud detection technology</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <!-- Wire Transfers -->
-            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:border-primary-200 hover:shadow-xl transition duration-300">
                 <div class="flex items-start gap-4">
-                    <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <img src="/assets/images/bill-pay-icon.png" alt="Wire Transfers" class="w-8 h-8">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-gray-900">Wire Transfer Services</h3>
                         <p class="text-gray-600 text-sm mt-1">Send and receive domestic and international wires.</p>
-                        <ul class="mt-3 space-y-1 text-sm text-gray-600">
-                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Same-day processing</li>
-                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Competitive exchange rates</li>
-                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Online wire initiation</li>
+                        <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Same-day processing</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Competitive exchange rates</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Online wire initiation</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <!-- Positive Pay -->
-            <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:border-primary-200 hover:shadow-xl transition duration-300">
                 <div class="flex items-start gap-4">
-                    <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <img src="/assets/images/secure-protected-icon.png" alt="Positive Pay" class="w-8 h-8">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-gray-900">Positive Pay</h3>
                         <p class="text-gray-600 text-sm mt-1">Protect your business from check fraud.</p>
-                        <ul class="mt-3 space-y-1 text-sm text-gray-600">
-                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Check fraud prevention</li>
-                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Exception reporting</li>
-                            <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Real-time alerts</li>
+                        <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Check fraud prevention</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Exception reporting</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Real-time alerts</li>
                         </ul>
                     </div>
                 </div>
@@ -157,30 +189,31 @@ base_path: /aifirst-bank
 </section>
 
 <!-- Getting Started Steps -->
-<section class="py-16 bg-white">
+<section class="py-16 md:py-20 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Getting Started</h2>
-            <p class="mt-2 text-gray-600">Simple steps to access our business services</p>
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">How It Works</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Getting Started</h2>
+            <p class="mt-4 text-gray-600">Simple steps to access our business services</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">1</div>
                 <h3 class="font-semibold text-gray-900 mb-2">Consultation</h3>
                 <p class="text-sm text-gray-600">Schedule a consultation to discuss your business needs.</p>
             </div>
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">2</div>
                 <h3 class="font-semibold text-gray-900 mb-2">Custom Solution</h3>
                 <p class="text-sm text-gray-600">We design a service package tailored to your business.</p>
             </div>
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">3</div>
                 <h3 class="font-semibold text-gray-900 mb-2">Implementation</h3>
                 <p class="text-sm text-gray-600">Our team handles setup and system integration.</p>
             </div>
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+                <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">4</div>
                 <h3 class="font-semibold text-gray-900 mb-2">Ongoing Support</h3>
                 <p class="text-sm text-gray-600">Dedicated support and account management.</p>
             </div>
@@ -189,44 +222,47 @@ base_path: /aifirst-bank
 </section>
 
 <!-- Contact Form -->
-<section class="py-16 bg-gray-50" id="contact-form">
+<section class="py-16 md:py-20 bg-gray-50" id="contact-form">
     <div class="container mx-auto px-4 max-w-2xl">
-        <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-2">Schedule a Consultation</h2>
-            <p class="text-center text-gray-600 mb-6">Tell us about your business needs</p>
+        <div class="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100">
+            <div class="text-center mb-8">
+                <span class="text-accent font-semibold text-sm uppercase tracking-wider">Get Started</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-2">Schedule a Consultation</h2>
+                <p class="text-gray-600 mt-2">Tell us about your business needs</p>
+            </div>
             <form id="services-form" class="space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="svc-first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
-                        <input type="text" id="svc-first-name" name="svc-first-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        <input type="text" id="svc-first-name" name="svc-first-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                        <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                     </div>
                     <div>
                         <label for="svc-last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
-                        <input type="text" id="svc-last-name" name="svc-last-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        <input type="text" id="svc-last-name" name="svc-last-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                        <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                     </div>
                 </div>
                 <div>
                     <label for="svc-business-name" class="block text-sm font-medium text-gray-700">Business Name *</label>
-                    <input type="text" id="svc-business-name" name="svc-business-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    <input type="text" id="svc-business-name" name="svc-business-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                    <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="svc-email" class="block text-sm font-medium text-gray-700">Email *</label>
-                        <input type="email" id="svc-email" name="svc-email" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        <input type="email" id="svc-email" name="svc-email" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                        <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                     </div>
                     <div>
                         <label for="svc-phone" class="block text-sm font-medium text-gray-700">Phone *</label>
-                        <input type="tel" id="svc-phone" name="svc-phone" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        <input type="tel" id="svc-phone" name="svc-phone" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                        <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                     </div>
                 </div>
                 <div>
                     <label for="svc-interest" class="block text-sm font-medium text-gray-700">Services Interested In *</label>
-                    <select id="svc-interest" name="svc-interest" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <select id="svc-interest" name="svc-interest" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
                         <option value="">Select a service</option>
                         <option value="payment-processing">Payment Processing</option>
                         <option value="cash-management">Cash Management</option>
@@ -234,35 +270,35 @@ base_path: /aifirst-bank
                         <option value="consulting">Business Consulting</option>
                         <option value="multiple">Multiple Services</option>
                     </select>
-                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                 </div>
                 <div>
                     <label for="svc-message" class="block text-sm font-medium text-gray-700">Tell us about your needs</label>
-                    <textarea id="svc-message" name="svc-message" rows="3" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+                    <textarea id="svc-message" name="svc-message" rows="3" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent"></textarea>
                 </div>
                 <!-- Supporting Documents -->
                 <div>
                     <label for="svc-documents" class="block text-sm font-medium text-gray-700">Supporting Documents</label>
-                    <p class="text-xs text-gray-500 mt-1">Demo purposes only - do not upload sensitive or real documents. Files are not stored.</p>
-                    <input type="file" id="svc-documents" name="svc-documents" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" class="mt-2 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                    <p class="text-xs text-gray-500 mt-1 mb-2">Demo purposes only - do not upload sensitive or real documents. Files are not stored.</p>
+                    <input type="file" id="svc-documents" name="svc-documents" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-medium file:bg-accent/10 file:text-accent hover:file:bg-accent/20">
                 </div>
                 <!-- Demo Notice -->
-                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                    <p class="text-sm text-blue-800 text-center"><span class="font-semibold">Demo Site Notice:</span> This is a demonstration website. Please do not enter real personal information. No data is stored or transmitted.</p>
+                <div class="bg-primary-50 border border-primary-200 rounded-xl p-4">
+                    <p class="text-sm text-primary-800 text-center"><span class="font-semibold">Demo Site Notice:</span> This is a demonstration website. Please do not enter real personal information. No data is stored or transmitted.</p>
                 </div>
 
-                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition duration-300">Request Consultation</button>
+                <button type="submit" class="w-full flex justify-center py-4 px-6 border border-transparent rounded-full shadow-lg shadow-accent/30 text-base font-semibold text-white bg-accent hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition duration-300">Request Consultation</button>
             </form>
 
             <div id="svc-success" class="text-center hidden">
-                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                <div class="bg-green-50 border border-green-200 rounded-xl p-6">
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                     </div>
                     <p class="text-green-800 font-semibold text-lg">Thank You!</p>
                     <p class="text-gray-600 mt-2">Your consultation request has been received.</p>
-                    <p class="text-sm text-blue-600 mt-2">This is a demo site - no data was actually submitted.</p>
-                    <a href="/aifirst-bank/business/business-banking.html" class="inline-block mt-4 text-blue-600 font-medium hover:underline">Back to Business Banking</a>
+                    <p class="text-sm text-accent mt-2">This is a demo site - no data was actually submitted.</p>
+                    <a href="/aifirst-bank/business/business-banking.html" class="inline-block mt-4 text-accent font-medium hover:text-accent-dark hover:underline">Back to Business Banking</a>
                 </div>
             </div>
         </div>
@@ -270,13 +306,16 @@ base_path: /aifirst-bank
 </section>
 
 <!-- CTA Section -->
-<section class="py-16 bg-blue-600">
-    <div class="container mx-auto px-4 text-center">
+<section class="relative py-16 md:py-20 bg-gradient-to-br from-accent to-accent-dark overflow-hidden">
+    <!-- Decorative circles -->
+    <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
+    <div class="container mx-auto px-4 text-center relative z-10">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Streamline Your Business?</h2>
-        <p class="text-blue-100 max-w-2xl mx-auto mb-8">Partner with AI First Bank and discover how our business services can help you operate more efficiently.</p>
+        <p class="text-white/90 max-w-2xl mx-auto mb-8 text-lg">Partner with AI First Bank and discover how our business services can help you operate more efficiently.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#contact-form" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition duration-300">Schedule Consultation</a>
-            <a href="/aifirst-bank/business/business-banking.html" class="bg-transparent text-white font-semibold py-3 px-8 rounded-full border-2 border-white hover:bg-white/10 transition duration-300">Explore Business Banking</a>
+            <a href="#contact-form" class="bg-white text-accent font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Schedule Consultation</a>
+            <a href="/aifirst-bank/business/business-banking.html" class="bg-white/10 backdrop-blur-sm text-white font-semibold py-3 px-8 rounded-full border border-white/20 hover:bg-white/20 transition duration-300">Explore Business Banking</a>
         </div>
     </div>
 </section>

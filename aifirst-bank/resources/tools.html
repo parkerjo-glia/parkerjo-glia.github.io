@@ -4,118 +4,125 @@ site_type: bank
 base_path: /aifirst-bank
 ---
 
-<section class="bg-gradient-to-br from-blue-100 to-white py-20 md:py-32">
-    <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-            Financial Tools & Calculators.
-        </h1>
-        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Make informed financial decisions with our suite of AI-powered calculators and planning tools designed to help you achieve your goals.
-        </p>
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 py-20 md:py-28 overflow-hidden">
+    <!-- Dot pattern overlay -->
+    <div class="absolute inset-0 opacity-10">
+        <svg class="w-full h-full" xmlns="https://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="white"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dots)"/>
+        </svg>
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <span class="inline-block bg-white/10 backdrop-blur-sm text-accent font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full mb-6">Resources</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">Financial Tools & Calculators</h1>
+        <p class="mt-6 text-lg md:text-xl text-primary-100 max-w-2xl mx-auto">Make informed financial decisions with our suite of AI-powered calculators and planning tools designed to help you achieve your goals.</p>
         <div class="mt-8">
-            <a href="#calculators" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg">Explore Tools</a>
+            <a href="#calculators" class="bg-accent text-white font-semibold py-3 px-8 rounded-full hover:bg-accent-dark transition duration-300 shadow-lg">Explore Tools</a>
         </div>
     </div>
 </section>
 
-<section class="bg-white py-16" id="calculators">
+<!-- Loan Calculators -->
+<section class="py-16 md:py-20 bg-white" id="calculators">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Loan Calculators</h2>
-            <p class="mt-2 text-gray-600">Calculate payments and compare options for all your borrowing needs.</p>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Loan Calculators</h2>
+            <p class="mt-4 text-gray-600">Calculate payments and compare options for all your borrowing needs.</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition duration-300">
-                <img src="/assets/images/auto-loan-calc-icon.png" alt="Auto Loan Calculator" class="h-12 w-12 mb-4">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-accent/20 transition duration-300">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path></svg>
+                </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Auto Loan Calculator</h3>
                 <p class="text-gray-600 text-sm mb-4">Calculate monthly payments for new and used vehicle financing.</p>
-                <a href="personal-auto-loan.html#calculator" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Use Calculator →</a>
+                <a href="/aifirst-bank/personal/personal-auto-loan.html#calculator" class="text-accent font-medium hover:text-accent-dark transition duration-300">Use Calculator →</a>
             </div>
             
-            <div class="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition duration-300">
-                <img src="/assets/images/home-loan-calc-icon.png" alt="Home Loan Calculator" class="h-12 w-12 mb-4">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-accent/20 transition duration-300">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Mortgage Calculator</h3>
                 <p class="text-gray-600 text-sm mb-4">Estimate monthly mortgage payments and total interest costs.</p>
-                <a href="personal-home-loan.html#calculator" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Use Calculator →</a>
+                <a href="/aifirst-bank/personal/personal-home-loan.html#calculator" class="text-accent font-medium hover:text-accent-dark transition duration-300">Use Calculator →</a>
             </div>
 
-            <div class="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition duration-300">
-                <img src="/assets/images/personal-loan-calc-icon.png" alt="Personal Loan Calculator" class="h-12 w-12 mb-4">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-accent/20 transition duration-300">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Personal Loan Calculator</h3>
                 <p class="text-gray-600 text-sm mb-4">Calculate payments for personal loans and debt consolidation.</p>
-                <a href="personal-loans.html#calculator" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Use Calculator →</a>
+                <a href="/aifirst-bank/personal/personal-loans.html#calculator" class="text-accent font-medium hover:text-accent-dark transition duration-300">Use Calculator →</a>
             </div>
         </div>
     </div>
 </section>
 
-<section class="bg-gray-100 py-16">
+<!-- Savings & Investment Tools -->
+<section class="py-16 md:py-20 bg-gray-50">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Savings & Investment Tools</h2>
-            <p class="mt-2 text-gray-600">Plan for your future with our savings and investment calculators.</p>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Savings & Investment Tools</h2>
+            <p class="mt-4 text-gray-600">Plan for your future with our savings and investment calculators.</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
-                <img src="/assets/images/savings-calc-icon.png" alt="Savings Calculator" class="h-12 w-12 mb-4">
+            <div class="bg-white p-8 rounded-2xl shadow-sm">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </div>
                 <h3 class="text-2xl font-bold text-gray-900 mb-4">Savings Goal Calculator</h3>
                 <p class="text-gray-600 mb-6">Calculate how much you need to save monthly to reach your financial goals.</p>
                 
                 <form id="savings-form" class="space-y-4">
                     <div>
                         <label for="savings-goal" class="block text-sm font-medium text-gray-700">Savings Goal ($)</label>
-                        <input type="number" id="savings-goal" name="savings-goal" required
-                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                            placeholder="e.g., 10000">
+                        <input type="number" id="savings-goal" name="savings-goal" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-xl shadow-sm focus:ring-accent focus:border-accent" placeholder="e.g., 10000">
                     </div>
                     <div>
                         <label for="time-frame" class="block text-sm font-medium text-gray-700">Time Frame (Months)</label>
-                        <input type="number" id="time-frame" name="time-frame" required
-                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                            placeholder="e.g., 24">
+                        <input type="number" id="time-frame" name="time-frame" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-xl shadow-sm focus:ring-accent focus:border-accent" placeholder="e.g., 24">
                     </div>
                     <div>
                         <label for="interest-rate-savings" class="block text-sm font-medium text-gray-700">Annual Interest Rate (%)</label>
-                        <input type="number" id="interest-rate-savings" name="interest-rate-savings" step="0.01"
-                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                            placeholder="e.g., 2.5">
+                        <input type="number" id="interest-rate-savings" name="interest-rate-savings" step="0.01" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-xl shadow-sm focus:ring-accent focus:border-accent" placeholder="e.g., 2.5">
                     </div>
-                    <button type="button" onclick="calculateSavings()"
-                        class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">
-                        Calculate
-                    </button>
+                    <button type="button" onclick="calculateSavings()" class="w-full bg-accent text-white font-semibold py-3 px-4 rounded-xl hover:bg-accent-dark transition duration-300">Calculate</button>
                 </form>
                 
                 <div id="savings-results" class="mt-6 text-center hidden">
                     <h4 class="text-lg font-bold text-gray-900 mb-2">Monthly Savings Needed</h4>
-                    <p class="text-3xl font-extrabold text-blue-600" id="monthly-savings-result">$0.00</p>
+                    <p class="text-3xl font-extrabold text-accent" id="monthly-savings-result">$0.00</p>
                 </div>
             </div>
             
-            <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
-                <img src="/assets/images/cd-calc-icon.png" alt="CD Calculator" class="h-12 w-12 mb-4">
+            <div class="bg-white p-8 rounded-2xl shadow-sm">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
                 <h3 class="text-2xl font-bold text-gray-900 mb-4">Certificate of Deposit Calculator</h3>
                 <p class="text-gray-600 mb-6">Calculate earnings on certificates of deposit with compound interest.</p>
                 
                 <form id="cd-form" class="space-y-4">
                     <div>
                         <label for="cd-amount" class="block text-sm font-medium text-gray-700">Initial Deposit ($)</label>
-                        <input type="number" id="cd-amount" name="cd-amount" required
-                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                            placeholder="e.g., 5000">
+                        <input type="number" id="cd-amount" name="cd-amount" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-xl shadow-sm focus:ring-accent focus:border-accent" placeholder="e.g., 5000">
                     </div>
                     <div>
                         <label for="cd-rate" class="block text-sm font-medium text-gray-700">Annual Interest Rate (%)</label>
-                        <input type="number" id="cd-rate" name="cd-rate" step="0.01" required
-                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                            placeholder="e.g., 4.5">
+                        <input type="number" id="cd-rate" name="cd-rate" step="0.01" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-xl shadow-sm focus:ring-accent focus:border-accent" placeholder="e.g., 4.5">
                     </div>
                     <div>
                         <label for="cd-term" class="block text-sm font-medium text-gray-700">Term (Months)</label>
-                        <select id="cd-term" name="cd-term" required
-                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <select id="cd-term" name="cd-term" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-xl shadow-sm focus:ring-accent focus:border-accent">
                             <option value="6">6 months</option>
                             <option value="12">12 months</option>
                             <option value="18">18 months</option>
@@ -124,114 +131,119 @@ base_path: /aifirst-bank
                             <option value="60">60 months</option>
                         </select>
                     </div>
-                    <button type="button" onclick="calculateCD()"
-                        class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300">
-                        Calculate
-                    </button>
+                    <button type="button" onclick="calculateCD()" class="w-full bg-accent text-white font-semibold py-3 px-4 rounded-xl hover:bg-accent-dark transition duration-300">Calculate</button>
                 </form>
                 
                 <div id="cd-results" class="mt-6 text-center hidden">
                     <h4 class="text-lg font-bold text-gray-900 mb-2">Maturity Value</h4>
-                    <p class="text-3xl font-extrabold text-blue-600" id="cd-maturity-result">$0.00</p>
-                    <p class="text-sm text-gray-600 mt-2">Interest Earned: <span id="cd-interest-earned">$0.00</span></p>
+                    <p class="text-3xl font-extrabold text-accent" id="cd-maturity-result">$0.00</p>
+                    <p class="text-sm text-gray-600 mt-2">Interest Earned: <span id="cd-interest-earned" class="font-semibold">$0.00</span></p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-16 bg-white">
+<!-- Budget & Planning Tools -->
+<section class="py-16 md:py-20 bg-white">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Budget & Planning Tools</h2>
-            <p class="mt-2 text-gray-600">Take control of your finances with our budgeting and planning resources.</p>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Budget & Planning Tools</h2>
+            <p class="mt-4 text-gray-600">Take control of your finances with our budgeting and planning resources.</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition duration-300">
-                <img src="/assets/images/budget-planner-icon.png" alt="Budget Planner" class="h-12 w-12 mb-4">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-accent/20 transition duration-300">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Budget Planner</h3>
                 <p class="text-gray-600 text-sm mb-4">Create and track your monthly budget with our interactive planner.</p>
-                <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Coming Soon →</a>
+                <span class="text-gray-400 font-medium">Coming Soon →</span>
             </div>
             
-            <div class="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition duration-300">
-                <img src="/assets/images/debt-payoff-icon.png" alt="Debt Payoff Calculator" class="h-12 w-12 mb-4">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-accent/20 transition duration-300">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Debt Payoff Calculator</h3>
                 <p class="text-gray-600 text-sm mb-4">Create a strategy to pay off your debts faster and save on interest.</p>
-                <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Coming Soon →</a>
+                <span class="text-gray-400 font-medium">Coming Soon →</span>
             </div>
 
-            <div class="bg-white p-6 rounded-lg border border-gray-200 hover:shadow-md transition duration-300">
-                <img src="/assets/images/retirement-calc-icon.png" alt="Retirement Calculator" class="h-12 w-12 mb-4">
+            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-accent/20 transition duration-300">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Retirement Calculator</h3>
                 <p class="text-gray-600 text-sm mb-4">Plan for your retirement and see if you're on track to meet your goals.</p>
-                <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Coming Soon →</a>
+                <span class="text-gray-400 font-medium">Coming Soon →</span>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-16 bg-gray-100">
+<!-- Financial Resources -->
+<section class="py-16 md:py-20 bg-gray-50">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Financial Resources</h2>
-            <p class="mt-2 text-gray-600">Educational resources to help you make informed financial decisions.</p>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Financial Resources</h2>
+            <p class="mt-4 text-gray-600">Educational resources to help you make informed financial decisions.</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white p-8 rounded-lg shadow-md">
-                <img src="/assets/images/rate-sheet-icon.png" alt="Current Rates" class="h-12 w-12 mb-4">
+            <div class="bg-white p-8 rounded-2xl shadow-sm">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                </div>
                 <h3 class="text-2xl font-bold text-gray-900 mb-4">Current Rates</h3>
                 <p class="text-gray-600 mb-6">View our latest rates for loans, savings accounts, and certificates of deposit.</p>
                 
                 <div class="space-y-4">
                     <div class="flex justify-between items-center py-2 border-b border-gray-200">
                         <span class="text-gray-700">Auto Loans (New)</span>
-                        <span class="font-semibold text-blue-600">3.49% APR*</span>
+                        <span class="font-semibold text-accent">3.49% APR*</span>
                     </div>
                     <div class="flex justify-between items-center py-2 border-b border-gray-200">
                         <span class="text-gray-700">Personal Loans</span>
-                        <span class="font-semibold text-blue-600">6.99% APR*</span>
+                        <span class="font-semibold text-accent">6.99% APR*</span>
                     </div>
                     <div class="flex justify-between items-center py-2 border-b border-gray-200">
                         <span class="text-gray-700">Mortgages (30-year)</span>
-                        <span class="font-semibold text-blue-600">6.75% APR*</span>
+                        <span class="font-semibold text-accent">6.75% APR*</span>
                     </div>
                     <div class="flex justify-between items-center py-2 border-b border-gray-200">
                         <span class="text-gray-700">Savings Account</span>
-                        <span class="font-semibold text-blue-600">2.25% APY*</span>
+                        <span class="font-semibold text-accent">2.25% APY*</span>
                     </div>
                     <div class="flex justify-between items-center py-2">
                         <span class="text-gray-700">12-Month CD</span>
-                        <span class="font-semibold text-blue-600">4.50% APY*</span>
+                        <span class="font-semibold text-accent">4.50% APY*</span>
                     </div>
                 </div>
                 
                 <p class="text-xs text-gray-500 mt-4">*Rates subject to change. Contact us for current rates and terms.</p>
             </div>
             
-            <div class="bg-white p-8 rounded-lg shadow-md">
-                <img src="/assets/images/financial-tips-icon.png" alt="Financial Tips" class="h-12 w-12 mb-4">
+            <div class="bg-white p-8 rounded-2xl shadow-sm">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                </div>
                 <h3 class="text-2xl font-bold text-gray-900 mb-4">Financial Tips & Guides</h3>
                 <p class="text-gray-600 mb-6">Expert advice and guides to help you make smart financial decisions.</p>
                 
                 <div class="space-y-4">
-                    <a href="#" class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition duration-300">
+                    <a href="#" class="block p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition duration-300">
                         <h4 class="font-semibold text-gray-900 mb-1">First-Time Home Buyer's Guide</h4>
                         <p class="text-sm text-gray-600">Everything you need to know about buying your first home.</p>
                     </a>
-                    <a href="#" class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition duration-300">
+                    <a href="#" class="block p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition duration-300">
                         <h4 class="font-semibold text-gray-900 mb-1">Building Your Emergency Fund</h4>
                         <p class="text-sm text-gray-600">How to save for unexpected expenses and financial security.</p>
                     </a>
-                    <a href="#" class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition duration-300">
+                    <a href="#" class="block p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition duration-300">
                         <h4 class="font-semibold text-gray-900 mb-1">Understanding Credit Scores</h4>
                         <p class="text-sm text-gray-600">Learn how credit scores work and how to improve yours.</p>
-                    </a>
-                    <a href="#" class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition duration-300">
-                        <h4 class="font-semibold text-gray-900 mb-1">Retirement Planning Basics</h4>
-                        <p class="text-sm text-gray-600">Start planning for your retirement with these essential tips.</p>
                     </a>
                 </div>
             </div>
@@ -239,15 +251,16 @@ base_path: /aifirst-bank
     </div>
 </section>
 
-<section class="bg-blue-600 py-16">
-    <div class="container mx-auto px-4 text-center text-white">
-        <h2 class="text-3xl md:text-4xl font-bold">Need Personalized Advice?</h2>
-        <p class="mt-4 text-lg max-w-2xl mx-auto opacity-90">
-            Our financial advisors are here to help you create a personalized plan for your financial goals.
-        </p>
-        <div class="mt-8 flex justify-center space-x-4">
-            <a href="/aifirst-bank/contact.html" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Schedule Consultation</a>
-            <a href="/aifirst-bank/open-account.html" class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Open an Account</a>
+<!-- CTA Section -->
+<section class="relative py-16 md:py-20 bg-gradient-to-br from-accent to-accent-dark overflow-hidden">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Need Personalized Advice?</h2>
+        <p class="text-white/90 max-w-2xl mx-auto mb-8 text-lg">Our financial advisors are here to help you create a personalized plan for your financial goals.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="/aifirst-bank/contact.html" class="bg-white text-accent font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Schedule Consultation</a>
+            <a href="/aifirst-bank/open-account.html" class="bg-white/10 backdrop-blur-sm text-white font-semibold py-3 px-8 rounded-full border border-white/20 hover:bg-white/20 transition duration-300">Open an Account</a>
         </div>
     </div>
 </section>

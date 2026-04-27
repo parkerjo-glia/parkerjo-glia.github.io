@@ -4,112 +4,212 @@ site_type: cu
 base_path: /aifirst-cu
 ---
 
-<!-- Hero Section with Background Image -->
-<section class="relative bg-gradient-to-br from-blue-600 to-blue-800 py-20 md:py-28 overflow-hidden">
-    <div class="absolute inset-0 opacity-20">
-        <img src="/assets/images/home-loan-hero-bg.png" alt="" class="w-full h-full object-cover">
-    </div>
-    <div class="container mx-auto px-4 text-center relative z-10">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">Your Dream Home Awaits</h1>
-        <p class="mt-4 text-lg text-blue-100 max-w-2xl mx-auto">Competitive rates and AI-powered approval make homeownership achievable. Get pre-approved in hours, not days.</p>
-        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-            <a href="home-loan-application.html" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition duration-300 shadow-lg">Apply for Home Loan</a>
-            <a href="#calculator" class="bg-transparent text-white font-semibold py-3 px-8 rounded-full border-2 border-white hover:bg-white/10 transition duration-300">Mortgage Calculator</a>
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 24px 24px;"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent/10 to-transparent"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>
+                <span class="text-white/90 text-sm font-medium">Pre-Approval in Hours, Not Days</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
+                Your Dream Home <span class="text-accent">Awaits</span>
+            </h1>
+            <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                Competitive rates and AI-powered approval make homeownership achievable. Get pre-approved in hours, not days.
+            </p>
+            
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="home-loan-application.html" class="bg-accent hover:bg-accent-dark text-white font-semibold py-4 px-8 rounded-full transition duration-300 shadow-lg shadow-accent/30 text-lg">
+                    Apply for Home Loan
+                </a>
+                <a href="#calculator" class="bg-white/10 backdrop-blur-sm text-white font-semibold py-4 px-8 rounded-full border border-white/20 hover:bg-white/20 transition duration-300">
+                    Mortgage Calculator
+                </a>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white">6.25%</div>
+                    <div class="text-sm text-gray-400 mt-1">APR as low as</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white">3%</div>
+                    <div class="text-sm text-gray-400 mt-1">Down Payment</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white">24hr</div>
+                    <div class="text-sm text-gray-400 mt-1">Pre-Approval</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white">$0</div>
+                    <div class="text-sm text-gray-400 mt-1">Application Fee</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Home Loan Products -->
-<section class="py-16 bg-white" id="products">
+<section class="py-20 bg-white" id="products">
     <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Home Loan Options</h2>
-            <p class="mt-2 text-gray-600">Find the perfect financing for your homeownership needs</p>
+        <div class="text-center mb-14">
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Home Loan Options</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Find Your Perfect Mortgage</h2>
+            <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Flexible financing options for your homeownership needs.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Purchase -->
-            <div class="bg-white rounded-xl shadow-lg border-2 border-blue-500 overflow-hidden hover:shadow-xl transition duration-300 relative">
-                <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">POPULAR</div>
-                <div class="h-44 bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center p-6">
-                    <img src="/assets/images/purchase-home-icon.png" alt="Purchase" class="h-28 object-contain rounded-xl">
+            <div class="group bg-white rounded-2xl border-2 border-accent hover:shadow-xl transition-all duration-300 overflow-hidden card-hover relative">
+                <div class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">POPULAR</div>
+                <div class="h-44 bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center p-6">
+                    <svg class="w-20 h-20 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                    </svg>
                 </div>
-                <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900">Purchase Mortgage</h3>
-                    <p class="text-2xl font-bold text-blue-600 mt-2">6.25% <span class="text-sm font-normal text-gray-500">APR*</span></p>
-                    <ul class="mt-3 space-y-1 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Down payments as low as 3%</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Fixed & adjustable rates</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> First-time buyer programs</li>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900">Purchase Mortgage</h3>
+                    <div class="flex items-center gap-2 mt-2">
+                        <span class="text-2xl font-bold text-accent">6.25%</span>
+                        <span class="text-sm text-gray-500">APR*</span>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            Down payments as low as 3%
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            Fixed & adjustable rates
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            First-time buyer programs
+                        </li>
                     </ul>
-                    <button class="w-full mt-4 bg-blue-600 text-white py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition text-sm">Apply Now</button>
+                    <a href="home-loan-application.html" class="w-full mt-6 bg-accent hover:bg-accent-dark text-white py-3 rounded-full font-semibold transition block text-center shadow-md shadow-accent/25">Apply Now</a>
                 </div>
             </div>
             <!-- Refinance -->
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300">
-                <div class="h-44 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-6">
-                    <img src="/assets/images/refinance-home-icon.png" alt="Refinance" class="h-28 object-contain rounded-xl">
+            <div class="group bg-white rounded-2xl border border-gray-100 hover:border-primary-200 hover:shadow-xl transition-all duration-300 overflow-hidden card-hover">
+                <div class="h-44 bg-gradient-to-br from-primary-600 to-primary-700 flex items-center justify-center p-6">
+                    <svg class="w-20 h-20 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                    </svg>
                 </div>
-                <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900">Refinance</h3>
-                    <p class="text-2xl font-bold text-blue-600 mt-2">6.00% <span class="text-sm font-normal text-gray-500">APR*</span></p>
-                    <ul class="mt-3 space-y-1 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Lower your monthly payment</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Cash-out options available</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> No prepayment penalties</li>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900">Refinance</h3>
+                    <div class="flex items-center gap-2 mt-2">
+                        <span class="text-2xl font-bold text-primary-600">6.00%</span>
+                        <span class="text-sm text-gray-500">APR*</span>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            Lower your monthly payment
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            Cash-out options available
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            No prepayment penalties
+                        </li>
                     </ul>
-                    <button class="w-full mt-4 bg-blue-600 text-white py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition text-sm">Apply Now</button>
+                    <a href="home-loan-application.html?type=refinance" class="w-full mt-6 bg-primary-600 hover:bg-primary-700 text-white py-3 rounded-full font-semibold transition block text-center shadow-md shadow-primary-600/25">Apply Now</a>
                 </div>
             </div>
             <!-- HELOC -->
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300">
-                <div class="h-44 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-6">
-                    <img src="/assets/images/heloc-icon.png" alt="HELOC" class="h-28 object-contain rounded-xl">
+            <div class="group bg-white rounded-2xl border border-gray-100 hover:border-primary-200 hover:shadow-xl transition-all duration-300 overflow-hidden card-hover">
+                <div class="h-44 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center p-6">
+                    <svg class="w-20 h-20 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                    </svg>
                 </div>
-                <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900">Home Equity Line</h3>
-                    <p class="text-2xl font-bold text-blue-600 mt-2">7.50% <span class="text-sm font-normal text-gray-500">APR*</span></p>
-                    <ul class="mt-3 space-y-1 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Lines up to $500,000</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Interest-only options</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> No closing costs*</li>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900">Home Equity Line</h3>
+                    <div class="flex items-center gap-2 mt-2">
+                        <span class="text-2xl font-bold text-primary-600">7.50%</span>
+                        <span class="text-sm text-gray-500">APR*</span>
+                    </div>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            Lines up to $500,000
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            Interest-only options
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            No closing costs*
+                        </li>
                     </ul>
-                    <button class="w-full mt-4 bg-blue-600 text-white py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition text-sm">Apply Now</button>
+                    <a href="home-loan-application.html?type=heloc" class="w-full mt-6 bg-primary-600 hover:bg-primary-700 text-white py-3 rounded-full font-semibold transition block text-center shadow-md shadow-primary-600/25">Apply Now</a>
                 </div>
             </div>
         </div>
-        <p class="text-center text-sm text-gray-500 mt-6">*APR = Annual Percentage Rate. Rates subject to credit approval.</p>
+        <p class="text-center text-sm text-gray-500 mt-8">*APR = Annual Percentage Rate. Rates subject to credit approval.</p>
     </div>
 </section>
 
-<!-- Why Choose Us with Image -->
-<section class="py-16 bg-gray-50">
+<!-- Why Choose Us Section with Image -->
+<section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-                <img src="/assets/images/happy-homeowner.png" alt="Happy homeowner with keys" class="rounded-2xl shadow-xl w-full">
+                <img src="/assets/images/happy-homeowner.png" alt="Happy family in front of their new home" class="rounded-2xl shadow-2xl w-full">
             </div>
             <div>
-                <h2 class="text-3xl font-bold text-gray-900 mb-6">Why Members Choose Us for Home Loans</h2>
-                <div class="space-y-6">
-                    <div class="flex items-start gap-4">
-                        <img src="/assets/images/fast-decisions-icon.png" alt="" class="w-10 h-10 flex-shrink-0">
-                        <div>
-                            <h3 class="font-semibold text-gray-900">Fast Pre-Approval</h3>
-                            <p class="text-gray-600">Get pre-approved in hours with our AI-powered application. Shop with confidence knowing your rate.</p>
+                <span class="text-accent font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">The AI First Advantage</h2>
+                <p class="text-gray-600 mb-6">Experience a smarter, faster path to homeownership with our AI-powered mortgage process.</p>
+                <div class="space-y-4">
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900">Fast Pre-Approval</h3>
+                                <p class="text-sm text-gray-600">Get pre-approved in hours with our AI-powered application.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex items-start gap-4">
-                        <img src="/assets/images/competitive-rates-icon.png" alt="" class="w-10 h-10 flex-shrink-0">
-                        <div>
-                            <h3 class="font-semibold text-gray-900">Member-Only Rates</h3>
-                            <p class="text-gray-600">As a credit union, we offer rates that beat the big banks. Your savings go back to you.</p>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900">Member-Only Rates</h3>
+                                <p class="text-sm text-gray-600">As a credit union, we offer rates that beat the big banks.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex items-start gap-4">
-                        <img src="/assets/images/expert-guidance-icon.png" alt="" class="w-10 h-10 flex-shrink-0">
-                        <div>
-                            <h3 class="font-semibold text-gray-900">Expert Guidance</h3>
-                            <p class="text-gray-600">Our mortgage specialists guide you through every step of the home buying process.</p>
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900">Expert Guidance</h3>
+                                <p class="text-sm text-gray-600">Our mortgage specialists guide you through every step.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -119,38 +219,81 @@ base_path: /aifirst-cu
 </section>
 
 <!-- Mortgage Programs -->
-<section class="py-16 bg-white">
+<section class="py-20 bg-slate-900">
     <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Mortgage Programs</h2>
-            <p class="mt-2 text-gray-600">Special programs designed to help you achieve homeownership</p>
+        <div class="text-center mb-14">
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Mortgage Programs</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Special Programs for You</h2>
+            <p class="mt-3 text-gray-400 max-w-2xl mx-auto">Programs designed to help you achieve homeownership.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-200 hover:shadow-lg transition">
-                <h3 class="text-xl font-bold text-gray-900 mb-2">First-Time Homebuyer</h3>
-                <p class="text-gray-600 text-sm mb-4">Special programs and assistance for first-time homebuyers.</p>
-                <ul class="text-sm text-gray-600 space-y-1 text-left">
-                    <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Down payment assistance</li>
-                    <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Reduced fees</li>
-                    <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Educational resources</li>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">First-Time Homebuyer</h3>
+                <p class="text-gray-400 text-sm mb-4">Special programs and assistance for first-time homebuyers.</p>
+                <ul class="text-sm text-gray-300 space-y-2">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                        Down payment assistance
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                        Reduced fees
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                        Educational resources
+                    </li>
                 </ul>
             </div>
-            <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-200 hover:shadow-lg transition">
-                <h3 class="text-xl font-bold text-gray-900 mb-2">FHA Loans</h3>
-                <p class="text-gray-600 text-sm mb-4">Government-backed loans with flexible qualification requirements.</p>
-                <ul class="text-sm text-gray-600 space-y-1 text-left">
-                    <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Down payments as low as 3.5%</li>
-                    <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Flexible credit requirements</li>
-                    <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Competitive rates</li>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">FHA Loans</h3>
+                <p class="text-gray-400 text-sm mb-4">Government-backed loans with flexible qualification requirements.</p>
+                <ul class="text-sm text-gray-300 space-y-2">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                        Down payments as low as 3.5%
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                        Flexible credit requirements
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                        Competitive rates
+                    </li>
                 </ul>
             </div>
-            <div class="text-center p-6 bg-gray-50 rounded-xl border border-gray-200 hover:shadow-lg transition">
-                <h3 class="text-xl font-bold text-gray-900 mb-2">VA Loans</h3>
-                <p class="text-gray-600 text-sm mb-4">Exclusive benefits for eligible veterans and service members.</p>
-                <ul class="text-sm text-gray-600 space-y-1 text-left">
-                    <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> No down payment required</li>
-                    <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> No private mortgage insurance</li>
-                    <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Competitive rates</li>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.108.054a9 9 0 006.086.71l3.114-.732a48.524 48.524 0 01-.005-10.499l-3.11.732a9 9 0 01-6.085-.711l-.108-.054a9 9 0 00-6.208-.682L3 4.5M3 15V4.5" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">VA Loans</h3>
+                <p class="text-gray-400 text-sm mb-4">Exclusive benefits for eligible veterans and service members.</p>
+                <ul class="text-sm text-gray-300 space-y-2">
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                        No down payment required
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                        No private mortgage insurance
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                        Competitive rates
+                    </li>
                 </ul>
             </div>
         </div>
@@ -158,10 +301,14 @@ base_path: /aifirst-cu
 </section>
 
 <!-- Calculator Section -->
-<section class="py-16 bg-gray-100" id="calculator">
+<section class="py-20 bg-white" id="calculator">
     <div class="container mx-auto px-4 max-w-2xl">
-        <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-6">Mortgage Calculator</h2>
+        <div class="text-center mb-10">
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Calculator</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Estimate Your Payment</h2>
+        </div>
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200">
+            <h3 class="text-xl font-bold text-center text-gray-900 mb-6">Mortgage Calculator</h3>
             <form id="mortgage-form" class="space-y-6">
                 <div>
                     <label for="home-price" class="block text-sm font-medium text-gray-700">Home Price ($)</label>
@@ -193,11 +340,11 @@ base_path: /aifirst-cu
                         <option value="30" selected>30 years</option>
                     </select>
                 </div>
-                <button type="button" onclick="calculateMortgage()" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">Calculate Payment</button>
+                <button type="button" onclick="calculateMortgage()" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-full shadow-md shadow-accent/25 text-sm font-semibold text-white bg-accent hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition duration-300">Calculate Payment</button>
             </form>
             <div id="mortgage-results" class="mt-6 text-center hidden">
                 <h3 class="text-xl font-bold text-gray-900 mb-2">Estimated Monthly Payment</h3>
-                <p class="text-4xl font-extrabold text-blue-600" id="mortgage-monthly-payment-result">$0.00</p>
+                <p class="text-4xl font-extrabold text-accent" id="mortgage-monthly-payment-result">$0.00</p>
                 <p class="mt-2 text-sm text-gray-500">This is an estimate. Final rates subject to credit approval.</p>
             </div>
         </div>
@@ -205,30 +352,31 @@ base_path: /aifirst-cu
 </section>
 
 <!-- Application Process -->
-<section class="py-16 bg-white">
+<section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Application Process</h2>
-            <p class="mt-2 text-gray-600">Simple steps to get the home financing you need</p>
+        <div class="text-center mb-14">
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">How It Works</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Application Process</h2>
+            <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Simple steps to get the home financing you need.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">1</div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Get Pre-Approved</h3>
                 <p class="text-sm text-gray-600">Complete our secure online application and get pre-approved in hours.</p>
             </div>
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">2</div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Shop with Confidence</h3>
                 <p class="text-sm text-gray-600">Use your pre-approval letter to shop for homes within your budget.</p>
             </div>
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">3</div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Submit Application</h3>
                 <p class="text-sm text-gray-600">Once you find your home, submit your full application with required documents.</p>
             </div>
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+                <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">4</div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Close on Your Home</h3>
                 <p class="text-sm text-gray-600">Complete the closing process and get the keys to your new home.</p>
             </div>
@@ -237,13 +385,21 @@ base_path: /aifirst-cu
 </section>
 
 <!-- CTA Section -->
-<section class="py-16 bg-blue-600">
-    <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Make Your Move?</h2>
-        <p class="text-blue-100 max-w-2xl mx-auto mb-8">Get pre-approved today and start your journey to homeownership.</p>
+<section class="py-20 bg-gradient-to-br from-accent to-accent-dark relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3"></div>
+    
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">Ready to Make Your Move?</h2>
+        <p class="text-white/80 max-w-2xl mx-auto mb-10 text-lg">Get pre-approved today and start your journey to homeownership.</p>
+        
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="home-loan-application.html" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition duration-300">Apply Now</a>
-            <a href="/aifirst-cu/contact.html" class="bg-transparent text-white font-semibold py-3 px-8 rounded-full border-2 border-white hover:bg-white/10 transition duration-300">Contact Us</a>
+            <a href="home-loan-application.html" class="bg-white text-accent-dark font-semibold py-4 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg text-lg">
+                Apply Now
+            </a>
+            <a href="/aifirst-cu/contact.html" class="bg-transparent text-white font-semibold py-4 px-8 rounded-full border-2 border-white/30 hover:bg-white/10 transition duration-300">
+                Contact Us
+            </a>
         </div>
     </div>
 </section>

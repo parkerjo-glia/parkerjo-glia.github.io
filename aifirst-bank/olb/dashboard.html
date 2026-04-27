@@ -1,52 +1,63 @@
 ---
 layout: olb
-site_type: bank
-base_path: /aifirst-bank
 title: Dashboard
 nav_active: dashboard
+site_type: bank
+base_path: /aifirst-bank
 ---
 
-<section class="bg-gradient-to-br from-blue-50 to-white py-8">
+<!-- Welcome Section -->
+<section class="bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 py-8">
     <div class="container mx-auto px-4">
-        <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
-            <p class="text-sm text-blue-800 text-center">Demo Mode: Sample account data shown for demonstration purposes only.</p>
+        <!-- Demo Notice -->
+        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 mb-6">
+            <p class="text-sm text-white/90 text-center">Demo Mode: Sample account data shown for demonstration purposes only.</p>
         </div>
         <div class="flex justify-between items-center">
             <div>
-                <h1 class="text-3xl font-bold text-gray-900">Welcome back, <span id="dashboard-username">User</span>!</h1>
-                <p class="text-gray-600 mt-1">Here's an overview of your accounts</p>
+                <h1 class="text-3xl font-bold text-white">Welcome back, <span id="dashboard-username">User</span>!</h1>
+                <p class="text-primary-100 mt-1">Here's an overview of your accounts</p>
             </div>
             <div class="text-right">
-                <p class="text-sm text-gray-500">Last login</p>
-                <p class="text-sm font-medium text-gray-900">Dec 29, 2024 at 2:15 PM</p>
+                <p class="text-sm text-primary-200">Last login</p>
+                <p class="text-sm font-medium text-white">Dec 29, 2024 at 2:15 PM</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-8">
+<!-- Main Content -->
+<section class="py-8 bg-gray-50">
     <div class="container mx-auto px-4">
         <!-- Quick Actions -->
         <div class="mb-8">
             <h2 class="text-xl font-bold text-gray-900 mb-4">Quick Actions</h2>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <a href="/aifirst-bank/olb/transfer.html" class="bg-white p-4 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition duration-300 text-center">
-                    <img src="/assets/images/transfer-icon.png" alt="Transfer Money" class="w-8 h-8 mx-auto mb-2">
+                <a href="/aifirst-bank/olb/transfer.html" class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 hover:border-primary-200 hover:shadow-xl transition duration-300 text-center group">
+                    <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-accent/20 transition duration-300">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                    </div>
                     <h3 class="font-semibold text-gray-900">Transfer Money</h3>
                     <p class="text-sm text-gray-600">Between accounts</p>
                 </a>
-                <a href="/aifirst-bank/olb/bill-pay.html" class="bg-white p-4 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition duration-300 text-center">
-                    <img src="/assets/images/bill-pay-icon.png" alt="Pay Bills" class="w-8 h-8 mx-auto mb-2">
+                <a href="/aifirst-bank/olb/bill-pay.html" class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 hover:border-primary-200 hover:shadow-xl transition duration-300 text-center group">
+                    <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-accent/20 transition duration-300">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
                     <h3 class="font-semibold text-gray-900">Pay Bills</h3>
                     <p class="text-sm text-gray-600">Schedule payments</p>
                 </a>
-                <a href="#" class="bg-white p-4 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition duration-300 text-center">
-                    <img src="/assets/images/mobile-deposit-icon.png" alt="Mobile Deposit" class="w-8 h-8 mx-auto mb-2">
+                <a href="#" class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 hover:border-primary-200 hover:shadow-xl transition duration-300 text-center group">
+                    <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-accent/20 transition duration-300">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
                     <h3 class="font-semibold text-gray-900">Mobile Deposit</h3>
                     <p class="text-sm text-gray-600">Deposit checks</p>
                 </a>
-                <a href="#" class="bg-white p-4 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition duration-300 text-center">
-                    <img src="/assets/images/statements-icon.png" alt="Statements" class="w-8 h-8 mx-auto mb-2">
+                <a href="#" class="bg-white p-5 rounded-2xl shadow-lg border border-gray-100 hover:border-primary-200 hover:shadow-xl transition duration-300 text-center group">
+                    <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:bg-accent/20 transition duration-300">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
                     <h3 class="font-semibold text-gray-900">Statements</h3>
                     <p class="text-sm text-gray-600">View & download</p>
                 </a>
@@ -57,24 +68,19 @@ nav_active: dashboard
         <div class="mb-8">
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-xl font-bold text-gray-900">Account Summary</h2>
-                <button class="text-blue-600 hover:text-blue-700 font-medium text-sm">Refresh Balances</button>
+                <button class="text-accent hover:text-accent-dark font-medium text-sm">Refresh Balances</button>
             </div>
-            
-            <div id="accounts-container" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <!-- Accounts will be loaded here via JavaScript -->
-            </div>
+            <div id="accounts-container" class="grid grid-cols-1 lg:grid-cols-2 gap-6"></div>
         </div>
 
         <!-- Recent Activity -->
         <div>
             <h2 class="text-xl font-bold text-gray-900 mb-4">Recent Activity</h2>
-            <div class="bg-white rounded-lg shadow-md border border-gray-200">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100">
                 <div class="p-6">
-                    <div id="recent-transactions" class="space-y-4">
-                        <!-- Recent transactions will be loaded here via JavaScript -->
-                    </div>
+                    <div id="recent-transactions" class="space-y-4"></div>
                     <div class="mt-6 text-center">
-                        <button class="text-blue-600 hover:text-blue-700 font-medium">View All Activity</button>
+                        <button class="text-accent hover:text-accent-dark font-medium">View All Activity</button>
                     </div>
                 </div>
             </div>
@@ -83,37 +89,25 @@ nav_active: dashboard
 </section>
 
 <script>
-// Load account data
+var basePath = '/aifirst-cu';
 async function loadAccounts() {
     try {
         const response = await fetch('/assets/json/accounts.json');
         const data = await response.json();
         displayAccounts(data.accounts);
-    } catch (error) {
-        console.error('Error loading accounts:', error);
-    }
+    } catch (error) { console.error('Error loading accounts:', error); }
 }
-
-// Display accounts
 function displayAccounts(accounts) {
     const container = document.getElementById('accounts-container');
     container.innerHTML = '';
-
-    accounts.forEach(account => {
-        const accountCard = createAccountCard(account);
-        container.appendChild(accountCard);
-    });
+    accounts.forEach(account => { container.appendChild(createAccountCard(account)); });
 }
-
-// Create account card
 function createAccountCard(account) {
     const card = document.createElement('div');
-    card.className = 'bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition duration-300';
-    
+    card.className = 'bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:border-primary-200 hover:shadow-xl transition duration-300';
     const isLoan = account.balance < 0;
-    const balanceColor = isLoan ? 'text-red-600' : 'text-blue-600';
+    const balanceColor = isLoan ? 'text-red-600' : 'text-accent';
     const balanceLabel = isLoan ? 'Balance Owed' : 'Available Balance';
-    
     card.innerHTML = `
         <div class="flex justify-between items-start mb-4">
             <div>
@@ -121,112 +115,56 @@ function createAccountCard(account) {
                 <p class="text-sm text-gray-600 capitalize">${account.type.replace('_', ' ')}</p>
                 <p class="text-xs text-gray-500">${account.accountNumber}</p>
             </div>
-            <span class="px-2 py-1 text-xs font-medium rounded-full ${account.status === 'active' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}">${account.status}</span>
+            <span class="px-3 py-1 text-xs font-medium rounded-full ${account.status === 'active' ? 'bg-accent/10 text-accent' : 'bg-gray-100 text-gray-800'}">${account.status}</span>
         </div>
         <div class="mb-4">
             <p class="text-sm text-gray-600">${balanceLabel}</p>
-            <p class="text-2xl font-bold ${balanceColor}">$${Math.abs(account.balance).toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
+            <p class="text-2xl font-bold ${balanceColor}">${Math.abs(account.balance).toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
         </div>
-        ${account.type === 'heloc' ? `
-            <div class="mb-4">
-                <p class="text-sm text-gray-600">Available Credit</p>
-                <p class="text-lg font-semibold text-blue-600">$${account.availableCredit.toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
-            </div>
-        ` : ''}
-        ${account.interestRate ? `
-            <div class="mb-4">
-                <p class="text-sm text-gray-600">Interest Rate</p>
-                <p class="text-sm font-medium text-gray-900">${account.interestRate}% APY</p>
-            </div>
-        ` : ''}
         <div class="flex space-x-2">
-            <button onclick="viewAccountDetails('${account.id}')" class="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300 text-sm font-medium">
-                View Details
-            </button>
-            ${!isLoan ? `
-                <button onclick="initiateTransfer('${account.id}')" class="flex-1 bg-gray-100 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-200 transition duration-300 text-sm font-medium">
-                    Transfer
-                </button>
-            ` : ''}
-        </div>
-    `;
-    
+            <button onclick="viewAccountDetails('${account.id}')" class="flex-1 bg-accent hover:bg-accent-dark text-white py-2 px-4 rounded-full transition duration-300 text-sm font-medium shadow-md shadow-accent/25">View Details</button>
+            ${!isLoan ? `<button onclick="initiateTransfer('${account.id}')" class="flex-1 bg-gray-100 text-gray-700 py-2 px-4 rounded-full hover:bg-gray-200 transition duration-300 text-sm font-medium">Transfer</button>` : ''}
+        </div>`;
     return card;
 }
-
-// Load recent transactions
 async function loadRecentTransactions() {
     try {
         const response = await fetch('/assets/json/transactions.json');
         const data = await response.json();
-        
-        // Get all transactions and sort by date
         const allTransactions = [];
         Object.keys(data.transactions).forEach(accountId => {
-            data.transactions[accountId].forEach(transaction => {
-                allTransactions.push({...transaction, accountId});
-            });
+            data.transactions[accountId].forEach(transaction => { allTransactions.push({...transaction, accountId}); });
         });
-        
-        // Sort by date (most recent first) and take top 5
         allTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
-        const recentTransactions = allTransactions.slice(0, 5);
-        
-        displayRecentTransactions(recentTransactions);
-    } catch (error) {
-        console.error('Error loading transactions:', error);
-    }
+        displayRecentTransactions(allTransactions.slice(0, 5));
+    } catch (error) { console.error('Error loading transactions:', error); }
 }
-
-// Display recent transactions
 function displayRecentTransactions(transactions) {
     const container = document.getElementById('recent-transactions');
     container.innerHTML = '';
-
     transactions.forEach(transaction => {
-        const transactionElement = document.createElement('div');
-        transactionElement.className = 'flex justify-between items-center py-3 border-b border-gray-100 last:border-b-0';
-        
-        const amountColor = transaction.amount >= 0 ? 'text-blue-600' : 'text-red-600';
+        const el = document.createElement('div');
+        el.className = 'flex justify-between items-center py-3 border-b border-gray-100 last:border-b-0';
+        const amountColor = transaction.amount >= 0 ? 'text-accent' : 'text-red-600';
         const amountSign = transaction.amount >= 0 ? '+' : '';
-        
-        transactionElement.innerHTML = `
+        el.innerHTML = `
             <div class="flex-1">
                 <p class="font-medium text-gray-900">${transaction.description}</p>
-                <p class="text-sm text-gray-600">${new Date(transaction.date).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
-                })}</p>
+                <p class="text-sm text-gray-600">${new Date(transaction.date).toLocaleDateString('en-US', {year: 'numeric', month: 'short', day: 'numeric'})}</p>
             </div>
             <div class="text-right">
-                <p class="font-semibold ${amountColor}">${amountSign}$${Math.abs(transaction.amount).toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
+                <p class="font-semibold ${amountColor}">${amountSign}${Math.abs(transaction.amount).toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
                 <p class="text-xs text-gray-500">${transaction.category}</p>
-            </div>
-        `;
-        
-        container.appendChild(transactionElement);
+            </div>`;
+        container.appendChild(el);
     });
 }
-
-// Navigation functions
-function viewAccountDetails(accountId) {
-    window.location.href = `/aifirst-bank/olb/account-details.html?id=${accountId}`;
-}
-
-function initiateTransfer(fromAccountId) {
-    window.location.href = `/aifirst-bank/olb/transfer.html?from=${fromAccountId}`;
-}
-
-// Load data when page loads
+function viewAccountDetails(accountId) { window.location.href = basePath + `/olb/account-details.html?id=${accountId}`; }
+function initiateTransfer(fromAccountId) { window.location.href = basePath + `/olb/transfer.html?from=${fromAccountId}`; }
 document.addEventListener('DOMContentLoaded', function() {
-    // Set username from localStorage
     const username = localStorage.getItem('username') || 'User';
     const dashboardUsername = document.getElementById('dashboard-username');
-    if (dashboardUsername) {
-        dashboardUsername.textContent = username;
-    }
-    
+    if (dashboardUsername) dashboardUsername.textContent = username;
     loadAccounts();
     loadRecentTransactions();
 });

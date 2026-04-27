@@ -4,6 +4,7 @@ site_type: cu
 ---
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,18 @@ site_type: cu
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a' },
+                        accent: { DEFAULT: '#10b981', dark: '#059669', light: '#34d399' }
+                    }
+                }
+            }
+        }
+    </script>
     <!-- jQuery (required for glia-site-selector.js) -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- Bootstrap JS (required for modal) -->
@@ -21,7 +34,8 @@ site_type: cu
     <script src="/assets/scripts/glia-installer.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body { 
+
+        body {
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
@@ -29,50 +43,70 @@ site_type: cu
         }
     </style>
 </head>
-<body class="bg-gray-100">
+
+<body class="bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 min-h-screen">
     <!-- Header with logo and subtle site switchers -->
     <header class="absolute top-0 left-0 p-6">
         <div class="flex items-center space-x-3 mb-3">
             <img src="/assets/images/logo.png" alt="AI First Credit Union Logo" class="w-10 h-10">
             <div class="flex flex-col">
-                <span class="font-bold text-xl text-gray-900 leading-tight">AI First CU</span>
-                <span class="text-xs text-gray-500">Branch Kiosk</span>
+                <span class="font-bold text-xl text-white leading-tight">AI First CU</span>
+                <span class="text-xs text-primary-200">Branch Kiosk</span>
             </div>
         </div>
-        <div class="text-xs text-gray-400 space-y-1">
+        <div class="text-xs text-primary-300 space-y-1">
             <div>
                 <span>Demo: </span>
-                <a href="/aifirst-bank/kiosk.html" class="hover:text-gray-600 transition">Switch to Bank</a>
+                <a href="/aifirst-bank/kiosk.html" class="hover:text-white transition text-accent">Switch to Bank</a>
             </div>
             <div>
                 <span>Glia: </span>
-                <a href="/?openSettings=true" id="change-glia-site-link" class="hover:text-gray-600 transition">
+                <a href="/?openSettings=true" id="change-glia-site-link"
+                    class="hover:text-white transition text-accent">
                     <span id="current-glia-site-display">Loading...</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <div class="min-h-screen flex items-center justify-center">
-        <img src="/assets/images/about-story-image.png" alt="AI First Credit Union" class="max-w-full max-h-screen object-contain">
+    <!-- Trust badge -->
+    <div class="absolute top-6 right-6">
+        <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+            <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                </path>
+            </svg>
+            <span class="text-white text-sm font-medium">Glia Demo Certified</span>
+        </div>
+    </div>
+
+    <div class="min-h-screen flex items-center justify-center p-8">
+        <div class="text-center">
+            <img src="/assets/images/about-story-image.png" alt="AI First Credit Union"
+                class="max-w-2xl max-h-[60vh] object-contain rounded-2xl shadow-2xl mx-auto">
+            <p class="mt-8 text-primary-100 text-lg">Welcome to AI First Credit Union</p>
+            <p class="text-primary-300 text-sm mt-2">Member-Owned • Community Focused</p>
+        </div>
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var gliaSiteRaw = localStorage.getItem('glia_site');
-        var currentGliaSiteDisplay = document.getElementById('current-glia-site-display');
-        
-        if (currentGliaSiteDisplay && gliaSiteRaw) {
-            var gliaSite = JSON.parse(gliaSiteRaw);
-            if (gliaSite && gliaSite.name && gliaSite.name !== gliaSite.id) {
-                currentGliaSiteDisplay.textContent = gliaSite.name;
-                currentGliaSiteDisplay.title = gliaSite.name + '\n' + gliaSite.id;
-            } else if (gliaSite && gliaSite.id) {
-                currentGliaSiteDisplay.textContent = gliaSite.id.substring(0, 8) + '...';
-                currentGliaSiteDisplay.title = gliaSite.id;
+        document.addEventListener('DOMContentLoaded', function () {
+            var gliaSiteRaw = localStorage.getItem('glia_site');
+            var currentGliaSiteDisplay = document.getElementById('current-glia-site-display');
+
+            if (currentGliaSiteDisplay && gliaSiteRaw) {
+                var gliaSite = JSON.parse(gliaSiteRaw);
+                if (gliaSite && gliaSite.name && gliaSite.name !== gliaSite.id) {
+                    currentGliaSiteDisplay.textContent = gliaSite.name;
+                    currentGliaSiteDisplay.title = gliaSite.name + '\n' + gliaSite.id;
+                } else if (gliaSite && gliaSite.id) {
+                    currentGliaSiteDisplay.textContent = gliaSite.id.substring(0, 8) + '...';
+                    currentGliaSiteDisplay.title = gliaSite.id;
+                }
             }
-        }
-    });
+        });
     </script>
 </body>
+
 </html>

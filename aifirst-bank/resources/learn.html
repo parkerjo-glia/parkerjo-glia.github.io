@@ -4,39 +4,50 @@ site_type: bank
 base_path: /aifirst-bank
 ---
 
-<section class="bg-gradient-to-br from-blue-100 to-white py-20 md:py-32">
-    <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-            Learn & Grow Your Financial Knowledge.
-        </h1>
-        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Empower yourself with financial education resources, expert insights, and practical tools to make informed decisions and achieve your financial goals.
-        </p>
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 py-20 md:py-28 overflow-hidden">
+    <!-- Dot pattern overlay -->
+    <div class="absolute inset-0 opacity-10">
+        <svg class="w-full h-full" xmlns="https://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="white"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dots)"/>
+        </svg>
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <span class="inline-block bg-white/10 backdrop-blur-sm text-accent font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full mb-6">Education</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">Learn & Grow Your Financial Knowledge</h1>
+        <p class="mt-6 text-lg md:text-xl text-primary-100 max-w-2xl mx-auto">Empower yourself with financial education resources, expert insights, and practical tools to make informed decisions and achieve your financial goals.</p>
         <div class="mt-8">
-            <a href="#resources" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg">Explore Resources</a>
+            <a href="#resources" class="bg-accent text-white font-semibold py-3 px-8 rounded-full hover:bg-accent-dark transition duration-300 shadow-lg">Explore Resources</a>
         </div>
     </div>
 </section>
 
-<section class="bg-white py-16">
-    <div class="container mx-auto px-4 text-center max-w-4xl">
-        <h2 class="text-3xl font-bold text-gray-900">Financial Education for Every Stage of Life</h2>
-        <p class="mt-4 text-gray-600">
-            Whether you're just starting your financial journey or planning for retirement, our comprehensive educational resources provide the knowledge and tools you need to make confident financial decisions.
-        </p>
+<!-- Intro Section -->
+<section class="py-16 md:py-20 bg-white">
+    <div class="container mx-auto px-4 text-center max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Financial Education for Every Stage of Life</h2>
+        <p class="mt-4 text-gray-600 text-lg">Whether you're just starting your financial journey or planning for retirement, our comprehensive educational resources provide the knowledge and tools you need to make confident financial decisions.</p>
     </div>
 </section>
 
-<section class="bg-gray-100 py-16" id="resources">
+<!-- Learning Categories -->
+<section class="py-16 md:py-20 bg-gray-50" id="resources">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Learning Categories</h2>
-            <p class="mt-2 text-gray-600">Choose your area of interest to get started.</p>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Learning Categories</h2>
+            <p class="mt-4 text-gray-600">Choose your area of interest to get started.</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                <img src="/assets/images/education-icon.png" alt="Banking Basics" class="h-12 w-12 mb-4">
+            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Banking Basics</h3>
                 <p class="text-gray-600 text-sm mb-4">Learn the fundamentals of banking, from opening your first account to understanding different account types.</p>
                 <ul class="text-sm text-gray-600 space-y-1 mb-4">
@@ -45,11 +56,13 @@ base_path: /aifirst-bank
                     <li>• Online and mobile banking</li>
                     <li>• Building banking relationships</li>
                 </ul>
-                <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Start Learning →</a>
+                <a href="#" class="text-accent font-medium hover:text-accent-dark transition duration-300">Start Learning →</a>
             </div>
             
-            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                <img src="/assets/images/budget-planner-icon.png" alt="Budgeting & Saving" class="h-12 w-12 mb-4">
+            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Budgeting & Saving</h3>
                 <p class="text-gray-600 text-sm mb-4">Master the art of budgeting and develop effective saving strategies for your financial goals.</p>
                 <ul class="text-sm text-gray-600 space-y-1 mb-4">
@@ -58,11 +71,13 @@ base_path: /aifirst-bank
                     <li>• Saving for specific goals</li>
                     <li>• Automating your savings</li>
                 </ul>
-                <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Start Learning →</a>
+                <a href="#" class="text-accent font-medium hover:text-accent-dark transition duration-300">Start Learning →</a>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                <img src="/assets/images/business-credit-card-icon.png" alt="Credit & Debt" class="h-12 w-12 mb-4">
+            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Credit & Debt Management</h3>
                 <p class="text-gray-600 text-sm mb-4">Understand credit scores, build good credit, and learn strategies for managing and reducing debt.</p>
                 <ul class="text-sm text-gray-600 space-y-1 mb-4">
@@ -71,11 +86,13 @@ base_path: /aifirst-bank
                     <li>• Debt consolidation strategies</li>
                     <li>• Credit card best practices</li>
                 </ul>
-                <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Start Learning →</a>
+                <a href="#" class="text-accent font-medium hover:text-accent-dark transition duration-300">Start Learning →</a>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                <img src="/assets/images/home-loan-calc-icon.png" alt="Home Buying" class="h-12 w-12 mb-4">
+            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Home Buying</h3>
                 <p class="text-gray-600 text-sm mb-4">Navigate the home buying process with confidence, from pre-approval to closing.</p>
                 <ul class="text-sm text-gray-600 space-y-1 mb-4">
@@ -84,11 +101,13 @@ base_path: /aifirst-bank
                     <li>• Down payment strategies</li>
                     <li>• Closing process overview</li>
                 </ul>
-                <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Start Learning →</a>
+                <a href="#" class="text-accent font-medium hover:text-accent-dark transition duration-300">Start Learning →</a>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                <img src="/assets/images/retirement-calc-icon.png" alt="Retirement Planning" class="h-12 w-12 mb-4">
+            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Retirement Planning</h3>
                 <p class="text-gray-600 text-sm mb-4">Plan for your future with retirement savings strategies and investment basics.</p>
                 <ul class="text-sm text-gray-600 space-y-1 mb-4">
@@ -97,11 +116,13 @@ base_path: /aifirst-bank
                     <li>• Investment fundamentals</li>
                     <li>• Social Security planning</li>
                 </ul>
-                <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Start Learning →</a>
+                <a href="#" class="text-accent font-medium hover:text-accent-dark transition duration-300">Start Learning →</a>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                <img src="/assets/images/business-services-icon.png" alt="Business Finance" class="h-12 w-12 mb-4">
+            <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Business Finance</h3>
                 <p class="text-gray-600 text-sm mb-4">Learn essential business financial management skills and growth strategies.</p>
                 <ul class="text-sm text-gray-600 space-y-1 mb-4">
@@ -110,218 +131,124 @@ base_path: /aifirst-bank
                     <li>• Business loan options</li>
                     <li>• Financial planning for growth</li>
                 </ul>
-                <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Start Learning →</a>
+                <a href="#" class="text-accent font-medium hover:text-accent-dark transition duration-300">Start Learning →</a>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-16 bg-white">
+<!-- Featured Articles -->
+<section class="py-16 md:py-20 bg-white">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Featured Articles</h2>
-            <p class="mt-2 text-gray-600">Expert insights and practical advice for your financial journey.</p>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Featured Articles</h2>
+            <p class="mt-4 text-gray-600">Expert insights and practical advice for your financial journey.</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <article class="bg-gray-50 rounded-lg overflow-hidden hover:shadow-md transition duration-300">
+            <article class="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition duration-300">
                 <div class="p-6">
                     <div class="flex items-center mb-3">
-                        <img src="/assets/images/ai-security-icon.png" alt="AI Finance" class="h-8 w-8 mr-3">
-                        <span class="text-sm text-blue-600 font-medium">AI & Finance</span>
+                        <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                        </div>
+                        <span class="text-sm text-accent font-medium">AI & Finance</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">How AI is Revolutionizing Personal Finance</h3>
                     <p class="text-gray-600 text-sm mb-4">Discover how artificial intelligence is making banking safer, smarter, and more personalized for everyday consumers.</p>
-                    <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Read More →</a>
+                    <a href="#" class="text-accent font-medium hover:text-accent-dark transition duration-300">Read More →</a>
                 </div>
             </article>
 
-            <article class="bg-gray-50 rounded-lg overflow-hidden hover:shadow-md transition duration-300">
+            <article class="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition duration-300">
                 <div class="p-6">
                     <div class="flex items-center mb-3">
-                        <img src="/assets/images/savings-calc-icon.png" alt="Saving Tips" class="h-8 w-8 mr-3">
-                        <span class="text-sm text-blue-600 font-medium">Saving Tips</span>
+                        <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <span class="text-sm text-accent font-medium">Saving Tips</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">10 Simple Ways to Save More Money</h3>
                     <p class="text-gray-600 text-sm mb-4">Practical strategies to boost your savings without drastically changing your lifestyle.</p>
-                    <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Read More →</a>
+                    <a href="#" class="text-accent font-medium hover:text-accent-dark transition duration-300">Read More →</a>
                 </div>
             </article>
 
-            <article class="bg-gray-50 rounded-lg overflow-hidden hover:shadow-md transition duration-300">
+            <article class="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition duration-300">
                 <div class="p-6">
                     <div class="flex items-center mb-3">
-                        <img src="/assets/images/secure-protected-icon.png" alt="Security" class="h-8 w-8 mr-3">
-                        <span class="text-sm text-blue-600 font-medium">Security</span>
+                        <div class="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center mr-3">
+                            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <span class="text-sm text-accent font-medium">Security</span>
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Protecting Yourself from Financial Fraud</h3>
                     <p class="text-gray-600 text-sm mb-4">Essential tips to keep your accounts safe and recognize common fraud schemes.</p>
-                    <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Read More →</a>
-                </div>
-            </article>
-
-            <article class="bg-gray-50 rounded-lg overflow-hidden hover:shadow-md transition duration-300">
-                <div class="p-6">
-                    <div class="flex items-center mb-3">
-                        <img src="/assets/images/debt-payoff-icon.png" alt="Debt Management" class="h-8 w-8 mr-3">
-                        <span class="text-sm text-blue-600 font-medium">Debt Management</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Debt Snowball vs. Debt Avalanche</h3>
-                    <p class="text-gray-600 text-sm mb-4">Compare two popular debt payoff strategies to find the method that works best for you.</p>
-                    <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Read More →</a>
-                </div>
-            </article>
-
-            <article class="bg-gray-50 rounded-lg overflow-hidden hover:shadow-md transition duration-300">
-                <div class="p-6">
-                    <div class="flex items-center mb-3">
-                        <img src="/assets/images/auto-loan-calc-icon.png" alt="Auto Loans" class="h-8 w-8 mr-3">
-                        <span class="text-sm text-blue-600 font-medium">Auto Loans</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">New vs. Used: Making the Right Car Choice</h3>
-                    <p class="text-gray-600 text-sm mb-4">Financial considerations when deciding between a new or used vehicle purchase.</p>
-                    <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Read More →</a>
-                </div>
-            </article>
-
-            <article class="bg-gray-50 rounded-lg overflow-hidden hover:shadow-md transition duration-300">
-                <div class="p-6">
-                    <div class="flex items-center mb-3">
-                        <img src="/assets/images/financial-tips-icon.png" alt="Financial Planning" class="h-8 w-8 mr-3">
-                        <span class="text-sm text-blue-600 font-medium">Financial Planning</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Building Your Emergency Fund</h3>
-                    <p class="text-gray-600 text-sm mb-4">Step-by-step guide to creating a financial safety net for unexpected expenses.</p>
-                    <a href="#" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Read More →</a>
+                    <a href="#" class="text-accent font-medium hover:text-accent-dark transition duration-300">Read More →</a>
                 </div>
             </article>
         </div>
     </div>
 </section>
 
-<section class="py-16 bg-gray-100">
+<!-- Interactive Tools -->
+<section class="py-16 md:py-20 bg-gray-50">
     <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Interactive Learning Tools</h2>
-            <p class="mt-2 text-gray-600">Hands-on tools to help you practice and apply financial concepts.</p>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Interactive Learning Tools</h2>
+            <p class="mt-4 text-gray-600">Hands-on tools to help you practice and apply financial concepts.</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
-                <img src="/assets/images/budget-planner-icon.png" alt="Budget Worksheet" class="h-12 w-12 mx-auto mb-4">
+            <div class="bg-white p-6 rounded-2xl shadow-sm text-center hover:shadow-lg transition duration-300">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                </div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Budget Worksheet</h3>
                 <p class="text-sm text-gray-600 mb-4">Interactive tool to create and track your monthly budget.</p>
-                <a href="/aifirst-bank/resources/tools.html" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Try It →</a>
+                <a href="/aifirst-bank/resources/tools.html" class="text-accent font-medium hover:text-accent-dark transition duration-300">Try It →</a>
             </div>
             
-            <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
-                <img src="/assets/images/debt-payoff-icon.png" alt="Debt Calculator" class="h-12 w-12 mx-auto mb-4">
+            <div class="bg-white p-6 rounded-2xl shadow-sm text-center hover:shadow-lg transition duration-300">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                </div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Debt Payoff Calculator</h3>
                 <p class="text-sm text-gray-600 mb-4">Calculate how long it will take to pay off your debts.</p>
-                <a href="/aifirst-bank/resources/tools.html" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Try It →</a>
+                <a href="/aifirst-bank/resources/tools.html" class="text-accent font-medium hover:text-accent-dark transition duration-300">Try It →</a>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
-                <img src="/assets/images/retirement-calc-icon.png" alt="Retirement Calculator" class="h-12 w-12 mx-auto mb-4">
+            <div class="bg-white p-6 rounded-2xl shadow-sm text-center hover:shadow-lg transition duration-300">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Retirement Calculator</h3>
                 <p class="text-sm text-gray-600 mb-4">Plan for your retirement and see if you're on track.</p>
-                <a href="/aifirst-bank/resources/tools.html" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Try It →</a>
+                <a href="/aifirst-bank/resources/tools.html" class="text-accent font-medium hover:text-accent-dark transition duration-300">Try It →</a>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition duration-300">
-                <img src="/assets/images/savings-calc-icon.png" alt="Savings Goal Calculator" class="h-12 w-12 mx-auto mb-4">
+            <div class="bg-white p-6 rounded-2xl shadow-sm text-center hover:shadow-lg transition duration-300">
+                <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </div>
                 <h3 class="text-lg font-semibold text-gray-900 mb-2">Savings Goal Calculator</h3>
                 <p class="text-sm text-gray-600 mb-4">Calculate how much to save monthly for your goals.</p>
-                <a href="/aifirst-bank/resources/tools.html" class="text-blue-600 font-medium hover:text-blue-700 transition duration-300">Try It →</a>
+                <a href="/aifirst-bank/resources/tools.html" class="text-accent font-medium hover:text-accent-dark transition duration-300">Try It →</a>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Workshops & Events</h2>
-            <p class="mt-2 text-gray-600">Join our educational workshops and webinars to learn from financial experts.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                <div class="flex items-start space-x-4">
-                    <img src="/assets/images/education-icon.png" alt="Workshop" class="h-12 w-12 mt-1">
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">First-Time Home Buyer Workshop</h3>
-                        <p class="text-gray-600 text-sm mb-3">Learn everything you need to know about buying your first home, from pre-approval to closing.</p>
-                        <div class="text-sm text-gray-500 mb-3">
-                            <p><strong>Date:</strong> January 15, 2025</p>
-                            <p><strong>Time:</strong> 6:00 PM - 8:00 PM</p>
-                            <p><strong>Format:</strong> Online Webinar</p>
-                        </div>
-                        <button class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">Register Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-green-50 p-6 rounded-lg border border-green-200">
-                <div class="flex items-start space-x-4">
-                    <img src="/assets/images/retirement-calc-icon.png" alt="Workshop" class="h-12 w-12 mt-1">
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Retirement Planning Seminar</h3>
-                        <p class="text-gray-600 text-sm mb-3">Strategies for building a secure retirement, including 401(k)s, IRAs, and Social Security planning.</p>
-                        <div class="text-sm text-gray-500 mb-3">
-                            <p><strong>Date:</strong> January 22, 2025</p>
-                            <p><strong>Time:</strong> 10:00 AM - 12:00 PM</p>
-                            <p><strong>Format:</strong> In-Person & Online</p>
-                        </div>
-                        <button class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">Register Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                <div class="flex items-start space-x-4">
-                    <img src="/assets/images/business-services-icon.png" alt="Workshop" class="h-12 w-12 mt-1">
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Small Business Finance Workshop</h3>
-                        <p class="text-gray-600 text-sm mb-3">Essential financial management skills for small business owners and entrepreneurs.</p>
-                        <div class="text-sm text-gray-500 mb-3">
-                            <p><strong>Date:</strong> February 5, 2025</p>
-                            <p><strong>Time:</strong> 2:00 PM - 4:00 PM</p>
-                            <p><strong>Format:</strong> Online Webinar</p>
-                        </div>
-                        <button class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">Register Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                <div class="flex items-start space-x-4">
-                    <img src="/assets/images/budget-planner-icon.png" alt="Workshop" class="h-12 w-12 mt-1">
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Budgeting & Saving Masterclass</h3>
-                        <p class="text-gray-600 text-sm mb-3">Master the fundamentals of budgeting and develop effective saving strategies.</p>
-                        <div class="text-sm text-gray-500 mb-3">
-                            <p><strong>Date:</strong> February 12, 2025</p>
-                            <p><strong>Time:</strong> 7:00 PM - 8:30 PM</p>
-                            <p><strong>Format:</strong> Online Webinar</p>
-                        </div>
-                        <button class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">Register Now</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="bg-blue-600 py-16">
-    <div class="container mx-auto px-4 text-center text-white">
-        <h2 class="text-3xl md:text-4xl font-bold">Ready to Start Learning?</h2>
-        <p class="mt-4 text-lg max-w-2xl mx-auto opacity-90">
-            Take control of your financial future with our comprehensive educational resources and expert guidance.
-        </p>
-        <div class="mt-8 flex justify-center space-x-4">
-            <a href="/aifirst-bank/open-account.html" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Open an Account</a>
-            <a href="/aifirst-bank/contact.html" class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Schedule Consultation</a>
+<!-- CTA Section -->
+<section class="relative py-16 md:py-20 bg-gradient-to-br from-accent to-accent-dark overflow-hidden">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Start Learning?</h2>
+        <p class="text-white/90 max-w-2xl mx-auto mb-8 text-lg">Take control of your financial future with our comprehensive educational resources and expert guidance.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="/aifirst-bank/open-account.html" class="bg-white text-accent font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Open an Account</a>
+            <a href="/aifirst-bank/contact.html" class="bg-white/10 backdrop-blur-sm text-white font-semibold py-3 px-8 rounded-full border border-white/20 hover:bg-white/20 transition duration-300">Schedule Consultation</a>
         </div>
     </div>
 </section>

@@ -5,66 +5,91 @@ base_path: /aifirst-cu
 ---
 
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-blue-600 to-blue-800 py-20 md:py-28 overflow-hidden">
-    <div class="absolute inset-0 opacity-20">
-        <img src="/assets/images/banking-hero-bg.png" alt="" class="w-full h-full object-cover">
+<section class="relative bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 py-20 md:py-28 overflow-hidden">
+    <!-- Dot pattern overlay -->
+    <div class="absolute inset-0 opacity-10">
+        <svg class="w-full h-full" xmlns="https://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="white"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dots)"/>
+        </svg>
     </div>
     <div class="container mx-auto px-4 text-center relative z-10">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">Become a Member Today</h1>
-        <p class="mt-4 text-lg text-blue-100 max-w-2xl mx-auto">Join AI First Credit Union and experience the difference of member-owned banking with better rates, lower fees, and personalized service.</p>
-        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#join" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition duration-300 shadow-lg">Join Now</a>
-            <a href="#benefits" class="bg-transparent text-white font-semibold py-3 px-8 rounded-full border-2 border-white hover:bg-white/10 transition duration-300">See Benefits</a>
+        <span class="inline-block bg-white/10 backdrop-blur-sm text-accent font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full mb-6">Membership</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">Become a Member Today</h1>
+        <p class="mt-6 text-lg md:text-xl text-primary-100 max-w-2xl mx-auto">Join AI First Credit Union and experience the difference of member-owned banking with better rates, lower fees, and personalized service.</p>
+        <!-- Trust badges -->
+        <div class="flex flex-wrap justify-center gap-4 mt-8">
+            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span class="text-white text-sm font-medium">Better Rates</span>
+            </div>
+            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                <span class="text-white text-sm font-medium">Glia Demo Certified</span>
+            </div>
+            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                <span class="text-white text-sm font-medium">Member-Owned</span>
+            </div>
+        </div>
+        <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#join" class="bg-accent hover:bg-accent-dark text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg shadow-accent/30">Join Now</a>
+            <a href="#benefits" class="bg-white/10 backdrop-blur-sm text-white font-semibold py-3 px-8 rounded-full border border-white/20 hover:bg-white/20 transition duration-300">See Benefits</a>
         </div>
     </div>
 </section>
 
 <!-- Membership Benefits -->
-<section class="py-16 bg-white" id="benefits">
+<section class="py-16 md:py-20 bg-white" id="benefits">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Why Join AI First Credit Union?</h2>
-            <p class="mt-2 text-gray-600">As a member-owned institution, we put your financial success first</p>
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Member Benefits</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Why Join AI First Credit Union?</h2>
+            <p class="mt-4 text-gray-600">As a member-owned institution, we put your financial success first</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 text-center hover:shadow-xl transition duration-300">
-                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <img src="/assets/images/competitive-rates-icon.png" alt="" class="w-10 h-10">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 text-center hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
                 </div>
                 <h3 class="text-lg font-bold text-gray-900">Better Rates</h3>
                 <p class="text-sm text-gray-600 mt-2">Earn more on savings and pay less on loans with our member-exclusive rates.</p>
             </div>
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 text-center hover:shadow-xl transition duration-300">
-                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <img src="/assets/images/lower-fees-icon.png" alt="" class="w-10 h-10">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 text-center hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 </div>
                 <h3 class="text-lg font-bold text-gray-900">Lower Fees</h3>
                 <p class="text-sm text-gray-600 mt-2">Keep more of your money with fewer fees and no hidden charges.</p>
             </div>
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 text-center hover:shadow-xl transition duration-300">
-                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <img src="/assets/images/always-human-icon.png" alt="" class="w-10 h-10">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 text-center hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                 </div>
                 <h3 class="text-lg font-bold text-gray-900">Personal Service</h3>
                 <p class="text-sm text-gray-600 mt-2">Work with people who know your name and care about your goals.</p>
             </div>
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 text-center hover:shadow-xl transition duration-300">
-                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <img src="/assets/images/ai-security-icon.png" alt="" class="w-10 h-10">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 text-center hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                 </div>
                 <h3 class="text-lg font-bold text-gray-900">AI-Powered Security</h3>
                 <p class="text-sm text-gray-600 mt-2">Advanced fraud detection and security measures protect your accounts 24/7.</p>
             </div>
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 text-center hover:shadow-xl transition duration-300">
-                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <img src="/assets/images/location-icon.png" alt="" class="w-10 h-10">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 text-center hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                 </div>
                 <h3 class="text-lg font-bold text-gray-900">Shared Branching</h3>
                 <p class="text-sm text-gray-600 mt-2">Access your accounts at thousands of credit union locations nationwide.</p>
             </div>
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 p-6 text-center hover:shadow-xl transition duration-300">
-                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <img src="/assets/images/education-icon.png" alt="" class="w-10 h-10">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 text-center hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                 </div>
                 <h3 class="text-lg font-bold text-gray-900">Financial Education</h3>
                 <p class="text-sm text-gray-600 mt-2">Free resources, workshops, and tools to help you achieve your goals.</p>
@@ -74,32 +99,39 @@ base_path: /aifirst-cu
 </section>
 
 <!-- Member Ownership -->
-<section class="py-16 bg-gray-50">
+<section class="py-16 md:py-20 bg-gray-50">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="flex justify-center">
-                <img src="/assets/images/about-story-image.png" alt="Credit union members" class="rounded-2xl shadow-xl max-w-md">
+                <img src="/assets/images/cu-members-community.png" alt="Diverse credit union members from our community" class="rounded-2xl shadow-xl max-w-md">
             </div>
             <div>
-                <h2 class="text-3xl font-bold text-gray-900 mb-6">You're Not Just a Customer—You're an Owner</h2>
+                <span class="text-accent font-semibold text-sm uppercase tracking-wider">Member Ownership</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">You're Not Just a Customer—You're an Owner</h2>
                 <p class="text-gray-600 mb-6">When you join AI First Credit Union, you become a member-owner. That means you have a voice in how we operate and share in our success through better rates and lower fees.</p>
                 <div class="space-y-4">
                     <div class="flex items-start gap-4">
-                        <img src="/assets/images/check-icon.png" alt="" class="w-6 h-6 flex-shrink-0 mt-1">
+                        <div class="w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
                         <div>
                             <h3 class="font-semibold text-gray-900">Democratic Governance</h3>
                             <p class="text-gray-600 text-sm">One member, one vote—regardless of account balance.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
-                        <img src="/assets/images/check-icon.png" alt="" class="w-6 h-6 flex-shrink-0 mt-1">
+                        <div class="w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
                         <div>
                             <h3 class="font-semibold text-gray-900">Profits Returned to Members</h3>
                             <p class="text-gray-600 text-sm">Earnings go back to you through better rates and services.</p>
                         </div>
                     </div>
                     <div class="flex items-start gap-4">
-                        <img src="/assets/images/check-icon.png" alt="" class="w-6 h-6 flex-shrink-0 mt-1">
+                        <div class="w-6 h-6 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
                         <div>
                             <h3 class="font-semibold text-gray-900">Community Focused</h3>
                             <p class="text-gray-600 text-sm">We invest in our community and support local initiatives.</p>
@@ -112,30 +144,31 @@ base_path: /aifirst-cu
 </section>
 
 <!-- How to Join -->
-<section class="py-16 bg-white">
+<section class="py-16 md:py-20 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">How to Join</h2>
-            <p class="mt-2 text-gray-600">Becoming a member is quick and easy</p>
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Getting Started</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">How to Join</h2>
+            <p class="mt-4 text-gray-600">Becoming a member is quick and easy</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">1</div>
                 <h3 class="font-semibold text-gray-900 mb-2">Check Eligibility</h3>
                 <p class="text-sm text-gray-600">Anyone can join! We welcome members from all communities.</p>
             </div>
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">2</div>
                 <h3 class="font-semibold text-gray-900 mb-2">Apply Online</h3>
                 <p class="text-sm text-gray-600">Complete our simple membership application in minutes.</p>
             </div>
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">3</div>
                 <h3 class="font-semibold text-gray-900 mb-2">Fund Your Account</h3>
                 <p class="text-sm text-gray-600">Open your membership with as little as $25.</p>
             </div>
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+                <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">4</div>
                 <h3 class="font-semibold text-gray-900 mb-2">Start Banking</h3>
                 <p class="text-sm text-gray-600">Access all member benefits and start saving today.</p>
             </div>
@@ -144,47 +177,50 @@ base_path: /aifirst-cu
 </section>
 
 <!-- Membership Application Form -->
-<section class="py-16 bg-gray-50" id="join">
+<section class="py-16 md:py-20 bg-gray-50" id="join">
     <div class="container mx-auto px-4 max-w-2xl">
-        <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-2">Join AI First Credit Union</h2>
-            <p class="text-center text-gray-600 mb-6">Start your membership application today</p>
+        <div class="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100">
+            <div class="text-center mb-8">
+                <span class="text-accent font-semibold text-sm uppercase tracking-wider">Membership Application</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-2">Join AI First Credit Union</h2>
+                <p class="text-gray-600 mt-2">Start your membership application today</p>
+            </div>
             <form id="membership-form" class="space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
-                        <input type="text" id="first-name" name="first-name" placeholder="John" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        <input type="text" id="first-name" name="first-name" placeholder="John" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                        <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                     </div>
                     <div>
                         <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
-                        <input type="text" id="last-name" name="last-name" placeholder="Doe" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        <input type="text" id="last-name" name="last-name" placeholder="Doe" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                        <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                     </div>
                 </div>
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700">Email Address *</label>
-                    <input type="email" id="email" name="email" placeholder="john.doe@example.com" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    <input type="email" id="email" name="email" placeholder="john.doe@example.com" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                    <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                 </div>
                 <div>
                     <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" placeholder="555-867-5309" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    <input type="tel" id="phone" name="phone" placeholder="555-867-5309" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                    <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                 </div>
                 <div>
                     <label for="account-type" class="block text-sm font-medium text-gray-700">Account Type *</label>
-                    <select id="account-type" name="account-type" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <select id="account-type" name="account-type" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
                         <option value="">Select account type</option>
                         <option value="savings">Savings Account</option>
                         <option value="checking">Checking Account</option>
                         <option value="both">Both Savings & Checking</option>
                     </select>
-                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                 </div>
                 <div>
                     <label for="initial-deposit" class="block text-sm font-medium text-gray-700">Initial Deposit Amount *</label>
-                    <select id="initial-deposit" name="initial-deposit" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <select id="initial-deposit" name="initial-deposit" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
                         <option value="">Select deposit amount</option>
                         <option value="25">$25 (Minimum)</option>
                         <option value="100">$100</option>
@@ -193,40 +229,40 @@ base_path: /aifirst-cu
                         <option value="1000">$1,000</option>
                         <option value="other">Other amount</option>
                     </select>
-                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                 </div>
                 <div>
                     <div class="flex items-center">
-                        <input id="terms" name="terms" type="checkbox" data-required="true" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                        <input id="terms" name="terms" type="checkbox" data-required="true" class="h-4 w-4 text-accent border-gray-300 rounded focus:ring-accent">
                         <label for="terms" class="ml-2 block text-sm text-gray-900">
-                            I agree to the <a href="/aifirst-cu/terms-of-use.html" class="text-blue-600 hover:text-blue-700">Membership Agreement</a> and <a href="/aifirst-cu/privacy-policy.html" class="text-blue-600 hover:text-blue-700">Privacy Policy</a> *
+                            I agree to the <a href="/aifirst-cu/terms-of-use.html" class="text-accent hover:text-accent-dark">Membership Agreement</a> and <a href="/aifirst-cu/privacy-policy.html" class="text-accent hover:text-accent-dark">Privacy Policy</a> *
                         </label>
                     </div>
-                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                 </div>
                 <!-- Supporting Documents -->
                 <div>
                     <label for="documents" class="block text-sm font-medium text-gray-700">Supporting Documents</label>
-                    <p class="text-xs text-gray-500 mt-1">Demo purposes only - do not upload sensitive or real documents. Files are not stored.</p>
-                    <input type="file" id="documents" name="documents" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" class="mt-2 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                    <p class="text-xs text-gray-500 mt-1 mb-2">Demo purposes only - do not upload sensitive or real documents. Files are not stored.</p>
+                    <input type="file" id="documents" name="documents" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-medium file:bg-accent/10 file:text-accent hover:file:bg-accent/20">
                 </div>
                 <!-- Demo Notice -->
-                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                    <p class="text-sm text-blue-800 text-center"><span class="font-semibold">Demo Site Notice:</span> This is a demonstration website. Please do not enter real personal information. No data is stored or transmitted.</p>
+                <div class="bg-primary-50 border border-primary-200 rounded-xl p-4">
+                    <p class="text-sm text-primary-800 text-center"><span class="font-semibold">Demo Site Notice:</span> This is a demonstration website. Please do not enter real personal information. No data is stored or transmitted.</p>
                 </div>
 
-                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition duration-300">Submit Application</button>
+                <button type="submit" class="w-full flex justify-center py-4 px-6 border border-transparent rounded-full shadow-lg shadow-accent/30 text-base font-semibold text-white bg-accent hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition duration-300">Submit Application</button>
             </form>
 
             <div id="membership-success" class="text-center hidden">
-                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                <div class="bg-green-50 border border-green-200 rounded-xl p-6">
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                     </div>
                     <p class="text-green-800 font-semibold text-lg">Welcome to AI First Credit Union!</p>
                     <p class="text-gray-600 mt-2">Your membership application has been received.</p>
-                    <p class="text-sm text-blue-600 mt-2">This is a demo site - no data was actually submitted.</p>
-                    <a href="/aifirst-cu/index.html" class="inline-block mt-4 text-blue-600 font-medium hover:underline">Back to Home</a>
+                    <p class="text-sm text-accent mt-2">This is a demo site - no data was actually submitted.</p>
+                    <a href="/aifirst-cu/index.html" class="inline-block mt-4 text-accent font-medium hover:text-accent-dark hover:underline">Back to Home</a>
                 </div>
             </div>
         </div>
@@ -234,13 +270,16 @@ base_path: /aifirst-cu
 </section>
 
 <!-- CTA Section -->
-<section class="py-16 bg-blue-600">
-    <div class="container mx-auto px-4 text-center">
+<section class="relative py-16 md:py-20 bg-gradient-to-br from-accent to-accent-dark overflow-hidden">
+    <!-- Decorative circles -->
+    <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
+    <div class="container mx-auto px-4 text-center relative z-10">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Questions About Membership?</h2>
-        <p class="text-blue-100 max-w-2xl mx-auto mb-8">Our member services team is here to help you understand the benefits of joining AI First Credit Union.</p>
+        <p class="text-white/90 max-w-2xl mx-auto mb-8 text-lg">Our member services team is here to help you understand the benefits of joining AI First Credit Union.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="/aifirst-cu/contact.html" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition duration-300">Contact Us</a>
-            <a href="/aifirst-cu/resources/help-center.html" class="bg-transparent text-white font-semibold py-3 px-8 rounded-full border-2 border-white hover:bg-white/10 transition duration-300">Visit Help Center</a>
+            <a href="/aifirst-cu/contact.html" class="bg-white text-accent font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Contact Us</a>
+            <a href="/aifirst-cu/resources/help-center.html" class="bg-white/10 backdrop-blur-sm text-white font-semibold py-3 px-8 rounded-full border border-white/20 hover:bg-white/20 transition duration-300">Visit Help Center</a>
         </div>
     </div>
 </section>

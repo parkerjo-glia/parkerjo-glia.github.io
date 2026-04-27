@@ -5,124 +5,158 @@ base_path: /aifirst-bank
 ---
 
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-blue-600 to-blue-800 py-20 md:py-28 overflow-hidden">
-    <div class="absolute inset-0 opacity-20">
-        <img src="/assets/images/business-hero-bg.png" alt="" class="w-full h-full object-cover">
+<section class="relative bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 py-20 md:py-28 overflow-hidden">
+    <!-- Dot pattern overlay -->
+    <div class="absolute inset-0 opacity-10">
+        <svg class="w-full h-full" xmlns="https://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="white"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dots)"/>
+        </svg>
     </div>
     <div class="container mx-auto px-4 text-center relative z-10">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">Fuel Your Business Growth</h1>
-        <p class="mt-4 text-lg text-blue-100 max-w-2xl mx-auto">Access the capital you need to expand, innovate, and succeed with AI-powered lending and competitive rates.</p>
-        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#apply" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition duration-300 shadow-lg">Apply for Business Loan</a>
-            <a href="#loan-types" class="bg-transparent text-white font-semibold py-3 px-8 rounded-full border-2 border-white hover:bg-white/10 transition duration-300">Explore Loan Options</a>
+        <span class="inline-block bg-white/10 backdrop-blur-sm text-accent font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full mb-6">Business Financing</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">Fuel Your Business Growth</h1>
+        <p class="mt-6 text-lg md:text-xl text-primary-100 max-w-2xl mx-auto">Access the capital you need to expand, innovate, and succeed with AI-powered lending and customer-exclusive rates.</p>
+        <!-- Trust badges -->
+        <div class="flex flex-wrap justify-center gap-4 mt-8">
+            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <span class="text-white text-sm font-medium">Fast Decisions</span>
+            </div>
+            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span class="text-white text-sm font-medium">Competitive Rates</span>
+            </div>
+            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                <span class="text-white text-sm font-medium">Local Expertise</span>
+            </div>
+        </div>
+        <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#apply" class="bg-accent hover:bg-accent-dark text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg shadow-accent/30">Apply for Business Loan</a>
+            <a href="#loan-types" class="bg-white/10 backdrop-blur-sm text-white font-semibold py-3 px-8 rounded-full border border-white/20 hover:bg-white/20 transition duration-300">Explore Loan Options</a>
         </div>
     </div>
 </section>
 
 <!-- Loan Products -->
-<section class="py-16 bg-white" id="loan-types">
+<section class="py-16 md:py-20 bg-white" id="loan-types">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Business Loan Solutions</h2>
-            <p class="mt-2 text-gray-600">Flexible financing options for every stage of growth</p>
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Financing Options</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Business Loan Solutions</h2>
+            <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Flexible financing options for every stage of growth</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Term Loans -->
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300">
-                <div class="h-44 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-6">
-                    <img src="/assets/images/biz-term-loans.png" alt="Term Loans" class="h-28 object-contain rounded-xl">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:border-primary-200 hover:shadow-xl transition duration-300 group">
+                <div class="h-44 bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center p-6">
+                    <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    </div>
                 </div>
-                <div class="p-5">
+                <div class="p-6">
                     <h3 class="text-lg font-bold text-gray-900">Business Term Loans</h3>
-                    <p class="text-2xl font-bold text-blue-600 mt-2">7.25% <span class="text-sm font-normal text-gray-500">APR*</span></p>
-                    <ul class="mt-3 space-y-1 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Up to $500,000</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Terms from 1-10 years</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Fixed & variable rates</li>
+                    <p class="text-2xl font-bold text-accent mt-2">7.25% <span class="text-sm font-normal text-gray-500">APR*</span></p>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Up to $500,000</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Terms from 1-10 years</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Fixed & variable rates</li>
                     </ul>
-                    <button class="w-full mt-4 bg-blue-600 text-white py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition text-sm">Apply Now</button>
+                    <button class="w-full mt-5 bg-accent hover:bg-accent-dark text-white py-3 rounded-full font-semibold transition shadow-md shadow-accent/25 text-sm">Apply Now</button>
                 </div>
             </div>
             <!-- Line of Credit -->
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300">
-                <div class="h-44 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-6">
-                    <img src="/assets/images/biz-line-of-credit.png" alt="Line of Credit" class="h-28 object-contain rounded-xl">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:border-primary-200 hover:shadow-xl transition duration-300 group">
+                <div class="h-44 bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center p-6">
+                    <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                    </div>
                 </div>
-                <div class="p-5">
+                <div class="p-6">
                     <h3 class="text-lg font-bold text-gray-900">Business Line of Credit</h3>
-                    <p class="text-2xl font-bold text-blue-600 mt-2">8.50% <span class="text-sm font-normal text-gray-500">APR*</span></p>
-                    <ul class="mt-3 space-y-1 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Up to $250,000</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Pay only what you use</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Revolving access</li>
+                    <p class="text-2xl font-bold text-accent mt-2">8.50% <span class="text-sm font-normal text-gray-500">APR*</span></p>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Up to $250,000</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Pay only what you use</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Revolving access</li>
                     </ul>
-                    <button class="w-full mt-4 bg-blue-600 text-white py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition text-sm">Apply Now</button>
+                    <button class="w-full mt-5 bg-accent hover:bg-accent-dark text-white py-3 rounded-full font-semibold transition shadow-md shadow-accent/25 text-sm">Apply Now</button>
                 </div>
             </div>
             <!-- Equipment Financing -->
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300">
-                <div class="h-44 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-6">
-                    <img src="/assets/images/biz-equip-financing.png" alt="Equipment Financing" class="h-28 object-contain rounded-xl">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:border-primary-200 hover:shadow-xl transition duration-300 group">
+                <div class="h-44 bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center p-6">
+                    <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
                 </div>
-                <div class="p-5">
+                <div class="p-6">
                     <h3 class="text-lg font-bold text-gray-900">Equipment Financing</h3>
-                    <p class="text-2xl font-bold text-blue-600 mt-2">6.75% <span class="text-sm font-normal text-gray-500">APR*</span></p>
-                    <ul class="mt-3 space-y-1 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Up to 100% financing</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Terms up to 7 years</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> New & used eligible</li>
+                    <p class="text-2xl font-bold text-accent mt-2">6.75% <span class="text-sm font-normal text-gray-500">APR*</span></p>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Up to 100% financing</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Terms up to 7 years</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> New & used eligible</li>
                     </ul>
-                    <button class="w-full mt-4 bg-blue-600 text-white py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition text-sm">Apply Now</button>
+                    <button class="w-full mt-5 bg-accent hover:bg-accent-dark text-white py-3 rounded-full font-semibold transition shadow-md shadow-accent/25 text-sm">Apply Now</button>
                 </div>
             </div>
             <!-- Commercial Real Estate -->
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition duration-300">
-                <div class="h-44 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-6">
-                    <img src="/assets/images/biz-comm-realestate.png" alt="Commercial Real Estate" class="h-28 object-contain rounded-xl">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:border-primary-200 hover:shadow-xl transition duration-300 group">
+                <div class="h-44 bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center p-6">
+                    <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
                 </div>
-                <div class="p-5">
+                <div class="p-6">
                     <h3 class="text-lg font-bold text-gray-900">Commercial Real Estate</h3>
-                    <p class="text-2xl font-bold text-blue-600 mt-2">7.00% <span class="text-sm font-normal text-gray-500">APR*</span></p>
-                    <ul class="mt-3 space-y-1 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Up to $2 million</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Terms up to 25 years</li>
-                        <li class="flex items-center gap-2"><img src="/assets/images/check-icon.png" class="w-4 h-4"> Owner-occupied & investment</li>
+                    <p class="text-2xl font-bold text-accent mt-2">7.00% <span class="text-sm font-normal text-gray-500">APR*</span></p>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Up to $2 million</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Terms up to 25 years</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Owner-occupied & investment</li>
                     </ul>
-                    <button class="w-full mt-4 bg-blue-600 text-white py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition text-sm">Apply Now</button>
+                    <button class="w-full mt-5 bg-accent hover:bg-accent-dark text-white py-3 rounded-full font-semibold transition shadow-md shadow-accent/25 text-sm">Apply Now</button>
                 </div>
             </div>
         </div>
-        <p class="text-center text-sm text-gray-500 mt-6">*APR = Annual Percentage Rate. Rates shown are lowest available and subject to credit approval.</p>
+        <p class="text-center text-sm text-gray-500 mt-8">*APR = Annual Percentage Rate. Rates shown are lowest available and subject to credit approval.</p>
     </div>
 </section>
 
 <!-- Why Choose Us -->
-<section class="py-16 bg-gray-50">
+<section class="py-16 md:py-20 bg-gray-50">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Why Customers Choose Us</h2>
-            <p class="mt-2 text-gray-600">Smart lending backed by AI and local expertise</p>
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Our Advantage</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Why Customers Choose Us</h2>
+            <p class="mt-4 text-gray-600">Smart lending backed by AI and local expertise</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white rounded-xl shadow-lg p-6 text-center">
-                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <img src="/assets/images/fast-decisions-icon.png" alt="Fast Decisions" class="w-8 h-8">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 </div>
-                <h3 class="font-semibold text-gray-900 mb-2">Fast Decisions</h3>
+                <h3 class="font-semibold text-gray-900 text-lg mb-2">Fast Decisions</h3>
                 <p class="text-sm text-gray-600">AI-powered underwriting provides preliminary decisions in hours, not weeks.</p>
             </div>
-            <div class="bg-white rounded-xl shadow-lg p-6 text-center">
-                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <img src="/assets/images/competitive-rates-icon.png" alt="Competitive Rates" class="w-8 h-8">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 </div>
-                <h3 class="font-semibold text-gray-900 mb-2">Competitive Rates</h3>
-                <p class="text-sm text-gray-600">We offer some of the most competitive business lending rates in the market.</p>
+                <h3 class="font-semibold text-gray-900 text-lg mb-2">Member-Only Rates</h3>
+                <p class="text-sm text-gray-600">Our member-owned structure means better rates and terms for your business.</p>
             </div>
-            <div class="bg-white rounded-xl shadow-lg p-6 text-center">
-                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <img src="/assets/images/local-expertise-icon.png" alt="Local Expertise" class="w-8 h-8">
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                 </div>
-                <h3 class="font-semibold text-gray-900 mb-2">Local Expertise</h3>
+                <h3 class="font-semibold text-gray-900 text-lg mb-2">Local Expertise</h3>
                 <p class="text-sm text-gray-600">Work with experienced lenders who understand your market and industry.</p>
             </div>
         </div>
@@ -130,30 +164,31 @@ base_path: /aifirst-bank
 </section>
 
 <!-- Application Process -->
-<section class="py-16 bg-gray-50">
+<section class="py-16 md:py-20 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Application Process</h2>
-            <p class="mt-2 text-gray-600">Simple steps to get the funding your business needs</p>
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">How It Works</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Application Process</h2>
+            <p class="mt-4 text-gray-600">Simple steps to get the funding your business needs</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">1</div>
                 <h3 class="font-semibold text-gray-900 mb-2">Apply Online</h3>
                 <p class="text-sm text-gray-600">Complete our secure application in minutes.</p>
             </div>
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">2</div>
                 <h3 class="font-semibold text-gray-900 mb-2">AI Review</h3>
                 <p class="text-sm text-gray-600">Get a preliminary decision within hours.</p>
             </div>
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">3</div>
                 <h3 class="font-semibold text-gray-900 mb-2">Documentation</h3>
                 <p class="text-sm text-gray-600">Submit documents through our secure portal.</p>
             </div>
             <div class="text-center">
-                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+                <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">4</div>
                 <h3 class="font-semibold text-gray-900 mb-2">Funding</h3>
                 <p class="text-sm text-gray-600">Receive funds within 5-7 business days.</p>
             </div>
@@ -162,44 +197,47 @@ base_path: /aifirst-bank
 </section>
 
 <!-- Application Form -->
-<section class="py-16 bg-white" id="apply">
+<section class="py-16 md:py-20 bg-gray-50" id="apply">
     <div class="container mx-auto px-4 max-w-2xl">
-        <div class="bg-gray-50 p-8 rounded-xl shadow-lg border border-gray-200">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-2">Apply for a Business Loan</h2>
-            <p class="text-center text-gray-600 mb-6">Get started in minutes</p>
+        <div class="bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100">
+            <div class="text-center mb-8">
+                <span class="text-accent font-semibold text-sm uppercase tracking-wider">Get Started</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-2">Apply for a Business Loan</h2>
+                <p class="text-gray-600 mt-2">Get started in minutes</p>
+            </div>
             <form id="business-loan-form" class="space-y-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="bl-first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
-                        <input type="text" id="bl-first-name" name="bl-first-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        <input type="text" id="bl-first-name" name="bl-first-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                        <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                     </div>
                     <div>
                         <label for="bl-last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
-                        <input type="text" id="bl-last-name" name="bl-last-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        <input type="text" id="bl-last-name" name="bl-last-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                        <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                     </div>
                 </div>
                 <div>
                     <label for="bl-business-name" class="block text-sm font-medium text-gray-700">Business Name *</label>
-                    <input type="text" id="bl-business-name" name="bl-business-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    <input type="text" id="bl-business-name" name="bl-business-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                    <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="bl-email" class="block text-sm font-medium text-gray-700">Email *</label>
-                        <input type="email" id="bl-email" name="bl-email" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        <input type="email" id="bl-email" name="bl-email" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                        <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                     </div>
                     <div>
                         <label for="bl-phone" class="block text-sm font-medium text-gray-700">Phone *</label>
-                        <input type="tel" id="bl-phone" name="bl-phone" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        <input type="tel" id="bl-phone" name="bl-phone" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                        <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                     </div>
                 </div>
                 <div>
                     <label for="bl-loan-type" class="block text-sm font-medium text-gray-700">Loan Type *</label>
-                    <select id="bl-loan-type" name="bl-loan-type" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <select id="bl-loan-type" name="bl-loan-type" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
                         <option value="">Select loan type</option>
                         <option value="term-loan">Business Term Loan</option>
                         <option value="line-of-credit">Business Line of Credit</option>
@@ -207,23 +245,23 @@ base_path: /aifirst-bank
                         <option value="commercial-real-estate">Commercial Real Estate</option>
                         <option value="sba">SBA Loan</option>
                     </select>
-                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="bl-amount" class="block text-sm font-medium text-gray-700">Loan Amount ($) *</label>
-                        <input type="number" id="bl-amount" name="bl-amount" data-required="true" min="5000" placeholder="e.g., 100000" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        <input type="number" id="bl-amount" name="bl-amount" data-required="true" min="5000" placeholder="e.g., 100000" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                        <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                     </div>
                     <div>
                         <label for="bl-annual-revenue" class="block text-sm font-medium text-gray-700">Annual Revenue ($) *</label>
-                        <input type="number" id="bl-annual-revenue" name="bl-annual-revenue" data-required="true" min="0" placeholder="e.g., 500000" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                        <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                        <input type="number" id="bl-annual-revenue" name="bl-annual-revenue" data-required="true" min="0" placeholder="e.g., 500000" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                        <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                     </div>
                 </div>
                 <div>
                     <label for="bl-purpose" class="block text-sm font-medium text-gray-700">Loan Purpose *</label>
-                    <select id="bl-purpose" name="bl-purpose" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <select id="bl-purpose" name="bl-purpose" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
                         <option value="">Select purpose</option>
                         <option value="working-capital">Working Capital</option>
                         <option value="equipment">Equipment Purchase</option>
@@ -232,11 +270,11 @@ base_path: /aifirst-bank
                         <option value="inventory">Inventory</option>
                         <option value="refinance">Refinance Existing Debt</option>
                     </select>
-                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                 </div>
                 <div>
                     <label for="bl-years-in-business" class="block text-sm font-medium text-gray-700">Years in Business *</label>
-                    <select id="bl-years-in-business" name="bl-years-in-business" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <select id="bl-years-in-business" name="bl-years-in-business" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
                         <option value="">Select years</option>
                         <option value="less-than-1">Less than 1 year</option>
                         <option value="1-2">1-2 years</option>
@@ -244,31 +282,31 @@ base_path: /aifirst-bank
                         <option value="5-10">5-10 years</option>
                         <option value="10+">10+ years</option>
                     </select>
-                    <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                    <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                 </div>
                 <!-- Supporting Documents -->
                 <div>
                     <label for="bl-documents" class="block text-sm font-medium text-gray-700">Supporting Documents</label>
-                    <p class="text-xs text-gray-500 mt-1">Demo purposes only - do not upload sensitive or real documents. Files are not stored.</p>
-                    <input type="file" id="bl-documents" name="bl-documents" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" class="mt-2 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                    <p class="text-xs text-gray-500 mt-1 mb-2">Demo purposes only - do not upload sensitive or real documents. Files are not stored.</p>
+                    <input type="file" id="bl-documents" name="bl-documents" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-medium file:bg-accent/10 file:text-accent hover:file:bg-accent/20">
                 </div>
                 <!-- Demo Notice -->
-                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                    <p class="text-sm text-blue-800 text-center"><span class="font-semibold">Demo Site Notice:</span> This is a demonstration website. Please do not enter real personal information. No data is stored or transmitted.</p>
+                <div class="bg-primary-50 border border-primary-200 rounded-xl p-4">
+                    <p class="text-sm text-primary-800 text-center"><span class="font-semibold">Demo Site Notice:</span> This is a demonstration website. Please do not enter real personal information. No data is stored or transmitted.</p>
                 </div>
 
-                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition duration-300">Submit Application</button>
+                <button type="submit" class="w-full flex justify-center py-4 px-6 border border-transparent rounded-full shadow-lg shadow-accent/30 text-base font-semibold text-white bg-accent hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition duration-300">Submit Application</button>
             </form>
 
             <div id="bl-success" class="text-center hidden">
-                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                <div class="bg-green-50 border border-green-200 rounded-xl p-6">
                     <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                     </div>
                     <p class="text-green-800 font-semibold text-lg">Thank You!</p>
                     <p class="text-gray-600 mt-2">Your business loan application has been received.</p>
-                    <p class="text-sm text-blue-600 mt-2">This is a demo site - no data was actually submitted.</p>
-                    <a href="/aifirst-bank/business/business-banking.html" class="inline-block mt-4 text-blue-600 font-medium hover:underline">Back to Business Banking</a>
+                    <p class="text-sm text-accent mt-2">This is a demo site - no data was actually submitted.</p>
+                    <a href="/aifirst-bank/business/business-banking.html" class="inline-block mt-4 text-accent font-medium hover:text-accent-dark hover:underline">Back to Business Banking</a>
                 </div>
             </div>
         </div>
@@ -276,13 +314,16 @@ base_path: /aifirst-bank
 </section>
 
 <!-- CTA Section -->
-<section class="py-16 bg-blue-600">
-    <div class="container mx-auto px-4 text-center">
+<section class="relative py-16 md:py-20 bg-gradient-to-br from-accent to-accent-dark overflow-hidden">
+    <!-- Decorative circles -->
+    <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
+    <div class="container mx-auto px-4 text-center relative z-10">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Accelerate Your Growth?</h2>
-        <p class="text-blue-100 max-w-2xl mx-auto mb-8">Take the next step in your business journey with a loan from AI First Bank.</p>
+        <p class="text-white/90 max-w-2xl mx-auto mb-8 text-lg">Take the next step in your business journey with a loan from AI First Bank.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#apply" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition duration-300">Apply Now</a>
-            <a href="/aifirst-bank/contact.html" class="bg-transparent text-white font-semibold py-3 px-8 rounded-full border-2 border-white hover:bg-white/10 transition duration-300">Speak with a Lender</a>
+            <a href="#apply" class="bg-white text-accent font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Apply Now</a>
+            <a href="/aifirst-bank/contact.html" class="bg-white/10 backdrop-blur-sm text-white font-semibold py-3 px-8 rounded-full border border-white/20 hover:bg-white/20 transition duration-300">Speak with a Lender</a>
         </div>
     </div>
 </section>

@@ -4,81 +4,101 @@ site_type: cu
 base_path: /aifirst-cu
 ---
 
-<section class="bg-gradient-to-br from-blue-100 to-white py-20 md:py-32">
-    <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">Get in Touch.</h1>
-        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">This is a demo site operated by Glia Technologies, Inc. For questions about Glia integration, please contact us using the information below.</p>
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 py-20 md:py-28 overflow-hidden">
+    <!-- Dot pattern overlay -->
+    <div class="absolute inset-0 opacity-10">
+        <svg class="w-full h-full" xmlns="https://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="white"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dots)"/>
+        </svg>
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <span class="inline-block bg-white/10 backdrop-blur-sm text-accent font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full mb-6">Contact Us</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">Get in Touch</h1>
+        <p class="mt-6 text-lg md:text-xl text-primary-100 max-w-2xl mx-auto">This is a demo site operated by Glia Technologies, Inc. For questions about Glia integration, please contact us using the information below.</p>
     </div>
 </section>
 
-<section class="bg-white py-16">
+<!-- Contact Information -->
+<section class="py-16 md:py-20 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Contact Information</h2>
-            <p class="mt-2 text-gray-600">For questions about this demo site or Glia's services.</p>
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Glia Technologies</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Contact Information</h2>
+            <p class="mt-4 text-gray-600">For questions about this demo site or Glia's services.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div class="bg-white p-8 rounded-lg text-center border border-gray-200 shadow-md">
-                <img src="/assets/images/email-support-icon.png" alt="Email" class="h-16 w-16 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Email</h3>
-                <p class="text-lg font-semibold text-blue-600 mb-2"><a href="mailto:legal@glia.com" class="hover:text-blue-700">legal@glia.com</a></p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div class="bg-white p-8 rounded-2xl text-center border border-gray-100 shadow-lg hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Email</h3>
+                <p class="text-lg font-semibold text-accent mb-2"><a href="mailto:legal@glia.com" class="hover:text-accent-dark">legal@glia.com</a></p>
                 <p class="text-sm text-gray-500">For legal and demo site inquiries</p>
             </div>
-            <div class="bg-white p-8 rounded-lg text-center border border-gray-200 shadow-md">
-                <img src="/assets/images/location-icon.png" alt="Location" class="h-16 w-16 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Address</h3>
+            <div class="bg-white p-8 rounded-2xl text-center border border-gray-100 shadow-lg hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Address</h3>
                 <p class="text-gray-600 mb-2">Glia Technologies, Inc.<br>30 West 21st St<br>New York, NY 10010</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-16 bg-white">
+<!-- Support Options -->
+<section class="py-16 md:py-20 bg-gray-50">
     <div class="container mx-auto px-4">
         <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Contact Us</h2>
-            <p class="mt-2 text-gray-600">Multiple ways to get the support you need, when you need it.</p>
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Support Channels</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Contact Us</h2>
+            <p class="mt-4 text-gray-600">Multiple ways to get the support you need, when you need it.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            <div class="bg-white p-8 rounded-lg shadow-md text-center border border-gray-200">
-                <img src="/assets/images/email-support-icon.png" alt="Email Support" class="h-16 w-16 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Email Support</h3>
-                <p class="text-gray-600 mb-4">Contact Glia for demo site questions.</p>
-                <p class="text-xl font-bold text-blue-600 mb-2">
-                    <a href="mailto:legal@glia.com" class="hover:text-blue-700">legal@glia.com</a>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div class="bg-white p-6 rounded-2xl shadow-lg text-center border border-gray-100 hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Email Support</h3>
+                <p class="text-gray-600 text-sm mb-4">Contact Glia for demo site questions.</p>
+                <p class="text-base font-semibold text-accent mb-2">
+                    <a href="mailto:legal@glia.com" class="hover:text-accent-dark">legal@glia.com</a>
                 </p>
-                <p class="text-sm text-gray-500">
-                    30 West 21st St<br>
-                    New York, NY 10010
-                </p>
+                <p class="text-xs text-gray-500">30 West 21st St<br>New York, NY 10010</p>
             </div>
 
-            <div class="bg-white p-8 rounded-lg shadow-md text-center border border-gray-200">
-                <img src="/assets/images/chat-support-icon.png" alt="Live Chat" class="h-16 w-16 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Live Chat</h3>
-                <p class="text-gray-600 mb-4">Get instant help through our secure chat system.</p>
-                <button onclick="startEngagement('text')"
-                    class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 mb-2">Start
-                    Chat</button>
+            <div class="bg-white p-6 rounded-2xl shadow-lg text-center border border-gray-100 hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Live Chat</h3>
+                <p class="text-gray-600 text-sm mb-4">Get instant help through our secure chat system.</p>
+                <button onclick="startEngagement('text')" class="bg-accent hover:bg-accent-dark text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md shadow-accent/25">Start Chat</button>
             </div>
 
-            <div class="bg-white p-8 rounded-lg shadow-md text-center border border-gray-200">
-                <img src="/assets/images/audio-support-icon.png" alt="Audio Support" class="h-16 w-16 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Audio Support</h3>
-                <p class="text-gray-600 mb-4">Get instant help using your computer mic.</p>
-                <button onclick="startEngagement('audio')"
-                    class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 mb-2">Start
-                    Audio</button>
+            <div class="bg-white p-6 rounded-2xl shadow-lg text-center border border-gray-100 hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Audio Support</h3>
+                <p class="text-gray-600 text-sm mb-4">Get instant help using your computer mic.</p>
+                <button onclick="startEngagement('audio')" class="bg-accent hover:bg-accent-dark text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md shadow-accent/25">Start Audio</button>
             </div>
 
-            <div class="bg-white p-8 rounded-lg shadow-md text-center border border-gray-200">
-                <img src="/assets/images/video-support-icon.png" alt="Video Support" class="h-16 w-16 mx-auto mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Video Support</h3>
-                <p class="text-gray-600 mb-4">Connect face-to-face with a support specialist.</p>
-                <button onclick="startEngagement('video')"
-                    class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 mb-2">Start
-                    Video</button>
+            <div class="bg-white p-6 rounded-2xl shadow-lg text-center border border-gray-100 hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Video Support</h3>
+                <p class="text-gray-600 text-sm mb-4">Connect face-to-face with a support specialist.</p>
+                <button onclick="startEngagement('video')" class="bg-accent hover:bg-accent-dark text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md shadow-accent/25">Start Video</button>
             </div>
         </div>
     </div>
@@ -99,13 +119,17 @@ function startEngagement(channel) {
 }
 </script>
 
-<section class="bg-blue-600 py-16">
-    <div class="container mx-auto px-4 text-center text-white">
-        <h2 class="text-3xl md:text-4xl font-bold">Learn More About Glia</h2>
-        <p class="mt-4 text-lg max-w-2xl mx-auto opacity-90">Discover how Glia's Digital Customer Service platform can transform your customer experience.</p>
-        <div class="mt-8 flex justify-center space-x-4">
-            <a href="https://www.glia.com" target="_blank" rel="noopener noreferrer" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Visit Glia.com</a>
-            <a href="mailto:legal@glia.com" class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Contact Us</a>
+<!-- CTA Section -->
+<section class="relative py-16 md:py-20 bg-gradient-to-br from-accent to-accent-dark overflow-hidden">
+    <!-- Decorative circles -->
+    <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Learn More About Glia</h2>
+        <p class="text-white/90 max-w-2xl mx-auto mb-8 text-lg">Discover how Glia's Digital Customer Service platform can transform your customer experience.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="https://www.glia.com" target="_blank" rel="noopener noreferrer" class="bg-white text-accent font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Visit Glia.com</a>
+            <a href="mailto:legal@glia.com" class="bg-white/10 backdrop-blur-sm text-white font-semibold py-3 px-8 rounded-full border border-white/20 hover:bg-white/20 transition duration-300">Contact Us</a>
         </div>
     </div>
 </section>

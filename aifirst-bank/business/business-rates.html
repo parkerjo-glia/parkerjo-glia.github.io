@@ -4,195 +4,193 @@ site_type: bank
 base_path: /aifirst-bank
 ---
 
-<section class="bg-gradient-to-br from-blue-100 to-white py-20 md:py-32">
-    <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-            Business Rates & Services.
-        </h1>
-        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Sample business rates and service pricing for demonstration purposes. These are example rates that showcase how a bank might display business banking information.
-        </p>
-        <div class="mt-8">
-            <button class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg">Open Business Account</button>
+<!-- Hero Section -->
+<section class="relative bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 py-20 md:py-28 overflow-hidden">
+    <!-- Dot pattern overlay -->
+    <div class="absolute inset-0 opacity-10">
+        <svg class="w-full h-full" xmlns="https://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="white"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dots)"/>
+        </svg>
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <span class="inline-block bg-white/10 backdrop-blur-sm text-accent font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full mb-6">Business Rates</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">Business Rates & Services</h1>
+        <p class="mt-6 text-lg md:text-xl text-primary-100 max-w-2xl mx-auto">Competitive rates and transparent pricing designed to help your business thrive. As a customer-focused credit union, we pass savings directly to you.</p>
+        <!-- Trust badges -->
+        <div class="flex flex-wrap justify-center gap-4 mt-8">
+            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span class="text-white text-sm font-medium">Competitive Rates</span>
+            </div>
+            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                <span class="text-white text-sm font-medium">No Hidden Fees</span>
+            </div>
+            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                <span class="text-white text-sm font-medium">Customer-Focused</span>
+            </div>
+        </div>
+        <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="/aifirst-bank/business/business-banking.html" class="bg-accent hover:bg-accent-dark text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg shadow-accent/30">Open Business Account</a>
+            <a href="#loan-rates" class="bg-white/10 backdrop-blur-sm text-white font-semibold py-3 px-8 rounded-full border border-white/20 hover:bg-white/20 transition duration-300">View Loan Rates</a>
         </div>
     </div>
 </section>
 
-<section class="bg-white py-16">
+<!-- Business-First Pricing -->
+<section class="py-16 md:py-20 bg-white">
     <div class="container mx-auto px-4 text-center max-w-4xl">
-        <h2 class="text-3xl font-bold text-gray-900">Business-First Pricing</h2>
-        <p class="mt-4 text-gray-600">
-            As a customer-owned bank, we offer competitive rates and transparent pricing that helps your business keep more of what it earns. Our AI-powered efficiency allows us to pass savings directly to our business customers.
-        </p>
+        <span class="text-accent font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Business-First Pricing</h2>
+        <p class="mt-4 text-gray-600 text-lg">As a customer-focused credit union, we offer competitive rates and transparent pricing that helps your business keep more of what it earns. Our AI-powered efficiency allows us to pass savings directly to our business customers.</p>
     </div>
 </section>
 
-<section class="bg-gray-100 py-16">
+<!-- Business Loan Rates -->
+<section class="py-16 md:py-20 bg-gray-50" id="loan-rates">
     <div class="container mx-auto px-4">
         <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Business Loan Rates</h2>
-            <p class="mt-2 text-gray-600">Competitive financing options to fuel your business growth.</p>
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Financing Options</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Business Loan Rates</h2>
+            <p class="mt-4 text-gray-600">Competitive financing options to fuel your business growth.</p>
             <p class="text-sm text-gray-500 mt-2">Rates effective as of December 30, 2024. Subject to change without notice.</p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
-                <img src="/assets/images/term-loan-icon.png" alt="Term Loans" class="h-12 w-12 mb-4">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Business Term Loans</h3>
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">$25K - $100K (1-5 years)</span>
-                        <span class="font-semibold text-blue-600">7.25% APR*</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Business Term Loans -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="p-6">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Business Term Loans</h3>
                     </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">$100K - $250K (1-7 years)</span>
-                        <span class="font-semibold text-blue-600">7.50% APR*</span>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                            <span class="text-gray-700">$25K - $100K (1-5 years)</span>
+                            <span class="font-semibold text-accent">7.25% APR*</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                            <span class="text-gray-700">$100K - $250K (1-7 years)</span>
+                            <span class="font-semibold text-accent">7.50% APR*</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                            <span class="text-gray-700">$250K - $500K (1-10 years)</span>
+                            <span class="font-semibold text-accent">7.75% APR*</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3">
+                            <span class="text-gray-700">SBA 7(a) Loans</span>
+                            <span class="font-semibold text-accent">Prime + 2.75%*</span>
+                        </div>
                     </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">$250K - $500K (1-10 years)</span>
-                        <span class="font-semibold text-blue-600">7.75% APR*</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2">
-                        <span class="text-gray-700">SBA 7(a) Loans</span>
-                        <span class="font-semibold text-blue-600">Prime + 2.75%*</span>
-                    </div>
-                </div>
-                <div class="mt-6">
-                    <a href="business-loans.html" class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300">Apply Now</a>
-                </div>
-            </div>
-            
-            <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
-                <img src="/assets/images/line-of-credit-icon.png" alt="Lines of Credit" class="h-12 w-12 mb-4">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Business Lines of Credit</h3>
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">$10K - $50K</span>
-                        <span class="font-semibold text-blue-600">8.50% APR*</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">$50K - $100K</span>
-                        <span class="font-semibold text-blue-600">8.25% APR*</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">$100K - $250K</span>
-                        <span class="font-semibold text-blue-600">8.00% APR*</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2">
-                        <span class="text-gray-700">Annual Fee</span>
-                        <span class="font-semibold text-blue-600">$0</span>
-                    </div>
-                </div>
-                <div class="mt-6">
-                    <a href="business-loans.html" class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300">Apply Now</a>
-                </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
-                <img src="/assets/images/equipment-financing-icon.png" alt="Equipment Financing" class="h-12 w-12 mb-4">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Equipment Financing</h3>
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">New Equipment</span>
-                        <span class="font-semibold text-blue-600">6.75% APR*</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">Used Equipment (< 5 years)</span>
-                        <span class="font-semibold text-blue-600">7.25% APR*</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">Technology Equipment</span>
-                        <span class="font-semibold text-blue-600">6.50% APR*</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2">
-                        <span class="text-gray-700">Terms</span>
-                        <span class="font-semibold text-gray-600">Up to 7 years</span>
-                    </div>
-                </div>
-                <div class="mt-6">
-                    <a href="business-loans.html" class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300">Apply Now</a>
-                </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
-                <img src="/assets/images/commercial-real-estate-icon.png" alt="Commercial Real Estate" class="h-12 w-12 mb-4">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Commercial Real Estate</h3>
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">Owner-Occupied (Fixed)</span>
-                        <span class="font-semibold text-blue-600">7.00% APR*</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">Investment Property</span>
-                        <span class="font-semibold text-blue-600">7.50% APR*</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">SBA 504 Loans</span>
-                        <span class="font-semibold text-blue-600">6.75% APR*</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2">
-                        <span class="text-gray-700">Terms</span>
-                        <span class="font-semibold text-gray-600">Up to 25 years</span>
-                    </div>
-                </div>
-                <div class="mt-6">
-                    <a href="business-loans.html" class="inline-block bg-blue-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-blue-700 transition duration-300">Apply Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-        <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Business Deposit Rates</h2>
-            <p class="mt-2 text-gray-600">Competitive returns on your business deposits and cash reserves.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-gray-50 p-8 rounded-lg">
-                <img src="/assets/images/business-savings-icon.png" alt="Business Savings" class="h-12 w-12 mb-4">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Business Savings Rates</h3>
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">Business Savings</span>
-                        <span class="font-semibold text-blue-600">2.50% APY*</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">Money Market ($25K+)</span>
-                        <span class="font-semibold text-blue-600">3.25% APY*</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">High-Yield Savings ($100K+)</span>
-                        <span class="font-semibold text-blue-600">3.75% APY*</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2">
-                        <span class="text-gray-700">Premium Tier ($500K+)</span>
-                        <span class="font-semibold text-blue-600">4.00% APY*</span>
+                    <div class="mt-6">
+                        <a href="/aifirst-bank/business/business-loans.html" class="inline-flex items-center justify-center w-full bg-accent hover:bg-accent-dark text-white font-semibold py-3 px-6 rounded-full transition duration-300 shadow-md shadow-accent/25">Apply Now</a>
                     </div>
                 </div>
             </div>
             
-            <div class="bg-gray-50 p-8 rounded-lg">
-                <img src="/assets/images/business-cd-icon.png" alt="Business CDs" class="h-12 w-12 mb-4">
-                <h3 class="text-2xl font-bold text-gray-900 mb-6">Business CD Rates</h3>
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">6 Month CD</span>
-                        <span class="font-semibold text-blue-600">4.50% APY*</span>
+            <!-- Business Lines of Credit -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="p-6">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Business Lines of Credit</h3>
                     </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">12 Month CD</span>
-                        <span class="font-semibold text-blue-600">4.75% APY*</span>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                            <span class="text-gray-700">$10K - $50K</span>
+                            <span class="font-semibold text-accent">8.50% APR*</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                            <span class="text-gray-700">$50K - $100K</span>
+                            <span class="font-semibold text-accent">8.25% APR*</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                            <span class="text-gray-700">$100K - $250K</span>
+                            <span class="font-semibold text-accent">8.00% APR*</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3">
+                            <span class="text-gray-700">Annual Fee</span>
+                            <span class="font-semibold text-accent">$0</span>
+                        </div>
                     </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-200">
-                        <span class="text-gray-700">24 Month CD</span>
-                        <span class="font-semibold text-blue-600">4.50% APY*</span>
+                    <div class="mt-6">
+                        <a href="/aifirst-bank/business/business-loans.html" class="inline-flex items-center justify-center w-full bg-accent hover:bg-accent-dark text-white font-semibold py-3 px-6 rounded-full transition duration-300 shadow-md shadow-accent/25">Apply Now</a>
                     </div>
-                    <div class="flex justify-between items-center py-2">
-                        <span class="text-gray-700">60 Month CD</span>
-                        <span class="font-semibold text-blue-600">4.25% APY*</span>
+                </div>
+            </div>
+
+            <!-- Equipment Financing -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="p-6">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Equipment Financing</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                            <span class="text-gray-700">New Equipment</span>
+                            <span class="font-semibold text-accent">6.75% APR*</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                            <span class="text-gray-700">Used Equipment (&lt; 5 years)</span>
+                            <span class="font-semibold text-accent">7.25% APR*</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                            <span class="text-gray-700">Technology Equipment</span>
+                            <span class="font-semibold text-accent">6.50% APR*</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3">
+                            <span class="text-gray-700">Terms</span>
+                            <span class="font-semibold text-gray-600">Up to 7 years</span>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <a href="/aifirst-bank/business/business-loans.html" class="inline-flex items-center justify-center w-full bg-accent hover:bg-accent-dark text-white font-semibold py-3 px-6 rounded-full transition duration-300 shadow-md shadow-accent/25">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Commercial Real Estate -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <div class="p-6">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">Commercial Real Estate</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                            <span class="text-gray-700">Owner-Occupied (Fixed)</span>
+                            <span class="font-semibold text-accent">7.00% APR*</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                            <span class="text-gray-700">Investment Property</span>
+                            <span class="font-semibold text-accent">7.50% APR*</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-gray-100">
+                            <span class="text-gray-700">SBA 504 Loans</span>
+                            <span class="font-semibold text-accent">6.75% APR*</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3">
+                            <span class="text-gray-700">Terms</span>
+                            <span class="font-semibold text-gray-600">Up to 25 years</span>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <a href="/aifirst-bank/business/business-loans.html" class="inline-flex items-center justify-center w-full bg-accent hover:bg-accent-dark text-white font-semibold py-3 px-6 rounded-full transition duration-300 shadow-md shadow-accent/25">Apply Now</a>
                     </div>
                 </div>
             </div>
@@ -200,38 +198,110 @@ base_path: /aifirst-bank
     </div>
 </section>
 
-<section class="py-16 bg-gray-100">
+<!-- Business Deposit Rates -->
+<section class="py-16 md:py-20 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Business Service Fees</h2>
-            <p class="mt-2 text-gray-600">Transparent, competitive pricing for business banking services.</p>
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Deposit Products</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Business Deposit Rates</h2>
+            <p class="mt-4 text-gray-600">Competitive returns on your business deposits and cash reserves.</p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Account Fees</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Business Savings Rates -->
+            <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Business Savings Rates</h3>
+                </div>
                 <div class="space-y-3">
-                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                    <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                        <span class="text-gray-700">Business Savings</span>
+                        <span class="font-semibold text-accent">2.50% APY*</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                        <span class="text-gray-700">Money Market ($25K+)</span>
+                        <span class="font-semibold text-accent">3.25% APY*</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                        <span class="text-gray-700">High-Yield Savings ($100K+)</span>
+                        <span class="font-semibold text-accent">3.75% APY*</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3">
+                        <span class="text-gray-700">Premium Tier ($500K+)</span>
+                        <span class="font-semibold text-accent">4.00% APY*</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Business CD Rates -->
+            <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Business CD Rates</h3>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                        <span class="text-gray-700">6 Month CD</span>
+                        <span class="font-semibold text-accent">4.50% APY*</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                        <span class="text-gray-700">12 Month CD</span>
+                        <span class="font-semibold text-accent">4.75% APY*</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                        <span class="text-gray-700">24 Month CD</span>
+                        <span class="font-semibold text-accent">4.50% APY*</span>
+                    </div>
+                    <div class="flex justify-between items-center py-3">
+                        <span class="text-gray-700">60 Month CD</span>
+                        <span class="font-semibold text-accent">4.25% APY*</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Business Service Fees -->
+<section class="py-16 md:py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center max-w-4xl mx-auto mb-12">
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Transparent Pricing</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Business Service Fees</h2>
+            <p class="mt-4 text-gray-600">Transparent, competitive pricing for business banking services.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Account Fees -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <h3 class="text-xl font-bold text-gray-900 mb-6">Account Fees</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center py-3 border-b border-gray-100">
                         <span class="text-gray-700">Business Checking (Monthly)</span>
-                        <span class="font-semibold text-blue-600">FREE*</span>
+                        <span class="font-semibold text-accent">FREE*</span>
                     </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                    <div class="flex justify-between items-center py-3 border-b border-gray-100">
                         <span class="text-gray-700">Business Savings (Monthly)</span>
-                        <span class="font-semibold text-blue-600">FREE</span>
+                        <span class="font-semibold text-accent">FREE</span>
                     </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                    <div class="flex justify-between items-center py-3 border-b border-gray-100">
                         <span class="text-gray-700">Online Banking</span>
-                        <span class="font-semibold text-blue-600">FREE</span>
+                        <span class="font-semibold text-accent">FREE</span>
                     </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                    <div class="flex justify-between items-center py-3 border-b border-gray-100">
                         <span class="text-gray-700">Mobile Banking</span>
-                        <span class="font-semibold text-blue-600">FREE</span>
+                        <span class="font-semibold text-accent">FREE</span>
                     </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                    <div class="flex justify-between items-center py-3 border-b border-gray-100">
                         <span class="text-gray-700">Business Bill Pay</span>
-                        <span class="font-semibold text-blue-600">FREE</span>
+                        <span class="font-semibold text-accent">FREE</span>
                     </div>
-                    <div class="flex justify-between items-center py-2">
+                    <div class="flex justify-between items-center py-3">
                         <span class="text-gray-700">Overdraft Protection Transfer</span>
                         <span class="font-semibold text-gray-600">$10.00</span>
                     </div>
@@ -239,30 +309,31 @@ base_path: /aifirst-bank
                 <p class="text-xs text-gray-500 mt-4">*Free with $2,500 minimum daily balance</p>
             </div>
             
-            <div class="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Transaction Fees</h3>
+            <!-- Transaction Fees -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 hover:border-primary-200 hover:shadow-xl transition duration-300">
+                <h3 class="text-xl font-bold text-gray-900 mb-6">Transaction Fees</h3>
                 <div class="space-y-3">
-                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                    <div class="flex justify-between items-center py-3 border-b border-gray-100">
                         <span class="text-gray-700">Remote Deposit Capture</span>
-                        <span class="font-semibold text-blue-600">FREE</span>
+                        <span class="font-semibold text-accent">FREE</span>
                     </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                    <div class="flex justify-between items-center py-3 border-b border-gray-100">
                         <span class="text-gray-700">ACH Origination (per item)</span>
                         <span class="font-semibold text-gray-600">$0.25</span>
                     </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                    <div class="flex justify-between items-center py-3 border-b border-gray-100">
                         <span class="text-gray-700">Wire Transfer (Domestic)</span>
                         <span class="font-semibold text-gray-600">$20.00</span>
                     </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                    <div class="flex justify-between items-center py-3 border-b border-gray-100">
                         <span class="text-gray-700">Wire Transfer (International)</span>
                         <span class="font-semibold text-gray-600">$35.00</span>
                     </div>
-                    <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                    <div class="flex justify-between items-center py-3 border-b border-gray-100">
                         <span class="text-gray-700">Positive Pay (Monthly)</span>
                         <span class="font-semibold text-gray-600">$15.00</span>
                     </div>
-                    <div class="flex justify-between items-center py-2">
+                    <div class="flex justify-between items-center py-3">
                         <span class="text-gray-700">Stop Payment</span>
                         <span class="font-semibold text-gray-600">$25.00</span>
                     </div>
@@ -272,77 +343,90 @@ base_path: /aifirst-bank
     </div>
 </section>
 
-<section class="py-16 bg-white">
+<!-- Merchant Services Pricing -->
+<section class="py-16 md:py-20 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center max-w-4xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Merchant Services Pricing</h2>
-            <p class="mt-2 text-gray-600">Competitive payment processing rates for your business.</p>
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Payment Processing</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Merchant Services Pricing</h2>
+            <p class="mt-4 text-gray-600">Competitive payment processing rates for your business.</p>
         </div>
         
-        <div class="bg-gray-50 p-8 rounded-lg">
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Credit Card Processing -->
                 <div class="text-center">
-                    <img src="/assets/images/merchant-services-icon.png" alt="Credit Card Processing" class="h-12 w-12 mx-auto mb-4">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                    </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Credit Card Processing</h3>
-                    <div class="space-y-2">
-                        <div class="text-sm text-gray-600">
-                            <span class="font-semibold">Visa/Mastercard:</span> 2.65% + $0.10
+                    <div class="space-y-2 text-sm">
+                        <div class="text-gray-600">
+                            <span class="font-semibold text-gray-900">Visa/Mastercard:</span> 2.65% + $0.10
                         </div>
-                        <div class="text-sm text-gray-600">
-                            <span class="font-semibold">American Express:</span> 3.25% + $0.10
+                        <div class="text-gray-600">
+                            <span class="font-semibold text-gray-900">American Express:</span> 3.25% + $0.10
                         </div>
-                        <div class="text-sm text-gray-600">
-                            <span class="font-semibold">Discover:</span> 2.75% + $0.10
+                        <div class="text-gray-600">
+                            <span class="font-semibold text-gray-900">Discover:</span> 2.75% + $0.10
                         </div>
                     </div>
                 </div>
                 
+                <!-- Mobile Processing -->
                 <div class="text-center">
-                    <img src="/assets/images/mobile-banking-icon.png" alt="Mobile Processing" class="h-12 w-12 mx-auto mb-4">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Mobile Processing</h3>
-                    <div class="space-y-2">
-                        <div class="text-sm text-gray-600">
-                            <span class="font-semibold">Swiped/Dipped:</span> 2.65% + $0.10
+                    <div class="space-y-2 text-sm">
+                        <div class="text-gray-600">
+                            <span class="font-semibold text-gray-900">Swiped/Dipped:</span> 2.65% + $0.10
                         </div>
-                        <div class="text-sm text-gray-600">
-                            <span class="font-semibold">Keyed Entry:</span> 3.50% + $0.15
+                        <div class="text-gray-600">
+                            <span class="font-semibold text-gray-900">Keyed Entry:</span> 3.50% + $0.15
                         </div>
-                        <div class="text-sm text-gray-600">
-                            <span class="font-semibold">Monthly Fee:</span> $9.95
+                        <div class="text-gray-600">
+                            <span class="font-semibold text-gray-900">Monthly Fee:</span> $9.95
                         </div>
                     </div>
                 </div>
 
+                <!-- Online Gateway -->
                 <div class="text-center">
-                    <img src="/assets/images/online-banking-icon.png" alt="Online Processing" class="h-12 w-12 mx-auto mb-4">
+                    <div class="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                    </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Online Gateway</h3>
-                    <div class="space-y-2">
-                        <div class="text-sm text-gray-600">
-                            <span class="font-semibold">Online Transactions:</span> 2.90% + $0.30
+                    <div class="space-y-2 text-sm">
+                        <div class="text-gray-600">
+                            <span class="font-semibold text-gray-900">Online Transactions:</span> 2.90% + $0.30
                         </div>
-                        <div class="text-sm text-gray-600">
-                            <span class="font-semibold">Setup Fee:</span> $99.00
+                        <div class="text-gray-600">
+                            <span class="font-semibold text-gray-900">Setup Fee:</span> $99.00
                         </div>
-                        <div class="text-sm text-gray-600">
-                            <span class="font-semibold">Monthly Gateway:</span> $25.00
+                        <div class="text-gray-600">
+                            <span class="font-semibold text-gray-900">Monthly Gateway:</span> $25.00
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="mt-8 p-4 bg-blue-50 rounded-lg">
-                <p class="text-sm text-blue-800 text-center">
-                    <strong>No Setup Fees</strong> for qualified businesses. Next-day funding available. 24/7 customer support included.
+            <div class="mt-8 bg-primary-50 border border-primary-200 rounded-xl p-4">
+                <p class="text-sm text-primary-800 text-center">
+                    <span class="font-semibold">No Setup Fees</span> for qualified businesses. Next-day funding available. 24/7 customer support included.
                 </p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-16 bg-gray-100">
+<!-- Rate Disclaimers -->
+<section class="py-16 md:py-20 bg-gray-50">
     <div class="container mx-auto px-4 text-center max-w-4xl">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">Rate Disclaimers</h2>
-        <div class="text-left bg-white p-6 rounded-lg shadow-md">
+        <span class="text-accent font-semibold text-sm uppercase tracking-wider">Important Information</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-8">Rate Disclaimers</h2>
+        <div class="text-left bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
             <p class="text-sm text-gray-600 mb-3">
                 This is a demonstration site. All rates, fees, and financial information shown are fictional examples for demo purposes only.
             </p>
@@ -365,15 +449,17 @@ base_path: /aifirst-bank
     </div>
 </section>
 
-<section class="bg-blue-600 py-16">
-    <div class="container mx-auto px-4 text-center text-white">
-        <h2 class="text-3xl md:text-4xl font-bold">Ready to Partner with Us?</h2>
-        <p class="mt-4 text-lg max-w-2xl mx-auto opacity-90">
-            Experience the AI First bank difference with competitive rates, transparent pricing, and exceptional service for your business.
-        </p>
-        <div class="mt-8 flex justify-center space-x-4">
-            <button class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Open Business Account</button>
-            <a href="../contact.html" class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Contact Business Banking</a>
+<!-- CTA Section -->
+<section class="relative py-16 md:py-20 bg-gradient-to-br from-accent to-accent-dark overflow-hidden">
+    <!-- Decorative circles -->
+    <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Partner with Us?</h2>
+        <p class="text-white/90 max-w-2xl mx-auto mb-8 text-lg">Experience the AI First Bank difference with competitive rates, transparent pricing, and exceptional service for your business.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="/aifirst-bank/business/business-banking.html" class="bg-white text-accent font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Open Business Account</a>
+            <a href="/aifirst-bank/contact.html" class="bg-white/10 backdrop-blur-sm text-white font-semibold py-3 px-8 rounded-full border border-white/20 hover:bg-white/20 transition duration-300">Contact Business Banking</a>
         </div>
     </div>
 </section>

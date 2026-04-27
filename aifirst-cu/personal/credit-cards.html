@@ -5,155 +5,221 @@ base_path: /aifirst-cu
 ---
 
 <!-- Hero Section -->
-<section class="relative bg-gradient-to-br from-blue-600 to-blue-800 py-20 overflow-hidden">
-    <div class="absolute inset-0 opacity-10">
-        <img src="/assets/images/credit-cards-hero-bg.png" alt="" class="w-full h-full object-cover">
-    </div>
-    <div class="container mx-auto px-4 text-center relative z-10">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight">Credit Cards</h1>
-        <p class="mt-4 text-lg text-blue-100 max-w-2xl mx-auto">Rewards you'll love, rates you can afford. Find the perfect card for your lifestyle.</p>
+<section class="relative bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 24px 24px;"></div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent/10 to-transparent"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                </svg>
+                <span class="text-white/90 text-sm font-medium">No Annual Fee Options Available</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
+                Credit Cards That <span class="text-accent">Reward You</span>
+            </h1>
+            <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                Rewards you'll love, rates you can afford. Find the perfect card for your lifestyle.
+            </p>
+            
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="/aifirst-cu/personal/apply-credit-card.html" class="bg-accent hover:bg-accent-dark text-white font-semibold py-4 px-8 rounded-full transition duration-300 shadow-lg shadow-accent/30 text-lg">
+                    Apply Now
+                </a>
+                <a href="#compare" class="bg-white/10 backdrop-blur-sm text-white font-semibold py-4 px-8 rounded-full border border-white/20 hover:bg-white/20 transition duration-300">
+                    Compare Cards
+                </a>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white">2%</div>
+                    <div class="text-sm text-gray-400 mt-1">Cash Back</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white">$0</div>
+                    <div class="text-sm text-gray-400 mt-1">Annual Fee</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white">0%</div>
+                    <div class="text-sm text-gray-400 mt-1">Intro APR</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-white">$200</div>
+                    <div class="text-sm text-gray-400 mt-1">Welcome Bonus</div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- Credit Cards Grid -->
-<section class="py-16 bg-white">
+<section class="py-20 bg-white">
     <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Choose Your Card</h2>
-            <p class="mt-2 text-gray-600">Compare our cards and find the one that fits your needs</p>
+        <div class="text-center mb-14">
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Our Cards</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Choose Your Card</h2>
+            <p class="mt-3 text-gray-600 max-w-2xl mx-auto">Compare our cards and find the one that fits your needs.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
             <!-- Cash Back Rewards Card -->
-            <div class="bg-white rounded-2xl shadow-xl border-2 border-blue-500 overflow-hidden relative">
-                <div class="absolute top-4 right-4 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-full shadow-md">MOST POPULAR</div>
-                <div class="h-56 bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center p-6">
-                    <img src="/assets/images/bank-cash-card.png" alt="Cash Back Rewards Card" class="h-44 object-contain rounded-xl">
+            <div class="group bg-white rounded-2xl border-2 border-accent hover:shadow-xl transition-all duration-300 overflow-hidden card-hover relative">
+                <div class="absolute top-4 right-4 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">MOST POPULAR</div>
+                <div class="h-48 bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center p-6">
+                    <svg class="w-24 h-24 text-white/90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="5" width="20" height="14" rx="2"/>
+                        <line x1="6" y1="9" x2="12" y2="9"/>
+                        <line x1="6" y1="12" x2="18" y2="12"/>
+                        <line x1="6" y1="15" x2="10" y2="15"/>
+                        <path d="M14 15l1.5 1.5L18 14"/>
+                    </svg>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold text-gray-900">Cash Back Rewards</h3>
-                    <p class="text-3xl font-bold text-blue-600 mt-2">2% <span class="text-lg font-normal text-gray-500">unlimited cash back</span></p>
-                    <div class="mt-4 space-y-3">
-                        <div class="flex items-center gap-3">
-                            <img src="/assets/images/check-icon.png" class="w-5 h-5">
-                            <span class="text-gray-700">2% cash back on all purchases</span>
+                    <h3 class="text-xl font-bold text-gray-900">Cash Back Rewards</h3>
+                    <div class="flex items-center gap-2 mt-2">
+                        <span class="text-2xl font-bold text-accent">2%</span>
+                        <span class="text-sm text-gray-500">unlimited cash back</span>
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            <span>2% cash back on all purchases</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <img src="/assets/images/check-icon.png" class="w-5 h-5">
-                            <span class="text-gray-700">$200 welcome bonus after $500 spend</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            <span>$200 welcome bonus</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <img src="/assets/images/check-icon.png" class="w-5 h-5">
-                            <span class="text-gray-700">No annual fee</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            <span>No annual fee</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <img src="/assets/images/check-icon.png" class="w-5 h-5">
-                            <span class="text-gray-700">0% intro APR for 15 months</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            <span>0% intro APR for 15 months</span>
                         </div>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-gray-200">
-                        <p class="text-sm text-gray-500">Variable APR: 14.99% - 24.99%</p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="text-xs text-gray-500">Variable APR: 14.99% - 24.99%</p>
                     </div>
-                    <a href="/aifirst-cu/personal/apply-credit-card.html?type=cash-back" class="w-full mt-4 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition block text-center">Apply Now</a>
+                    <a href="/aifirst-cu/personal/apply-credit-card.html?type=cash-back" class="w-full mt-4 bg-accent hover:bg-accent-dark text-white py-3 rounded-full font-semibold transition block text-center shadow-md shadow-accent/25">Apply Now</a>
                 </div>
             </div>
 
             <!-- Travel Rewards Card -->
-            <div class="bg-white rounded-2xl shadow-xl border-2 border-blue-500 overflow-hidden">
-                <div class="h-56 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-6">
-                    <img src="/assets/images/travel-credit-card.png" alt="Travel Rewards Card" class="h-44 object-contain rounded-xl">
+            <div class="group bg-white rounded-2xl border border-gray-100 hover:border-primary-200 hover:shadow-xl transition-all duration-300 overflow-hidden card-hover">
+                <div class="h-48 bg-gradient-to-br from-primary-600 to-primary-700 flex items-center justify-center p-6">
+                    <svg class="w-24 h-24 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                    </svg>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold text-gray-900">Travel Rewards</h3>
-                    <p class="text-3xl font-bold text-blue-600 mt-2">3X <span class="text-lg font-normal text-gray-500">points on travel & dining</span></p>
-                    <div class="mt-4 space-y-3">
-                        <div class="flex items-center gap-3">
-                            <img src="/assets/images/check-icon.png" class="w-5 h-5">
-                            <span class="text-gray-700">50,000 bonus points ($500 value)</span>
+                    <h3 class="text-xl font-bold text-gray-900">Travel Rewards</h3>
+                    <div class="flex items-center gap-2 mt-2">
+                        <span class="text-2xl font-bold text-primary-600">3X</span>
+                        <span class="text-sm text-gray-500">points on travel & dining</span>
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            <span>50,000 bonus points ($500 value)</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <img src="/assets/images/check-icon.png" class="w-5 h-5">
-                            <span class="text-gray-700">No foreign transaction fees</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            <span>No foreign transaction fees</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <img src="/assets/images/check-icon.png" class="w-5 h-5">
-                            <span class="text-gray-700">Travel insurance & purchase protection</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            <span>Travel insurance included</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <img src="/assets/images/check-icon.png" class="w-5 h-5">
-                            <span class="text-gray-700">TSA PreCheck/Global Entry credit</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            <span>TSA PreCheck credit</span>
                         </div>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-gray-200">
-                        <p class="text-sm text-gray-500">$95 annual fee | Variable APR: 17.99% - 26.99%</p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="text-xs text-gray-500">$95 annual fee | APR: 17.99% - 26.99%</p>
                     </div>
-                    <a href="/aifirst-cu/personal/apply-credit-card.html?type=travel-rewards" class="w-full mt-4 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition block text-center">Apply Now</a>
+                    <a href="/aifirst-cu/personal/apply-credit-card.html?type=travel-rewards" class="w-full mt-4 bg-primary-600 hover:bg-primary-700 text-white py-3 rounded-full font-semibold transition block text-center shadow-md shadow-primary-600/25">Apply Now</a>
                 </div>
             </div>
 
             <!-- Platinum Rewards Card -->
-            <div class="bg-white rounded-2xl shadow-xl border-2 border-blue-500 overflow-hidden relative">
-                <div class="h-56 bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center p-6">
-                    <img src="/assets/images/bank-rewards-card.png" alt="Platinum Rewards Card" class="h-44 object-contain rounded-xl">
+            <div class="group bg-white rounded-2xl border border-gray-100 hover:border-primary-200 hover:shadow-xl transition-all duration-300 overflow-hidden card-hover">
+                <div class="h-48 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center p-6">
+                    <svg class="w-24 h-24 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                    </svg>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold text-gray-900">Platinum Rewards</h3>
-                    <p class="text-3xl font-bold text-blue-600 mt-2">3X <span class="text-lg font-normal text-gray-500">points on travel & dining</span></p>
-                    <div class="mt-4 space-y-3">
-                        <div class="flex items-center gap-3">
-                            <img src="/assets/images/check-icon.png" class="w-5 h-5">
-                            <span class="text-gray-700">75,000 bonus points ($750 value)</span>
+                    <h3 class="text-xl font-bold text-gray-900">Platinum Rewards</h3>
+                    <div class="flex items-center gap-2 mt-2">
+                        <span class="text-2xl font-bold text-slate-700">3X</span>
+                        <span class="text-sm text-gray-500">points on travel & dining</span>
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            <span>75,000 bonus points ($750 value)</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <img src="/assets/images/check-icon.png" class="w-5 h-5">
-                            <span class="text-gray-700">$300 annual travel credit</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            <span>$300 annual travel credit</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <img src="/assets/images/check-icon.png" class="w-5 h-5">
-                            <span class="text-gray-700">Airport lounge access</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            <span>Airport lounge access</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <img src="/assets/images/check-icon.png" class="w-5 h-5">
-                            <span class="text-gray-700">No foreign transaction fees</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            <span>No foreign transaction fees</span>
                         </div>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-gray-200">
-                        <p class="text-sm text-gray-500">$195 annual fee | Variable APR: 18.99% - 27.99%</p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="text-xs text-gray-500">$195 annual fee | APR: 18.99% - 27.99%</p>
                     </div>
-                    <a href="/aifirst-cu/personal/apply-credit-card.html?type=platinum-rewards" class="w-full mt-4 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition block text-center">Apply Now</a>
+                    <a href="/aifirst-cu/personal/apply-credit-card.html?type=platinum-rewards" class="w-full mt-4 bg-slate-700 hover:bg-slate-800 text-white py-3 rounded-full font-semibold transition block text-center shadow-md shadow-slate-700/25">Apply Now</a>
                 </div>
             </div>
 
             <!-- Student Card -->
-            <div class="bg-white rounded-2xl shadow-xl border-2 border-blue-500 overflow-hidden">
-                <div class="h-56 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center p-6">
-                    <img src="/assets/images/student-credit-card.png" alt="Student Card" class="h-44 object-contain rounded-xl">
+            <div class="group bg-white rounded-2xl border border-gray-100 hover:border-primary-200 hover:shadow-xl transition-all duration-300 overflow-hidden card-hover">
+                <div class="h-48 bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center p-6">
+                    <svg class="w-24 h-24 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                    </svg>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-2xl font-bold text-gray-900">Student Card</h3>
-                    <p class="text-3xl font-bold text-blue-600 mt-2">Build <span class="text-lg font-normal text-gray-500">your credit history</span></p>
-                    <div class="mt-4 space-y-3">
-                        <div class="flex items-center gap-3">
-                            <img src="/assets/images/check-icon.png" class="w-5 h-5">
-                            <span class="text-gray-700">$200 - $5,000 credit line</span>
+                    <h3 class="text-xl font-bold text-gray-900">Student Card</h3>
+                    <div class="flex items-center gap-2 mt-2">
+                        <span class="text-2xl font-bold text-primary-600">Build</span>
+                        <span class="text-sm text-gray-500">your credit history</span>
+                    </div>
+                    <div class="mt-4 space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            <span>$200 - $5,000 credit line</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <img src="/assets/images/check-icon.png" class="w-5 h-5">
-                            <span class="text-gray-700">Reports to all 3 credit bureaus</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            <span>Reports to all 3 bureaus</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <img src="/assets/images/check-icon.png" class="w-5 h-5">
-                            <span class="text-gray-700">Graduate to unsecured card</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            <span>Graduate to unsecured card</span>
                         </div>
-                        <div class="flex items-center gap-3">
-                            <img src="/assets/images/check-icon.png" class="w-5 h-5">
-                            <span class="text-gray-700">Free credit score monitoring</span>
+                        <div class="flex items-center gap-2 text-sm text-gray-600">
+                            <svg class="w-4 h-4 text-accent flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                            <span>Free credit score monitoring</span>
                         </div>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-gray-200">
-                        <p class="text-sm text-gray-500">No annual fee | Variable APR: 18.99%</p>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <p class="text-xs text-gray-500">No annual fee | Variable APR: 18.99%</p>
                     </div>
-                    <a href="/aifirst-cu/personal/apply-credit-card.html?type=student" class="w-full mt-4 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition block text-center">Apply Now</a>
+                    <a href="/aifirst-cu/personal/apply-credit-card.html?type=student" class="w-full mt-4 bg-primary-600 hover:bg-primary-700 text-white py-3 rounded-full font-semibold transition block text-center shadow-md shadow-primary-600/25">Apply Now</a>
                 </div>
             </div>
         </div>
@@ -161,27 +227,28 @@ base_path: /aifirst-cu
 </section>
 
 <!-- Card Comparison Table -->
-<section class="py-16 bg-gray-50">
+<section class="py-20 bg-gray-50" id="compare">
     <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Compare Cards</h2>
-            <p class="mt-2 text-gray-600">See all features side by side</p>
+        <div class="text-center mb-14">
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Compare</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Compare Cards</h2>
+            <p class="mt-3 text-gray-600">See all features side by side.</p>
         </div>
         <div class="overflow-x-auto">
-            <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
-                <thead class="bg-gray-100">
+            <table class="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
+                <thead class="bg-slate-900 text-white">
                     <tr>
-                        <th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">Feature</th>
-                        <th class="px-6 py-4 text-center text-sm font-semibold text-blue-600">Cash Back</th>
-                        <th class="px-6 py-4 text-center text-sm font-semibold text-blue-600">Travel</th>
-                        <th class="px-6 py-4 text-center text-sm font-semibold text-blue-600">Platinum</th>
-                        <th class="px-6 py-4 text-center text-sm font-semibold text-blue-600">Student</th>
+                        <th class="px-6 py-4 text-left text-sm font-semibold">Feature</th>
+                        <th class="px-6 py-4 text-center text-sm font-semibold text-accent">Cash Back</th>
+                        <th class="px-6 py-4 text-center text-sm font-semibold">Travel</th>
+                        <th class="px-6 py-4 text-center text-sm font-semibold">Platinum</th>
+                        <th class="px-6 py-4 text-center text-sm font-semibold">Student</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-gray-200">
+                <tbody class="divide-y divide-gray-100">
                     <tr>
                         <td class="px-6 py-4 text-sm text-gray-700">Annual Fee</td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">$0</td>
+                        <td class="px-6 py-4 text-center text-sm text-accent font-semibold">$0</td>
                         <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">$95</td>
                         <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">$195</td>
                         <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">$0</td>
@@ -202,7 +269,7 @@ base_path: /aifirst-cu
                     </tr>
                     <tr class="bg-gray-50">
                         <td class="px-6 py-4 text-sm text-gray-700">Intro APR</td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">0% for 15 mo</td>
+                        <td class="px-6 py-4 text-center text-sm text-accent font-semibold">0% for 15 mo</td>
                         <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">—</td>
                         <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">—</td>
                         <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">—</td>
@@ -217,8 +284,8 @@ base_path: /aifirst-cu
                     <tr class="bg-gray-50">
                         <td class="px-6 py-4 text-sm text-gray-700">Foreign Transaction Fee</td>
                         <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">3%</td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">$0</td>
-                        <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">$0</td>
+                        <td class="px-6 py-4 text-center text-sm text-accent font-semibold">$0</td>
+                        <td class="px-6 py-4 text-center text-sm text-accent font-semibold">$0</td>
                         <td class="px-6 py-4 text-center text-sm text-gray-900 font-medium">3%</td>
                     </tr>
                 </tbody>
@@ -227,54 +294,105 @@ base_path: /aifirst-cu
     </div>
 </section>
 
-<!-- Card Benefits -->
-<section class="py-16 bg-white">
+<!-- Card Benefits with Image -->
+<section class="py-20 bg-white">
     <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">All Cards Include</h2>
-            <p class="mt-2 text-gray-600">Every card comes with these great benefits</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="text-center p-6">
-                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <img src="/assets/images/check-icon.png" alt="" class="w-8 h-8">
-                </div>
-                <h3 class="font-semibold text-gray-900 mb-2">$0 Fraud Liability</h3>
-                <p class="text-sm text-gray-600">You're never responsible for unauthorized purchases</p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-14">
+            <div>
+                <img src="/assets/images/credit-card-shopping.png" alt="Person using credit card for shopping" class="rounded-2xl shadow-2xl w-full">
             </div>
-            <div class="text-center p-6">
-                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <img src="/assets/images/check-icon.png" alt="" class="w-8 h-8">
+            <div>
+                <span class="text-accent font-semibold text-sm uppercase tracking-wider">Benefits</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">All Cards Include</h2>
+                <p class="text-gray-600 mb-6">Every card comes with these great benefits to keep you protected and rewarded.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">$0 Fraud Liability</h4>
+                            <p class="text-sm text-gray-600">Never responsible for unauthorized purchases</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-primary-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Digital Wallet</h4>
+                            <p class="text-sm text-gray-600">Apple Pay, Google Pay ready</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Free Credit Score</h4>
+                            <p class="text-sm text-gray-600">Monitor your score anytime</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Card Controls</h4>
+                            <p class="text-sm text-gray-600">Lock/unlock instantly from app</p>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="font-semibold text-gray-900 mb-2">Digital Wallet</h3>
-                <p class="text-sm text-gray-600">Apple Pay, Google Pay, and Samsung Pay ready</p>
-            </div>
-            <div class="text-center p-6">
-                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <img src="/assets/images/check-icon.png" alt="" class="w-8 h-8">
-                </div>
-                <h3 class="font-semibold text-gray-900 mb-2">Free Credit Score</h3>
-                <p class="text-sm text-gray-600">Monitor your score anytime in online banking</p>
-            </div>
-            <div class="text-center p-6">
-                <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <img src="/assets/images/check-icon.png" alt="" class="w-8 h-8">
-                </div>
-                <h3 class="font-semibold text-gray-900 mb-2">Card Controls</h3>
-                <p class="text-sm text-gray-600">Lock/unlock your card instantly from the app</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- CTA Section -->
-<section class="py-16 bg-blue-600">
-    <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold text-white mb-4">Ready to Apply?</h2>
-        <p class="text-blue-100 max-w-2xl mx-auto mb-8">Get a decision in minutes. No impact to your credit score to check your rate.</p>
+<section class="py-20 bg-gradient-to-br from-accent to-accent-dark relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3"></div>
+    
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">Ready to Apply?</h2>
+        <p class="text-white/80 max-w-2xl mx-auto mb-10 text-lg">Get a decision in minutes. No impact to your credit score to check your rate.</p>
+        
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="/aifirst-cu/personal/apply-credit-card.html" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-blue-50 transition duration-300">Apply Now</a>
-            <a href="/aifirst-cu/contact.html" class="bg-transparent text-white font-semibold py-3 px-8 rounded-full border-2 border-white hover:bg-white/10 transition duration-300">Questions? Contact Us</a>
+            <a href="/aifirst-cu/personal/apply-credit-card.html" class="bg-white text-accent-dark font-semibold py-4 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg text-lg">
+                Apply Now
+            </a>
+            <a href="/aifirst-cu/contact.html" class="bg-transparent text-white font-semibold py-4 px-8 rounded-full border-2 border-white/30 hover:bg-white/10 transition duration-300">
+                Questions? Contact Us
+            </a>
+        </div>
+        
+        <div class="mt-12 flex flex-wrap justify-center gap-8 text-white/70 text-sm">
+            <div class="flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                </svg>
+                Secure Application
+            </div>
+            <div class="flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Instant Decision
+            </div>
+            <div class="flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+                </svg>
+                No Annual Fee Options
+            </div>
         </div>
     </div>
 </section>

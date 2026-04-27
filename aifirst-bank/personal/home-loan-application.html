@@ -4,89 +4,117 @@ site_type: bank
 base_path: /aifirst-bank
 ---
 
-<section class="bg-gradient-to-br from-blue-100 to-white py-20 md:py-32">
-    <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
-            Home Loan Application.
+<section class="relative bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 py-20 md:py-28 overflow-hidden">
+    <!-- Dot pattern overlay -->
+    <div class="absolute inset-0 opacity-10">
+        <svg class="w-full h-full" xmlns="https://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="white"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dots)"/>
+        </svg>
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+        <span class="inline-block bg-white/10 backdrop-blur-sm text-accent font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full mb-6">Home Loans</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+            Home Loan Application
         </h1>
-        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="mt-6 text-lg md:text-xl text-primary-100 max-w-3xl mx-auto">
             Take the first step toward homeownership with our simple, secure application process. Get pre-approved in as little as 24 hours.
         </p>
+        <!-- Trust badges -->
+        <div class="flex flex-wrap justify-center gap-4 mt-8">
+            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span class="text-white text-sm font-medium">24-Hour Pre-Approval</span>
+            </div>
+            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                <span class="text-white text-sm font-medium">Secure Application</span>
+            </div>
+            <div class="flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
+                <svg class="w-5 h-5 text-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                <span class="text-white text-sm font-medium">Expert Guidance</span>
+            </div>
+        </div>
     </div>
 </section>
 
-<section class="bg-white py-16">
+<section class="bg-white py-16 md:py-20">
     <div class="container mx-auto px-4 max-w-4xl">
-        <div class="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-200">
+        <div class="bg-gray-50 p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100">
             <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold text-gray-900 mb-2">Home Loan Application</h2>
-                <p class="text-gray-600">Complete this form to get started with your home loan pre-approval process.</p>
+                <span class="text-accent font-semibold text-sm uppercase tracking-wider">Apply Now</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-2">Home Loan Application</h2>
+                <p class="text-gray-600 mt-2">Complete this form to get started with your home loan pre-approval process.</p>
             </div>
 
             <form id="home-loan-application" class="space-y-8">
                 <!-- Personal Information -->
-                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Personal Information</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label for="first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
                             <input type="text" id="first-name" name="first-name" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
                             <input type="text" id="last-name" name="last-name" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-700">Email Address *</label>
                             <input type="email" id="email" name="email" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number *</label>
                             <input type="tel" id="phone" name="phone" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="date-of-birth" class="block text-sm font-medium text-gray-700">Date of Birth *</label>
                             <input type="date" id="date-of-birth" name="date-of-birth" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="ssn" class="block text-sm font-medium text-gray-700">Social Security Number *</label>
                             <input type="text" id="ssn" name="ssn" data-required="true" placeholder="###-##-####"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Current Address -->
-                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Current Address</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="md:col-span-2">
                             <label for="current-address" class="block text-sm font-medium text-gray-700">Street Address *</label>
                             <input type="text" id="current-address" name="current-address" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="current-city" class="block text-sm font-medium text-gray-700">City *</label>
                             <input type="text" id="current-city" name="current-city" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="current-state" class="block text-sm font-medium text-gray-700">State *</label>
                             <select id="current-state" name="current-state" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
                                 <option value="">Select State</option>
                                 <option value="CA">California</option>
                                 <option value="NY">New York</option>
@@ -94,18 +122,18 @@ base_path: /aifirst-bank
                                 <option value="FL">Florida</option>
                                 <!-- Add more states as needed -->
                             </select>
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="current-zip" class="block text-sm font-medium text-gray-700">ZIP Code *</label>
                             <input type="text" id="current-zip" name="current-zip" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="time-at-address" class="block text-sm font-medium text-gray-700">Time at Current Address *</label>
                             <select id="time-at-address" name="time-at-address" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
                                 <option value="">Select Duration</option>
                                 <option value="less-than-1">Less than 1 year</option>
                                 <option value="1-2">1-2 years</option>
@@ -113,43 +141,43 @@ base_path: /aifirst-bank
                                 <option value="5-10">5-10 years</option>
                                 <option value="more-than-10">More than 10 years</option>
                             </select>
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Employment Information -->
-                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Employment Information</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label for="employment-status" class="block text-sm font-medium text-gray-700">Employment Status *</label>
                             <select id="employment-status" name="employment-status" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
                                 <option value="">Select Status</option>
                                 <option value="employed">Employed</option>
                                 <option value="self-employed">Self-Employed</option>
                                 <option value="retired">Retired</option>
                                 <option value="unemployed">Unemployed</option>
                             </select>
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="employer-name" class="block text-sm font-medium text-gray-700">Employer Name *</label>
                             <input type="text" id="employer-name" name="employer-name" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="job-title" class="block text-sm font-medium text-gray-700">Job Title *</label>
                             <input type="text" id="job-title" name="job-title" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="time-employed" class="block text-sm font-medium text-gray-700">Time with Current Employer *</label>
                             <select id="time-employed" name="time-employed" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
                                 <option value="">Select Duration</option>
                                 <option value="less-than-1">Less than 1 year</option>
                                 <option value="1-2">1-2 years</option>
@@ -157,80 +185,80 @@ base_path: /aifirst-bank
                                 <option value="5-10">5-10 years</option>
                                 <option value="more-than-10">More than 10 years</option>
                             </select>
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="annual-income" class="block text-sm font-medium text-gray-700">Annual Gross Income *</label>
                             <input type="number" id="annual-income" name="annual-income" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent"
                                 placeholder="e.g., 75000">
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="other-income" class="block text-sm font-medium text-gray-700">Other Monthly Income</label>
                             <input type="number" id="other-income" name="other-income"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent"
                                 placeholder="e.g., 2000">
                         </div>
                     </div>
                 </div>
 
                 <!-- Loan Information -->
-                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Loan Information</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label for="loan-purpose" class="block text-sm font-medium text-gray-700">Loan Purpose *</label>
                             <select id="loan-purpose" name="loan-purpose" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
                                 <option value="">Select Purpose</option>
                                 <option value="purchase">Purchase</option>
                                 <option value="refinance">Refinance</option>
                                 <option value="cash-out-refinance">Cash-Out Refinance</option>
                             </select>
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="property-type" class="block text-sm font-medium text-gray-700">Property Type *</label>
                             <select id="property-type" name="property-type" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
                                 <option value="">Select Type</option>
                                 <option value="single-family">Single Family Home</option>
                                 <option value="condo">Condominium</option>
                                 <option value="townhouse">Townhouse</option>
                                 <option value="multi-family">Multi-Family</option>
                             </select>
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="property-use" class="block text-sm font-medium text-gray-700">Property Use *</label>
                             <select id="property-use" name="property-use" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
                                 <option value="">Select Use</option>
                                 <option value="primary">Primary Residence</option>
                                 <option value="secondary">Secondary Home</option>
                                 <option value="investment">Investment Property</option>
                             </select>
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="loan-amount" class="block text-sm font-medium text-gray-700">Requested Loan Amount *</label>
                             <input type="number" id="loan-amount" name="loan-amount" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent"
                                 placeholder="e.g., 350000">
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="down-payment-amount" class="block text-sm font-medium text-gray-700">Down Payment Amount *</label>
                             <input type="number" id="down-payment-amount" name="down-payment-amount" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent"
                                 placeholder="e.g., 70000">
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="credit-score" class="block text-sm font-medium text-gray-700">Estimated Credit Score *</label>
                             <select id="credit-score" name="credit-score" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
                                 <option value="">Select Range</option>
                                 <option value="excellent">Excellent (750+)</option>
                                 <option value="good">Good (700-749)</option>
@@ -238,125 +266,125 @@ base_path: /aifirst-bank
                                 <option value="poor">Poor (600-649)</option>
                                 <option value="very-poor">Very Poor (Below 600)</option>
                             </select>
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Financial Information -->
-                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Financial Information</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label for="checking-balance" class="block text-sm font-medium text-gray-700">Checking Account Balance</label>
                             <input type="number" id="checking-balance" name="checking-balance"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent"
                                 placeholder="e.g., 15000">
                         </div>
                         <div>
                             <label for="savings-balance" class="block text-sm font-medium text-gray-700">Savings Account Balance</label>
                             <input type="number" id="savings-balance" name="savings-balance"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent"
                                 placeholder="e.g., 25000">
                         </div>
                         <div>
                             <label for="monthly-debt" class="block text-sm font-medium text-gray-700">Total Monthly Debt Payments</label>
                             <input type="number" id="monthly-debt" name="monthly-debt"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent"
                                 placeholder="e.g., 1200">
                         </div>
                         <div>
                             <label for="first-time-buyer" class="block text-sm font-medium text-gray-700">First-Time Home Buyer? *</label>
                             <select id="first-time-buyer" name="first-time-buyer" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
                                 <option value="">Select</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Additional Information -->
-                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Additional Information</h3>
                     <div class="space-y-4">
                         <div>
                             <label for="preferred-contact" class="block text-sm font-medium text-gray-700">Preferred Contact Method *</label>
                             <select id="preferred-contact" name="preferred-contact" data-required="true"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
                                 <option value="">Select Method</option>
                                 <option value="phone">Phone</option>
                                 <option value="email">Email</option>
                                 <option value="text">Text Message</option>
                             </select>
-                            <p class="text-red-600 text-sm mt-1 hidden error-message">Field is required</p>
+                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="comments" class="block text-sm font-medium text-gray-700">Additional Comments or Questions</label>
                             <textarea id="comments" name="comments" rows="4"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent"
                                 placeholder="Tell us about any special circumstances or questions you have..."></textarea>
                         </div>
                     </div>
                 </div>
 
                 <!-- Consent and Disclosures -->
-                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
                     <h3 class="text-xl font-bold text-gray-900 mb-4">Consent and Disclosures</h3>
                     <div class="space-y-4">
                         <div class="flex items-start">
                             <input id="credit-check-consent" name="credit-check-consent" type="checkbox" data-required="true" 
-                                class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-1">
+                                class="h-4 w-4 text-accent border-gray-300 rounded focus:ring-accent mt-1">
                             <label for="credit-check-consent" class="ml-3 block text-sm text-gray-900">
                                 I authorize AI First bank to obtain my credit report and verify information provided in this application. *
                             </label>
                         </div>
-                        <p class="text-red-600 text-sm mt-1 hidden error-message ml-7">Field is required</p>
+                        <p class="text-red-600 text-sm mt-1 hidden error-msg ml-7">Field is required</p>
                         <div class="flex items-start">
                             <input id="marketing-consent" name="marketing-consent" type="checkbox" 
-                                class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-1">
+                                class="h-4 w-4 text-accent border-gray-300 rounded focus:ring-accent mt-1">
                             <label for="marketing-consent" class="ml-3 block text-sm text-gray-900">
                                 I would like to receive information about AI First bank products and services.
                             </label>
                         </div>
                         <div class="flex items-start">
                             <input id="terms-consent" name="terms-consent" type="checkbox" data-required="true" 
-                                class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-1">
+                                class="h-4 w-4 text-accent border-gray-300 rounded focus:ring-accent mt-1">
                             <label for="terms-consent" class="ml-3 block text-sm text-gray-900">
-                                I agree to the <a href="../terms-of-use.html" class="text-blue-600 hover:text-blue-700">Terms of Use</a> and <a href="../privacy-policy.html" class="text-blue-600 hover:text-blue-700">Privacy Policy</a>. *
+                                I agree to the <a href="../terms-of-use.html" class="text-accent hover:text-accent-dark">Terms of Use</a> and <a href="../privacy-policy.html" class="text-accent hover:text-accent-dark">Privacy Policy</a>. *
                             </label>
                         </div>
-                        <p class="text-red-600 text-sm mt-1 hidden error-message ml-7">Field is required</p>
+                        <p class="text-red-600 text-sm mt-1 hidden error-msg ml-7">Field is required</p>
                         <div class="flex items-start">
                             <input id="accuracy-consent" name="accuracy-consent" type="checkbox" data-required="true" 
-                                class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-1">
+                                class="h-4 w-4 text-accent border-gray-300 rounded focus:ring-accent mt-1">
                             <label for="accuracy-consent" class="ml-3 block text-sm text-gray-900">
                                 I certify that the information provided in this application is true and complete to the best of my knowledge. *
                             </label>
                         </div>
-                        <p class="text-red-600 text-sm mt-1 hidden error-message ml-7">Field is required</p>
+                        <p class="text-red-600 text-sm mt-1 hidden error-msg ml-7">Field is required</p>
                     </div>
                 </div>
 
                 <!-- Document Upload -->
-                <div class="border-t pt-6">
+                <div class="border-t border-gray-200 pt-6">
                     <label for="documents" class="block text-sm font-medium text-gray-700">Supporting Documents</label>
                     <p class="text-xs text-gray-500 mt-1 mb-2">Demo purposes only - do not upload sensitive or real documents. Files are not stored.</p>
-                    <input type="file" id="documents" name="documents" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                    <input type="file" id="documents" name="documents" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-medium file:bg-accent/10 file:text-accent hover:file:bg-accent/20">
                     <p class="text-xs text-gray-500 mt-1">Accepted formats: PDF, JPG, PNG, DOC, DOCX. Multiple files allowed.</p>
                 </div>
 
                 <!-- Demo Notice -->
-                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                    <p class="text-sm text-blue-800 text-center"><span class="font-semibold">Demo Site Notice:</span> This is a demonstration website. Please do not enter real personal information. No data is stored or transmitted.</p>
+                <div class="bg-primary-50 border border-primary-200 rounded-xl p-4">
+                    <p class="text-sm text-primary-800 text-center"><span class="font-semibold">Demo Site Notice:</span> This is a demonstration website. Please do not enter real personal information. No data is stored or transmitted.</p>
                 </div>
 
                 <!-- Submit Button -->
                 <div class="text-center">
                     <button type="submit"
-                        class="bg-blue-600 text-white font-semibold py-4 px-12 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 shadow-lg text-lg">
+                        class="bg-accent text-white font-semibold py-4 px-12 rounded-full hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition duration-300 shadow-lg shadow-accent/30 text-lg">
                         Submit Application
                     </button>
                 </div>
@@ -369,31 +397,32 @@ base_path: /aifirst-bank
                     </div>
                     <p class="text-green-800 font-semibold text-lg">Thank You!</p>
                     <p class="text-gray-600 mt-2">Your home loan application has been received.</p>
-                    <p class="text-sm text-blue-600 mt-2">This is a demo site - no data was actually submitted.</p>
-                    <a href="personal-home-loan.html" class="inline-block mt-4 text-blue-600 font-medium hover:underline">Back to Home Loans</a>
+                    <p class="text-sm text-accent mt-2">This is a demo site - no data was actually submitted.</p>
+                    <a href="personal-home-loan.html" class="inline-block mt-4 text-accent font-medium hover:text-accent-dark hover:underline">Back to Home Loans</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="bg-gray-100 py-16">
+<section class="bg-gray-50 py-16 md:py-20">
     <div class="container mx-auto px-4">
         <div class="text-center max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">What Happens Next?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <span class="text-accent font-semibold text-sm uppercase tracking-wider">Next Steps</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">What Happens Next?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 <div class="text-center">
-                    <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                    <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">1</div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Application Review</h3>
                     <p class="text-sm text-gray-600">Our AI-powered system reviews your application and credit profile within hours.</p>
                 </div>
                 <div class="text-center">
-                    <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                    <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">2</div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Pre-Approval Decision</h3>
                     <p class="text-sm text-gray-600">Receive your pre-approval decision and loan terms via your preferred contact method.</p>
                 </div>
                 <div class="text-center">
-                    <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                    <div class="bg-accent text-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-lg shadow-accent/30">3</div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">Expert Guidance</h3>
                     <p class="text-sm text-gray-600">Work with our mortgage specialists to finalize your loan and close on your home.</p>
                 </div>
@@ -402,15 +431,18 @@ base_path: /aifirst-bank
     </div>
 </section>
 
-<section class="bg-blue-600 py-16">
-    <div class="container mx-auto px-4 text-center text-white">
+<section class="relative bg-gradient-to-br from-accent to-accent-dark py-16 md:py-20 overflow-hidden">
+    <!-- Decorative circles -->
+    <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
+    <div class="container mx-auto px-4 text-center text-white relative z-10">
         <h2 class="text-3xl md:text-4xl font-bold">Questions About Your Application?</h2>
         <p class="mt-4 text-lg max-w-2xl mx-auto opacity-90">
             Our mortgage specialists are here to help you through every step of the process.
         </p>
-        <div class="mt-8 flex justify-center space-x-4">
-            <a href="../contact.html" class="bg-white text-blue-600 font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Contact Us</a>
-            <a href="personal-home-loan.html" class="text-white font-medium py-3 px-8 rounded-full hover:underline transition duration-300">Back to Home Loans</a>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <a href="../contact.html" class="bg-white text-accent font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Contact Us</a>
+            <a href="personal-home-loan.html" class="text-white font-medium py-3 px-8 rounded-full border-2 border-white/50 hover:bg-white/10 transition duration-300">Back to Home Loans</a>
         </div>
     </div>
 </section>
