@@ -5,6 +5,12 @@
       "custom_locales": [
         { "locale_key": "en-PARK", "locale_name": "Parker English" }
       ]
+    },
+    {
+      "siteId": "70436271-1338-4b36-b07f-8d1c9f3d6d33",
+      "custom_locales": [
+        { "locale_key": "en-PARK", "locale_name": "Parker English" }
+      ]
     }
   ]
 }
