@@ -171,6 +171,26 @@ async function loadAccounts() {
         accounts = data.accounts.filter(account => account.balance >= 0);
         populateAccountSelects();
         const urlParams = new URLSearchParams(window.location.search);
+        
+        // Check for transfer type parameter (internal or external)
+        const transferType = urlParams.get('type');
+        if (transferType === 'external') {
+            const externalRadio = document.querySelector('input[name="transfer-type"][value="external"]');
+            if (externalRadio) {
+                externalRadio.checked = true;
+                // Update card styling
+                document.querySelectorAll('.transfer-type-card').forEach(card => {
+                    card.classList.remove('border-accent', 'bg-accent/5');
+                    card.classList.add('border-gray-200', 'bg-white');
+                });
+                const selectedCard = externalRadio.parentElement.querySelector('.transfer-type-card');
+                selectedCard.classList.remove('border-gray-200', 'bg-white');
+                selectedCard.classList.add('border-accent', 'bg-accent/5');
+                toggleTransferType();
+            }
+        }
+        
+        // Check for from account parameter
         const fromAccountId = urlParams.get('from');
         if (fromAccountId) {
             document.getElementById('from-account').value = fromAccountId;
