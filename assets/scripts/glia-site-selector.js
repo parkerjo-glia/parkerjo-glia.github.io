@@ -173,6 +173,39 @@ function getCleanReloadUrl() {
     return url.pathname + url.search;
 }
 
+// Opens the site selector modal directly without redirecting
+// Called from header and footer "change Glia site" links
+function openSiteSelectorModal(event) {
+    if (event) {
+        event.preventDefault();
+    }
+    
+    // Check for active engagement first
+    const activeEngagement = localStorage.getItem('activeEngagement');
+    if (activeEngagement) {
+        alert('Cannot change Glia site while an engagement is active.');
+        return;
+    }
+    
+    // Open the modal on the current page
+    const modalEl = document.getElementById('siteSelectorModal');
+    if (modalEl) {
+        const modal = new bootstrap.Modal(modalEl);
+        modal.show();
+    } else {
+        // Modal might not be loaded yet, wait a moment and try again
+        setTimeout(function() {
+            const modalElRetry = document.getElementById('siteSelectorModal');
+            if (modalElRetry) {
+                const modal = new bootstrap.Modal(modalElRetry);
+                modal.show();
+            } else {
+                console.error('Site selector modal not found');
+            }
+        }, 500);
+    }
+}
+
 function init() {
     const siteParam = getQueryParam("glia_site");
     const openSettings = getQueryParam("openSettings");
