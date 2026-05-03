@@ -89,7 +89,7 @@ base_path: /aifirst-cu
                         <div>
                             <label for="ssn" class="block text-sm font-medium text-gray-700">Social Security Number *</label>
                             <input type="text" id="ssn" name="ssn" data-required="true" placeholder="###-##-####"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
+                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent sm_cobrowsing_masked_field">
                             <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                     </div>
@@ -372,7 +372,7 @@ base_path: /aifirst-cu
                 <div class="border-t border-gray-200 pt-6">
                     <label for="documents" class="block text-sm font-medium text-gray-700">Supporting Documents</label>
                     <p class="text-xs text-gray-500 mt-1 mb-2">Demo purposes only - do not upload sensitive or real documents. Files are not stored.</p>
-                    <input type="file" id="documents" name="documents" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-medium file:bg-accent/10 file:text-accent hover:file:bg-accent/20">
+                    <input type="file" id="documents" name="documents" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-medium file:bg-accent/10 file:text-accent hover:file:bg-accent/20 sm_cobrowsing_hidden_field">
                     <p class="text-xs text-gray-500 mt-1">Accepted formats: PDF, JPG, PNG, DOC, DOCX. Multiple files allowed.</p>
                 </div>
 
@@ -384,7 +384,7 @@ base_path: /aifirst-cu
                 <!-- Submit Button -->
                 <div class="text-center">
                     <button type="submit"
-                        class="bg-accent text-white font-semibold py-4 px-12 rounded-full hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition duration-300 shadow-lg shadow-accent/30 text-lg">
+                        class="bg-accent text-white font-semibold py-4 px-12 rounded-full hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition duration-300 shadow-lg shadow-accent/30 text-lg sm_cobrowsing_disabled_field">
                         Submit Application
                     </button>
                 </div>
