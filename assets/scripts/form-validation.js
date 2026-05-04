@@ -1,64 +1,96 @@
 /**
  * Shared form validation utilities
  * Include this script in the site header to enable validation on all forms
+ * 
+ * Error messages are dynamically created and appended to the DOM when validation fails.
+ * No need to pre-define hidden error-msg elements in HTML.
  */
 
-// Find the error message element for a field (looks for .error-msg in parent containers)
-function findErrorMessage(field) {
-    // Start with the immediate parent and traverse up to find .error-msg
-    let container = field.parentElement;
-    
-    // Traverse up to 3 levels to find the error message
-    for (let i = 0; i < 3 && container; i++) {
-        let errorMsg = container.querySelector('.error-msg');
-        if (errorMsg) return errorMsg;
-        container = container.parentElement;
+// Store references to dynamically created error messages
+const errorMessageMap = new WeakMap();
+
+// Get or create error message element for a field
+function getOrCreateErrorMessage(field) {
+    // Check if we already created an error message for this field
+    if (errorMessageMap.has(field)) {
+        return errorMessageMap.get(field);
     }
     
-    // For checkboxes in flex containers
+    // Find the appropriate container for the error message
+    let container = field.parentElement;
+    
+    // For checkboxes in flex containers, go up one more level
     if (field.type === 'checkbox') {
         const flexContainer = field.closest('.flex');
-        if (flexContainer) {
-            const parent = flexContainer.parentElement;
-            if (parent) {
-                return parent.querySelector('.error-msg');
-            }
+        if (flexContainer && flexContainer.parentElement) {
+            container = flexContainer.parentElement;
         }
     }
     
-    return null;
-}
-
-// Create error message element if it doesn't exist
-function createErrorMessage(field) {
-    // First check if error message already exists using findErrorMessage
-    let existingError = findErrorMessage(field);
-    if (existingError) return existingError;
-    
-    // Find the container that has the label (traverse up if needed)
-    let container = field.parentElement;
-    for (let i = 0; i < 3 && container; i++) {
-        if (container.querySelector('label')) break;
-        container = container.parentElement;
+    // Traverse up to find a container with a label (better placement)
+    let labelContainer = field.parentElement;
+    for (let i = 0; i < 3 && labelContainer; i++) {
+        if (labelContainer.querySelector('label')) {
+            container = labelContainer;
+            break;
+        }
+        labelContainer = labelContainer.parentElement;
     }
     
     if (!container) return null;
     
     // Create new error message element
     const errorMsg = document.createElement('p');
-    errorMsg.className = 'error-msg text-red-600 text-sm mb-1 hidden';
-    errorMsg.textContent = 'This field is required';
+    errorMsg.className = 'error-msg text-red-600 text-sm mb-1';
+    errorMsg.textContent = field.dataset.errorMessage || 'This field is required';
+    errorMsg.style.display = 'none';
     
-    // Find the label and insert after it
+    // Find the best insertion point
     const label = container.querySelector('label');
-    if (label) {
+    if (label && label.parentElement === container) {
+        // Insert after the label
         label.insertAdjacentElement('afterend', errorMsg);
-    } else {
+    } else if (field.parentElement === container) {
         // Insert before the field
-        field.parentElement.insertBefore(errorMsg, field);
+        container.insertBefore(errorMsg, field);
+    } else {
+        // Insert at the beginning of the container
+        container.insertBefore(errorMsg, container.firstChild);
     }
     
+    // Store reference for future use
+    errorMessageMap.set(field, errorMsg);
+    
     return errorMsg;
+}
+
+// Show error message for a field
+function showError(field, message) {
+    const errorMsg = getOrCreateErrorMessage(field);
+    if (errorMsg) {
+        errorMsg.textContent = message || field.dataset.errorMessage || 'This field is required';
+        errorMsg.style.display = 'block';
+    }
+    field.classList.add('border-red-500');
+}
+
+// Hide error message for a field
+function hideError(field) {
+    const errorMsg = errorMessageMap.get(field);
+    if (errorMsg) {
+        errorMsg.style.display = 'none';
+    }
+    field.classList.remove('border-red-500');
+}
+
+// Remove error message element from DOM
+function removeError(field) {
+    const errorMsg = errorMessageMap.get(field);
+    if (errorMsg && errorMsg.parentElement) {
+        errorMsg.parentElement.removeChild(errorMsg);
+        errorMessageMap.delete(field);
+    }
+    field.classList.remove('border-red-500');
 }
 
 // Validate a form and show/hide error messages
@@ -67,20 +99,13 @@ function validate(form) {
     const requiredFields = form.querySelectorAll('[data-required="true"]');
     
     requiredFields.forEach(field => {
-        let errorMsg = findErrorMessage(field);
-        if (!errorMsg) {
-            errorMsg = createErrorMessage(field);
-        }
-        
         const value = field.type === 'checkbox' ? field.checked : field.value.trim();
         
         if (!value) {
             isValid = false;
-            if (errorMsg) errorMsg.classList.remove('hidden');
-            field.classList.add('border-red-500');
+            showError(field);
         } else {
-            if (errorMsg) errorMsg.classList.add('hidden');
-            field.classList.remove('border-red-500');
+            hideError(field);
         }
     });
     
@@ -89,13 +114,9 @@ function validate(form) {
 
 // Clear error message when user enters data
 function clearErrorOnInput(field) {
-    const errorMsg = findErrorMessage(field);
-    if (errorMsg) {
-        const value = field.type === 'checkbox' ? field.checked : field.value.trim();
-        if (value) {
-            errorMsg.classList.add('hidden');
-            field.classList.remove('border-red-500');
-        }
+    const value = field.type === 'checkbox' ? field.checked : field.value.trim();
+    if (value) {
+        hideError(field);
     }
 }
 
@@ -123,6 +144,32 @@ function initFormValidation() {
             });
         }
     });
+}
+
+// Legacy support: find existing error-msg elements (for backwards compatibility)
+function findErrorMessage(field) {
+    // First check our map
+    if (errorMessageMap.has(field)) {
+        return errorMessageMap.get(field);
+    }
+    
+    // Look for existing .error-msg in parent containers
+    let container = field.parentElement;
+    for (let i = 0; i < 3 && container; i++) {
+        let errorMsg = container.querySelector('.error-msg');
+        if (errorMsg) {
+            errorMessageMap.set(field, errorMsg);
+            return errorMsg;
+        }
+        container = container.parentElement;
+    }
+    
+    return null;
+}
+
+// Legacy support: create error message (calls new function)
+function createErrorMessage(field) {
+    return getOrCreateErrorMessage(field);
 }
 
 // Auto-initialize when DOM is ready

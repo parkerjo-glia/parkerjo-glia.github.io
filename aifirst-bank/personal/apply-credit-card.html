@@ -60,7 +60,6 @@ base_path: /aifirst-bank
                         <option value="platinum-rewards">Platinum Rewards - Premium travel perks</option>
                         <option value="student">Student Card - Build credit history</option>
                     </select>
-                    <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                 </div>
 
                 <!-- Personal Information -->
@@ -70,35 +69,29 @@ base_path: /aifirst-bank
                         <div>
                             <label for="cc-first-name" class="block text-sm font-medium text-gray-700">First Name *</label>
                             <input type="text" id="cc-first-name" name="cc-first-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
-                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="cc-last-name" class="block text-sm font-medium text-gray-700">Last Name *</label>
                             <input type="text" id="cc-last-name" name="cc-last-name" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
-                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                         <div>
                             <label for="cc-email" class="block text-sm font-medium text-gray-700">Email *</label>
                             <input type="email" id="cc-email" name="cc-email" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
-                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="cc-phone" class="block text-sm font-medium text-gray-700">Phone *</label>
                             <input type="tel" id="cc-phone" name="cc-phone" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
-                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                     </div>
                     <div class="mt-4">
                         <label for="cc-dob" class="block text-sm font-medium text-gray-700">Date of Birth *</label>
                         <input type="date" id="cc-dob" name="cc-dob" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
-                        <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                     </div>
                     <div class="mt-4">
                         <label for="cc-ssn" class="block text-sm font-medium text-gray-700">Social Security Number *</label>
                         <input type="text" id="cc-ssn" name="cc-ssn" data-required="true" placeholder="###-##-####" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent sm_cobrowsing_masked_field sm_cobrowsing_disabled_field">
-                        <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                     </div>
                 </div>
 
@@ -109,13 +102,11 @@ base_path: /aifirst-bank
                     <div>
                         <label for="cc-address" class="block text-sm font-medium text-gray-700">Street Address *</label>
                         <input type="text" id="cc-address" name="cc-address" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
-                        <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                     </div>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
                         <div class="col-span-2">
                             <label for="cc-city" class="block text-sm font-medium text-gray-700">City *</label>
                             <input type="text" id="cc-city" name="cc-city" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
-                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="cc-state" class="block text-sm font-medium text-gray-700">State *</label>
@@ -135,12 +126,10 @@ base_path: /aifirst-bank
                                 <option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option>
                                 <option value="WI">WI</option><option value="WY">WY</option>
                             </select>
-                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="cc-zip" class="block text-sm font-medium text-gray-700">ZIP *</label>
                             <input type="text" id="cc-zip" name="cc-zip" data-required="true" pattern="[0-9]{5}" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
-                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                     </div>
                 </div>
@@ -159,12 +148,10 @@ base_path: /aifirst-bank
                                 <option value="retired">Retired</option>
                                 <option value="other">Other</option>
                             </select>
-                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                         <div>
                             <label for="cc-income" class="block text-sm font-medium text-gray-700">Annual Income ($) *</label>
                             <input type="number" id="cc-income" name="cc-income" data-required="true" min="0" placeholder="e.g., 50000" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
-                            <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                         </div>
                     </div>
                     <div class="mt-4">
@@ -175,12 +162,10 @@ base_path: /aifirst-bank
                             <option value="rent">Rent</option>
                             <option value="other">Other</option>
                         </select>
-                        <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                     </div>
                     <div class="mt-4">
                         <label for="cc-housing-payment" class="block text-sm font-medium text-gray-700">Monthly Housing Payment ($) *</label>
                         <input type="number" id="cc-housing-payment" name="cc-housing-payment" data-required="true" min="0" placeholder="e.g., 1500" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent">
-                        <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                     </div>
                 </div>
 
@@ -191,7 +176,6 @@ base_path: /aifirst-bank
                         <input type="checkbox" id="cc-terms" name="cc-terms" data-required="true" class="mt-1 h-4 w-4 text-accent border-gray-300 rounded focus:ring-accent">
                         <label for="cc-terms" class="ml-2 text-sm text-gray-600">I agree to the <a href="/aifirst-bank/terms-of-use.html" class="text-accent hover:text-accent-dark hover:underline">Terms of Use</a>, <a href="/aifirst-bank/privacy-policy.html" class="text-accent hover:text-accent-dark hover:underline">Privacy Policy</a>, and authorize a credit check. *</label>
                     </div>
-                    <p class="text-red-600 text-sm mt-1 hidden error-msg">Field is required</p>
                 </div>
 
                 <!-- Document Upload -->
