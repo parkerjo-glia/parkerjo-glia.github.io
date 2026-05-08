@@ -5,6 +5,56 @@ var defaultLanguages = [
 ];
 
 var availableLanguages = [...defaultLanguages];
+var languageDropdownOpen = false;
+
+// Toggle language dropdown open/close
+function toggleLanguageDropdown(event) {
+    if (event) {
+        event.stopPropagation();
+    }
+    var panel = document.getElementById('language-dropdown-panel');
+    var arrow = document.getElementById('language-dropdown-arrow');
+    
+    if (!panel) return;
+    
+    languageDropdownOpen = !languageDropdownOpen;
+    
+    if (languageDropdownOpen) {
+        panel.classList.remove('hidden');
+        if (arrow) arrow.classList.add('rotate-180');
+    } else {
+        panel.classList.add('hidden');
+        if (arrow) arrow.classList.remove('rotate-180');
+    }
+}
+
+// Close dropdown when clicking outside
+function closeLanguageDropdown(event) {
+    var container = document.getElementById('language-dropdown-container');
+    if (container && !container.contains(event.target) && languageDropdownOpen) {
+        languageDropdownOpen = false;
+        var panel = document.getElementById('language-dropdown-panel');
+        var arrow = document.getElementById('language-dropdown-arrow');
+        if (panel) panel.classList.add('hidden');
+        if (arrow) arrow.classList.remove('rotate-180');
+    }
+}
+
+// Initialize click handlers for language dropdown
+function initLanguageDropdown() {
+    var btn = document.getElementById('language-dropdown-btn');
+    if (btn) {
+        btn.addEventListener('click', toggleLanguageDropdown);
+    }
+    document.addEventListener('click', closeLanguageDropdown);
+}
+
+// Initialize on DOM ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLanguageDropdown);
+} else {
+    initLanguageDropdown();
+}
 
 function updateLanguageUI(name) {
     // Update desktop display
@@ -29,6 +79,13 @@ function toggleLanguage(localeKey, name) {
         updateLanguageUI(name);
         localStorage.setItem('glia_locale', localeKey);
         localStorage.setItem('glia_locale_name', name);
+        
+        // Close the dropdown after selection
+        languageDropdownOpen = false;
+        var panel = document.getElementById('language-dropdown-panel');
+        var arrow = document.getElementById('language-dropdown-arrow');
+        if (panel) panel.classList.add('hidden');
+        if (arrow) arrow.classList.remove('rotate-180');
     });
 }
 
