@@ -198,21 +198,29 @@ base_path: /aifirst-cu
 </section>
 
 <script>
-document.getElementById('account-application-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    if (validate(this)) {
-        this.classList.add('hidden');
-        document.getElementById('application-success').classList.remove('hidden');
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('account-application-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (validate(this)) {
+            this.classList.add('hidden');
+            document.getElementById('application-success').classList.remove('hidden');
+        }
+    });
+
+    // Pre-select account type from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const accountType = urlParams.get('type');
+    if (accountType) {
+        const select = document.getElementById('account-type');
+        if (select) {
+            // Find the option with matching value
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].value === accountType) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
+        }
     }
 });
-
-// Pre-select account type from URL parameter
-const urlParams = new URLSearchParams(window.location.search);
-const accountType = urlParams.get('type');
-if (accountType) {
-    const select = document.getElementById('account-type');
-    if (select) {
-        select.value = accountType;
-    }
-}
 </script>
