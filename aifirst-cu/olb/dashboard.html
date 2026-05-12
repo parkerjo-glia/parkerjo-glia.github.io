@@ -13,6 +13,22 @@ base_path: /aifirst-cu
         <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-3 mb-6">
             <p class="text-sm text-white/90 text-center">Demo Mode: Sample account data shown for demonstration purposes only.</p>
         </div>
+        
+        <!-- TEMPORARY: Glia API Test Button -->
+        <div class="bg-yellow-500/20 backdrop-blur-sm border border-yellow-400/40 rounded-xl p-4 mb-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-sm font-semibold text-yellow-200">TEMP: Glia Chat Message API Test</p>
+                    <p class="text-xs text-yellow-300/80 mt-1">PUT /engagements/{engagement_id}/chat_messages/{message_id}</p>
+                </div>
+                <button onclick="sendGliaChatMessageUpdate()" class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm">
+                    Send PUT Request
+                </button>
+            </div>
+            <div id="glia-api-response" class="mt-3 hidden">
+                <pre class="bg-black/30 rounded p-2 text-xs text-white/90 overflow-x-auto"></pre>
+            </div>
+        </div>
         <div class="flex justify-between items-center">
             <div>
                 <h1 class="text-3xl font-bold text-white">Welcome back, <span id="dashboard-username">User</span>!</h1>
@@ -89,83 +105,119 @@ base_path: /aifirst-cu
 </section>
 
 <script>
-var basePath = '/aifirst-cu';
-async function loadAccounts() {
-    try {
-        const response = await fetch('/assets/json/accounts.json');
-        const data = await response.json();
-        displayAccounts(data.accounts);
-    } catch (error) { console.error('Error loading accounts:', error); }
-}
-function displayAccounts(accounts) {
-    const container = document.getElementById('accounts-container');
-    container.innerHTML = '';
-    accounts.forEach(account => { container.appendChild(createAccountCard(account)); });
-}
-function createAccountCard(account) {
-    const card = document.createElement('div');
-    card.className = 'bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:border-primary-200 hover:shadow-xl transition duration-300';
-    const isLoan = account.balance < 0;
-    const balanceColor = isLoan ? 'text-red-600' : 'text-accent';
-    const balanceLabel = isLoan ? 'Balance Owed' : 'Available Balance';
-    card.innerHTML = `
-        <div class="flex justify-between items-start mb-4">
-            <div>
-                <h3 class="font-bold text-gray-900">${account.name}</h3>
-                <p class="text-sm text-gray-600 capitalize">${account.type.replace('_', ' ')}</p>
-                <p class="text-xs text-gray-500">${account.accountNumber}</p>
-            </div>
-            <span class="px-3 py-1 text-xs font-medium rounded-full ${account.status === 'active' ? 'bg-accent/10 text-accent' : 'bg-gray-100 text-gray-800'}">${account.status}</span>
-        </div>
-        <div class="mb-4">
-            <p class="text-sm text-gray-600">${balanceLabel}</p>
-            <p class="text-2xl font-bold ${balanceColor}">$${Math.abs(account.balance).toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
-        </div>
-        <div class="flex space-x-2">
-            <button onclick="viewAccountDetails('${account.id}')" class="flex-1 bg-accent hover:bg-accent-dark text-white py-2 px-4 rounded-full transition duration-300 text-sm font-medium shadow-md shadow-accent/25">View Details</button>
-            ${!isLoan ? `<button onclick="initiateTransfer('${account.id}')" class="flex-1 bg-gray-100 text-gray-700 py-2 px-4 rounded-full hover:bg-gray-200 transition duration-300 text-sm font-medium">Transfer</button>` : ''}
-        </div>`;
-    return card;
-}
-async function loadRecentTransactions() {
-    try {
-        const response = await fetch('/assets/json/transactions.json');
-        const data = await response.json();
-        const allTransactions = [];
-        Object.keys(data.transactions).forEach(accountId => {
-            data.transactions[accountId].forEach(transaction => { allTransactions.push({...transaction, accountId}); });
+    var currentEngagement = null;
+    var basePath = '/aifirst-cu';
+
+    // TEMPORARY: Glia Chat Message API function
+    function generateUUID() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            const r = Math.random() * 16 | 0;
+            const v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
         });
-        allTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
-        displayRecentTransactions(allTransactions.slice(0, 5));
-    } catch (error) { console.error('Error loading transactions:', error); }
-}
-function displayRecentTransactions(transactions) {
-    const container = document.getElementById('recent-transactions');
-    container.innerHTML = '';
-    transactions.forEach(transaction => {
-        const el = document.createElement('div');
-        el.className = 'flex justify-between items-center py-3 border-b border-gray-100 last:border-b-0';
-        const amountColor = transaction.amount >= 0 ? 'text-accent' : 'text-red-600';
-        const amountSign = transaction.amount >= 0 ? '+' : '';
-        el.innerHTML = `
-            <div class="flex-1">
-                <p class="font-medium text-gray-900">${transaction.description}</p>
-                <p class="text-sm text-gray-600">${new Date(transaction.date).toLocaleDateString('en-US', {year: 'numeric', month: 'short', day: 'numeric'})}</p>
+    }
+
+    async function sendGliaChatMessageUpdate() {
+        if (currentEngagement) {
+            currentEngagement.recordEvent({ message: "I clicked a button." });
+        }
+    }
+
+    async function loadAccounts() {
+        try {
+            const response = await fetch('/assets/json/accounts.json');
+            const data = await response.json();
+            displayAccounts(data.accounts);
+        } catch (error) { console.error('Error loading accounts:', error); }
+    }
+    
+    function displayAccounts(accounts) {
+        const container = document.getElementById('accounts-container');
+        container.innerHTML = '';
+        accounts.forEach(account => { container.appendChild(createAccountCard(account)); });
+    }
+    
+    function createAccountCard(account) {
+        const card = document.createElement('div');
+        card.className = 'bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:border-primary-200 hover:shadow-xl transition duration-300';
+        const isLoan = account.balance < 0;
+        const balanceColor = isLoan ? 'text-red-600' : 'text-accent';
+        const balanceLabel = isLoan ? 'Balance Owed' : 'Available Balance';
+        card.innerHTML = `
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <h3 class="font-bold text-gray-900">${account.name}</h3>
+                    <p class="text-sm text-gray-600 capitalize">${account.type.replace('_', ' ')}</p>
+                    <p class="text-xs text-gray-500">${account.accountNumber}</p>
+                </div>
+                <span class="px-3 py-1 text-xs font-medium rounded-full ${account.status === 'active' ? 'bg-accent/10 text-accent' : 'bg-gray-100 text-gray-800'}">${account.status}</span>
             </div>
-            <div class="text-right">
-                <p class="font-semibold ${amountColor}">${amountSign}$${Math.abs(transaction.amount).toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
-                <p class="text-xs text-gray-500">${transaction.category}</p>
+            <div class="mb-4">
+                <p class="text-sm text-gray-600">${balanceLabel}</p>
+                <p class="text-2xl font-bold ${balanceColor}">$${Math.abs(account.balance).toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
+            </div>
+            <div class="flex space-x-2">
+                <button onclick="viewAccountDetails('${account.id}')" class="flex-1 bg-accent hover:bg-accent-dark text-white py-2 px-4 rounded-full transition duration-300 text-sm font-medium shadow-md shadow-accent/25">View Details</button>
+                ${!isLoan ? `<button onclick="initiateTransfer('${account.id}')" class="flex-1 bg-gray-100 text-gray-700 py-2 px-4 rounded-full hover:bg-gray-200 transition duration-300 text-sm font-medium">Transfer</button>` : ''}
             </div>`;
-        container.appendChild(el);
+        return card;
+    }
+    
+    async function loadRecentTransactions() {
+        try {
+            const response = await fetch('/assets/json/transactions.json');
+            const data = await response.json();
+            const allTransactions = [];
+            Object.keys(data.transactions).forEach(accountId => {
+                data.transactions[accountId].forEach(transaction => { allTransactions.push({...transaction, accountId}); });
+            });
+            allTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
+            displayRecentTransactions(allTransactions.slice(0, 5));
+        } catch (error) { console.error('Error loading transactions:', error); }
+    }
+    
+    function displayRecentTransactions(transactions) {
+        const container = document.getElementById('recent-transactions');
+        container.innerHTML = '';
+        transactions.forEach(transaction => {
+            const el = document.createElement('div');
+            el.className = 'flex justify-between items-center py-3 border-b border-gray-100 last:border-b-0';
+            const amountColor = transaction.amount >= 0 ? 'text-accent' : 'text-red-600';
+            const amountSign = transaction.amount >= 0 ? '+' : '';
+            el.innerHTML = `
+                <div class="flex-1">
+                    <p class="font-medium text-gray-900">${transaction.description}</p>
+                    <p class="text-sm text-gray-600">${new Date(transaction.date).toLocaleDateString('en-US', {year: 'numeric', month: 'short', day: 'numeric'})}</p>
+                </div>
+                <div class="text-right">
+                    <p class="font-semibold ${amountColor}">${amountSign}$${Math.abs(transaction.amount).toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
+                    <p class="text-xs text-gray-500">${transaction.category}</p>
+                </div>`;
+            container.appendChild(el);
+        });
+    }
+    
+    function viewAccountDetails(accountId) { window.location.href = basePath + `/olb/account-details.html?id=${accountId}`; }
+    
+    function initiateTransfer(fromAccountId) { window.location.href = basePath + `/olb/transfer.html?from=${fromAccountId}`; }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const username = localStorage.getItem('username') || 'User';
+        const dashboardUsername = document.getElementById('dashboard-username');
+        if (dashboardUsername) dashboardUsername.textContent = username;
+        loadAccounts();
+        loadRecentTransactions();
     });
-}
-function viewAccountDetails(accountId) { window.location.href = basePath + `/olb/account-details.html?id=${accountId}`; }
-function initiateTransfer(fromAccountId) { window.location.href = basePath + `/olb/transfer.html?from=${fromAccountId}`; }
-document.addEventListener('DOMContentLoaded', function() {
-    const username = localStorage.getItem('username') || 'User';
-    const dashboardUsername = document.getElementById('dashboard-username');
-    if (dashboardUsername) dashboardUsername.textContent = username;
-    loadAccounts();
-    loadRecentTransactions();
-});
+
+    // Setup listeners with Glia is ready
+    window.addEventListener('glia-installed', function () {
+        sm.getApi({ version: 'v1' }).then(function (glia) {
+            glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, engagementStart);
+        });
+    });
+
+    function engagementStart(engagement) {
+        currentEngagement = engagement;
+    }
+
 </script>
