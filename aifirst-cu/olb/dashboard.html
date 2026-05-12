@@ -105,23 +105,7 @@ base_path: /aifirst-cu
 </section>
 
 <script>
-    var currentEngagement = null;
     var basePath = '/aifirst-cu';
-
-    // TEMPORARY: Glia Chat Message API function
-    function generateUUID() {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-            const r = Math.random() * 16 | 0;
-            const v = c === 'x' ? r : (r & 0x3 | 0x8);
-            return v.toString(16);
-        });
-    }
-
-    async function sendGliaChatMessageUpdate() {
-        if (currentEngagement) {
-            currentEngagement.recordEvent({ message: "I clicked a button." });
-        }
-    }
 
     async function loadAccounts() {
         try {
@@ -208,16 +192,5 @@ base_path: /aifirst-cu
         loadAccounts();
         loadRecentTransactions();
     });
-
-    // Setup listeners with Glia is ready
-    window.addEventListener('glia-installed', function () {
-        sm.getApi({ version: 'v1' }).then(function (glia) {
-            glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, engagementStart);
-        });
-    });
-
-    function engagementStart(engagement) {
-        currentEngagement = engagement;
-    }
 
 </script>
