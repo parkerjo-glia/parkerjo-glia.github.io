@@ -1,0 +1,27 @@
+# This is a demo site for Glia integration testing
+# Block all search engine crawlers to prevent indexing
+
+User-agent: *
+Disallow: /
+
+# Specifically block all Google crawlers
+User-agent: Googlebot
+Disallow: /
+
+User-agent: Googlebot-Image
+Disallow: /
+
+User-agent: Googlebot-News
+Disallow: /
+
+User-agent: Googlebot-Video
+Disallow: /
+
+User-agent: AdsBot-Google
+Disallow: /
+
+User-agent: AdsBot-Google-Mobile
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
