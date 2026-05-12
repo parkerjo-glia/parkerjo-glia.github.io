@@ -4,7 +4,7 @@
       {
         "id": "TXN017",
         "date": "2026-05-11",
-        "description": "Online Purchase - Unknown Merchant (Romania)",
+        "description": "Online Purchase - Bad Guys, Inc.",
         "amount": -847.99,
         "type": "debit",
         "category": "Potential Fraud",
