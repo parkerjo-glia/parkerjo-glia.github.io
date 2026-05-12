@@ -7,7 +7,7 @@
         "description": "Online Purchase - Bad Guys, Inc.",
         "amount": -847.99,
         "type": "debit",
-        "category": "Potential Fraud",
+        "category": "Online Gaming",
         "balance": 1999.64,
         "flagged": true
       },
