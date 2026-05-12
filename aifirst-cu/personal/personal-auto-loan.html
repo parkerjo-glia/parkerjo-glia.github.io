@@ -354,6 +354,13 @@ base_path: /aifirst-cu
                         <input type="number" id="al-down-payment" name="al-down-payment" class="mt-1 block w-full px-4 py-3 border border-gray-200 rounded-xl shadow-sm focus:ring-accent focus:border-accent" placeholder="e.g., 5000">
                     </div>
                 </div>
+                <!-- Document Upload -->
+                <div>
+                    <label for="al-documents" class="block text-sm font-medium text-gray-700">Supporting Documents</label>
+                    <p class="text-xs text-gray-500 mt-1 mb-2">Demo purposes only - do not upload sensitive or real documents. Files are not stored.</p>
+                    <input type="file" id="al-documents" name="al-documents" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" class="mt-1 block w-full px-4 py-3 border border-gray-200 rounded-xl shadow-sm focus:ring-accent focus:border-accent file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-medium file:bg-accent/10 file:text-accent hover:file:bg-accent/20 sm_cobrowsing_hidden_field">
+                    <p class="text-xs text-gray-500 mt-1">Accepted formats: PDF, JPG, PNG, DOC, DOCX. Multiple files allowed.</p>
+                </div>
                 <!-- Demo Notice -->
                 <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
                     <p class="text-sm text-amber-800 text-center flex items-center justify-center gap-2">
