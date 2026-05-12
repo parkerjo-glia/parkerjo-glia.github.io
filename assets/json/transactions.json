@@ -2,8 +2,18 @@
   "transactions": {
     "CHK001": [
       {
+        "id": "TXN017",
+        "date": "2026-05-11",
+        "description": "Online Purchase - Unknown Merchant (Romania)",
+        "amount": -847.99,
+        "type": "debit",
+        "category": "Potential Fraud",
+        "balance": 1999.64,
+        "flagged": true
+      },
+      {
         "id": "TXN001",
-        "date": "2024-12-29",
+        "date": "2026-05-12",
         "description": "Direct Deposit - Salary",
         "amount": 3250.00,
         "type": "credit",
@@ -12,7 +22,7 @@
       },
       {
         "id": "TXN002",
-        "date": "2024-12-28",
+        "date": "2026-05-10",
         "description": "Grocery Store Purchase",
         "amount": -127.45,
         "type": "debit",
@@ -21,7 +31,7 @@
       },
       {
         "id": "TXN003",
-        "date": "2024-12-27",
+        "date": "2026-05-08",
         "description": "Online Transfer to Savings",
         "amount": -500.00,
         "type": "transfer",
@@ -30,7 +40,7 @@
       },
       {
         "id": "TXN004",
-        "date": "2024-12-26",
+        "date": "2026-05-05",
         "description": "Gas Station",
         "amount": -65.23,
         "type": "debit",
@@ -39,7 +49,7 @@
       },
       {
         "id": "TXN005",
-        "date": "2024-12-25",
+        "date": "2026-05-02",
         "description": "Restaurant",
         "amount": -89.67,
         "type": "debit",
@@ -50,7 +60,7 @@
     "SAV001": [
       {
         "id": "TXN006",
-        "date": "2024-12-27",
+        "date": "2026-05-08",
         "description": "Transfer from Checking",
         "amount": 500.00,
         "type": "credit",
@@ -59,7 +69,7 @@
       },
       {
         "id": "TXN007",
-        "date": "2024-12-01",
+        "date": "2026-05-01",
         "description": "Monthly Interest Payment",
         "amount": 54.73,
         "type": "credit",
@@ -68,7 +78,7 @@
       },
       {
         "id": "TXN008",
-        "date": "2024-11-15",
+        "date": "2026-04-15",
         "description": "Automatic Savings Deposit",
         "amount": 1000.00,
         "type": "credit",
@@ -79,7 +89,7 @@
     "CD001": [
       {
         "id": "TXN009",
-        "date": "2024-12-01",
+        "date": "2026-05-01",
         "description": "Monthly Interest Accrual",
         "amount": 42.92,
         "type": "credit",
@@ -88,7 +98,7 @@
       },
       {
         "id": "TXN010",
-        "date": "2024-01-15",
+        "date": "2026-01-15",
         "description": "Initial Deposit",
         "amount": 10000.00,
         "type": "credit",
@@ -99,7 +109,7 @@
     "MTG001": [
       {
         "id": "TXN011",
-        "date": "2025-01-01",
+        "date": "2026-05-01",
         "description": "Monthly Mortgage Payment",
         "amount": -1847.23,
         "type": "payment",
@@ -108,7 +118,7 @@
       },
       {
         "id": "TXN012",
-        "date": "2024-12-01",
+        "date": "2026-04-01",
         "description": "Monthly Mortgage Payment",
         "amount": -1847.23,
         "type": "payment",
@@ -119,7 +129,7 @@
     "AUTO001": [
       {
         "id": "TXN013",
-        "date": "2025-01-01",
+        "date": "2026-05-01",
         "description": "Monthly Auto Loan Payment",
         "amount": -485.67,
         "type": "payment",
@@ -128,7 +138,7 @@
       },
       {
         "id": "TXN014",
-        "date": "2024-12-01",
+        "date": "2026-04-01",
         "description": "Monthly Auto Loan Payment",
         "amount": -485.67,
         "type": "payment",
@@ -139,7 +149,7 @@
     "HELOC001": [
       {
         "id": "TXN015",
-        "date": "2024-12-15",
+        "date": "2026-04-28",
         "description": "Home Improvement Purchase",
         "amount": -2500.00,
         "type": "advance",
@@ -148,7 +158,7 @@
       },
       {
         "id": "TXN016",
-        "date": "2024-11-20",
+        "date": "2026-04-15",
         "description": "Home Improvement Purchase",
         "amount": -2750.00,
         "type": "advance",
