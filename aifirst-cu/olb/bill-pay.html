@@ -242,7 +242,7 @@ function populateAccountSelects() {
     const paymentAccountSelect = document.getElementById('payment-account');
     paymentAccountSelect.innerHTML = '<option value="">Select account</option>';
     accounts.forEach(account => {
-        paymentAccountSelect.innerHTML += `<option value="${account.id}">${account.name} - ${account.balance.toLocaleString('en-US', {minimumFractionDigits: 2})}</option>`;
+        paymentAccountSelect.innerHTML += `<option value="${account.id}">${account.name} - $${account.balance.toLocaleString('en-US', {minimumFractionDigits: 2})}</option>`;
     });
 }
 
@@ -274,7 +274,7 @@ function displayRecentPayments() {
                 <p class="text-xs text-gray-500">${payment.account}</p>
             </div>
             <div class="text-right">
-                <p class="font-semibold text-gray-900">${payment.amount.toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
+                <p class="font-semibold text-gray-900">$${payment.amount.toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${payment.status === 'completed' ? 'bg-accent/10 text-accent' : 'bg-yellow-100 text-yellow-800'}">${payment.status}</span>
             </div>
         </div>
@@ -292,7 +292,7 @@ function displayScheduledPayments() {
                 <p class="text-xs text-gray-500">${payment.account} • ${payment.frequency}</p>
             </div>
             <div class="text-right">
-                <p class="font-semibold text-gray-900">${payment.amount.toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
+                <p class="font-semibold text-gray-900">$${payment.amount.toLocaleString('en-US', {minimumFractionDigits: 2})}</p>
                 <div class="flex space-x-2 mt-2">
                     <button class="text-accent hover:text-accent-dark text-sm font-medium">Edit</button>
                     <button class="text-red-600 hover:text-red-700 text-sm font-medium">Cancel</button>
@@ -339,7 +339,7 @@ function updatePaymentAccountBalance() {
     const balanceDiv = document.getElementById('payment-account-balance');
     if (accountId) {
         const account = accounts.find(acc => acc.id === accountId);
-        if (account) { balanceDiv.textContent = `Available balance: ${account.balance.toLocaleString('en-US', {minimumFractionDigits: 2})}`; balanceDiv.classList.remove('hidden'); }
+        if (account) { balanceDiv.textContent = `Available balance: $${account.balance.toLocaleString('en-US', {minimumFractionDigits: 2})}`; balanceDiv.classList.remove('hidden'); }
     } else { balanceDiv.textContent = ''; balanceDiv.classList.add('hidden'); }
 }
 

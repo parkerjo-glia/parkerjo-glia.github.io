@@ -205,7 +205,7 @@ function populateAccountSelects() {
     fromSelect.innerHTML = '<option value="">Select account to transfer from</option>';
     toSelect.innerHTML = '<option value="">Select account to transfer to</option>';
     accounts.forEach(account => {
-        const option = `<option value="${account.id}">${account.name} - ${account.balance.toLocaleString('en-US', {minimumFractionDigits: 2})}</option>`;
+        const option = `<option value="${account.id}">${account.name} - $${account.balance.toLocaleString('en-US', {minimumFractionDigits: 2})}</option>`;
         fromSelect.innerHTML += option;
         toSelect.innerHTML += option;
     });
@@ -217,7 +217,7 @@ function updateFromAccountBalance() {
     if (fromAccountId) {
         const account = accounts.find(acc => acc.id === fromAccountId);
         if (account) {
-            balanceDiv.textContent = `Available balance: ${account.balance.toLocaleString('en-US', {minimumFractionDigits: 2})}`;
+            balanceDiv.textContent = `Available balance: $${account.balance.toLocaleString('en-US', {minimumFractionDigits: 2})}`;
             balanceDiv.classList.remove('hidden');
         }
     } else {
@@ -233,7 +233,7 @@ function updateToAccountOptions() {
     toSelect.innerHTML = '<option value="">Select account to transfer to</option>';
     accounts.forEach(account => {
         if (account.id !== fromAccountId) {
-            toSelect.innerHTML += `<option value="${account.id}">${account.name} - ${account.balance.toLocaleString('en-US', {minimumFractionDigits: 2})}</option>`;
+            toSelect.innerHTML += `<option value="${account.id}">${account.name} - $${account.balance.toLocaleString('en-US', {minimumFractionDigits: 2})}</option>`;
         }
     });
 }
@@ -297,7 +297,7 @@ function updateTransferSummary() {
         if (toText) {
             document.getElementById('summary-from').textContent = fromAccount.name;
             document.getElementById('summary-to').textContent = toText;
-            document.getElementById('summary-amount').textContent = `${parseFloat(amount).toLocaleString('en-US', {minimumFractionDigits: 2})}`;
+            document.getElementById('summary-amount').textContent = `$${parseFloat(amount).toLocaleString('en-US', {minimumFractionDigits: 2})}`;
             let whenText = 'Immediately';
             if (when === 'scheduled' && scheduleDate) {
                 whenText = new Date(scheduleDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
