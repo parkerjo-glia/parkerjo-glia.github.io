@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Change of Address Form - AI First Bank</title>
+    <title>Change of Address Form - AI First Credit Union (Sample)</title>
     <style>
         * {
             margin: 0;
@@ -57,13 +57,13 @@
             height: 50px;
         }
         
-        .bank-name {
+        .cu-name {
             font-size: 24pt;
             font-weight: bold;
             color: #1e3a5f;
         }
         
-        .bank-tagline {
+        .cu-tagline {
             font-size: 9pt;
             color: #666;
         }
@@ -81,6 +81,18 @@
         .form-number {
             font-size: 9pt;
             color: #666;
+        }
+        
+        /* Sample Banner */
+        .sample-banner {
+            background: #dc2626;
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-weight: bold;
+            font-size: 12pt;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
         }
         
         /* Instructions */
@@ -159,6 +171,17 @@
             background: transparent;
         }
         
+        .field-value {
+            border: none;
+            border-bottom: 1px solid #333;
+            width: 100%;
+            padding: 4px 0;
+            font-size: 11pt;
+            background: transparent;
+            color: #1a1a1a;
+            font-family: 'Courier New', monospace;
+        }
+        
         .field-box {
             border: 1px solid #333;
             min-height: 24px;
@@ -184,6 +207,17 @@
             height: 14px;
             border: 1px solid #333;
             display: inline-block;
+            position: relative;
+        }
+        
+        .checkbox-box.checked::after {
+            content: "✓";
+            position: absolute;
+            top: -3px;
+            left: 1px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #1e3a5f;
         }
         
         /* Address Block */
@@ -222,6 +256,25 @@
             border-bottom: 1px solid #333;
             height: 30px;
             margin-bottom: 5px;
+            position: relative;
+        }
+        
+        .signature-text {
+            font-family: 'Brush Script MT', 'Segoe Script', cursive;
+            font-size: 18pt;
+            color: #1a1a1a;
+            position: absolute;
+            bottom: 2px;
+            left: 5px;
+        }
+        
+        .date-text {
+            font-family: 'Courier New', monospace;
+            font-size: 11pt;
+            color: #1a1a1a;
+            position: absolute;
+            bottom: 2px;
+            left: 5px;
         }
         
         .signature-label {
@@ -277,13 +330,16 @@
     <button class="print-btn no-print" onclick="window.print()">Print Form</button>
     
     <div class="form-container">
+        <!-- Sample Banner -->
+        <div class="sample-banner">★ SAMPLE - FOR DEMONSTRATION PURPOSES ONLY ★</div>
+        
         <!-- Header -->
         <div class="header">
             <div class="logo-section">
-                <img src="/assets/images/bank-logo.png" alt="AI First Bank Logo">
+                <img src="{{ site.base_bank_path }}/assets/images/logo.png" alt="AI First Credit Union Logo">
                 <div>
-                    <div class="bank-name">AI First Bank</div>
-                    <div class="bank-tagline">Banking Made Intelligent</div>
+                    <div class="cu-name">AI First Credit Union</div>
+                    <div class="cu-tagline">Member-Owned. Community-Focused.</div>
                 </div>
             </div>
             <div class="form-title">
@@ -303,57 +359,57 @@
             </ul>
         </div>
         
-        <!-- Section 1: Account Information -->
+        <!-- Section 1: Member Account Information -->
         <div class="section">
-            <div class="section-header">Section 1: Account Information</div>
+            <div class="section-header">Section 1: Member Account Information</div>
             <div class="section-content">
                 <div class="field-row">
                     <div class="field">
-                        <label>Primary Account Number</label>
-                        <div class="field-input"></div>
+                        <label>Member Number</label>
+                        <div class="field-value">4821-7734-5590</div>
                     </div>
                     <div class="field">
                         <label>Additional Account Number(s)</label>
-                        <div class="field-input"></div>
+                        <div class="field-value">4821-7734-5591 (Share Savings)</div>
                     </div>
                 </div>
                 <div class="field-row">
                     <div class="field">
                         <label>Social Security Number (Last 4 digits)</label>
-                        <div class="field-input" style="width: 100px;"></div>
+                        <div class="field-value" style="width: 100px;">XXX-XX-4827</div>
                     </div>
                     <div class="field">
                         <label>Date of Birth (MM/DD/YYYY)</label>
-                        <div class="field-input"></div>
+                        <div class="field-value">03/15/1985</div>
                     </div>
                     <div class="field">
                         <label>Daytime Phone Number</label>
-                        <div class="field-input"></div>
+                        <div class="field-value">(212) 555-0147</div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Section 2: Account Holder Information -->
+        <!-- Section 2: Member Information -->
         <div class="section">
-            <div class="section-header">Section 2: Account Holder Information</div>
+            <div class="section-header">Section 2: Member Information</div>
             <div class="section-content">
                 <div class="field-row">
                     <div class="field">
-                        <label>Primary Account Holder - Full Legal Name</label>
-                        <div class="field-input"></div>
+                        <label>Primary Member - Full Legal Name</label>
+                        <div class="field-value">Jennifer Marie Thompson</div>
                     </div>
                 </div>
                 <div class="field-row">
                     <div class="field">
-                        <label>Joint Account Holder - Full Legal Name (if applicable)</label>
-                        <div class="field-input"></div>
+                        <label>Joint Member - Full Legal Name (if applicable)</label>
+                        <div class="field-value">Michael Robert Thompson</div>
                     </div>
                 </div>
                 <div class="field-row">
                     <div class="field">
                         <label>Email Address</label>
-                        <div class="field-input"></div>
+                        <div class="field-value">jennifer.thompson@email.com</div>
                     </div>
                 </div>
             </div>
@@ -367,25 +423,25 @@
                     <div class="field-row">
                         <div class="field large">
                             <label>Street Address</label>
-                            <div class="field-input"></div>
+                            <div class="field-value">742 Maple Street</div>
                         </div>
                         <div class="field small">
                             <label>Apt/Suite/Unit</label>
-                            <div class="field-input"></div>
+                            <div class="field-value">Apt 3B</div>
                         </div>
                     </div>
                     <div class="field-row">
                         <div class="field large">
                             <label>City</label>
-                            <div class="field-input"></div>
+                            <div class="field-value">Brooklyn</div>
                         </div>
                         <div class="field small">
                             <label>State</label>
-                            <div class="field-input"></div>
+                            <div class="field-value">NY</div>
                         </div>
                         <div class="field small">
                             <label>ZIP Code</label>
-                            <div class="field-input"></div>
+                            <div class="field-value">11201</div>
                         </div>
                     </div>
                 </div>
@@ -401,37 +457,37 @@
                     <div class="field-row">
                         <div class="field large">
                             <label>Street Address</label>
-                            <div class="field-input"></div>
+                            <div class="field-value">1285 Park Avenue</div>
                         </div>
                         <div class="field small">
                             <label>Apt/Suite/Unit</label>
-                            <div class="field-input"></div>
+                            <div class="field-value">Unit 12F</div>
                         </div>
                     </div>
                     <div class="field-row">
                         <div class="field large">
                             <label>City</label>
-                            <div class="field-input"></div>
+                            <div class="field-value">Manhattan</div>
                         </div>
                         <div class="field small">
                             <label>State</label>
-                            <div class="field-input"></div>
+                            <div class="field-value">NY</div>
                         </div>
                         <div class="field small">
                             <label>ZIP Code</label>
-                            <div class="field-input"></div>
+                            <div class="field-value">10128</div>
                         </div>
                     </div>
                     <div class="field-row">
                         <div class="field small">
                             <label>Effective Date (MM/DD/YYYY)</label>
-                            <div class="field-input"></div>
+                            <div class="field-value">05/01/2024</div>
                         </div>
                         <div class="field">
                             <label>Is this a permanent or temporary change?</label>
                             <div class="checkbox-group" style="margin-top: 5px;">
                                 <div class="checkbox-item">
-                                    <span class="checkbox-box"></span>
+                                    <span class="checkbox-box checked"></span>
                                     <span>Permanent</span>
                                 </div>
                                 <div class="checkbox-item">
@@ -452,16 +508,16 @@
                 <p style="margin-bottom: 10px; font-size: 10pt;">Please indicate which accounts/services should be updated with the new address:</p>
                 <div class="checkbox-group">
                     <div class="checkbox-item">
-                        <span class="checkbox-box"></span>
+                        <span class="checkbox-box checked"></span>
                         <span>All Accounts</span>
                     </div>
                     <div class="checkbox-item">
                         <span class="checkbox-box"></span>
-                        <span>Checking Account(s)</span>
+                        <span>Share/Savings Account(s)</span>
                     </div>
                     <div class="checkbox-item">
                         <span class="checkbox-box"></span>
-                        <span>Savings Account(s)</span>
+                        <span>Share Draft/Checking Account(s)</span>
                     </div>
                     <div class="checkbox-item">
                         <span class="checkbox-box"></span>
@@ -484,29 +540,37 @@
             <div class="section-header">Section 6: Authorization & Signature</div>
             <div class="section-content">
                 <p style="font-size: 9pt; margin-bottom: 15px;">
-                    I/We hereby request that AI First Bank update the address on file for the account(s) listed above. 
-                    I/We certify that the information provided is true and accurate. I/We understand that AI First Bank 
+                    I/We hereby request that AI First Credit Union update the address on file for the account(s) listed above. 
+                    I/We certify that the information provided is true and accurate. I/We understand that AI First Credit Union 
                     may verify this information and that providing false information may result in account closure.
                 </p>
                 
                 <div class="signature-row">
                     <div class="signature-field">
-                        <div class="signature-line"></div>
-                        <div class="signature-label">Primary Account Holder Signature</div>
+                        <div class="signature-line">
+                            <span class="signature-text">Jennifer M. Thompson</span>
+                        </div>
+                        <div class="signature-label">Primary Member Signature</div>
                     </div>
                     <div class="signature-field" style="flex: 0.4;">
-                        <div class="signature-line"></div>
+                        <div class="signature-line">
+                            <span class="date-text">04/15/2024</span>
+                        </div>
                         <div class="signature-label">Date</div>
                     </div>
                 </div>
                 
                 <div class="signature-row">
                     <div class="signature-field">
-                        <div class="signature-line"></div>
-                        <div class="signature-label">Joint Account Holder Signature (if applicable)</div>
+                        <div class="signature-line">
+                            <span class="signature-text">Michael R. Thompson</span>
+                        </div>
+                        <div class="signature-label">Joint Member Signature (if applicable)</div>
                     </div>
                     <div class="signature-field" style="flex: 0.4;">
-                        <div class="signature-line"></div>
+                        <div class="signature-line">
+                            <span class="date-text">04/15/2024</span>
+                        </div>
                         <div class="signature-label">Date</div>
                     </div>
                 </div>
@@ -517,19 +581,19 @@
         <div class="footer">
             <div class="footer-content">
                 <div>
-                    <strong>Questions?</strong> Call us at 1-800-555-BANK (2265)<br>
-                    Visit us online at www.aifirstbank.com
+                    <strong>Questions?</strong> Call us at 1-800-555-CUHELP (284357)<br>
+                    Visit us online at www.aifirstcu.com
                 </div>
                 <div style="text-align: right;">
-                    <strong>For Bank Use Only</strong><br>
+                    <strong>For Credit Union Use Only</strong><br>
                     Processed by: _____________ Date: _________
                 </div>
             </div>
             
             <div class="mailing-address">
                 <strong>Mail completed form to:</strong><br>
-                AI First Bank<br>
-                Attn: Account Services<br>
+                AI First Credit Union<br>
+                Attn: Member Services<br>
                 30 West 21st St<br>
                 New York, NY 10010
             </div>
