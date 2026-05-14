@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Glia demo site for integration testing. Not a real financial institution.">
     <meta name="google-site-verification" content="AiR11pkGBnm5APUixlIcuCTDI4kgN0ZlW20IEJUsENQ" />
-    <title>{% if page.site_type == 'bank' %}AI First Bank{% else %}AI First Credit Union{% endif %} - a Glia Demo</title>
+    <title>AI First Bank - a Glia Demo</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="{{ site.base_bank_path }}/assets/images/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -58,11 +58,11 @@
     <!-- Bootstrap CSS (required for modal styling) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Glia scripts - order matters: site-selector must load before installer -->
-    <script src="{{ '/assets/scripts/glia-site-selector.js?v=' | append: site.github.build_revision | relative_url }}"></script>
-    <script src="{{ '/assets/scripts/glia-installer.js?v=' | append: site.github.build_revision | relative_url }}"></script>
-    <script src="{{ '/assets/scripts/language-toggle.js?v=' | append: site.github.build_revision | relative_url }}"></script>
-    <script src="{{ '/assets/scripts/form-validation.js?v=' | append: site.github.build_revision | relative_url }}"></script>
-    <script src="{{ '/assets/scripts/session-manager.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script src="{{ site.base_bank_path | append: '/assets/scripts/glia-site-selector.js?v=' | append: site.github.build_revision }}"></script>
+    <script src="{{ site.base_bank_path | append: '/assets/scripts/glia-installer.js?v=' | append: site.github.build_revision }}"></script>
+    <script src="{{ site.base_bank_path | append: '/assets/scripts/language-toggle.js?v=' | append: site.github.build_revision }}"></script>
+    <script src="{{ site.base_bank_path | append: '/assets/scripts/form-validation.js?v=' | append: site.github.build_revision }}"></script>
+    <script src="{{ site.base_bank_path | append: '/assets/scripts/session-manager.js?v=' | append: site.github.build_revision }}"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         
@@ -104,19 +104,12 @@
 </head>
 
 <body class="bg-white text-gray-800 antialiased">
-    {% assign base_path = page.base_path | default: '' %}
-    {% assign site_name = 'AI First CU' %}
-    {% assign site_name_full = 'AI First Credit Union' %}
-    {% assign join_text = 'Join Today' %}
-    {% assign join_link = base_path | append: '/join.html' %}
-    {% assign logo_image = '/assets/images/logo.png' %}
-    {% if page.site_type == 'bank' %}
+    {% assign base_path = site.base_bank_path %}
     {% assign site_name = 'AI First Bank' %}
     {% assign site_name_full = 'AI First Bank' %}
     {% assign join_text = 'Open Account' %}
-    {% assign join_link = base_path | append: '/open-account.html' %}
-    {% assign logo_image = '/assets/images/bank-logo.png' %}
-    {% endif %}
+    {% assign join_link = site.base_bank_path | append: '/open-account.html' %}
+    {% assign logo_image = site.base_bank_path | append: '/assets/images/bank-logo.png' %}
 
     <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
@@ -129,17 +122,8 @@
                         <span class="text-xs text-gray-400 font-medium">a Glia Demo</span>
                     </div>
                 </a>
-                <div class="hidden md:block text-xs text-gray-400 mt-1 space-y-0.5">
-                    <div>
-                        {% if page.site_type == 'bank' %}
-                        <a href="/aifirst-cu/index.html" class="hover:text-primary-600 transition">→ AI First Credit Union</a>
-                        {% else %}
-                        <a href="/aifirst-bank/index.html" class="hover:text-primary-600 transition">→ AI First Bank</a>
-                        {% endif %}
-                    </div>
-                    <div>
-                        <a href="#" id="header-change-glia-site-link" class="hover:text-primary-600 transition" onclick="openSiteSelectorModal(event)">→ <span id="header-glia-site-display">...</span></a>
-                    </div>
+                <div class="hidden md:block text-xs text-gray-400 mt-1">
+                    <a href="#" id="header-change-glia-site-link" class="hover:text-primary-600 transition" onclick="openSiteSelectorModal(event)">→ <span id="header-glia-site-display">...</span></a>
                 </div>
             </div>
             
@@ -409,19 +393,7 @@
                         Get Cobrowse Code
                     </button>
                     <div class="mt-6 pt-6 border-t border-gray-700/50">
-                        <p class="text-xs text-gray-500 mb-2">Switch demo site:</p>
-                        {% if page.site_type == 'bank' %}
-                        <a href="/aifirst-cu/index.html" class="text-sm text-gray-400 hover:text-white transition duration-300 flex items-center gap-1">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-                            AI First Credit Union
-                        </a>
-                        {% else %}
-                        <a href="/aifirst-bank/index.html" class="text-sm text-gray-400 hover:text-white transition duration-300 flex items-center gap-1">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-                            AI First Bank
-                        </a>
-                        {% endif %}
-                        <p class="text-xs text-gray-500 mt-4 mb-2">Switch Glia site:</p>
+                        <p class="text-xs text-gray-500 mb-2">Switch Glia site:</p>
                         <a href="#" id="change-glia-site-link" class="text-sm text-gray-400 hover:text-white transition duration-300 flex items-center gap-1" onclick="openSiteSelectorModal(event)">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                             <span id="current-glia-site-display">Loading...</span>

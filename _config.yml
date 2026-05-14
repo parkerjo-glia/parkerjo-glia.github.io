@@ -27,6 +27,11 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://parkerjo-glia.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 show_downloads: false
 
+# Site-specific base paths
+# Change to "" when deploying to separate domains
+base_cu_path: "/aifirst-cu"
+base_bank_path: "/aifirst-bank"
+
 # Build settings
 # remote_theme: pages-themes/hacker@v0.2.0
 plugins:
