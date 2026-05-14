@@ -18,7 +18,7 @@ window.gliaDemo.sites = [
 ];
 
 function loadSiteSelector() {
-    fetch('/assets/site-selector-modal.html')
+    fetch(siteBasePath + '/assets/site-selector-modal.html')
         .then(response => response.text())
         .then(html => {
             document.body.insertAdjacentHTML('beforeend', html);
@@ -324,4 +324,5 @@ function init() {
     });
 }
 
+// Self-initialize using global siteBasePath set by layout
 init();
