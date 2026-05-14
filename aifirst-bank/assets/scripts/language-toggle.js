@@ -4,6 +4,20 @@ var defaultLanguages = [
     { localeKey: 'es-MX', name: 'Español', id: "spanishLocale" }
 ];
 
+// Custom locales configuration (embedded to avoid fetch/path issues)
+var customLocalesConfig = {
+    sites: [
+        {
+            siteId: "d3a89556-35b6-4c09-a6ac-d86212581dfc",
+            custom_locales: [ { locale_key: "en-PARK", locale_name: "Parker English" } ]
+        },
+        {
+            siteId: "70436271-1338-4b36-b07f-8d1c9f3d6d33",
+            custom_locales: [ { locale_key: "en-PARK", locale_name: "Parker English" } ]
+        }
+    ]
+};
+
 var availableLanguages = [...defaultLanguages];
 var languageDropdownOpen = false;
 
@@ -150,56 +164,40 @@ function buildLanguageDropdowns() {
 function fetchCustomLocales(api) {
     var siteId = api.getSiteId();
     
-    fetch('/assets/json/custom_locales.json')
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error('Failed to load custom_locales.json');
-            }
-            return response.json();
-        })
-        .then(function(data) {
-            // Find matching site config or use default
-            var siteConfig = data.sites.find(function(site) {
-                return site.siteId === siteId;
-            });
-            
-            // Fall back to default if no match
-            if (!siteConfig) {
-                siteConfig = data.sites.find(function(site) {
-                    return site.siteId === 'default';
-                });
-            }
-            
-            // If we found a config, use its locales
-            if (siteConfig && siteConfig.custom_locales) {
-                var customLocales = siteConfig.custom_locales.map(function(locale) {
-                    return {
-                        localeKey: locale.locale_key,
-                        name: locale.locale_name,
-                        id: locale.locale_name.toLowerCase().replace(/\s/g, '') + 'Locale'
-                    };
-                });
-                
-                // Filter out en-US and es-MX from custom locales (we'll add defaults first)
-                var additionalLocales = customLocales.filter(function(locale) {
-                    return locale.localeKey !== 'en-US' && locale.localeKey !== 'es-MX';
-                });
-                
-                // Always start with English and Spanish, then add any additional locales
-                availableLanguages = [...defaultLanguages, ...additionalLocales];
-            }
-            
-            // Build dropdowns with the loaded languages
-            buildLanguageDropdowns();
-            restoreStoredLocale(api);
-        })
-        .catch(function(error) {
-            console.warn('Could not load custom locales, using defaults:', error);
-            // Use default languages on error
-            availableLanguages = [...defaultLanguages];
-            buildLanguageDropdowns();
-            restoreStoredLocale(api);
+    // Find matching site config or use default
+    var siteConfig = customLocalesConfig.sites.find(function(site) {
+        return site.siteId === siteId;
+    });
+    
+    // Fall back to default if no match
+    if (!siteConfig) {
+        siteConfig = customLocalesConfig.sites.find(function(site) {
+            return site.siteId === 'default';
         });
+    }
+    
+    // If we found a config, use its locales
+    if (siteConfig && siteConfig.custom_locales) {
+        var customLocales = siteConfig.custom_locales.map(function(locale) {
+            return {
+                localeKey: locale.locale_key,
+                name: locale.locale_name,
+                id: locale.locale_name.toLowerCase().replace(/\s/g, '') + 'Locale'
+            };
+        });
+        
+        // Filter out en-US and es-MX from custom locales (we'll add defaults first)
+        var additionalLocales = customLocales.filter(function(locale) {
+            return locale.localeKey !== 'en-US' && locale.localeKey !== 'es-MX';
+        });
+        
+        // Always start with English and Spanish, then add any additional locales
+        availableLanguages = [...defaultLanguages, ...additionalLocales];
+    }
+    
+    // Build dropdowns with the loaded languages
+    buildLanguageDropdowns();
+    restoreStoredLocale(api);
 }
 
 function restoreStoredLocale(api) {
