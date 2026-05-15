@@ -1,0 +1,66 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Copy shared assets to bank
+        run: |
+          cp -r _site/assets/scripts _site/aifirst-bank/assets/
+          cp -r _site/assets/forms _site/aifirst-bank/assets/
+          cp -r _site/assets/json _site/aifirst-bank/assets/
+          cp _site/assets/site-selector-modal.html _site/aifirst-bank/assets/
+          cp _site/assets/images/* _site/aifirst-bank/assets/images/
+
+      - name: Copy shared assets to CU
+        run: |
+          cp -r _site/assets/scripts _site/aifirst-cu/assets/
+          cp -r _site/assets/forms _site/aifirst-cu/assets/
+          cp -r _site/assets/json _site/aifirst-cu/assets/
+          cp _site/assets/site-selector-modal.html _site/aifirst-cu/assets/
+          cp _site/assets/images/* _site/aifirst-cu/assets/images/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
