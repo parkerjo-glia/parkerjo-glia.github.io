@@ -77,7 +77,9 @@ function loadGliaAfterAuth() {
         customAttributes: { }
     };
 
-    if (localStorage.getItem("useDirectId")) {
+    var useDirectId = localStorage.getItem("useDirectId") === "true";
+
+    if (useDirectId) {
         var idToken;
         var xhr = new XMLHttpRequest();
 

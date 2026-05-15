@@ -74,10 +74,12 @@ function loadGliaAfterAuth() {
     var authVisitorInfo = {
         externalId: "123456789",
         phone: "915-555-5555",
-        customAttributes: { }
+        customAttributes: {}
     };
 
-    if (localStorage.getItem("useDirectId")) {
+    var useDirectId = localStorage.getItem("useDirectId") === "true";
+
+    if (useDirectId) {
         var idToken;
         var xhr = new XMLHttpRequest();
 
@@ -133,7 +135,7 @@ function postGliaInstalled(glia) {
 }
 
 function logout() {
-    
+
     localStorage.removeItem('loggingStatus');
     localStorage.removeItem('username');
     localStorage.removeItem('useDirectId');
