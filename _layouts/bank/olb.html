@@ -55,9 +55,19 @@
     <link rel="icon" type="image/png" href="{{ site.base_bank_path }}/assets/images/favicon.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        .card-hover { transition: all 0.3s ease; }
-        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 
@@ -191,6 +201,7 @@
 
     <script>
         var basePath = '{{ base_path }}';
+
         function checkSessionExpiration() {
             if (localStorage.getItem('loggingStatus') !== 'true') {
                 window.location.href = basePath + '/login.html';
@@ -202,6 +213,7 @@
             if (timeUntilExpiry <= 0) { clearSession(); window.location.href = basePath + '/login.html'; return; }
             if (timeUntilExpiry <= 60000) showSessionWarningModal();
         }
+
         document.addEventListener('DOMContentLoaded', function () {
             checkSessionExpiration();
             var username = localStorage.getItem('username') || 'User';
@@ -222,6 +234,7 @@
             var mobileMenu = document.getElementById('olb-mobile-menu');
             if (mobileMenuBtn && mobileMenu) mobileMenuBtn.addEventListener('click', function () { mobileMenu.classList.toggle('hidden'); });
         });
+        
     </script>
 </body>
 

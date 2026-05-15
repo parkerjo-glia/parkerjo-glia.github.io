@@ -3,6 +3,7 @@
 function clearSession() {
     localStorage.removeItem('loggingStatus');
     localStorage.removeItem('username');
+    localStorage.removeItem('useDirectId');
     localStorage.removeItem('sessionExpiration');
 }
 

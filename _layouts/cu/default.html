@@ -67,37 +67,38 @@
     <script src="{{ site.base_cu_path | append: '/assets/scripts/session-manager.js?v=' | append: site.github.build_revision }}"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        
+
         body {
             font-family: 'Inter', system-ui, sans-serif;
         }
-        
+
         /* Consistent icon styling - outline style */
         .icon-outline {
             stroke-width: 1.5;
             fill: none;
         }
-        
+
         /* Premium gradient overlays */
         .gradient-overlay {
             background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(37, 99, 235, 0.9) 50%, rgba(16, 185, 129, 0.85) 100%);
         }
-        
+
         /* Subtle pattern for sections */
         .pattern-dots {
             background-image: radial-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px);
             background-size: 20px 20px;
         }
-        
+
         /* Card hover effects */
         .card-hover {
             transition: all 0.3s ease;
         }
+
         .card-hover:hover {
             transform: translateY(-4px);
             box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
         }
-        
+
         /* Smooth scroll */
         html {
             scroll-behavior: smooth;
@@ -128,7 +129,7 @@
                     <a href="#" id="header-change-glia-site-link" class="hover:text-primary-600 transition" onclick="openSiteSelectorModal(event)">→ <span id="header-glia-site-display">...</span></a>
                 </div>
             </div>
-            
+
             <!-- Center nav links -->
             <div class="hidden md:flex flex-1 justify-center space-x-8">
                 <div class="relative group">
@@ -176,7 +177,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Right side -->
             <div class="hidden md:flex flex-col items-end flex-shrink-0">
                 <!-- Login/Join row -->
@@ -203,7 +204,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Language Dropdown - below login -->
                 <div class="relative mt-2" id="language-dropdown-container">
                     <button id="language-dropdown-btn" class="flex items-center text-gray-500 hover:text-primary-600 text-sm py-1 transition">
@@ -222,7 +223,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Mobile menu button -->
             <button id="mobile-menu-btn" class="md:hidden text-gray-600 ml-auto p-2 hover:bg-gray-50 rounded-lg transition">
                 <svg xmlns="https://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -373,7 +374,7 @@
                 </p>
             </div>
         </div>
-        
+
         <div class="container mx-auto px-4 py-12">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
                 <div class="lg:col-span-2">
@@ -397,7 +398,10 @@
                     <div class="mt-6 pt-6 border-t border-gray-700/50">
                         <p class="text-xs text-gray-500 mb-2">Switch Glia site:</p>
                         <a href="#" id="change-glia-site-link" class="text-sm text-gray-400 hover:text-white transition duration-300 flex items-center gap-1" onclick="openSiteSelectorModal(event)">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
                             <span id="current-glia-site-display">Loading...</span>
                         </a>
                     </div>
@@ -436,7 +440,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="mt-12 pt-8 border-t border-gray-700/50 text-center text-sm text-gray-500">
                 <p>© 2025 {{ site_name_full }}. All rights reserved. This is a demo site powered by Glia.</p>
             </div>

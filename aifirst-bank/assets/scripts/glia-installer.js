@@ -70,57 +70,54 @@ var installGlia = function (callback) {
  * Set additional custom attributes to indicate authenticated experience
  */
 function loadGliaAfterAuth() {
-    var idToken;
-    var xhr = new XMLHttpRequest();
 
-    xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-            console.log("200 ok from Lambda");
-            idToken = this.responseText;
-
-            window.getGliaContext = () => ({ idToken });
-
-            installGlia(function () {
-                sm.getApi({ version: 'v1' }).then(function (api) {
-                    glia = api;
-                    glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, engagementStart);
-                    glia.addEventListener(glia.EVENTS.ENGAGEMENT_END, engagementEnd);
-                    glia.updateInformation({
-                        externalId: "123456789",
-                        phone: "915-555-5555",
-                        customAttributes: {
-                            Authenticated: 'YES'
-                        }
-                    }).then(function () {
-                        window.dispatchEvent(new Event('glia-installed'));
-                        postGliaInstalled();
-                    }).catch(function () { });
-                });
-            });
+    var authVisitorInfo = {
+        externalId: "123456789",
+        phone: "915-555-5555",
+        customAttributes: {
+            Authenticated: 'YES'
         }
-    });
+    };
 
-    var awsURL = "https://u5aabf3fywin5ciiwtqgwvphhe0nnboh.lambda-url.us-east-1.on.aws/?myParam=" + username;
-    xhr.open("GET", awsURL);
-    xhr.send();
+    if (localStorage.getItem("useDirectId")) {
+        var idToken;
+        var xhr = new XMLHttpRequest();
+
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                console.log("200 ok from Lambda");
+                idToken = this.responseText;
+
+                window.getGliaContext = () => ({ idToken });
+
+                installGlia(postGliaLoaded(authVisitorInfo));
+            }
+        });
+
+        var awsURL = "https://u5aabf3fywin5ciiwtqgwvphhe0nnboh.lambda-url.us-east-1.on.aws/?myParam=" + username;
+        xhr.open("GET", awsURL);
+        xhr.send();
+    } else {
+        installGlia(postGliaLoaded(authVisitorInfo));
+    }
 }
 
 /**
  * Install Glia without obtaining authentication token
  */
 function loadGliaUnauth() {
-    installGlia(function () {
-        sm.getApi({ version: 'v1' }).then(function (api) {
-            glia = api;
-            glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, engagementStart);
-            glia.addEventListener(glia.EVENTS.ENGAGEMENT_END, engagementEnd);
-            glia.updateInformation({
-                customAttributes: { }
-            }).then(function () {
-                window.dispatchEvent(new Event('glia-installed'));
-                postGliaInstalled();
-            }).catch(function () { });
-        });
+    installGlia(postGliaLoaded);
+}
+
+function postGliaLoaded(visitorInfo) {
+    sm.getApi({ version: 'v1' }).then(function (api) {
+        glia = api;
+        glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, engagementStart);
+        glia.addEventListener(glia.EVENTS.ENGAGEMENT_END, engagementEnd);
+        glia.updateInformation(visitorInfo).then(function () {
+            window.dispatchEvent(new Event('glia-installed'));
+            postGliaInstalled();
+        }).catch(function () { });
     });
 }
 
@@ -138,14 +135,18 @@ function postGliaInstalled(glia) {
 }
 
 function logout() {
+    
     localStorage.removeItem('loggingStatus');
     localStorage.removeItem('username');
+    localStorage.removeItem('useDirectId');
+    localStorage.removeItem('sessionExpiration');
+
     window.getGliaContext = () => null;
 
     sm.getApi({ version: 'v1' }).then(function (glia) {
         glia.updateInformation({
             externalId: '',
-            customAttributes: { }
+            customAttributes: {}
         }).catch(function (error) {
             console.log(JSON.stringify(error));
         }).then(function () {
@@ -178,7 +179,7 @@ function engagementStart(engagement) {
         if (changeGliaSiteLink) {
             changeGliaSiteLink.style.opacity = '0.5';
             changeGliaSiteLink.style.cursor = 'not-allowed';
-            changeGliaSiteLink.onclick = function(e) {
+            changeGliaSiteLink.onclick = function (e) {
                 e.preventDefault();
                 alert('Cannot change Glia site while an engagement is active.');
             };
