@@ -88,7 +88,7 @@ function loadGliaAfterAuth() {
 
                 window.getGliaContext = () => ({ idToken });
 
-                installGlia(postGliaLoaded(authVisitorInfo));
+                installGlia(() => postGliaLoaded(authVisitorInfo));
             }
         });
 
@@ -96,7 +96,7 @@ function loadGliaAfterAuth() {
         xhr.open("GET", awsURL);
         xhr.send();
     } else {
-        installGlia(postGliaLoaded(authVisitorInfo));
+        installGlia(() => postGliaLoaded(authVisitorInfo));
     }
 }
 
