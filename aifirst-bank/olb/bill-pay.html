@@ -231,7 +231,7 @@ let scheduledPayments = [
 
 async function loadAccounts() {
     try {
-        const response = await fetch('/assets/json/accounts.json');
+        const response = await fetch(siteBasePath + '/assets/json/accounts.json');
         const data = await response.json();
         accounts = data.accounts.filter(account => account.type === 'checking' || account.type === 'savings');
         populateAccountSelects();

@@ -8,7 +8,9 @@ base_path: /aifirst-bank
     <div class="w-full max-w-md bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-10">
         <div class="text-center">
             <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                </svg>
             </div>
             <h2 class="text-3xl font-extrabold text-gray-900">Log in to Online Banking</h2>
             <p class="mt-2 text-sm text-gray-600">Access your secure online banking portal.</p>
@@ -16,15 +18,11 @@ base_path: /aifirst-bank
         <form id="login-form" class="mt-8 space-y-6" action="#" method="POST">
             <div>
                 <label for="login-name" class="block text-sm font-medium text-gray-700">Name *</label>
-                <input id="login-name" name="login-name" type="text" autocomplete="username"
-                    class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent sm:text-sm"
-                    placeholder="Enter your Name" data-required="true">
+                <input id="login-name" name="login-name" type="text" autocomplete="username" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent sm:text-sm" placeholder="Enter your Name" data-required="true">
             </div>
             <div>
                 <label for="password" class="block text-sm font-medium text-gray-700">Password *</label>
-                <input id="password" name="password" type="password" autocomplete="current-password"
-                    class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent sm:text-sm"
-                    placeholder="Enter your Password" readonly data-required="true">
+                <input id="password" name="password" type="password" autocomplete="current-password" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent sm:text-sm" placeholder="Enter your Password" readonly data-required="true">
             </div>
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
@@ -45,34 +43,49 @@ base_path: /aifirst-bank
         </form>
         <div class="mt-6 text-center text-sm text-gray-500">
             Don't have online access?
-            <a href="/aifirst-bank/open-account.html" class="font-medium text-accent hover:text-accent-dark">Sign up now.</a>
+            <a href="{{ site.base_bank_path }}/open-account.html" class="font-medium text-accent hover:text-accent-dark">Sign up now.</a>
         </div>
     </div>
 </section>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    var storedUsername = localStorage.getItem('username');
-    if (storedUsername) {
-        window.location.href = '/aifirst-bank/olb/dashboard.html';
-        return;
-    }
-});
-document.getElementById("login-name").addEventListener("blur", function(e) { document.getElementById("password").value = "glia123!!"; });
-document.getElementById('login-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (!validate(this)) return;
-    
-    var loginName = document.getElementById('login-name').value;
-    var password = document.getElementById('password').value;
-    
-    if (loginName.length > 1 && password === 'glia123!!') {
-        localStorage.setItem('loggingStatus', 'true');
-        localStorage.setItem('username', loginName);
-        localStorage.setItem('sessionExpiration', Date.now() + (60 * 60 * 1000));
-        window.location.href = '/aifirst-bank/olb/dashboard.html';
-    } else {
-        alert('Invalid Name ID or Password. Please try again.');
-    }
-});
+    document.addEventListener('DOMContentLoaded', function () {
+        var storedUsername = localStorage.getItem('username');
+        if (storedUsername) {
+            window.location.href = siteBasePath + '/olb/dashboard.html';
+            return;
+        }
+    });
+
+    document.getElementById("login-name").addEventListener("blur", function (e) {
+        var loginName = document.getElementById('login-name').value;
+        if (loginName.length > 1) {
+            document.getElementById("password").value = "glia123!!";
+            document.getElementById("remember-me").checked = true;
+        } else {
+            document.getElementById("password").value = "";
+            document.getElementById("remember-me").checked = false;
+        }
+    });
+
+    document.getElementById('login-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!validate(this)) return;
+
+        var loginName = document.getElementById('login-name').value;
+        var password = document.getElementById('password').value;
+        var useDirectId = document.getElementById("remember-me").checked;
+
+        if (loginName.length > 1 && password === 'glia123!!') {
+            localStorage.setItem('loggingStatus', 'true');
+            localStorage.setItem('username', loginName);
+            localStorage.setItem('sessionExpiration', Date.now() + (60 * 60 * 1000));
+            localStorage.setItem('useDirectId', useDirectId);
+
+            window.location.href = siteBasePath + '/olb/dashboard.html';
+        } else {
+            alert('Invalid Name ID or Password. Please try again.');
+        }
+    });
+
 </script>

@@ -45,34 +45,49 @@ base_path: /aifirst-cu
         </form>
         <div class="mt-6 text-center text-sm text-gray-500">
             Not a member yet?
-            <a href="/aifirst-cu/join.html" class="font-medium text-accent hover:text-accent-dark">Join now.</a>
+            <a href="{{ site.base_cu_path }}/join.html" class="font-medium text-accent hover:text-accent-dark">Join now.</a>
         </div>
     </div>
 </section>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    var storedUsername = localStorage.getItem('username');
-    if (storedUsername) {
-        window.location.href = '/aifirst-cu/olb/dashboard.html';
-        return;
-    }
-});
-document.getElementById("login-name").addEventListener("blur", function(e) { document.getElementById("password").value = "glia123!!"; });
-document.getElementById('login-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (!validate(this)) return;
-    
-    var loginName = document.getElementById('login-name').value;
-    var password = document.getElementById('password').value;
-    
-    if (loginName.length > 1 && password === 'glia123!!') {
-        localStorage.setItem('loggingStatus', 'true');
-        localStorage.setItem('username', loginName);
-        localStorage.setItem('sessionExpiration', Date.now() + (60 * 60 * 1000));
-        window.location.href = '/aifirst-cu/olb/dashboard.html';
-    } else {
-        alert('Invalid Name ID or Password. Please try again.');
-    }
-});
+    document.addEventListener('DOMContentLoaded', function () {
+        var storedUsername = localStorage.getItem('username');
+        if (storedUsername) {
+            window.location.href = siteBasePath + '/olb/dashboard.html';
+            return;
+        }
+    });
+
+    document.getElementById("login-name").addEventListener("blur", function (e) {
+        var loginName = document.getElementById('login-name').value;
+        if (loginName.length > 1) {
+            document.getElementById("password").value = "glia123!!";
+            document.getElementById("remember-me").checked = true;
+        } else {
+            document.getElementById("password").value = "";
+            document.getElementById("remember-me").checked = false;
+        }
+    });
+
+    document.getElementById('login-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!validate(this)) return;
+
+        var loginName = document.getElementById('login-name').value;
+        var password = document.getElementById('password').value;
+        var useDirectId = document.getElementById("remember-me").checked;
+
+        if (loginName.length > 1 && password === 'glia123!!') {
+            localStorage.setItem('loggingStatus', 'true');
+            localStorage.setItem('username', loginName);
+            localStorage.setItem('sessionExpiration', Date.now() + (60 * 60 * 1000));
+            localStorage.setItem('useDirectId', useDirectId);
+
+            window.location.href = siteBasePath + '/olb/dashboard.html';
+        } else {
+            alert('Invalid Name ID or Password. Please try again.');
+        }
+    });
+
 </script>

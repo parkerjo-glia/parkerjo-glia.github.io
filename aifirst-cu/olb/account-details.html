@@ -9,7 +9,7 @@ title: Account Details
     <div class="container mx-auto px-4">
         <!-- Back Navigation -->
         <div class="mb-6">
-            <a href="/aifirst-cu/olb/dashboard.html" class="inline-flex items-center text-accent hover:text-accent-dark font-medium">
+            <a href="{{ site.base_cu_path }}/olb/dashboard.html" class="inline-flex items-center text-accent hover:text-accent-dark font-medium">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                 </svg>
@@ -117,15 +117,15 @@ title: Account Details
     async function loadAccountDetails() {
         const accountId = getAccountId();
         if (!accountId) {
-            window.location.href = '/aifirst-cu/olb/dashboard.html';
+            window.location.href = siteBasePath + '/olb/dashboard.html';
             return;
         }
         try {
-            const response = await fetch('/assets/json/accounts.json');
+            const response = await fetch(siteBasePath + '/assets/json/accounts.json');
             const data = await response.json();
             currentAccount = data.accounts.find(account => account.id === accountId);
             if (!currentAccount) {
-                window.location.href = '/aifirst-cu/olb/dashboard.html';
+                window.location.href = siteBasePath + '/olb/dashboard.html';
                 return;
             }
             displayAccountHeader(currentAccount);
@@ -173,7 +173,7 @@ title: Account Details
 
     async function loadTransactions(accountId) {
         try {
-            const response = await fetch('/assets/json/transactions.json');
+            const response = await fetch(siteBasePath + '/assets/json/transactions.json');
             const data = await response.json();
             allTransactions = data.transactions[accountId] || [];
             displayTransactions();
@@ -269,7 +269,7 @@ title: Account Details
         document.getElementById('show-account-btn').addEventListener('click', showAccountModal);
         document.getElementById('transfer-btn').addEventListener('click', function() {
             if (currentAccount && currentAccount.balance >= 0) {
-                window.location.href = `/aifirst-cu/olb/transfer.html?from=${currentAccount.id}`;
+                window.location.href = `${siteBasePath}/olb/transfer.html?from=${currentAccount.id}`;
             }
         });
         document.getElementById('close-modal').addEventListener('click', closeModal);

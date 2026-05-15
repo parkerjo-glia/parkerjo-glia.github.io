@@ -204,7 +204,7 @@ base_path: /aifirst-bank
                     <div class="flex items-center">
                         <input id="terms" name="terms" type="checkbox" data-required="true" class="h-4 w-4 text-accent border-gray-300 rounded focus:ring-accent">
                         <label for="terms" class="ml-2 block text-sm text-gray-900">
-                            I agree to the <a href="/aifirst-bank/terms-of-use.html" class="text-accent hover:text-accent-dark">Online Banking Agreement</a> and <a href="/aifirst-bank/privacy-policy.html" class="text-accent hover:text-accent-dark">Privacy Policy</a> *
+                            I agree to the <a href="{{ site.base_bank_path }}/terms-of-use.html" class="text-accent hover:text-accent-dark">Online Banking Agreement</a> and <a href="{{ site.base_bank_path }}/privacy-policy.html" class="text-accent hover:text-accent-dark">Privacy Policy</a> *
                         </label>
                     </div>
                 </div>
@@ -224,7 +224,7 @@ base_path: /aifirst-bank
                     <p class="text-green-800 font-semibold text-lg">Enrollment Complete!</p>
                     <p class="text-gray-600 mt-2">Your online banking access has been set up successfully.</p>
                     <p class="text-sm text-accent mt-2">This is a demo site - no data was actually submitted.</p>
-                    <a href="/aifirst-bank/login.html" class="inline-block mt-4 bg-accent text-white font-semibold py-2 px-6 rounded-full hover:bg-accent-dark transition shadow-lg shadow-accent/30">Log In Now</a>
+                    <a href="{{ site.base_bank_path }}/login.html" class="inline-block mt-4 bg-accent text-white font-semibold py-2 px-6 rounded-full hover:bg-accent-dark transition shadow-lg shadow-accent/30">Log In Now</a>
                 </div>
             </div>
         </div>
@@ -283,8 +283,8 @@ base_path: /aifirst-bank
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Need Help Getting Started?</h2>
         <p class="text-white/90 max-w-2xl mx-auto mb-8 text-lg">Our customer service team is available to assist you with enrollment and answer any questions about online banking.</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="/aifirst-bank/contact.html" class="bg-white text-accent font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Contact Us</a>
-            <a href="/aifirst-bank/resources/help-center.html" class="bg-white/10 backdrop-blur-sm text-white font-semibold py-3 px-8 rounded-full border border-white/20 hover:bg-white/20 transition duration-300">Visit Help Center</a>
+            <a href="{{ site.base_bank_path }}/contact.html" class="bg-white text-accent font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">Contact Us</a>
+            <a href="{{ site.base_bank_path }}/resources/help-center.html" class="bg-white/10 backdrop-blur-sm text-white font-semibold py-3 px-8 rounded-full border border-white/20 hover:bg-white/20 transition duration-300">Visit Help Center</a>
         </div>
     </div>
 </section>
