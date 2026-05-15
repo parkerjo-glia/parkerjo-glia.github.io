@@ -18,74 +18,69 @@ window.gliaDemo.sites = [
     { id: '6779a7de-7336-47da-aa82-76c0a1993bb0', name: 'Glia SE 11 - Demo', code: "se11_demo" }
 ];
 
-function loadSiteSelector() {
-    fetch(siteBasePath + '/assets/site-selector-modal.html')
-        .then(response => response.text())
-        .then(html => {
-            document.body.insertAdjacentHTML('beforeend', html);
+function initSiteSelector() {
+    // Modal is already in the DOM via Jekyll include, just set up event handlers
+    $('#siteSelectorModal').on('shown.bs.modal', function () {
+        prepSettingsForm();
+    });
 
-            $('#siteSelectorModal').on('shown.bs.modal', function () {
-                prepSettingsForm();
-            });
+    $('#siteSelectorDDL').on('change', function () {
+        $('#siteIdTXT').val($('#siteSelectorDDL').val());
+        validateSiteId();
+    });
 
-            $('#siteSelectorDDL').on('change', function () {
-                $('#siteIdTXT').val($('#siteSelectorDDL').val());
-                validateSiteId();
-            });
+    $('#siteIdTXT').on('input', function () {
+        const textValue = $(this).val().trim();
+        if (textValue !== '') {
+            const selectedOption = $('#siteSelectorDDL').find(`option[value="${textValue}"]`);
+            $('#siteSelectorDDL').val(selectedOption.val());
+        } else {
+            $('#siteSelectorDDL').val($('#siteSelectorDDL option:first').val());
+        }
+    });
 
-            $('#siteIdTXT').on('input', function () {
-                const textValue = $(this).val().trim();
-                if (textValue !== '') {
-                    const selectedOption = $('#siteSelectorDDL').find(`option[value="${textValue}"]`);
-                    $('#siteSelectorDDL').val(selectedOption.val());
-                } else {
-                    $('#siteSelectorDDL').val($('#siteSelectorDDL option:first').val());
-                }
-            });
+    $('#siteIdTXT').on('blur', function() {
+        validateSiteId();
+    });
 
-            $('#siteIdTXT').on('blur', function() {
-                validateSiteId();
-            });
+    $('#saveSettings').on('click', function () {
+        const siteIdFieldError = $("#siteid-error");
+        siteIdFieldError.hide();
+        const siteId = $('#siteIdTXT').val();
 
-            $('#saveSettings').on('click', function () {
-                const siteIdFieldError = $("#siteid-error");
-                siteIdFieldError.hide();
-                const siteId = $('#siteIdTXT').val();
+        if (validateSiteId()) {
+            const selectedOption = $('#siteSelectorDDL').find(`option[value="${siteId}"]`);
 
-                if (validateSiteId()) {
-                    const selectedOption = $('#siteSelectorDDL').find(`option[value="${siteId}"]`);
-
-                    const selectedSite = {
-                        id: siteId,
-                        name: selectedOption.text() !== '' ? selectedOption.text().trim() : siteId
-                    }
-
-                    localStorage.setItem('glia_site', JSON.stringify(selectedSite));
-                    bootstrap.Modal.getInstance(document.getElementById('siteSelectorModal')).hide();
-                    localStorage.removeItem(window.gliaContextSessionItemKey);
-                    window.location.href = getCleanReloadUrl();
-                }
-            });
-            
-            // Remove openSettings param when modal is closed
-            $('#siteSelectorModal').on('hidden.bs.modal', function () {
-                removeOpenSettingsParam();
-            });
-
-            function validateSiteId(){
-                const siteIdFieldError = $("#siteid-error");
-                siteIdFieldError.hide();
-                const siteId = $('#siteIdTXT').val();
-                
-                if (!siteId || !isUUID(siteId)) {
-                    siteIdFieldError.text(siteId ? "Site Id Must Be a Valid UUID" : "Site Id is required");
-                    siteIdFieldError.show();
-                    return false;
-                }
-
-                return true;
+            const selectedSite = {
+                id: siteId,
+                name: selectedOption.text() !== '' ? selectedOption.text().trim() : siteId
             }
-        });
+
+            localStorage.setItem('glia_site', JSON.stringify(selectedSite));
+            bootstrap.Modal.getInstance(document.getElementById('siteSelectorModal')).hide();
+            localStorage.removeItem(window.gliaContextSessionItemKey);
+            window.location.href = getCleanReloadUrl();
+        }
+    });
+    
+    // Remove openSettings param when modal is closed
+    $('#siteSelectorModal').on('hidden.bs.modal', function () {
+        removeOpenSettingsParam();
+    });
+}
+
+function validateSiteId(){
+    const siteIdFieldError = $("#siteid-error");
+    siteIdFieldError.hide();
+    const siteId = $('#siteIdTXT').val();
+    
+    if (!siteId || !isUUID(siteId)) {
+        siteIdFieldError.text(siteId ? "Site Id Must Be a Valid UUID" : "Site Id is required");
+        siteIdFieldError.show();
+        return false;
+    }
+
+    return true;
 }
 
 async function prepSettingsForm() {
@@ -194,16 +189,7 @@ function openSiteSelectorModal(event) {
         const modal = new bootstrap.Modal(modalEl);
         modal.show();
     } else {
-        // Modal might not be loaded yet, wait a moment and try again
-        setTimeout(function() {
-            const modalElRetry = document.getElementById('siteSelectorModal');
-            if (modalElRetry) {
-                const modal = new bootstrap.Modal(modalElRetry);
-                modal.show();
-            } else {
-                console.error('Site selector modal not found');
-            }
-        }, 500);
+        console.error('Site selector modal not found');
     }
 }
 
@@ -225,7 +211,8 @@ function init() {
         }
     }
 
-    loadSiteSelector();
+    // Initialize site selector event handlers (modal is already in DOM via Jekyll include)
+    initSiteSelector();
     
     document.addEventListener('DOMContentLoaded', function() {
         const settingsLink = document.getElementById('settings-link');

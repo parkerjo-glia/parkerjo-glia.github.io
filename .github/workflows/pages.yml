@@ -40,7 +40,6 @@ jobs:
           cp -r _site/assets/scripts _site/aifirst-bank/assets/
           cp -r _site/assets/forms _site/aifirst-bank/assets/
           cp -r _site/assets/json _site/aifirst-bank/assets/
-          cp _site/assets/site-selector-modal.html _site/aifirst-bank/assets/
           cp _site/assets/images/* _site/aifirst-bank/assets/images/
 
       - name: Copy shared assets to CU
@@ -48,7 +47,6 @@ jobs:
           cp -r _site/assets/scripts _site/aifirst-cu/assets/
           cp -r _site/assets/forms _site/aifirst-cu/assets/
           cp -r _site/assets/json _site/aifirst-cu/assets/
-          cp _site/assets/site-selector-modal.html _site/aifirst-cu/assets/
           cp _site/assets/images/* _site/aifirst-cu/assets/images/
 
       - name: Upload artifact
