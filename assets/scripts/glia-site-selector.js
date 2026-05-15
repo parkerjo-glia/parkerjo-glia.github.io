@@ -14,7 +14,8 @@ window.gliaDemo.sites = [
     { id: 'af76e495-7859-43de-9d3b-a46f83dedb98', name: 'Glia SE 7 - Demo', code: "se7_demo" },
     { id: '07c4fad6-6a45-4673-b164-7bd767633fb9', name: 'Glia SE 8 - Demo', code: "se8_demo" },
     { id: '0062f71e-899d-4c16-b1eb-dd370fbc6e83', name: 'Glia SE 9 - Demo', code: "se9_demo" },
-    { id: '70436271-1338-4b36-b07f-8d1c9f3d6d33', name: 'Glia SE 10 - Demo', code: "se10_demo" }
+    { id: '70436271-1338-4b36-b07f-8d1c9f3d6d33', name: 'Glia SE 10 - Demo', code: "se10_demo" },
+    { id: '6779a7de-7336-47da-aa82-76c0a1993bb0', name: 'Glia SE 11 - Demo', code: "se11_demo" }
 ];
 
 function loadSiteSelector() {
