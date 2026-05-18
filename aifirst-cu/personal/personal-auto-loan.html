@@ -26,7 +26,7 @@ base_path: /aifirst-cu
             </p>
             
             <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#apply" class="apply-auto-loan bg-accent hover:bg-accent-dark text-white font-semibold py-4 px-8 rounded-full transition duration-300 shadow-lg shadow-accent/30 text-lg text-center">
+                <a href="#apply" class="apply-auto-loan bg-accent hover:bg-accent-dark text-white font-semibold py-4 px-8 rounded-full transition duration-300 shadow-lg shadow-accent/30 text-lg text-center btn-apply-now">
                     Apply for Auto Loan
                 </a>
                 <a href="#calculator" class="bg-white/10 backdrop-blur-sm text-white font-semibold py-4 px-8 rounded-full border border-white/20 hover:bg-white/20 transition duration-300 text-center">
@@ -97,7 +97,7 @@ base_path: /aifirst-cu
                             GAP insurance available
                         </li>
                     </ul>
-                    <a href="#apply" class="w-full mt-6 bg-primary-600 hover:bg-primary-700 text-white py-3 rounded-full font-semibold transition shadow-md shadow-primary-600/25 block text-center">Apply Now</a>
+                    <a href="#apply" class="w-full mt-6 bg-primary-600 hover:bg-primary-700 text-white py-3 rounded-full font-semibold transition shadow-md shadow-primary-600/25 block text-center btn-apply-now btn-apply-now btn-apply-now btn-apply-now">Apply Now</a>
                 </div>
             </div>
             <!-- Used Vehicle -->
@@ -432,45 +432,59 @@ base_path: /aifirst-cu
 </section>
 
 <script>
-// Sync sliders with input fields
-function syncSliderAndInput(sliderId, inputId) {
-    const slider = document.getElementById(sliderId);
-    const input = document.getElementById(inputId);
-    
-    slider.addEventListener('input', function() {
-        input.value = this.value;
-    });
-    
-    input.addEventListener('input', function() {
-        let val = parseFloat(this.value) || 0;
-        val = Math.max(parseFloat(slider.min), Math.min(parseFloat(slider.max), val));
-        slider.value = val;
-    });
-}
-
-// Initialize slider sync
-syncSliderAndInput('vehicle-price-slider', 'vehicle-price');
-syncSliderAndInput('down-payment-slider', 'down-payment');
-
-function calculateAutoPayment() {
-    const vehiclePrice = parseFloat(document.getElementById('vehicle-price').value);
-    const downPayment = parseFloat(document.getElementById('down-payment').value) || 0;
-    const interestRate = parseFloat(document.getElementById('auto-interest-rate').value) / 100 / 12;
-    const loanTerm = parseInt(document.getElementById('auto-loan-term').value);
-    
-    if (vehiclePrice && interestRate >= 0 && loanTerm) {
-        const loanAmount = vehiclePrice - downPayment;
-        const monthlyPayment = (loanAmount * interestRate * Math.pow(1 + interestRate, loanTerm)) / (Math.pow(1 + interestRate, loanTerm) - 1);
-        document.getElementById('auto-monthly-payment-result').textContent = '$' + monthlyPayment.toFixed(2);
-        document.getElementById('auto-results').classList.remove('hidden');
+    // Sync sliders with input fields
+    function syncSliderAndInput(sliderId, inputId) {
+        const slider = document.getElementById(sliderId);
+        const input = document.getElementById(inputId);
+        
+        slider.addEventListener('input', function() {
+            input.value = this.value;
+        });
+        
+        input.addEventListener('input', function() {
+            let val = parseFloat(this.value) || 0;
+            val = Math.max(parseFloat(slider.min), Math.min(parseFloat(slider.max), val));
+            slider.value = val;
+        });
     }
-}
 
-document.getElementById('auto-loan-application').addEventListener('submit', function(e) {
-    e.preventDefault();
-    if (validate(this)) {
-        this.classList.add('hidden');
-        document.getElementById('al-success').classList.remove('hidden');
+    // Initialize slider sync
+    syncSliderAndInput('vehicle-price-slider', 'vehicle-price');
+    syncSliderAndInput('down-payment-slider', 'down-payment');
+
+    function calculateAutoPayment() {
+        const vehiclePrice = parseFloat(document.getElementById('vehicle-price').value);
+        const downPayment = parseFloat(document.getElementById('down-payment').value) || 0;
+        const interestRate = parseFloat(document.getElementById('auto-interest-rate').value) / 100 / 12;
+        const loanTerm = parseInt(document.getElementById('auto-loan-term').value);
+        
+        if (vehiclePrice && interestRate >= 0 && loanTerm) {
+            const loanAmount = vehiclePrice - downPayment;
+            const monthlyPayment = (loanAmount * interestRate * Math.pow(1 + interestRate, loanTerm)) / (Math.pow(1 + interestRate, loanTerm) - 1);
+            document.getElementById('auto-monthly-payment-result').textContent = '$' + monthlyPayment.toFixed(2);
+            document.getElementById('auto-results').classList.remove('hidden');
+        }
     }
-});
+
+    document.getElementById('auto-loan-application').addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (validate(this)) {
+            this.classList.add('hidden');
+            document.getElementById('al-success').classList.remove('hidden');
+        }
+    });
+
+    // Trigger Visitor Event when starting loan application
+    window.addEventListener('glia-installed', function () {
+        sm.getApi({version: 'v1'}).then(function(glia) {
+            function engagementStart(engagement) {
+                var btnApplyNow = document.querySelector('.btn-apply-now');
+
+                btnApplyNow.addEventListener('click', function() {
+                    engagement.recordEvent({message: 'Visitor starting auto loan application'});
+                });
+            }
+            glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, engagementStart);
+        });
+    });
 </script>
