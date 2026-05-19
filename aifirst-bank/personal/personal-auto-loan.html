@@ -26,7 +26,7 @@ base_path: /aifirst-bank
             </p>
             
             <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#apply" class="bg-accent hover:bg-accent-dark text-white font-semibold py-4 px-8 rounded-full transition duration-300 shadow-lg shadow-accent/30 text-lg text-center">
+                <a href="#apply" class="bg-accent hover:bg-accent-dark text-white font-semibold py-4 px-8 rounded-full transition duration-300 shadow-lg shadow-accent/30 text-lg text-center btn-apply-now">
                     Apply for Auto Loan
                 </a>
                 <a href="#calculator" class="bg-white/10 backdrop-blur-sm text-white font-semibold py-4 px-8 rounded-full border border-white/20 hover:bg-white/20 transition duration-300 text-center">
@@ -336,6 +336,10 @@ base_path: /aifirst-bank
                     </div>
                 </div>
                 <div>
+                    <label for="al-ssn" class="block text-sm font-medium text-gray-700">Social Security Number *</label>
+                    <input type="text" id="al-ssn" name="al-ssn" data-required="true" placeholder="###-##-####" class="mt-1 block w-full px-4 py-3 border border-gray-200 rounded-xl shadow-sm focus:ring-accent focus:border-accent sm_cobrowsing_masked_field sm_cobrowsing_disabled_field">
+                </div>
+                <div>
                     <label for="al-loan-type" class="block text-sm font-medium text-gray-700">Loan Type *</label>
                     <select id="al-loan-type" name="al-loan-type" data-required="true" class="mt-1 block w-full px-4 py-3 border border-gray-200 rounded-xl shadow-sm focus:ring-accent focus:border-accent">
                         <option value="">Select loan type</option>
@@ -400,7 +404,7 @@ base_path: /aifirst-bank
         <p class="text-white/80 max-w-2xl mx-auto mb-10 text-lg">Get pre-approved today and shop with confidence at any dealership.</p>
         
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <button class="bg-white text-accent-dark font-semibold py-4 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg text-lg" onclick="document.getElementById('apply').scrollIntoView({behavior: 'smooth'})">
+            <button class="btn-apply-now bg-white text-accent-dark font-semibold py-4 px-8 rounded-full hover:bg-gray-100 transition duration-300 shadow-lg text-lg" onclick="document.getElementById('apply').scrollIntoView({behavior: 'smooth'})">
                 Apply Now
             </button>
             <a href="{{ site.base_bank_path }}/contact.html" class="bg-transparent text-white font-semibold py-4 px-8 rounded-full border-2 border-white/30 hover:bg-white/10 transition duration-300">
@@ -472,5 +476,20 @@ document.getElementById('auto-loan-application').addEventListener('submit', func
         this.classList.add('hidden');
         document.getElementById('al-success').classList.remove('hidden');
     }
+});
+
+// Trigger Visitor Event when starting loan application
+window.addEventListener('glia-installed', function () {
+    sm.getApi({ version: 'v1' }).then(function (glia) {
+        function engagementStart(engagement) {
+            var applyButtons = document.querySelectorAll('.btn-apply-now');
+            applyButtons.forEach(btnApplyNow => {
+                btnApplyNow.addEventListener('click', function () {
+                    engagement.recordEvent({ message: 'Visitor starting auto loan application' });
+                });
+            });
+        }
+        glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, engagementStart);
+    });
 });
 </script>
