@@ -211,10 +211,9 @@ function init() {
         }
     }
 
-    // Initialize site selector event handlers (modal is already in DOM via Jekyll include)
-    initSiteSelector();
-    
     document.addEventListener('DOMContentLoaded', function() {
+        // Initialize site selector event handlers (modal is already in DOM via Jekyll include)
+        initSiteSelector();
         const settingsLink = document.getElementById('settings-link');
         if (settingsLink) {
             settingsLink.addEventListener('click', function() {
