@@ -43,7 +43,7 @@ base_path: /aifirst-cu
             <!-- Security Settings Content -->
             <div class="lg:col-span-2 space-y-6">
                 <!-- Password Management -->
-                <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6">
+                <div id="change-password" class="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 transition-all duration-500">
                     <div class="flex justify-between items-center mb-6">
                         <div>
                             <h3 class="text-xl font-bold text-gray-900">Password Management</h3>
@@ -202,11 +202,40 @@ base_path: /aifirst-cu
     </div>
 </section>
 
+<style>
+    @keyframes highlight-pulse {
+        0% { background-color: #fef3c7; border-color: #f59e0b; box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.3); }
+        100% { background-color: #fff; border-color: #f3f4f6; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+    }
+    
+    #change-password.highlighted {
+        background-color: #fef3c7 !important;
+        border-color: #f59e0b !important;
+        box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.3) !important;
+        animation: highlight-pulse 2s ease-out forwards;
+        animation-delay: 1.5s;
+    }
+</style>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('security-preferences-form').addEventListener('submit', function(e) {
         e.preventDefault();
         alert('Security preferences saved successfully!');
     });
+    
+    // Highlight element if URL hash matches
+    var hash = window.location.hash;
+    if (hash === '#change-password') {
+        var target = document.getElementById('change-password');
+        if (target) {
+            target.classList.add('highlighted');
+            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Remove class after animation completes
+            setTimeout(function() {
+                target.classList.remove('highlighted');
+            }, 3500);
+        }
+    }
 });
 </script>
