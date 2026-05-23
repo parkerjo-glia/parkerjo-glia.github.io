@@ -236,8 +236,8 @@
                 if (olbUserBtn) olbUserBtn.insertAdjacentHTML('afterbegin', padlockHtml);
                 if (olbUserMobile) olbUserMobile.insertAdjacentHTML('afterbegin', padlockHtml.replace('auth-header-padlock', 'auth-header-padlock-mobile'));
             }
-            if (logoutBtn) logoutBtn.addEventListener('click', function (e) { e.preventDefault(); clearSession(); window.location.href = basePath + '/index.html'; });
-            if (mobileLogoutBtn) mobileLogoutBtn.addEventListener('click', function (e) { e.preventDefault(); clearSession(); window.location.href = basePath + '/index.html'; });
+            if (logoutBtn) logoutBtn.addEventListener('click', function (e) { e.preventDefault(); clearSession(); window.location.href = basePath + '/index.html#signout'; });
+            if (mobileLogoutBtn) mobileLogoutBtn.addEventListener('click', function (e) { e.preventDefault(); clearSession(); window.location.href = basePath + '/index.html#signout'; });
             var mobileMenuBtn = document.getElementById('olb-mobile-menu-btn');
             var mobileMenu = document.getElementById('olb-mobile-menu');
             if (mobileMenuBtn && mobileMenu) mobileMenuBtn.addEventListener('click', function () { mobileMenu.classList.toggle('hidden'); });
