@@ -187,14 +187,14 @@
                 </div>
             </div>
             <div class="mt-6 pt-6 border-t border-gray-700/50 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-                <p>© 2025 {{ site_name }}. All rights reserved. Demo Site - Not a real financial institution.</p>
-                <div class="mt-2 md:mt-0 flex items-center space-x-4">
+                <div class="mb-2 md:mb-0 flex items-center space-x-4">
                     <button id="cobrowse-code-btn" class="bg-primary-600 text-white font-medium py-1.5 px-3 rounded-lg hover:bg-primary-700 transition duration-300 text-xs" onclick="document.body.appendChild(document.createElement('sm-visitor-code'))">
                         Get Cobrowse Code
                     </button>
                     <span class="text-xs">Switch Glia site:</span>
                     <a href="#" id="change-glia-site-link" class="text-xs text-gray-400 hover:text-white transition" onclick="openSiteSelectorModal(event)">→ <span id="current-glia-site-display">Glia Site</span></a>
                 </div>
+                <p class="mt-2 md:mt-0">© 2025 {{ site_name }}. All rights reserved. Demo Site - Not a real financial institution.</p>
             </div>
         </div>
     </footer>
