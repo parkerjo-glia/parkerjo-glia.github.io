@@ -101,10 +101,7 @@
             </div>
 
             <div class="flex items-center space-x-4">
-                <div class="flex md:hidden items-center text-gray-600 font-medium py-2">
-                    <svg id="olb-padlock-mobile" class="hidden w-4 h-4 text-accent mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" title="Authenticated with Direct ID">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
-                    </svg>
+                <div id="olb-user-mobile" class="flex md:hidden items-center text-gray-600 font-medium py-2">
                     <div class="w-8 h-8 bg-primary-600 rounded-full flex items-center justify-center text-white text-sm font-semibold mr-2">
                         <span id="olb-username-mobile-initial">U</span>
                     </div>
@@ -112,10 +109,7 @@
                 </div>
                 <div class="hidden md:flex flex-col items-end">
                     <div class="relative group">
-                        <button class="flex items-center text-gray-600 hover:text-primary-600 font-medium py-2 transition">
-                            <svg id="olb-padlock" class="hidden w-4 h-4 text-accent mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" title="Authenticated with Direct ID">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
-                            </svg>
+                        <button id="olb-user-btn" class="flex items-center text-gray-600 hover:text-primary-600 font-medium py-2 transition">
                             <div class="w-8 h-8 bg-primary-600 rounded-full flex items-center justify-center text-white text-sm font-semibold mr-2">
                                 <span id="olb-username-initial">U</span>
                             </div>
@@ -234,13 +228,13 @@
             if (olbUsernameMobile) olbUsernameMobile.textContent = username;
             if (olbUsernameInitial) olbUsernameInitial.textContent = initial;
             if (olbUsernameMobileInitial) olbUsernameMobileInitial.textContent = initial;
-            // Show padlock if useDirectId is enabled
-            var useDirectId = localStorage.getItem('useDirectId') === 'true';
-            if (useDirectId) {
-                var padlock = document.getElementById('olb-padlock');
-                var padlockMobile = document.getElementById('olb-padlock-mobile');
-                if (padlock) padlock.classList.remove('hidden');
-                if (padlockMobile) padlockMobile.classList.remove('hidden');
+            // Inject padlock if useDirectId is enabled
+            if (localStorage.getItem('useDirectId') === 'true') {
+                var padlockHtml = '<svg id="auth-header-padlock" class="w-4 h-4 text-accent mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" title="Authenticated with Direct ID"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path></svg>';
+                var olbUserBtn = document.getElementById('olb-user-btn');
+                var olbUserMobile = document.getElementById('olb-user-mobile');
+                if (olbUserBtn) olbUserBtn.insertAdjacentHTML('afterbegin', padlockHtml);
+                if (olbUserMobile) olbUserMobile.insertAdjacentHTML('afterbegin', padlockHtml.replace('auth-header-padlock', 'auth-header-padlock-mobile'));
             }
             if (logoutBtn) logoutBtn.addEventListener('click', function (e) { e.preventDefault(); clearSession(); window.location.href = basePath + '/index.html'; });
             if (mobileLogoutBtn) mobileLogoutBtn.addEventListener('click', function (e) { e.preventDefault(); clearSession(); window.location.href = basePath + '/index.html'; });
