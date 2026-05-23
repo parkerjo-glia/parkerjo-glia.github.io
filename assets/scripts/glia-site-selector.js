@@ -239,14 +239,12 @@ function init() {
         // Helper function to set site display text
         function setSiteDisplayText(element, gliaSite, short) {
             if (gliaSite && gliaSite.name && gliaSite.name !== gliaSite.id) {
-                if (short) {
-                    element.textContent = gliaSite.name.length > 15 ? gliaSite.name.substring(0, 15) + '...' : gliaSite.name;
-                } else {
-                    element.textContent = gliaSite.name + ' (' + gliaSite.id.substring(0, 8) + '...)';
-                }
+                // Show full name with ... to indicate hover for more info
+                element.textContent = gliaSite.name + ' ...';
                 element.title = gliaSite.name + '\n' + gliaSite.id;
             } else if (gliaSite && gliaSite.id) {
-                element.textContent = short ? gliaSite.id.substring(0, 8) + '...' : gliaSite.id;
+                // Only have ID, show truncated with ...
+                element.textContent = gliaSite.id.substring(0, 8) + '...';
                 element.title = gliaSite.id;
             } else {
                 element.textContent = 'Not configured';
