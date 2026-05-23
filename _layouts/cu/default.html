@@ -337,11 +337,15 @@
                 if (headerUsernameMobile) headerUsernameMobile.textContent = username;
                 if (mobileLoggedOut) mobileLoggedOut.classList.add('hidden');
                 if (mobileLoggedIn) mobileLoggedIn.classList.remove('hidden');
-                // Inject padlock if useDirectId is enabled
+                // Inject padlock based on useDirectId status
                 if (localStorage.getItem('useDirectId') === 'true') {
                     var padlockHtml = '<svg id="public-header-padlock" class="w-4 h-4 text-accent mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" title="Authenticated with Direct ID"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path></svg>';
                     var headerUserBtn = document.getElementById('header-user-btn');
                     if (headerUserBtn) headerUserBtn.insertAdjacentHTML('afterbegin', padlockHtml);
+                } else {
+                    var openPadlockHtml = '<svg id="public-header-nodirectId" class="w-4 h-4 text-gray-400 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" title="Not authenticated with Direct ID"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path></svg>';
+                    var headerUserBtn = document.getElementById('header-user-btn');
+                    if (headerUserBtn) headerUserBtn.insertAdjacentHTML('afterbegin', openPadlockHtml);
                 }
             } else {
                 loggedOutNav.classList.remove('hidden');
