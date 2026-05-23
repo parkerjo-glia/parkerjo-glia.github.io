@@ -118,13 +118,13 @@
         <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
             <!-- Logo with switchers -->
             <div class="flex-shrink-0">
-                <a href="{{ base_path }}/index.html" class="flex items-center space-x-2">
-                    <img src="{{ logo_image }}" alt="{{ site_name_full }} Logo" class="w-9 h-9">
-                    <div class="flex flex-col">
+                <div class="flex items-center space-x-2">
+                    <img src="{{ logo_image }}" alt="{{ site_name_full }} Logo" class="logo w-9 h-9">
+                    <a href="{{ base_path }}/index.html" class="flex flex-col">
                         <span class="font-bold text-xl text-gray-900 leading-tight">{{ site_name }}</span>
                         <span class="text-xs text-gray-400 font-medium">a Glia Demo</span>
-                    </div>
-                </a>
+                    </a>
+                </div>
                 <div class="hidden md:block text-xs text-gray-400 mt-1">
                     <a href="#" id="header-change-glia-site-link" class="hover:text-primary-600 transition" onclick="openSiteSelectorModal(event)">→ <span id="header-glia-site-display">...</span></a>
                 </div>
