@@ -28,7 +28,7 @@ window.gliaDemo.seAgents = [
         { name: "Sandy Chansamone", code: "sandy"},
         { name: "Scott Hathaway", code: "scott"},
         { name: "Steve Revucky", code: "steve"},
-        { name: "Teagrin Forder", code: "tea-grin"}
+        { name: "Teagrin Forde", code: "tea-grin"}
     ]}
 ]
 
