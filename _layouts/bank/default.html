@@ -356,8 +356,8 @@
                 if (mobileLoggedOut) mobileLoggedOut.classList.remove('hidden');
                 if (mobileLoggedIn) mobileLoggedIn.classList.add('hidden');
             }
-            if (logoutBtn) logoutBtn.addEventListener('click', function (e) { e.preventDefault(); clearSession(); window.location.href = basePath + '/index.html#signout'; });
-            if (mobileLogoutBtn) mobileLogoutBtn.addEventListener('click', function (e) { e.preventDefault(); clearSession(); window.location.href = basePath + '/index.html#signout'; });
+            if (logoutBtn) logoutBtn.addEventListener('click', function (e) { e.preventDefault(); clearSession(); window.location.href = basePath + '/index.html?signout'; });
+            if (mobileLogoutBtn) mobileLogoutBtn.addEventListener('click', function (e) { e.preventDefault(); clearSession(); window.location.href = basePath + '/index.html?signout'; });
             var mobileMenuBtn = document.getElementById('mobile-menu-btn');
             var mobileMenu = document.getElementById('mobile-menu');
             if (mobileMenuBtn && mobileMenu) mobileMenuBtn.addEventListener('click', function () { mobileMenu.classList.toggle('hidden'); });
