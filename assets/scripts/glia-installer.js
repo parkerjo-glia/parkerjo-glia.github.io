@@ -73,7 +73,6 @@ function loadGliaAfterAuth() {
 
     var authVisitorInfo = {
         externalId: "123456789",
-        phone: "915-555-5555",
         customAttributes: {}
     };
 
