@@ -20,11 +20,12 @@ window.gliaDemo.sites = [
 
 window.gliaDemo.seAgents = [
     { siteId: '209c6db0-4f0c-4002-bf09-0e9b57e701c3', agents: [
-        { name: "Robert Blain", code: "blain"},
+        { name: "Brian Christiansen", code: "brian"},
         { name: "Chad Anderson", code: "chad-a"},
         { name: "Jimi Hendrix", code: "jimi"},
-        { name: "Kishan Patel", code: "kishan"},
         { name: "Jonathan Parker", code: "parker"},
+        { name: "Kishan Patel", code: "kishan"},
+        { name: "Robert Blain", code: "blain"},
         { name: "Sandy Chansamone", code: "sandy"},
         { name: "Scott Hathaway", code: "scott"},
         { name: "Steve Revucky", code: "steve"},
