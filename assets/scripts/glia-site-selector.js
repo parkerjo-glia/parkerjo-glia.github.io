@@ -20,7 +20,7 @@ window.gliaDemo.sites = [
 
 window.gliaDemo.seAgents = [
     { siteId: '209c6db0-4f0c-4002-bf09-0e9b57e701c3', agents: [
-        { name: "Brian Christiansen", code: "brian"},
+        { name: "Brian Christiansen", code: "brian-c"},
         { name: "Chad Anderson", code: "chad-a"},
         { name: "Jimi Hendrix", code: "jimi"},
         { name: "Jonathan Parker", code: "parker"},
