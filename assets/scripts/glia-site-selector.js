@@ -18,6 +18,20 @@ window.gliaDemo.sites = [
     { id: '6779a7de-7336-47da-aa82-76c0a1993bb0', name: 'Glia SE 11 - Demo', code: "se11_demo" }
 ];
 
+window.gliaDemo.seAgents = [
+    { siteId: '209c6db0-4f0c-4002-bf09-0e9b57e701c3', agents: [
+        { name: "Robert Blain", code: "blain"},
+        { name: "Chad Anderson", code: "chad-a"},
+        { name: "Jimi Hendrix", code: "jimi"},
+        { name: "Kishan Patel", code: "kishan"},
+        { name: "Jonathan Parker", code: "parker"},
+        { name: "Sandy Chansamone", code: "sandy"},
+        { name: "Scott Hathaway", code: "scott"},
+        { name: "Steve Revucky", code: "steve"},
+        { name: "Teagrin Forder", code: "tea-grin"}
+    ]}
+]
+
 function initSiteSelector() {
     // Modal is already in the DOM via Jekyll include, just set up event handlers
     $('#siteSelectorModal').on('shown.bs.modal', function () {
@@ -27,6 +41,7 @@ function initSiteSelector() {
     $('#siteSelectorDDL').on('change', function () {
         $('#siteIdTXT').val($('#siteSelectorDDL').val());
         validateSiteId();
+        updateSeAgentDropdown($('#siteSelectorDDL').val());
     });
 
     $('#siteIdTXT').on('input', function () {
@@ -34,8 +49,10 @@ function initSiteSelector() {
         if (textValue !== '') {
             const selectedOption = $('#siteSelectorDDL').find(`option[value="${textValue}"]`);
             $('#siteSelectorDDL').val(selectedOption.val());
+            updateSeAgentDropdown(textValue);
         } else {
             $('#siteSelectorDDL').val($('#siteSelectorDDL option:first').val());
+            updateSeAgentDropdown('');
         }
     });
 
@@ -59,7 +76,10 @@ function initSiteSelector() {
             localStorage.setItem('glia_site', JSON.stringify(selectedSite));
             bootstrap.Modal.getInstance(document.getElementById('siteSelectorModal')).hide();
             localStorage.removeItem(window.gliaContextSessionItemKey);
-            window.location.href = getCleanReloadUrl();
+            
+            // Get the selected SE agent code if any
+            const selectedAgentCode = $('#seAgentDDL').val();
+            window.location.href = getCleanReloadUrl(selectedAgentCode);
         }
     });
     
@@ -103,10 +123,12 @@ async function prepSettingsForm() {
         
         $('#siteSelectorDDL').prop('disabled', true);
         $('#siteIdTXT').prop('readonly', true);
+        $('#seAgentDDL').prop('disabled', true);
         $('#saveSettings').prop('disabled', true);
     } else {
         $('#siteSelectorDDL').prop('disabled', false);
         $('#siteIdTXT').prop('readonly', false);
+        $('#seAgentDDL').prop('disabled', false);
         $('#saveSettings').prop('disabled', false);
     }
     
@@ -120,6 +142,11 @@ async function prepSettingsForm() {
             siteSelectorDDL.val(siteSelectorDDL.find('option:first').val());
             siteIdTXT.val(gliaSite.id);
         }
+        // Update SE agent dropdown based on current site
+        updateSeAgentDropdown(gliaSite.id);
+    } else {
+        // Hide SE agent dropdown if no site selected
+        updateSeAgentDropdown('');
     }
 }
 
@@ -163,10 +190,49 @@ function removeOpenSettingsParam() {
     }
 }
 
-function getCleanReloadUrl() {
+function getCleanReloadUrl(agentCode) {
     const url = new URL(window.location.href);
     url.searchParams.delete('openSettings');
+    
+    // Build the final URL with agent code as first param if provided
+    if (agentCode) {
+        // Get remaining params after removing openSettings
+        const remainingParams = url.searchParams.toString();
+        // Build URL with agent code first (just the code, no key)
+        let finalUrl = url.pathname + '?' + encodeURIComponent(agentCode);
+        if (remainingParams) {
+            finalUrl += '&' + remainingParams;
+        }
+        return finalUrl;
+    }
+    
     return url.pathname + url.search;
+}
+
+function updateSeAgentDropdown(siteId) {
+    const $agentGroup = $('#seAgentGroup');
+    const $agentDDL = $('#seAgentDDL');
+    
+    // Find agents for this site
+    const siteAgents = window.gliaDemo.seAgents.find(sa => sa.siteId === siteId);
+    
+    if (siteAgents && siteAgents.agents && siteAgents.agents.length > 0) {
+        // Clear and populate dropdown
+        $agentDDL.empty();
+        // Add blank option first
+        $agentDDL.append($('<option>', { value: '', text: '' }));
+        // Add agents
+        siteAgents.agents.forEach(agent => {
+            $agentDDL.append($('<option>', {
+                value: agent.code,
+                text: agent.name
+            }));
+        });
+        $agentGroup.show();
+    } else {
+        $agentDDL.empty();
+        $agentGroup.hide();
+    }
 }
 
 // Opens the site selector modal directly without redirecting
