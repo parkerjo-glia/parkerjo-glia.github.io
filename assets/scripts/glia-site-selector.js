@@ -74,13 +74,32 @@ function initSiteSelector() {
                 name: selectedOption.text() !== '' ? selectedOption.text().trim() : siteId
             }
 
+            // Check if user is currently logged in before clearing
+            const wasLoggedIn = localStorage.getItem('loggingStatus') === 'true';
+
+            // Clear all localStorage items except the new site selection
+            localStorage.removeItem(window.gliaContextSessionItemKey);
+            localStorage.removeItem('activeEngagement');
+            localStorage.removeItem('useDirectId');
+            localStorage.removeItem('loggingStatus');
+            localStorage.removeItem('username');
+            localStorage.removeItem('sessionExpiration');
+            
+            // Set the new site
             localStorage.setItem('glia_site', JSON.stringify(selectedSite));
             bootstrap.Modal.getInstance(document.getElementById('siteSelectorModal')).hide();
-            localStorage.removeItem(window.gliaContextSessionItemKey);
             
-            // Get the selected SE agent code if any
-            const selectedAgentCode = $('#seAgentDDL').val();
-            window.location.href = getCleanReloadUrl(selectedAgentCode);
+            // If user was logged in, redirect to home with signout hash
+            if (wasLoggedIn) {
+                // Get the base path (e.g., /aifirst-bank or /aifirst-cu)
+                const pathParts = window.location.pathname.split('/').filter(p => p);
+                const basePath = pathParts.length > 0 ? '/' + pathParts[0] : '';
+                window.location.href = basePath + '/index.html#signout';
+            } else {
+                // Get the selected SE agent code if any
+                const selectedAgentCode = $('#seAgentDDL').val();
+                window.location.href = getCleanReloadUrl(selectedAgentCode);
+            }
         }
     });
     
