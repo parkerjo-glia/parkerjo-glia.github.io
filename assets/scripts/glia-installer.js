@@ -22,6 +22,7 @@ if (urlSiteId) {
     gliaSite = defaultSite;
 }
 
+/*
 window.getGliaContext = function () {
     // Check for sessionId in URL params first
     const urlParams = new URLSearchParams(window.location.search);
@@ -31,6 +32,7 @@ window.getGliaContext = function () {
     }
     return { sessionId: getGliaContextSession() };
 }
+*/
 
 var installGlia = function (callback) {
     var gliaIntegrationScriptUrl;
