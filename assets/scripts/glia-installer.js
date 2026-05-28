@@ -115,7 +115,7 @@ function postGliaLoaded(visitorInfo) {
         glia.addEventListener(glia.EVENTS.ENGAGEMENT_END, engagementEnd);
         glia.updateInformation(visitorInfo).then(function () {
             window.dispatchEvent(new Event('glia-installed'));
-            postGliaInstalled();
+            postGliaInstalled(glia);
         }).catch(function () { });
     });
 }
