@@ -4,6 +4,12 @@ window.gliaDemo.sites = window.gliaDemo.sites || [];
 window.gliaDemo.seAgents = window.gliaDemo.seAgents || [];
 window.gliaContextSessionItemKey = window.gliaContextSessionItemKey || "gliaContextSession";
 
+// UUID validation helper
+function isUUID(str) {
+    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+    return uuidRegex.test(str);
+}
+
 function initSiteSelector() {
     // Modal is already in the DOM via Jekyll include, just set up event handlers
     $('#siteSelectorModal').on('shown.bs.modal', function () {

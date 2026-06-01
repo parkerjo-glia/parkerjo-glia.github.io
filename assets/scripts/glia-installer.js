@@ -56,15 +56,15 @@ var urlParams = new URLSearchParams(window.location.search);
 var siteParam = urlParams.get('glia_site') || urlParams.get('site_id');
 
 if (siteParam) {
-    let selectedSite = window.gliaDemo.sites.find(
+    let gliaSite = window.gliaDemo.sites.find(
         site => site.id === siteParam || site.code === siteParam
     );
 
-    if (!selectedSite && isUUID(siteParam)) {
-        selectedSite = { id: siteParam, name: "Manual Demo" };
+    if (!gliaSite && isUUID(siteParam)) {
+        gliaSite = { id: siteParam, name: "Manual Demo" };
     }
 
-    if (selectedSite) {
+    if (gliaSite) {
         localStorage.setItem('glia_site', JSON.stringify(selectedSite));
     }
 } else if (useWebAddress) {
