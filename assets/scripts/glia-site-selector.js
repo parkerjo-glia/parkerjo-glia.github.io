@@ -1,37 +1,8 @@
-window.gliaDemo = {};
-window.gliaContextSessionItemKey = window.gliaContextSessionItemKey ?? "gliaContextSession";
-
-window.gliaDemo.sites = [
-    { id: '', name: '' },
-    { id: 'e501268f-9055-4133-a379-64f2a85c08d6', name: 'Glia Demo Universal - Digital', code: "demo_digital" },
-    { id: '209c6db0-4f0c-4002-bf09-0e9b57e701c3', name: 'Glia Demo Universal - Phone', code: "demo_phone" },
-    { id: '19243c86-8fb5-4841-9b16-5567adaec1b9', name: 'Glia SE 1 - Demo', code: "se1_demo" },
-    { id: '8737a7ef-0aff-4b24-a4b4-dac24e35a21c', name: 'Glia SE 2 - Demo', code: "se2_demo" },
-    { id: 'b23158b9-4c19-4858-99f1-85155540f80c', name: 'Glia SE 3 - Demo', code: "se3_demo" },
-    { id: '18ad232b-bf58-4cb7-99c6-c0b2b1d47d51', name: 'Glia SE 4 - Demo', code: "se4_demo" },
-    { id: 'e31cf5bc-7d87-4495-ad9b-3c104b45b3ee', name: 'Glia SE 5 - Demo', code: "se5_demo" },
-    { id: '4f629cae-abd6-486d-9140-3bc6506c2d6c', name: 'Glia SE 6 - Demo', code: "se6_demo" },
-    { id: 'af76e495-7859-43de-9d3b-a46f83dedb98', name: 'Glia SE 7 - Demo', code: "se7_demo" },
-    { id: '07c4fad6-6a45-4673-b164-7bd767633fb9', name: 'Glia SE 8 - Demo', code: "se8_demo" },
-    { id: '0062f71e-899d-4c16-b1eb-dd370fbc6e83', name: 'Glia SE 9 - Demo', code: "se9_demo" },
-    { id: '70436271-1338-4b36-b07f-8d1c9f3d6d33', name: 'Glia SE 10 - Demo', code: "se10_demo" },
-    { id: '6779a7de-7336-47da-aa82-76c0a1993bb0', name: 'Glia SE 11 - Demo', code: "se11_demo" }
-];
-
-window.gliaDemo.seAgents = [
-    { siteId: '209c6db0-4f0c-4002-bf09-0e9b57e701c3', agents: [
-        { name: "Brian Christiansen", code: "brian-c"},
-        { name: "Chad Anderson", code: "chad-a"},
-        { name: "Jimi Hendrix", code: "jimi"},
-        { name: "Jonathan Parker", code: "parker"},
-        { name: "Kishan Patel", code: "kishan"},
-        { name: "Robert Blain", code: "blain"},
-        { name: "Sandy Chansamone", code: "sandy"},
-        { name: "Scott Hathaway", code: "scott"},
-        { name: "Steve Revucky", code: "steve"},
-        { name: "Teagrin Forde", code: "tea-grin"}
-    ]}
-]
+// Safety checks - ensure globals exist (should be defined by glia-installer.js)
+window.gliaDemo = window.gliaDemo || {};
+window.gliaDemo.sites = window.gliaDemo.sites || [];
+window.gliaDemo.seAgents = window.gliaDemo.seAgents || [];
+window.gliaContextSessionItemKey = window.gliaContextSessionItemKey || "gliaContextSession";
 
 function initSiteSelector() {
     // Modal is already in the DOM via Jekyll include, just set up event handlers
@@ -195,11 +166,6 @@ function getQueryParam(paramName) {
     }
 
     return null;
-}
-
-function isUUID(str) {
-    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-    return uuidRegex.test(str);
 }
 
 function removeOpenSettingsParam() {
