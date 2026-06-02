@@ -65,7 +65,7 @@ if (siteParam) {
     }
 
     if (gliaSite) {
-        localStorage.setItem('glia_site', JSON.stringify(selectedSite));
+        localStorage.setItem('glia_site', JSON.stringify(gliaSite));
     }
 } else if (useWebAddress) {
     gliaSite = null;
