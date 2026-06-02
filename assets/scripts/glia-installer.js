@@ -56,7 +56,7 @@ var urlParams = new URLSearchParams(window.location.search);
 var siteParam = urlParams.get('glia_site') || urlParams.get('site_id');
 
 if (siteParam) {
-    let gliaSite = window.gliaDemo.sites.find(
+    gliaSite = window.gliaDemo.sites.find(
         site => site.id === siteParam || site.code === siteParam
     );
 
