@@ -185,10 +185,12 @@ function removeOpenSettingsParam() {
 function getCleanReloadUrl(agentCode) {
     const url = new URL(window.location.href);
     url.searchParams.delete('openSettings');
+    url.searchParams.delete('glia_site');
+    url.searchParams.delete('site_id');
     
     // Build the final URL with agent code as first param if provided
     if (agentCode) {
-        // Get remaining params after removing openSettings
+        // Get remaining params after removing openSettings/glia_site/site_id
         const remainingParams = url.searchParams.toString();
         // Build URL with agent code first (just the code, no key)
         let finalUrl = url.pathname + '?' + encodeURIComponent(agentCode);
