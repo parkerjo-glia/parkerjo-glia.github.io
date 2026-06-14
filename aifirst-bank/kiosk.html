@@ -75,13 +75,26 @@ site_type: bank
 
     <div class="min-h-screen flex items-center justify-center p-8">
         <div class="text-center">
-            <img src="{{ site.base_bank_path }}/assets/images/bank-about-story-image.png" alt="AI First Bank" class="max-w-2xl max-h-[60vh] object-contain rounded-2xl shadow-2xl mx-auto">
+            <img src="{{ site.base_bank_path }}/assets/images/bank-about-story-image.png" alt="AI First Bank" class="max-w-2xl max-h-[60vh] object-contain rounded-2xl shadow-2xl mx-auto cursor-pointer hover:scale-105 transition-transform duration-300" onclick="startEngagement('video')">
             <p class="mt-8 text-primary-100 text-lg">Welcome to AI First Bank</p>
-            <p class="text-primary-300 text-sm mt-2">Customer-Focused • Trusted Banking</p>
+            <p class="text-primary-300 text-sm mt-2">Tap the image to connect with a representative</p>
         </div>
     </div>
 
     <script>
+    function startEngagement(channel) {
+        var engagementRequest = glia.queueForEngagement(channel);
+        engagementRequest.engagementPromise.then(function (engagement) {
+            console.log("Visitor Enqueued");
+        }).catch(function (error) {
+            if (error.cause === salemove.ERRORS.OPERATOR_DECLINED) {
+                console.log("Engagement Request: DECLINED");
+            } else {
+                console.error("Engagement Request: ERROR. - " + error.cause);
+            }
+        });
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
         var gliaSiteRaw = localStorage.getItem('glia_site');
         var currentGliaSiteDisplay = document.getElementById('current-glia-site-display');
@@ -96,6 +109,23 @@ site_type: bank
                 currentGliaSiteDisplay.title = gliaSite.id;
             }
         }
+    });
+
+    // Auto-click fullscreen button when engagement starts
+    window.addEventListener('glia-installed', function() {
+        sm.getApi({ version: 'v1' }).then(function(glia) {
+            glia.addEventListener(glia.EVENTS.ENGAGEMENT_START, function() {
+                // Watch for fullscreen button to appear in DOM
+                var observer = new MutationObserver(function(mutations, obs) {
+                    var fullscreenBtn = document.querySelector('.sm-fullscreen-button');
+                    if (fullscreenBtn) {
+                        fullscreenBtn.click();
+                        obs.disconnect(); // Stop observing once clicked
+                    }
+                });
+                observer.observe(document.body, { childList: true, subtree: true });
+            });
+        });
     });
     </script>
 </body>
