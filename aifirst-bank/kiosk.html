@@ -58,7 +58,7 @@ site_type: bank
             </div>
             <div>
                 <span>Glia: </span>
-                <a href="/?openSettings=true" id="change-glia-site-link" class="hover:text-white transition text-accent">
+                <a href="#" onclick="openSiteSelectorModal(event)" id="change-glia-site-link" class="hover:text-white transition text-accent">
                     <span id="current-glia-site-display">Loading...</span>
                 </a>
             </div>
@@ -131,5 +131,8 @@ site_type: bank
         });
     });
     </script>
+
+    <!-- Site Selector Modal -->
+    {% include site-selector-modal.html %}
 </body>
 </html>
